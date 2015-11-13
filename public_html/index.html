@@ -10,17 +10,17 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="EfectosImg/client/styles/ihover.scss" rel="stylesheet">
         <link rel="stylesheet" href="EfectosImg/dist/styles/main.css"/>
-
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="datepicker/css/datepicker.css" />
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/jquery.jscrollpane.css" media="all" />
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="datepicker 2/css/datepicker.css" rel="stylesheet">
+        <link href="folder/bootstrap-datetimepicker.min.css" rel="stylesheet"> 
+        <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.css">
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        
         <style>
             body {
                 padding-top: 50px;
@@ -58,21 +58,7 @@
 
 
         </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.css">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-
-        <!-- ... -->
-        <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
-        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-
+        
 
     </head>
     <body>
@@ -166,25 +152,27 @@
 
 
         <div class="row" >
+
+            <!--INICIO -->
             <div class="container">
                 <div class="row">
-                    <div class='col-sm-6'>
-                        <div class="form-group">
-                            <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" />
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="well well-sm">
+                            <form class="form-horizontal" action="" method="post">
+                                <fieldset>
+                                    <legend class="text-center">Datetimepicker Bootstrap</legend>
+                                    <div class='input-group date' id='divMiCalendario'>
+                                        <input type='text' id="txtFecha" class="form-control"  readonly/>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </fieldset>
+                            </form>
                         </div>
                     </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#datetimepicker1').datetimepicker();
-                        });
-                    </script>
                 </div>
             </div>
+            <!--FIN -->
         </div>
 
 
@@ -430,36 +418,38 @@
                 </div>
             </div>
         </div>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-                        (function (b, o, i, l, e, r) {
-                            b.GoogleAnalyticsObject = l;
-                            b[l] || (b[l] =
-                                    function () {
-                                        (b[l].q = b[l].q || []).push(arguments)
-                                    });
-                            b[l].l = +new Date;
-                            e = o.createElement(i);
-                            r = o.getElementsByTagName(i)[0];
-                            e.src = '//www.google-analytics.com/analytics.js';
-                            r.parentNode.insertBefore(e, r)
-                        }(window, document, 'script', 'ga'));
-                        ga('create', 'UA-XXXXX-X', 'auto');
-                        ga('send', 'pageview');
+            (function (b, o, i, l, e, r) {
+                b.GoogleAnalyticsObject = l;
+                b[l] || (b[l] =
+                        function () {
+                            (b[l].q = b[l].q || []).push(arguments)
+                        });
+                b[l].l = +new Date;
+                e = o.createElement(i);
+                r = o.getElementsByTagName(i)[0];
+                e.src = '//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e, r)
+            }(window, document, 'script', 'ga'));
+            ga('create', 'UA-XXXXX-X', 'auto');
+            ga('send', 'pageview');
         </script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script type="text/javascript" src="CircularContentCarousel/js/jquery.easing.1.3.js"></script>
         <script type="text/javascript" src="datepicker/js/bootstrap-datepicker.js"></script>
         <!-- the jScrollPane script -->
         <script type="text/javascript" src="CircularContentCarousel/js/jquery.mousewheel.js"></script>
         <script type="text/javascript" src="CircularContentCarousel/js/jquery.contentcarousel.js"></script>
         <script type="text/javascript">
-                        $('#ca-container').contentcarousel();
+            $('#ca-container').contentcarousel();
         </script>
         <script src="js/google-code-prettify/prettify.js"></script>
+        <script src="js/jquery.js"></script>
         <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
         </script>
         <script type="text/javascript">
