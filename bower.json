@@ -1,13 +1,13 @@
 {
-    "name": "My-take-Car",
-    "version": "1.0.0",
-    "main": "path/to/main.css",
-    "ignore": [
-        ".jshintrc",
-        "**/*.txt"
-    ],
-    "dependencies": {
-    },
-    "devDependencies": {
-    }
+  "name": "My-take-Car",
+  "version": "1.0.0",
+  "main": "path/to/main.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37"
+  },
+  "devDependencies": {}
 }
