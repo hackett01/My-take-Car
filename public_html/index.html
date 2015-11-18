@@ -16,15 +16,16 @@
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/style.css" />
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/jquery.jscrollpane.css" media="all" />
-        <link href="folder/bootstrap-datetimepicker.min.css" rel="stylesheet"> 
-        <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.css">
+        <link href="Simple-jQuery-Calendar-Date-Picker-Plugin-DCalendar/dcalendar.picker.css" rel="stylesheet" type="text/css">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        
+
         <style>
             body {
                 padding-top: 50px;
                 padding-bottom: 20px;
+                -moz-osx-font-smoothing: grayscale;
+                background-color: rgba(168, 168, 168, 0.21);
             }
         </style>
 
@@ -58,7 +59,7 @@
 
 
         </style>
-        
+
 
     </head>
     <body>
@@ -119,9 +120,10 @@
                 <div class="item active">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Example headline.</h1>
-                            <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                            <h1>Elige entre más de 10,000 autos en todo México</h1>
+                            <p>Registrate hoy mismo Contacta al dueño sin intermediarios</p>
+                            <p>Reserva tu auto que se acomode a tus necesidadess</p>
+
                         </div>
                     </div>
                     <img src="img/js.jpg" alt="Chania">
@@ -151,11 +153,84 @@
         </header>
 
 
-        <div class="row" >
-            <h1>hola</h1>
+
+        <div class="row" style=" background: rgba(23, 22, 22, 0.5) none repeat scroll 0% 0%;margin-top: -98px;position: inherit;
+             max-width:101%; ">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-8">
+                <nav class="navbar navbar-default"  style="margin-top: 20px;" >
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                        </div>
+
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                            <form id="signin" class="navbar-form navbar-right" role="form">
+
+                                <div class="input-group">
+                                    <input style=" margin-top: -4px; " type="email" class="form-control" id="exampleInputEmail1" placeholder="A dónde quieres ir?">
+                                </div>
+                                <div class="input-group">
+                                    <input id="salida"  class="form-control" name="Salida"  placeholder="Salida">   
+                                </div>
+
+                                <div class="input-group">
+                                    <input id="llegada"  class="form-control" name="llegada"  placeholder="llegada">                                          
+                                </div>
+
+
+                                <select class="form-control" id="sel3" style=" margin-top: -4px; ">
+                                    <option>Personas</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+
+                                <button type="submit" class="btn btn-default" style=" margin-top: -4px; "><i class="fa fa-search "></i> </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+            <div class="col-md-2">
+            </div>
         </div>
 
 
+        <div class="row" style="
+             background: #c8284e;
+             background-image: url('img/Sin título-1-08.png'); /* fallback */
+             background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 ); /* W3C */
+
+             max-width:101%;
+             margin-top: -15px;">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-3" style=" color: white; ">
+                <h1>Alquila tu auto</h1>
+            </div>
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-2">
+                <button style="margin-top: -56px;background: rgba(206, 206, 206, 0) none repeat scroll 0% 0%;color: white;" type="button" class="btn btn-default btn-lg btn-block">Publica tu auto</button>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
         <br>
         <br>
         <br>
@@ -350,7 +425,13 @@
 
 
         </div> <!-- /container -->    
-        <div  style="background-color: rgb(248, 79, 82);">
+        <div  style="
+              background: #c8284e;
+              background-image: url('img/Sin título-1-08.png'); /* fallback */
+              background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 ); /* W3C */
+
+
+              ">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
@@ -365,7 +446,7 @@
                                     <option>Español</option>
                                 </select>
                                 <br>
-                                <select class="form-control" id="sel1">
+                                <select class="form-control" id="sel2">
                                     <option>USD</option>
                                     <option>Español</option>
                                     <option>Español</option>
@@ -398,42 +479,28 @@
                 </div>
             </div>
         </div>
+
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script src="Simple-jQuery-Calendar-Date-Picker-Plugin-DCalendar/dcalendar.picker.js"></script>
         <script>
-            (function (b, o, i, l, e, r) {
-                b.GoogleAnalyticsObject = l;
-                b[l] || (b[l] =
-                        function () {
-                            (b[l].q = b[l].q || []).push(arguments)
-                        });
-                b[l].l = +new Date;
-                e = o.createElement(i);
-                r = o.getElementsByTagName(i)[0];
-                e.src = '//www.google-analytics.com/analytics.js';
-                r.parentNode.insertBefore(e, r)
-            }(window, document, 'script', 'ga'));
-            ga('create', 'UA-XXXXX-X', 'auto');
-            ga('send', 'pageview');
+            $('#salida').dcalendarpicker();
+            $('#calendar-salida').dcalendar(); //creates the calendar
         </script>
+        <script>
+            $('#llegada').dcalendarpicker();
+            $('#calendar-llegada').dcalendar(); //creates the calendar
+        </script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script type="text/javascript" src="CircularContentCarousel/js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="js/vendor/jquery-1.11.2.js"> </script>
-     
-        <!-- the jScrollPane script -->
         <script type="text/javascript" src="CircularContentCarousel/js/jquery.mousewheel.js"></script>
         <script type="text/javascript" src="CircularContentCarousel/js/jquery.contentcarousel.js"></script>
         <script type="text/javascript">
             $('#ca-container').contentcarousel();
-        </script>
-        <script src="js/google-code-prettify/prettify.js"></script>
-        <script src="js/jquery.js"></script>
-        <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-        </script>
-        <script type="text/javascript">
-            _uacct = "UA-106117-1";
-            urchinTracker();
         </script>
     </body>
 </html>
