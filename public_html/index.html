@@ -17,22 +17,25 @@
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/style.css" />
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/jquery.jscrollpane.css" media="all" />
         <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.css">
-        <link href="Simple-jQuery-Calendar-Date-Picker-Plugin-DCalendar/dcalendar.picker.css" rel="stylesheet" type="text/css">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <link href="DCalendar/dcalendar.picker.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="Remodal-master/dist/remodal.css">
+        <link rel="stylesheet" href="Remodal-master/dist/remodal-default-theme.css">
+        <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+
 
         <style>
+
             body {
                 padding-top: 50px;
                 padding-bottom: 20px;
                 -moz-osx-font-smoothing: grayscale;
                 background-color: rgba(168, 168, 168, 0.21);
             }
-        </style>
 
-        <style>
             .carousel-inner > .item > img,
             .carousel-inner > .item > a > img {
                 width: 100%;
+                height: 560px;
                 margin: auto;
             }
             #mycar, #empresa, #car {
@@ -57,8 +60,161 @@
 
 
 
+            .login-block h1 {
+                text-align: center;
+                color: #000;
+                font-size: 18px;
+                text-transform: uppercase;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            .login-block input {
+                width: 100%;
+                height: 42px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-bottom: 20px;
+                font-size: 14px;
+                font-family: Montserrat;
+                padding: 0 20px 0 50px;
+                outline: none;
+            }
+
+            .login-block input#username {
+                background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#username:focus {
+                background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#password {
+                background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#password:focus {
+                background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input:active, .login-block input:focus {
+                border: 1px solid #ff656c;
+            }
+
+            .remodal-bg.with-red-theme.remodal-is-opening,
+            .remodal-bg.with-red-theme.remodal-is-opened {
+                filter: none;
+            }
+
+            .remodal-overlay.with-red-theme {
+                background-color: #f44336;
+            }
+
+            .remodal.with-red-theme {
+                background: #fff;
+            }
+            h1{font-family: 'Didact Gothic', sans-serif;}
+            h3{
+                font-family: 'Didact Gothic', sans-serif;
+                color: white;
+            }
+            h2{
+                font-family: 'Didact Gothic', sans-serif;
+
+            }
+
+            p{
+                font-family: 'Didact Gothic', sans-serif;
+                color: white;
+            }
+            #backinf{
+                background: #c8284e;
+                background-image: url('img/Sin título-1-08.png'); 
+                background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 );
+                width:101%;
+                margin-top: -15px;
+            }
+            #superior-1{
+                background: rgba(23, 22, 22, 0.5) none repeat scroll 0% 0%;margin-top: -98px;position: inherit;
+                width:101%;
+            }
+            #shearh{
+                margin-top: -4%;
+                text-align: center;
+            }
+            #sel3{
+                margin-top: -1%;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #lupa{
+                margin-top: -4px; 
+            }
+            #nav01{
+                margin-top: 20px;
+                border-radius: 36px;
+                width: 84%;
+            }
+            #carAl{
+                color: white;
+            }
+            #car-public{
+                background: rgba(206, 206, 206, 0) none repeat scroll 0% 0%;color: white;
+            }
+            #ca-container
+            {
+                background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
+                width: 86%;
+            }
+            #pass{
+                color: #F84F52;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #cuent-re{
+                color:black;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #remenber{
+                color: #F84F52;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #faceboton{
+                background: rgb(69, 104, 178) none repeat scroll 0% 0%; border: medium none rgb(69, 104, 178);
+            }
+            #g-button{
+                width: 192px;
+            }
+            #googleplus{
+                color: red; margin-left: -16px;
+            }
+            #footer-infer{
+                background: #c8284e;
+                background-image: url('img/Sin título-1-08.png'); /* fallback */
+                background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 ); /* W3C */
+
+            }
+
+            #politic{
+                font-family: 'Didact Gothic', sans-serif;
+                text-align: justify; color: black;
+            }
+            #text-caption{
+                min-width: 300px;
+            }
+
+
 
         </style>
+
+
+
+
+
+
 
 
     </head>
@@ -81,12 +237,12 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active">
-                            <a id="register" href="./">Registrate <span class="sr-only">(current)</span></a>
+                            <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
                         </li>
                         <li>
-                            <a id="session" href="../navbar-static-top/">Iniciar sesión</a>
+                            <a id="session" href="#modals"  >Iniciar sesión</a>
                         </li>
-                        <li><a id="cuenta" href="../navbar-fixed-top/">Mi cuenta</a></li>
+                        <li><a id="cuenta" href="#">Mi cuenta</a></li>
                         <li class="dropdown" id="listaOption">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
@@ -119,24 +275,25 @@
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <div class="container">
-                        <div class="carousel-caption">
+                        <div id="text-caption"  class="carousel-caption">
                             <h1>Elige entre más de 10,000 autos en todo México</h1>
-                            <p>Registrate hoy mismo Contacta al dueño sin intermediarios</p>
-                            <p>Reserva tu auto que se acomode a tus necesidadess</p>
+                            <p>Registrate hoy mismo Contacta al dueño sin intermediarios
+                                Reserva tu auto que se acomode a tus necesidadess
+                            </p>
 
                         </div>
                     </div>
-                    <img src="img/js.jpg" alt="Chania">
+                    <img src="img/Turismo/shutterstock_97767131_mod.jpg" alt="Chania">
 
 
                 </div>
 
                 <div class="item">
-                    <img src="img/js.jpg" alt="Chania" >
+                    <img src="img/zoom-38688792-3.jpg" alt="Chania" >
                 </div>
 
                 <div class="item">
-                    <img src="img/js.jpg" alt="Chania" >
+                    <img src="img/familia-feliz.jpg" alt="Chania" >
                 </div>
 
             </div>
@@ -152,12 +309,12 @@
             </a>
         </header>
 
-        <div class="row" style=" background: rgba(23, 22, 22, 0.5) none repeat scroll 0% 0%;margin-top: -98px;position: inherit;
-             max-width:101%; ">
+
+        <div class="row" id="superior-1">
             <div class="col-md-3">
             </div>
             <div class="col-md-8">
-                <nav class="navbar navbar-default"  style="margin-top: 20px;" >
+                <nav class="navbar navbar-default" id="nav01" >
                     <div class="container-fluid">
 
                         <div class="navbar-header">
@@ -176,25 +333,30 @@
                             <form id="signin" class="navbar-form navbar-right" role="form">
 
                                 <div class="input-group">
-                                    <input style=" margin-top: -4px; " type="email" class="form-control" id="exampleInputEmail1" placeholder="A dónde quieres ir?">
+                                    <input  type="text" class="form-control  " id="shearh" placeholder="A dónde quieres ir?">
+
+                                    <br>
                                 </div>
                                 <div class="input-group">
-                                    <input id="salida"  class="form-control" name="Salida"  placeholder="Salida">   
+                                    <input id="salida"  class="form-control " name="Salida"  placeholder="Salida">   
                                 </div>
 
                                 <div class="input-group">
-                                    <input id="llegada"  class="form-control" name="llegada"  placeholder="llegada">                                          
+                                    <input id="llegada"  class="form-control " name="Llegada"  placeholder="llegada">                                          
                                 </div>
 
 
-                                <select class="form-control" id="sel3" style=" margin-top: -4px; ">
+                                <select class="form-control " id="sel3" >
                                     <option>Personas</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
                                 </select>
 
-                                <button type="submit" class="btn btn-default" style=" margin-top: -4px; "><i class="fa fa-search "></i> </button>
+                                <div class="input-group">
+                                    <button id="lupa" type="submit" class="btn btn-default"><i class="fa fa-search "></i> </button>
+                                </div>
+
                             </form>
 
                         </div>
@@ -207,34 +369,123 @@
         </div>
 
 
-        <div class="row" style="
-             background: #c8284e;
-             background-image: url('img/Sin título-1-08.png'); /* fallback */
-             background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 ); /* W3C */
-
-             max-width:101%;
-             margin-top: -15px;">
+        <div class="row" id="backinf">
             <div class="col-md-2">
             </div>
-            <div class="col-md-3" style=" color: white; ">
+            <div class="col-md-4" id="carAl">
                 <h1>Alquila tu auto</h1>
-            </div>
-            <div class="col-md-8">
+                <br>
+                <br>
             </div>
             <div class="col-md-2">
-                <button style="margin-top: -56px;background: rgba(206, 206, 206, 0) none repeat scroll 0% 0%;color: white;" type="button" class="btn btn-default btn-lg btn-block">Publica tu auto</button>
+
+            </div>
+            <div class="col-md-2">
+                <br>
+                <button id="car-public" type="button" class="btn btn-default btn-lg btn-block">Publica tu auto</button>
             </div>
         </div>
+        
+
+
+
 
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
+
+
+        <div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+            <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+            <div>
+                <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+                <div class="logo"></div>
+                <div class="login-block">
+                    <h1>Take my car</h1>
+                    <input type="text" value="" placeholder="Correo Electrónico" id="username" />
+                    <input type="password" value="" placeholder="Contraseña" id="password" />
+                    <br>
+                    <p id="remenber">¿Olvidaste tu contraseña?</p>
+                    <hr>
+                    <p id="cuent-re">¿No tienes una cuenta? ¡Registrate!</p>
+                    <br>
+                    <button id="faceboton" type="submit" class="btn btn-primary">
+                        <span class="fa fa-facebook-f "></span>
+                        Registrate con facebook
+                    </button>
+                    <br>
+                    <br>
+                    <button  id="g-button" type="submit" class="btn btn-default" >
+                        <span class="fa fa-google-plus " id="googleplus"></span>
+                        Registrate con google
+                    </button>
+                    <br>
+                    <br>
+
+                    <p id="politic">Al registrarme acepto las Condiciones del servicio,
+                        la politica de privacidad y de cookies, la politica de reembolso al huésped y las condiciones 
+                        de la garantía al anfitrión de Take  my car
+                    </p>
+
+                </div>
+            </div>
+            <br>
+        </div>
+
+
+
+        <div class="remodal" data-remodal-id="modals" role="dialog" aria-labelledby="modal2Title" aria-describedby="modal1Desc">
+            <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+            <div>
+                <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+                <div class="logo"></div>
+                <div class="login-block">
+                    <h1>Take my car</h1>
+                    <input type="text" value="" placeholder="Correo Electrónico" id="username" />
+                    <input type="password" value="" placeholder="Contraseña" id="password" />
+                    <br>
+                    <p id="pass">¿Olvidaste tu contraseña?</p>
+                    <hr>
+                    <p id="cuent-re">¿No tienes una cuenta? <a href="#modal">¡Registrate!</a></p>
+                    <br>
+                    <button id="faceboton" type="submit" class="btn btn-primary">
+                        <span class="fa fa-facebook-f "></span>
+                        Registrate con facebook
+                    </button>
+                    <br>
+                    <br>
+                    <button  id="g-button" type="submit" class="btn btn-default" >
+                        <span class="fa fa-google-plus " id="googleplus"></span>
+                        Registrate con google
+                    </button>
+                    <br>
+                    <br>
+
+
+                </div>
+            </div>
+            <br>
+            <button data-remodal-action="cancel" class="remodal-cancel">Iniciar Sesión</button>
+        </div>
+
+
+
 
         <div class="container">
 
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header" style="text-align: center;">
+                        Para el fin de semana 
+                    </h1>
+                    <h3  style="text-align: center; color: black;">
+                        Aveces los lugares más increíbles están cerca de casa
+                    </h3>
+                </div>
+                <div class=" col-md-1 ">
+
+                </div>
+            </div>
 
             <div class="row">
                 <div class="col-md-4">
@@ -270,9 +521,7 @@
             </div>
 
             <br>
-            <br>
-            <br>
-            <div class="row">
+            <div class=" container " >
                 <div class="col-md-4">
                 </div>
                 <div class="col-md-4">
@@ -288,13 +537,13 @@
 
 
 
-            <!-- Marketing Icons Section -->
+
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header" style="text-align: center;">
                         Viaja por el mundo
                     </h1>
-                    <h3 style="text-align: center;">
+                    <h3 style="text-align: center; color: black;">
                         Aveces los lugares más increíbles están cerca de casa
                     </h3>
                 </div>
@@ -377,8 +626,7 @@
             <br>
 
             <div class="row" style=" background-image: url(img/zoom-38688792-3.jpg)  ">
-                <div id="ca-container" class="ca-container" style="background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
-                     width: 86%;">
+                <div id="ca-container" class="ca-container" >
                     <div class="ca-wrapper">
                         <div class="ca-item ca-item-1">
                             <img src="img/folder/1.png" alt="Chania" >
@@ -423,13 +671,7 @@
 
 
         </div> <!-- /container -->    
-        <div  style="
-              background: #c8284e;
-              background-image: url('img/Sin título-1-08.png'); /* fallback */
-              background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 ); /* W3C */
-
-
-              ">
+        <div id="footer-infer">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
@@ -455,7 +697,7 @@
                         </form>
                     </div>
                     <div class="col-md-3">
-                        <h2>Empresas</h2>
+                        <h3>Empresas</h3>
                         <p>Información</p>
                         <p>Políticas</p>
                         <p>Condiciones y privacidad</p>
@@ -481,10 +723,8 @@
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="Simple-jQuery-Calendar-Date-Picker-Plugin-DCalendar/dcalendar.picker.js"></script>
+        <script src="DCalendar/dcalendar.picker.js"></script>
         <script>
             $('#salida').dcalendarpicker();
             $('#calendar-salida').dcalendar(); //creates the calendar
@@ -500,5 +740,117 @@
         <script type="text/javascript">
             $('#ca-container').contentcarousel();
         </script>
+
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="Remodal-master/dist/remodal.js"></script>
+
+        <!-- Events -->
+        <script>
+            $(document).on('opening', '.remodal', function () {
+                console.log('opening');
+            });
+            $(document).on('opened', '.remodal', function () {
+                console.log('opened');
+            });
+            $(document).on('closing', '.remodal', function (e) {
+                console.log('closing' + (e.reason ? ', reason: ' + e.reason : ''));
+            });
+            $(document).on('closed', '.remodal', function (e) {
+                console.log('closed' + (e.reason ? ', reason: ' + e.reason : ''));
+            });
+            $(document).on('confirmation', '.remodal', function () {
+                console.log('confirmation');
+            });
+            $(document).on('cancellation', '.remodal', function () {
+                console.log('cancellation');
+            });
+            $('[data-remodal-id=modal2]').remodal({
+                modifier: 'with-red-theme'
+            });
+        </script>
+
+        <script>
+            $(document).ready(function ($) {
+                $(window).resize(function () {
+                    if ($(window).width() <= 800) {
+                        $("#text-caption").css({'position': 'absolute',
+                            'left': '15%',
+                            'right': '15%',
+                            'bottom': '200px'
+                        });
+                        $(".carousel-indicators").css({'position': 'absolute',
+                            'bottom': '100px'
+                        });
+                        $("#signin").css({
+                            'border': 'medium none'
+                        });
+                        $("#salida").hide();
+                        $("#llegada").hide();
+                        $("#lupa").hide();
+                        $("#sel3").hide();
+                    }
+                    if ($(window).width() > 800) {
+                        $("#salida").show();
+                        $("#llegada").show();
+                        $("#sel3").show();
+                        $("#lupa").show();
+                        setTimeout('document.location.reload()', 10);
+                    }
+
+                    if ($(window).width() <= 768) {
+
+                        $("#shearh").css({
+                            'margin-top': '5px',
+                            'width': '500px'
+                        });
+                        $("#lupa").show();
+
+                        $("#lupa").css({
+                            'margin-top': '-136px',
+                            'margin-left': '502px'
+                        });
+
+
+                    }
+
+                    if ($(window).width() <= 680) {
+
+                        $("#shearh").css({
+                            'margin-top': '5px',
+                            'width': '403px'
+                        });
+                        $("#lupa").show();
+                        
+                        $("#lupa").css({
+                            'margin-top': '-138px',
+                            'margin-left': '406px'
+                        });
+                    }
+
+                    if ($(window).width() <= 400) {
+
+                        $("#shearh").css({
+                            'margin-top': '5px',
+                            'width': '218px'
+                        });
+                        $("#lupa").show();
+                    }
+
+
+
+
+
+
+
+
+
+                });
+            });
+        </script>
+
+
+
     </body>
 </html>
