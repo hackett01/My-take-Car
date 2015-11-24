@@ -3,10 +3,6 @@
 Primary style
 
 -------------------------------- */
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -14,9 +10,7 @@ html * {
   box-sizing: border-box;
 }
 
-body {
 
-}
 
 /* -------------------------------- 
 
@@ -64,7 +58,7 @@ header h1 {
 #cd-google-map address {
   position: absolute;
   width: 100%;
-  bottom: 0;
+  bottom: -20px;
   left: 0;
   padding: 1em 1em;
   background-color: rgba(292, 92, 98, 0.9);
