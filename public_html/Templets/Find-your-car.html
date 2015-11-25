@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> 
-<html class="no-js" lang=""> <!--<![endif]-->
+<html lang=""> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -13,15 +13,129 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.css">
-        <link href="../DCalendar/dcalendar.picker.css" rel="stylesheet" type="text/css">
         <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="../custom-google-map/css/reset.css"> <!-- CSS reset -->
-        <link rel="stylesheet" href="../custom-google-map/css/style.css"> <!-- Resource style -->
-        <script src="../custom-google-map/js/modernizr.js"></script> <!-- Modernizr -->
-        <link href="../EfectosImg/client/styles/ihover.scss" rel="stylesheet">
         <link rel="stylesheet" href="../EfectosImg/dist/styles/main.css"/>
 
+        <link rel="stylesheet" type="text/css"  href="../Template samples/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-themes/red.css">
+        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-forms.css">
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-custom.min.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-timepicker.min.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-touch-punch.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
+
+        <script type="text/javascript">
+
+            $(function () {
+
+                var smartpickerWrapper = '<div class="smart-forms"><div class="red-slider"></div></div>';
+
+                $('#dtpicker').datetimepicker({
+                    altField: "#dtpfield",
+                    altFieldTimeOnly: false,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>'
+                });
+
+                $('#dtpicker').wrapInner('<div class="red-slider"></div>');
+
+
+
+                $('#timepicker2').timepicker({
+                    timeFormat: 'HH:mm:ss:TT',
+                    showSecond: true,
+                    beforeShow: function (input, inst) {
+                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
+                        var smartpikr = inst.dpDiv.parent();
+                        if (!smartpikr.hasClass('smart-forms')) {
+                            inst.dpDiv.wrap(smartpickerWrapper);
+                        }
+                    },
+                    onClose: function (input, inst) {
+                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
+                    }
+
+                });
+
+                $('#dtimepicker2').datetimepicker({
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    beforeShow: function (input, inst) {
+                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
+                        var smartpikr = inst.dpDiv.parent();
+                        if (!smartpikr.hasClass('smart-forms')) {
+                            inst.dpDiv.wrap(smartpickerWrapper);
+                        }
+                    },
+                    onClose: function (input, inst) {
+                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
+                    }
+
+                });
+
+                $("#datepicker2").datepicker({
+                    numberOfMonths: 1,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    showButtonPanel: false
+                });
+
+                $("#datepicker3").datepicker({
+                    numberOfMonths: 1,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    showButtonPanel: false
+                });
+            });
+
+        </script>
+
+        <script type="text/javascript">
+
+            function initialize() {
+                var mapOptions = {
+                    zoom: 10,
+                    center: new google.maps.LatLng(29.760193, -95.369390),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    draggable: false,
+                    position: new google.maps.LatLng(29.760193, -95.369390)
+                });
+            }
+            google.maps.event.addDomListener(window, 'resize', initialize);
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+        </script>   
+
+        <script type="text/javascript">
+
+            $(function () {
+
+
+
+
+                $("#slider2").slider({
+                    range: "min",
+                    value: 140,
+                    min: 1,
+                    max: 5000,
+                    slide: function (event, ui) {
+                        $("#amount").val("$" + ui.value);
+                    }
+                });
+
+                $("#amount").val(
+                        "$" + $("#slider2").slider("value")
+                        );
+            });
+
+        </script>
 
 
 
@@ -266,143 +380,283 @@
 
 
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form class="form-horizontal">
-                        <div class="form-group">
-                            <label class="control-label col-xs-3">Filtro:</label>
-                            <div class="col-xs-3">
-                                <input type="text" class="form-control" placeholder="Nombre">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-xs-3">Fechas:</label>
-                            <div class="col-xs-3">
-                                <input type="text" class="form-control" placeholder="Nombre">
-                            </div>
-                            <div class="col-xs-3">
-                                <input type="text" class="form-control" placeholder="Nombre">
-                            </div>
-                            <div class="col-xs-3">
-                                <input type="text" class="form-control" placeholder="Nombre">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-xs-3">Tipo de Auto</label>
-                            <div class="col-xs-3">
-                                <input type="text" class="form-control" placeholder="Nombre">
-                            </div>
-                            <div class="col-xs-3">
-                                <input type="text" class="form-control" placeholder="Nombre">
-                            </div>
-                            <div class="col-xs-3">
-                                <input type="text" class="form-control" placeholder="Nombre">
-                            </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label class="control-label col-xs-3"></label>
 
-                            <div class="col-xs-2">
-                                <div class = "checkbox">
-                                    <label><input type = "checkbox">Eléctrico</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                 <div class = "checkbox">
-                                    <label><input type = "checkbox">Asientos de piel</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-1">
-                                <div class = "checkbox">
-                                    <label><input type = "checkbox">Estéro</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                 <div class = "checkbox">
-                                    <label><input type = "checkbox">Auxiliar</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                <div class = "checkbox">
-                                    <label><input type = "checkbox">Pantalla de video</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-xs-3">Complementos</label>
 
-                            <div class="col-xs-2">
-                                <div class = "checkbox">
-                                    <label><input type = "checkbox">GPS</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                <div class = "checkbox">
-                                    <label><input type = "checkbox">Asientos avatibles</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-1">
-                                <div class = "checkbox">
-                                    <label><input type = "checkbox">CD</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                  <div class = "checkbox">
-                                    <label><input type = "checkbox">Bluetooth</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                <div class = "checkbox">
-                                    <label><input type = "checkbox">Refacciones de emergencia</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-xs-3"></label>
 
-                            <div class="col-xs-2">
-                                <div class = "checkbox">
-                                    <label><input type = "checkbox">Aire Acondicinados</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                  <div class = "checkbox ">
-                                    <label><input type = "checkbox">Quemacocos</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-1">
-                                 <div class = "checkbox">
-                                    <label><input type = "checkbox">USB</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                 <div class = "checkbox">
-                                    <label><input type = "checkbox">Radio</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-2">
-                                <div class = "checkbox">
-                                    <label><input type = "checkbox">Sistema de alarma </label>
-                                </div>
-                            </div>
-                        </div>
+            <div class="smart-wrap">
+                <div class="smart-forms smart-container ">
 
-                        <div class="form-group">
-                            <div class="col-xs-offset-3 col-xs-9">
-                                <input type="submit" class="btn btn-primary" value="Enviar">
-                                <input type="reset" class="btn btn-default" value="Limpiar">
-                            </div>
-                        </div>
+
+
+                    <form method="post" action="" id="form-ui">
+                        <div  class="form-body theme-red" style="margin-top: -49px;">
+                            <div class="spacer-t40 spacer-b40">
+                                <div class="tagline"><span> Busca tu auto ideal </span></div><!-- .tagline -->
+                            </div><!-- end .spacer section --> 
+
+                            <div class="frm-row">
+                                <label class="field-label colm colm1 align-right">Busqueda</label>
+                                <div class="section colm colm8">
+                                    <label class="field prepend-icon">
+                                        <input type="text" name="names" id="names" class="gui-input" placeholder="Enter name...">
+                                        <span class="field-icon"><i class="fa fa-search"></i></span>  
+                                    </label>
+                                </div><!-- end section -->                  
+                            </div><!-- end .frm-row section -->
+
+
+                            <div class="frm-row">
+                                <label class="field-label colm colm1 align-right">Fechas:</label>
+                                <div class="section colm colm3">
+                                    <label for="datepicker2" class="field prepend-icon">
+                                        <input type="text" id="datepicker2" name="datepicker2" class="gui-input">
+                                        <span class="field-icon"><i class="fa fa-calendar"></i></span>  
+                                    </label>
+                                </div><!-- end section -->
+                                <div class="section colm colm3">
+                                    <label for="datepicker3" class="field prepend-icon">
+                                        <input type="text" id="datepicker3" name="datepicker3" class="gui-input">
+                                        <span class="field-icon"><i class="fa fa-calendar"></i></span>  
+                                    </label>
+                                </div><!-- end section -->  
+
+                                <div class="section colm colm3">
+                                    <label class="field select">
+                                        <select id="location" name="location">
+                                            <option value="">Personas</option>
+                                            <option value="AL">1</option>
+                                            <option value="DZ">2</option>
+                                            <option value="AD">3</option>
+                                            <option value="AO">3</option>
+                                            <option value="AI">4</option>
+                                        </select>
+                                        <i class="arrow double"></i>                    
+                                    </label>  
+                                </div><!-- end section -->   
+                            </div><!-- end .frm-row section -->
+
+                            <div class="frm-row">
+                                <label class="field-label colm colm1 align-right">Tipo de auto:</label>
+                                   <div class="section colm colm1">
+
+                                    
+                                </div>
+                                <div class="section colm colm3">
+
+                                    <label class="option option-red block spacer-b10">
+                                        <span class="checkbox"></span>Grande  
+                                        <input type="checkbox" name="response">
+                                    </label>                                                   
+
+                                </div>
+                                <div class="section colm colm3">
+
+                                    <label class="option option-red block spacer-b10">
+                                           <span class="checkbox"></span>Mediano      
+                                        <input type="checkbox" name="response">
+                                    </label>                                                   
+
+                                </div>
+                                <div class="section colm colm3">
+
+                                    <label class="option option-red block spacer-b10">
+                                        <span class="checkbox"></span>Chico     
+                                        <input type="checkbox" name="response">
+                                    </label>                                                   
+
+                                </div>
+                            </div><!-- end .frm-row section -->
+
+
+                            <div class="spacer-t20 spacer-b40">
+                                <div class="tagline"><span> Complementos </span></div><!-- .tagline -->
+                            </div><!-- end .spacer section -->     
+
+
+                            <div class="frm-row">
+                                    
+                                <div class="section colm colm2">
+
+                                    <label class="option option-red block spacer-b10">
+                                        <input type="checkbox" name="response">
+                                        <span class="checkbox"></span>Eléctrico                
+                                    </label>
+
+                                    <label class="option option-red block spacer-b10">
+                                        <input type="checkbox" name="support">
+                                        <span class="checkbox"></span> GPS               
+                                    </label>
+
+                                    <label class="option option-red block">
+                                        <input type="checkbox" name="updates">
+                                        <span class="checkbox"></span> Aire acondicionado                
+                                    </label>                                                        
+
+                                </div><!-- end section -->
+                                <div class="section colm colm2">
+
+                                    <label class="option option-red block spacer-b10">
+                                        <input type="checkbox" name="invoicing">
+                                        <span class="checkbox"></span> Asientos de piel                  
+                                    </label>
+
+                                    <label class="option option-red block spacer-b10">
+                                        <input type="checkbox" name="social">
+                                        <span class="checkbox"></span> Asientos avatibles             
+                                    </label>
+
+                                    <label class="option option-red block">
+                                        <input type="checkbox" name="reports">
+                                        <span class="checkbox"></span> Quemacocos                
+                                    </label> 
+
+                                </div><!-- end section -->
+                                <div class="section colm colm2">
+
+                                    <label class="option option-red block spacer-b10">
+                                        <input type="checkbox" name="invoicing">
+                                        <span class="checkbox"></span> Estereo                  
+                                    </label>
+
+                                    <label class="option option-red block spacer-b10">
+                                        <input type="checkbox" name="social">
+                                        <span class="checkbox"></span> CD             
+                                    </label>
+
+                                    <label class="option option-red block">
+                                        <input type="checkbox" name="reports">
+                                        <span class="checkbox"></span> USB              
+                                    </label> 
+
+                                </div><!-- end section -->
+                                <div class="section colm colm2">
+
+                                    <label class="option option-red block spacer-b10">
+                                        <input type="checkbox" name="invoicing">
+                                        <span class="checkbox"></span> Auxiliar                  
+                                    </label>
+
+                                    <label class="option option-red block spacer-b10">
+                                        <input type="checkbox" name="social">
+                                        <span class="checkbox"></span> Bluetooth             
+                                    </label>
+
+                                    <label class="option option-red block">
+                                        <input type="checkbox" name="reports">
+                                        <span class="checkbox"></span> Radio               
+                                    </label> 
+
+                                </div><!-- end section -->
+                                <div class="section colm colm4">
+
+                                    <label class="option option-red block spacer-b10">
+                                        <input type="checkbox" name="invoicing">
+                                        <span class="checkbox"></span> Pantalla de video                  
+                                    </label>
+
+                                    <label class="option option-red block spacer-b10">
+                                        <input type="checkbox" name="social">
+                                        <span class="checkbox"></span> Refacciones de emergencia             
+                                    </label>
+
+                                    <label class="option option-red block">
+                                        <input type="checkbox" name="reports">
+                                        <span class="checkbox"></span> Sistema de alarma                
+                                    </label> 
+
+                                </div><!-- end section -->
+                            </div><!-- end .frm-row section -->
+
+                            <div class="spacer-t40 spacer-b40">
+                                <div class="tagline"><span> Rango de Precios </span></div><!-- .tagline -->
+                            </div><!-- end .spacer section --> 
+                            <div class="section">
+                                <div class="spacer-b15">
+                                    <label for="amount">Maximum price:</label>
+                                    <input type="text" id="amount" class="slider-input"> 
+                                </div><!-- end .spacer -->                   
+                                <div class="slider-wrapper red-slider">
+                                    <div id="slider2"></div>
+                                </div><!-- end .slider-wrapper -->
+                            </div><!-- end section -->
+
+                        </div><!-- end .form-body section -->
+                        <div class="form-footer">
+                            <button style="color: #FFF;
+                                    float: right;" type="button" class="btn btn-danger btn-lg">Procesar</button>
+                        </div><!-- end .form-footer section -->
                     </form>
-                </div>
-            </div>
+
+                </div><!-- end .smart-forms section -->
+            </div><!-- end .smart-wrap section -->
 
 
 
+            <div class="smart-wrap">
+                <div class="smart-forms smart-container ">
+
+                    <div class="form-body theme-red" style="margin-top: -49px;">
+                        <button style="color:white" type="button" class="btn btn-danger">Más Filtros +</button>
+                        <br>
+                        <br>
+                        <div class="frm-row">
+
+                            <div class=" colm colm2" style="overflow: scroll; width: 338px; height: 300px;">
+
+                                <div class="ih-item square effect13 left_to_right"><a href="#">
+                                        <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
+                                        <div class="info">
+                                            <h3>$550</h3>
+                                            <p>Description goes here</p>
+                                        </div></a></div>
+                                <br>
+                                <!-- end normal -->
+                                <!-- normal -->
+                                <div class="ih-item square effect13 left_to_right"><a href="#">
+                                        <div class="img"><img src="../img/Dodge_Caliber_001.JPG" alt="img"></div>
+                                        <div class="info">
+                                            <h3>$550</h3>
+                                            <p>Description goes here</p>
+                                        </div></a></div>
+                                <br>
+                                <!-- end normal -->
+
+                                <div class="ih-item square effect13 left_to_right"><a href="#">
+                                        <div class="img"><img src="../img/dic-amda-1315894.jpg" alt="img"></div>
+                                        <div class="info">
+                                            <h3>$550</h3>
+                                            <p>Description goes here</p>
+                                        </div></a></div>
+                                <br>
+                                <!-- end normal -->
+                                <!-- normal -->
+                                <div class="ih-item square effect13 left_to_right"><a href="#">
+                                        <div class="img"><img src="../img/ford_fusion_2011_01.jpg" alt="img"></div>
+                                        <div class="info">
+                                            <h3>$550</h3>
+                                            <p>Description goes here</p>
+                                        </div></a></div>
+                                <!-- end normal -->
+
+                            </div><!-- end .colm2 section -->
+
+                            <div class="colm colm2">
+                            </div><!-- end .colm6 section -->
+                            <div class="colm colm2">
+                            </div><!-- end .colm6 section -->
+                            <div class="colm colm7">
+                                <div class="map-container">
+                                    <div id="map_canvas"></div>
+                                </div>                        
+                            </div><!-- end .colm6 section -->
+                        </div><!-- end .frm-row section -->                              
+
+                    </div><!-- end .form-body section -->
 
 
-
+                </div><!-- end .smart-forms section -->
+            </div><!-- end .smart-wrap section -->
 
         </div> <!-- /container -->    
         <div id="footer-infer">
@@ -453,31 +707,34 @@
                 </div>
             </div>
         </div>
-
-
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
         <script src="../js/vendor/bootstrap.min.js"></script>
-        <script src="../DCalendar/dcalendar.picker.js"></script>
-        <script>
-            $('#salida').dcalendarpicker();
-            $('#calendar-salida').dcalendar(); //creates the calendar
-        </script>
-        <script>
-            $('#llegada').dcalendarpicker();
-            $('#calendar-llegada').dcalendar(); //creates the calendar
-        </script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script type="text/javascript" src="../CircularContentCarousel/js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="../CircularContentCarousel/js/jquery.mousewheel.js"></script>
-        <script type="text/javascript" src="../CircularContentCarousel/js/jquery.contentcarousel.js"></script>
-        <script type="text/javascript">
-            $('#ca-container').contentcarousel();
-        </script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="../custom-google-map/js/main.js"></script> 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhCWyoW-6JvybUbCR7yop6tCUMyb_Xh9s"></script>
+   <script>
+            $(document).ready(function ($) {
+                $(window).resize(function () {
+                    if ($(window).width() <= 800) {
+                        $("#coments").css({
+                            'margin-top': '17px',
+                            'margin-left': '13px',
+                            'width': '316px'
+                        });
 
+                        $(".ih-item.square").css({
+                            'position': 'relative',
+                            'width': '200px',
+                            'height': '134px'
+                        });
+
+
+                    }
+
+                    if ($(window).width() > 1000) {
+                        setTimeout('document.location.reload()', 10);
+
+                    }
+
+                });
+            });
+        </script>
 
 
     </body>

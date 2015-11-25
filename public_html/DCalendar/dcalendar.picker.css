@@ -43,7 +43,7 @@
 .calendar .date:hover, .calendar .pMDate:hover, .calendar .nMDate:hover, .calendar .month:hover { background-color: #E2E2E2; }
 .calendar .date:active, .calendar .pMDate:active, .calendar .nMDate:active, .calendar .month:active { background-color: #22A7F0; color: #FFF; }
 .calendar .selected {
-	background-color: #22A7F0 !important;
+	background-color: #F84F52 !important;
 	color: #FFF !important;
 }
 
