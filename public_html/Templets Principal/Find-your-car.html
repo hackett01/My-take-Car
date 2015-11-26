@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.css">
         <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="../EfectosImg/dist/styles/main.css"/>
-
         <link rel="stylesheet" type="text/css"  href="../Template samples/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-themes/red.css">
         <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-forms.css">
@@ -24,7 +23,14 @@
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-timepicker.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-touch-punch.min.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/smartforms-modal.min.js"></script>
 
+
+        <!--
+        Css modal
+        -->
+
+        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-addons.css">
 
         <script type="text/javascript">
 
@@ -386,9 +392,6 @@
 
             <div class="smart-wrap">
                 <div class="smart-forms smart-container ">
-
-
-
                     <form method="post" action="" id="form-ui">
                         <div  class="form-body theme-red" style="margin-top: -49px;">
                             <div class="spacer-t40 spacer-b40">
@@ -438,9 +441,9 @@
 
                             <div class="frm-row">
                                 <label class="field-label colm colm1 align-right">Tipo de auto:</label>
-                                   <div class="section colm colm1">
+                                <div class="section colm colm1">
 
-                                    
+
                                 </div>
                                 <div class="section colm colm3">
 
@@ -453,7 +456,7 @@
                                 <div class="section colm colm3">
 
                                     <label class="option option-red block spacer-b10">
-                                           <span class="checkbox"></span>Mediano      
+                                        <span class="checkbox"></span>Mediano      
                                         <input type="checkbox" name="response">
                                     </label>                                                   
 
@@ -475,7 +478,7 @@
 
 
                             <div class="frm-row">
-                                    
+
                                 <div class="section colm colm2">
 
                                     <label class="option option-red block spacer-b10">
@@ -597,12 +600,12 @@
                 <div class="smart-forms smart-container ">
 
                     <div class="form-body theme-red" style="margin-top: -49px;">
-                        <button style="color:white" type="button" class="btn btn-danger">Más Filtros +</button>
+                        <a href="#" data-smart-modal="#smart-modal1"  class="btn btn-danger">Más Filtros +</a>
                         <br>
                         <br>
-                        <div class="frm-row">
-
-                            <div class=" colm colm2" style="overflow: scroll; width: 338px; height: 300px;">
+                        <div class="frm-row" >
+                            <div class="colm colm8"  style="overflow: scroll;">
+                            <div class=" colm colm2" style=" width: 338px; height: 300px;">
 
                                 <div class="ih-item square effect13 left_to_right"><a href="#">
                                         <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
@@ -640,12 +643,52 @@
                                 <!-- end normal -->
 
                             </div><!-- end .colm2 section -->
+                             <div class=" colm colm2" style=" width: 338px; height: 300px;">
 
+                                <div class="ih-item square effect13 left_to_right"><a href="#">
+                                        <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
+                                        <div class="info">
+                                            <h3>$550</h3>
+                                            <p>Description goes here</p>
+                                        </div></a></div>
+                                <br>
+                                <!-- end normal -->
+                                <!-- normal -->
+                                <div class="ih-item square effect13 left_to_right"><a href="#">
+                                        <div class="img"><img src="../img/Dodge_Caliber_001.JPG" alt="img"></div>
+                                        <div class="info">
+                                            <h3>$550</h3>
+                                            <p>Description goes here</p>
+                                        </div></a></div>
+                                <br>
+                                <!-- end normal -->
+
+                                <div class="ih-item square effect13 left_to_right"><a href="#">
+                                        <div class="img"><img src="../img/dic-amda-1315894.jpg" alt="img"></div>
+                                        <div class="info">
+                                            <h3>$550</h3>
+                                            <p>Description goes here</p>
+                                        </div></a></div>
+                                <br>
+                                <!-- end normal -->
+                                <!-- normal -->
+                                <div class="ih-item square effect13 left_to_right"><a href="#">
+                                        <div class="img"><img src="../img/ford_fusion_2011_01.jpg" alt="img"></div>
+                                        <div class="info">
+                                            <h3>$550</h3>
+                                            <p>Description goes here</p>
+                                        </div></a></div>
+                                <!-- end normal -->
+
+                            </div><!-- end .colm2 section -->
+                            </div>
                             <div class="colm colm2">
                             </div><!-- end .colm6 section -->
                             <div class="colm colm2">
                             </div><!-- end .colm6 section -->
-                            <div class="colm colm7">
+                             <div class="colm colm2">
+                            </div><!-- end .colm6 section -->
+                            <div class="colm colm4">
                                 <div class="map-container">
                                     <div id="map_canvas"></div>
                                 </div>                        
@@ -657,6 +700,160 @@
 
                 </div><!-- end .smart-forms section -->
             </div><!-- end .smart-wrap section -->
+
+
+
+            <div id="smart-modal1" class="smartforms-modal" role="alert">
+                <div class="smartforms-modal-container">
+                    <div class="smartforms-modal-header">
+                        <h3>Contact Form</h3>
+                        <a href="#" class="smartforms-modal-close">&times;</a>            
+                    </div><!-- .smartforms-modal-header -->
+                    <div class="smartforms-modal-body">
+                        <div class="smart-wrap">
+                            <div class="smart-forms smart-container wrap-full">
+                                <div class="form-body">
+
+                                    <form method="post" action="" id="form-ui">
+                                        <div  class="form-body theme-red" style="margin-top: -49px;">
+                                            <div class="spacer-t40 spacer-b40">
+                                                <div class="tagline"><span> Busca tu auto ideal </span></div><!-- .tagline -->
+                                            </div><!-- end .spacer section --> 
+
+                                            <div class="frm-row">
+                                                <label class="field-label colm colm2 align-right">Ciudad</label>
+                                                <div class="section colm colm8">
+                                                    <label class="field prepend-icon">
+                                                        <input type="text" name="names" id="names" class="gui-input" placeholder="Enter name...">
+                                                        <span class="field-icon"><i class="fa fa-search"></i></span>  
+                                                    </label>
+                                                </div><!-- end section -->                  
+                                            </div><!-- end .frm-row section -->
+
+
+                                            <div class="frm-row">
+                                                <label class="field-label colm colm2 align-right">Mas+</label>
+
+
+                                                <div class="section colm colm3">
+                                                    <label class="field select">
+                                                        <select id="location" name="location">
+                                                            <option value="">Modelo</option>
+                                                            <option value="AL">1990</option>
+                                                            <option value="DZ">1991</option>
+                                                            <option value="AD">1992</option>
+                                                            <option value="AO">1993</option>
+                                                            <option value="AI">1994</option>
+                                                        </select>
+                                                        <i class="arrow double"></i>                    
+                                                    </label>  
+                                                </div><!-- end section -->   
+
+                                                <div class="section colm colm3">
+                                                    <label class="field select">
+                                                        <select id="location" name="location">
+                                                            <option value="">Puertas</option>
+                                                            <option value="AL">1</option>
+                                                            <option value="DZ">2</option>
+                                                            <option value="AD">3</option>
+                                                            <option value="AO">3</option>
+                                                            <option value="AI">4</option>
+                                                        </select>
+                                                        <i class="arrow double"></i>                    
+                                                    </label>  
+                                                </div><!-- end section -->   
+                                                <div class="section colm colm3">
+                                                    <label class="field select">
+                                                        <select id="location" name="location">
+                                                            <option value="">Motor</option>
+                                                            <option value="AL">V4</option>
+                                                            <option value="DZ">V6</option>
+                                                            <option value="AD">V8</option>
+                                                        </select>
+                                                        <i class="arrow double"></i>                    
+                                                    </label>  
+                                                </div><!-- end section --> 
+                                            </div><!-- end .frm-row section -->
+
+
+                                            <div class="spacer-t20 spacer-b40">
+                                                <div class="tagline"><span> Complementos </span></div><!-- .tagline -->
+                                            </div><!-- end .spacer section -->     
+
+
+                                            <div class="frm-row">
+                                                <div class="section colm colm5">
+
+                                                    <label class="option option-red block spacer-b10">
+                                                        <input type="checkbox" name="invoicing">
+                                                        <span class="checkbox"></span> Asientos de piel                  
+                                                    </label>
+
+                                                    <label class="option option-red block spacer-b10">
+                                                        <input type="checkbox" name="social">
+                                                        <span class="checkbox"></span> Asientos avatibles             
+                                                    </label>
+
+                                                    <label class="option option-red block">
+                                                        <input type="checkbox" name="reports">
+                                                        <span class="checkbox"></span> Quemacocos                
+                                                    </label> 
+
+                                                </div><!-- end section -->
+                                                <div class="section colm colm3">
+
+                                                    <label class="option option-red block spacer-b10">
+                                                        <input type="checkbox" name="invoicing">
+                                                        <span class="checkbox"></span> Estereo                  
+                                                    </label>
+
+                                                    <label class="option option-red block spacer-b10">
+                                                        <input type="checkbox" name="social">
+                                                        <span class="checkbox"></span> CD             
+                                                    </label>
+
+                                                    <label class="option option-red block">
+                                                        <input type="checkbox" name="reports">
+                                                        <span class="checkbox"></span> USB              
+                                                    </label> 
+
+                                                </div><!-- end section -->
+                                                <div class="section colm colm4">
+
+                                                    <label class="option option-red block spacer-b10">
+                                                        <input type="checkbox" name="invoicing">
+                                                        <span class="checkbox"></span> Auxiliar                  
+                                                    </label>
+
+                                                    <label class="option option-red block spacer-b10">
+                                                        <input type="checkbox" name="social">
+                                                        <span class="checkbox"></span> Bluetooth             
+                                                    </label>
+
+                                                    <label class="option option-red block">
+                                                        <input type="checkbox" name="reports">
+                                                        <span class="checkbox"></span> Radio               
+                                                    </label> 
+
+                                                </div><!-- end section -->
+
+                                            </div><!-- end .frm-row section -->
+
+                                         
+
+                                        </div><!-- end .form-body section -->
+                                        <div class="form-footer">
+                                            <button style="color: #FFF;
+                                                    float: right;" type="button" class="btn btn-danger btn-lg">Procesar</button>
+                                        </div><!-- end .form-footer section -->
+                                    </form>                                                                                
+                                </div><!-- end .form-body section -->
+                            </div><!-- end .smart-forms section -->
+                        </div><!-- end .smart-wrap section -->            
+                    </div><!-- .smartforms-modal-body -->
+                </div><!-- .smartforms-modal-container -->
+            </div><!-- .smartforms-modal 1 --> 
+
 
         </div> <!-- /container -->    
         <div id="footer-infer">
@@ -708,7 +905,7 @@
             </div>
         </div>
         <script src="../js/vendor/bootstrap.min.js"></script>
-   <script>
+        <script>
             $(document).ready(function ($) {
                 $(window).resize(function () {
                     if ($(window).width() <= 800) {

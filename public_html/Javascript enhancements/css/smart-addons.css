@@ -774,7 +774,7 @@ background-image: url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKi
 .smartforms-modal-header{
 	position:relative;
 	padding:15px 20px;
-	background-color:#4EBD4A;
+	background-color:#F84F52;
 	color:#fff;
 }
 
@@ -843,7 +843,7 @@ background-image: url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKi
 	width: 60px;
 	height: 100%;
 	line-height: 60px;
-	background:#4EBD4A;
+	background:#F84F52;
 	opacity: 1;
 	filter: alpha(opacity=100);	
 	font-family: Arial, Baskerville, monospace;    

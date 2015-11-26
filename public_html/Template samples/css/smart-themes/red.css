@@ -2,9 +2,9 @@
 /* @form header 
 ----------------------------------- */
 .smart-forms .header-red {	
-	background-color:#ee4f3d;
-	border-top:1px solid #f17163;  
-	border-bottom:5px solid #e42914;
+    background-color: #EDEFED;
+    border-top: 1px solid #EDEFED;
+    border-bottom: 5px solid #E42914;
 }
 
 .smart-forms .header-lite{ border-top-color:#F1978D; }
@@ -30,12 +30,12 @@
 .smart-forms .theme-red .gui-textarea:focus,
 .smart-forms .theme-red .select > select:focus,
 .smart-forms .theme-red .select-multiple select:focus{ 
-	border-color: #ee4f3d;
-	-webkit-box-shadow:0px 0px 3px #ee4f3d inset;  
-	-moz-box-shadow:0px 0px 3px #ee4f3d inset;  
-	-o-box-shadow:0px 0px 3px #ee4f3d inset; 
-	box-shadow:0px 0px 3px #ee4f3d inset;  
-	color: #3C3C3C; 
+    border-color: #ee4f3d;
+    -webkit-box-shadow:0px 0px 3px #ee4f3d inset;  
+    -moz-box-shadow:0px 0px 3px #ee4f3d inset;  
+    -o-box-shadow:0px 0px 3px #ee4f3d inset; 
+    box-shadow:0px 0px 3px #ee4f3d inset;  
+    color: #3C3C3C; 
 }
 
 .smart-forms .theme-red .gui-textarea:focus{  height: 120px; }
