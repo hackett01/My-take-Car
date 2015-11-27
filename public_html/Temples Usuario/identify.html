@@ -1,0 +1,474 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang=""> <!--<![endif]-->
+    <head>
+
+
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.css">
+        <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../EfectosImg/dist/styles/main.css"/>
+        <link rel="stylesheet" type="text/css"  href="../Template samples/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-themes/red.css">
+        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-forms.css">
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="../Temples Usuario/script.js"></script>
+        <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
+
+
+        <!--
+        Css modal
+        -->
+
+        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-addons.css">
+
+
+
+
+
+        <style>
+
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+                -moz-osx-font-smoothing: grayscale;
+                background-color: rgba(168, 168, 168, 0.21);
+            }
+
+
+            #mycar, #empresa, #car {
+                color: white;
+            }
+
+            #register{
+                color:#F84F52;
+            }
+            #session{
+                color:#F84F52;
+            }
+            #cuenta{
+                color:#F84F52;
+            }
+            #cog{
+                color:#F84F52;
+            }
+            #buttonTravel{
+                opacity: 0.5;
+            }
+
+
+
+            .login-block h1 {
+                text-align: center;
+                color: #000;
+                font-size: 18px;
+                text-transform: uppercase;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            .login-block input {
+                width: 100%;
+                height: 42px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-bottom: 20px;
+                font-size: 14px;
+                font-family: Montserrat;
+                padding: 0 20px 0 50px;
+                outline: none;
+            }
+
+            .login-block input#username {
+                background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#username:focus {
+                background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#password {
+                background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#password:focus {
+                background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input:active, .login-block input:focus {
+                border: 1px solid #ff656c;
+            }
+
+            .remodal-bg.with-red-theme.remodal-is-opening,
+            .remodal-bg.with-red-theme.remodal-is-opened {
+                filter: none;
+            }
+
+            .remodal-overlay.with-red-theme {
+                background-color: #f44336;
+            }
+
+            .remodal.with-red-theme {
+                background: #fff;
+            }
+            h1{font-family: 'Didact Gothic', sans-serif;}
+            h3{
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            h2{
+                font-family: 'Didact Gothic', sans-serif;
+
+            }
+
+            p{
+                font-family: "Didact Gothic",sans-serif;
+                color: #4A4A4A;
+
+            }
+            #backinf{
+                background: #c8284e;
+                background-image: url('img/Sin título-1-08.png'); 
+                background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 );
+                width:101%;
+                margin-top: -15px;
+            }
+            #superior-1{
+                background: rgba(23, 22, 22, 0.5) none repeat scroll 0% 0%;margin-top: -98px;position: inherit;
+                width:101%;
+            }
+            #shearh{
+                margin-top: -4%;
+                text-align: center;
+            }
+            #sel3{
+                margin-top: -1%;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #lupa{
+                margin-top: -4px; 
+            }
+            #nav01{
+                margin-top: 20px;
+                border-radius: 36px;
+                width: 84%;
+            }
+            #carAl{
+                color: white;
+            }
+            #car-public{
+                background: rgba(206, 206, 206, 0) none repeat scroll 0% 0%;color: white;
+            }
+            #ca-container
+            {
+                background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
+                width: 86%;
+            }
+            #pass{
+                color: #F84F52;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #cuent-re{
+                color:black;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #remenber{
+                color: #F84F52;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #faceboton{
+                background: rgb(69, 104, 178) none repeat scroll 0% 0%; border: medium none rgb(69, 104, 178);
+            }
+            #g-button{
+                width: 192px;
+            }
+            #googleplus{
+                color: red; margin-left: -16px;
+            }
+            #footer-infer{
+                background: #c8284e;
+                background-image: url('../img/Sin título-1-08.png'); /* fallback */
+                background-image: url('../img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 ); /* W3C */
+
+            }
+
+            #politic{
+                font-family: 'Didact Gothic', sans-serif;
+                text-align: justify; color: black;
+            }
+            #text-caption{
+                min-width: 300px;
+            }
+
+            #lineaInfe{
+                border-color: #989898 -moz-use-text-color -moz-use-text-color;
+
+            }
+            .text-danger{
+                color: #FC696E;
+            }
+            a{
+                color: #FC696E;
+            }
+        </style>
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Take my car</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li>
+                            <a id="session" href="#modals"  >Iniciar sesión</a>
+                        </li>
+                        <li><a id="cuenta" href="#">Mi cuenta</a></li>
+                        <li class="dropdown" id="listaOption">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+                                <span class="fa fa-cog fa-2x" id="cog"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+
+
+
+
+        <div class="container">
+
+
+
+            <div class="row" >
+                <div class="col-md-3">
+                    <div id='cssmenu'>
+                        <ul>
+                            <li><a href='#'>Editar perfil</a></li>
+                            <li class='active has-sub'><a href='#'>Products</a>
+                                <ul>
+                                    <li class='has-sub'><a href='#'>Product 1</a>
+                                        <ul>
+                                            <li><a href='#'>Sub Product</a></li>
+                                            <li><a href='#'>Sub Product</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class='has-sub'><a href='#'>Product 2</a>
+                                        <ul>
+                                            <li><a href='#'>Sub Product</a></li>
+                                            <li><a href='#'>Sub Product</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href='photos-videos-imagen.html'>Fotos, Símbolos y videos</a></li>
+                            <li><a href='identify.html'>Verificar Identidad</a></li>
+                            <li><a href='identify.html'>Evaluaciones</a></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class=" col-md-8">
+                    <br>
+                    <br>
+                    <br>
+
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class=" col-md-5">
+                                <h3>Verifica tu identidad</h3>
+                                <p>Verificar tu identidad es una forma sencilla de contribuir a mantener la confianza en la comunidad de Airbnb. Para hacerlo, comprobaremos si los datos de tu documento de identidad coinciden con la información de tu cuenta. Obtén más información. </p>
+                                <p>También tienes la opción de elegir más abajo qué verificaciones quieres completar. </p>
+                            </div>
+                            <div class=" col-md-6">
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <a  href="verify-identity.html" style="float: right;"  class="btn btn-danger">Advertencia</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Tus verificaciones</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class=" col-md-12">
+                                    <h3>Correo electrónico</h3>
+                                    <p>Has confirmado tu dirección de correo electrónico: mariorz665@gmail.com. Realizar este paso es importante, ya que nos permite comunicarnos contigo de forma segura.  </p>
+
+                                </div>   
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-12">
+                                    <h3>Número de teléfono</h3>
+                                    <p> No te preocupes: tu número solo se comparte con otros miembros de Airbnb cuando tienes una reserva confirmada con ellos. </p>
+
+                                </div>    
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Añade más verificaciones </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class=" col-md-7">
+                                    <h3>Facebook</h3>
+                                    <p>Conéctate con Facebook y muestra tus conexiones fiables a anfitriones y huéspedes de todo el mundo. </p>
+
+                                </div> 
+                                <br>
+                                <br>
+                                <br>
+                                <div class=" col-md-5">
+
+                                    <button style=" float: right; " type="button" class="btn btn-default">Conectar</button>
+
+                                </div> 
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-7">
+                                    <h3>Google</h3>
+                                    <p>Conecta tu cuenta de Airbnb a tu cuenta de Google para que todo sea más fácil.  </p>
+
+                                </div>    
+
+                                <br>
+                                <br>
+                                <br>
+                                <div class=" col-md-5">
+                                    <button  style=" float: right; " type="button" class="btn btn-default">Conectar</button>
+
+                                </div> 
+                            </div>
+                            <div class="row">
+
+                                <div class=" col-md-7">
+                                    <h3>LinkedIn</h3>
+                                    <p>Crea un enlace a tu vida profesional: conecta tu cuenta de Airbnb a la de LinkedIn. </p>
+
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <div class=" col-md-5">
+                                    <button style=" float: right; " type="button" class="btn btn-default " >conectar</button>
+
+
+                                </div> 
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+        </div> <!-- /container -->    
+        <div id="footer-infer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <br>
+                        <br>
+                        <form role="form">
+                            <div class="form-group">
+                                <select class="form-control" id="sel1">
+                                    <option>Español</option>
+                                    <option>Español</option>
+                                    <option>Español</option>
+                                    <option>Español</option>
+                                </select>
+                                <br>
+                                <select class="form-control" id="sel2">
+                                    <option>USD</option>
+                                    <option>Español</option>
+                                    <option>Español</option>
+                                    <option>Español</option>
+                                </select>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>Empresas</h3>
+                        <p>Información</p>
+                        <p>Políticas</p>
+                        <p>Condiciones y privacidad</p>
+                        <p> y cookies</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>Descubre Take my car</h3>
+                        <p>Confianza y seguridad</p>
+                        <p>Selección de take my car</p>
+                        <p>Viajes y negocios</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>Busca tu auto</h3>
+                        <p>Publica tu auto</p>
+                        <p>Razones para compartir tu auto</p>
+                        <p>Viajes y negocios</p>
+                        <p>Ser un propietario ó conductor responsable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/vendor/bootstrap.min.js"></script>
+
+    </body>
+</html>
