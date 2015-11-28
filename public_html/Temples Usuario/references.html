@@ -5,9 +5,6 @@
 <!--[if gt IE 8]><!--> 
 <html lang=""> <!--<![endif]-->
     <head>
-
-
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
@@ -16,23 +13,32 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.css">
-        <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="../EfectosImg/dist/styles/main.css"/>
-        <link rel="stylesheet" type="text/css"  href="../Template samples/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-themes/red.css">
-        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-forms.css">
+        <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>  
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="../Temples Usuario/script.js"></script>
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
 
-
-        <!--
-        Css modal
-        -->
-
-        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-addons.css">
-
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/user-styles.css">
+
+        <style>
+            #mail-box{
+                width: 336px;
+                resize: none;
+                line-height: 19px;
+                overflow: auto;
+                height: 124px;
+            }
+            #butt-mail, #butt-cont{
+                background-color: rgb(255, 255, 255);
+                border-radius: 0px;
+            }
+            #button-face{
+                background: #4568B2;
+                color: white;
+                border-radius: 0px;
+            }
+        </style>
+
 
 
     </head>
@@ -89,6 +95,7 @@
 
 
             <div class="row" >
+
                 <div class="col-md-3">
                     <div id='cssmenu'>
                         <ul>
@@ -122,106 +129,134 @@
                     <br>
                     <br>
                     <br>
+                    <main>
+
+                        <input id="tab1" type="radio" name="tabs" checked>
+                        <label for="tab1">Solicitar referencia</label>
+
+                        <input id="tab2" type="radio" name="tabs">
+                        <label for="tab2">Referecias que han escrito sobre de ti</label>
 
 
-
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class=" col-md-5">
-                                <h3>Verifica tu identidad</h3>
-                                <p>Verificar tu identidad es una forma sencilla de contribuir a mantener la confianza en la comunidad de Airbnb. Para hacerlo, comprobaremos si los datos de tu documento de identidad coinciden con la información de tu cuenta. Obtén más información. </p>
-                                <p>También tienes la opción de elegir más abajo qué verificaciones quieres completar. </p>
-                            </div>
-                            <div class=" col-md-6">
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <a  href="verify-identity.html" id="button-identify"  class="btn btn-danger">Veríficame</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Tus verificaciones</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class=" col-md-12">
-                                    <h3>Correo electrónico</h3>
-                                    <p>Has confirmado tu dirección de correo electrónico: mariorz665@gmail.com. Realizar este paso es importante, ya que nos permite comunicarnos contigo de forma segura.  </p>
-
-                                </div>   
-                            </div>
-                            <div class="row">
-                                <div class=" col-md-12">
-                                    <h3>Número de teléfono</h3>
-                                    <p> No te preocupes: tu número solo se comparte con otros miembros de Airbnb cuando tienes una reserva confirmada con ellos. </p>
-
-                                </div>    
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Añade más verificaciones </h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class=" col-md-7">
-                                    <h3>Facebook</h3>
-                                    <p>Conéctate con Facebook y muestra tus conexiones fiables a anfitriones y huéspedes de todo el mundo. </p>
-
-                                </div> 
-                                <br>
-                                <br>
-                                <br>
-                                <div class=" col-md-5">
-
-                                    <button style=" float: right; " type="button" class="btn btn-default">Conectar</button>
-
-                                </div> 
-                            </div>
-                            <div class="row">
-                                <div class=" col-md-7">
-                                    <h3>Google</h3>
-                                    <p>Conecta tu cuenta de Airbnb a tu cuenta de Google para que todo sea más fácil.  </p>
-
-                                </div>    
-
-                                <br>
-                                <br>
-                                <br>
-                                <div class=" col-md-5">
-                                    <button  style=" float: right; " type="button" class="btn btn-default">Conectar</button>
-
-                                </div> 
-                            </div>
-                            <div class="row">
-
-                                <div class=" col-md-7">
-                                    <h3>LinkedIn</h3>
-                                    <p>Crea un enlace a tu vida profesional: conecta tu cuenta de Airbnb a la de LinkedIn. </p>
+                        <section id="content1">
+                            <div class=" row">
+                                <div class=" col-md-1">
 
                                 </div>
-                                <br>
-                                <br>
-                                <br>
-                                <div class=" col-md-5">
-                                    <button style=" float: right; " type="button" class="btn btn-default " >conectar</button>
+                                <div class=" col-md-10">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <p>Airbnb se basa en la confianza y la reputación. Puedes solicitar referencias a tu red de contactos personales. Aparecerán publicadas en tu perfil de Airbnb para que otros miembros puedan conocerte mejor. Pídeselo solo a personas que te conozcan bien. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" col-md-1">
 
+                                </div>
 
-                                </div> 
                             </div>
 
+                            <div class=" row">
+                                <div class=" col-md-1">
+                                </div>
+                                <div class=" col-md-10">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">Envía un correo electrónico a tus amigo</div>
+                                        <div class="panel-body">
+                                            <div class="col-md-5" >
+                                                <p>Envía un correo a tus amigos para que se registren en Airbnb y te dejen una referencia personal. Puedes revisarlas y aceptarlas o ignorarlas antes de que aparezcan publicadas en tu perfil. </p>
+                                            </div>
 
-                        </div>
-                    </div>
+                                            <div class="col-md-3" >
+                                                <textarea id="mail-box" class="form-control" placeholder="Enter here for comments..." rows="3"></textarea>
+                                                <br>
+                                                <button id="butt-mail" type="button" class="btn btn-default">Enviar correos electrónicos con la solicitud</button>
+                                                <br>
+                                                <br>
+                                                <button id="butt-cont" type="button" class="btn btn-default">Importa tus contactos</button>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" row">
+                                <div class=" col-md-1">
+                                </div>
+                                <div class=" col-md-10">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+
+                                            Pendientes de aprobación </div>
+                                        <div class="panel-body">
+                                            <div class="col-md-8" >
+                                                <p>Conecta tu cuenta de Facebook para ver qué amigos están en Airbnb. Podrás pedirles referencias desde aquí.</p>
+                                            </div>
+
+                                            <div class="col-md-3" >
+                                                <button id="button-face" type="button" class="btn btn-default">
+                                                    <span class="fa fa-facebook"> </span> Conéctate a Facebook
+
+                                                </button>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+
+                        <section id="content2">
+
+                            <div class=" row">
+                                <div class=" col-md-1">
+                                </div>
+                                <div class=" col-md-10">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">Pendientes de aprobación </div>
+                                        <div class="panel-body">
+                                            <div class="col-md-12" >
+                                                <p>Cuando aceptes una referencia, aparecerá publicada en tu perfil. Si la ignoras, no aparecerá en él ni se notificará a la persona que la ha escrito al respecto. </p>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" row">
+                                <div class=" col-md-1">
+                                </div>
+                                <div class=" col-md-10">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"> Referencias que han escrito sobre ti en el pasado </div>
+                                        <div class="panel-body">
+                                            <div class="col-md-12" >
+                                                <p>Solo los miembros con una foto de perfil podrán dejar referencias sobre ti. En caso contrario, no aparecerán en tu perfil público. </p>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+
+
+                    </main>
+
+
 
 
                 </div>
