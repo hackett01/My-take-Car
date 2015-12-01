@@ -4,7 +4,7 @@
 .smart-forms .header-red {	
     background-color: #EDEFED;
     border-top: 1px solid #EDEFED;
-    border-bottom: 5px solid #E42914;
+    border-bottom: 5px solid #F84F52;
 }
 
 .smart-forms .header-lite{ border-top-color:#F1978D; }
@@ -77,7 +77,7 @@
 
 /* @button 
 ------------------------------------------------------ */
-.smart-forms .btn-red { background-color: #ee4f3d; }
+.smart-forms .btn-red { background-color: #F84F52; float: right; }
 .smart-forms .btn-red:hover, 
 .smart-forms .btn-red:focus { background-color: #f17163; }
 .smart-forms .btn-red:active{ background-color: #e42914; }

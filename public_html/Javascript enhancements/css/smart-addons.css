@@ -1457,7 +1457,7 @@ background-image: url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKi
 .steps-theme-red .wizard > .steps .current a:active,
 .steps-theme-red .wizard > .steps .current:before,
 .steps-theme-red .wizard > .steps .current .number{
-    background: #ee4f3d;
+    background: #8A8A8A;
 	color: #fff;
 }
 
@@ -1466,7 +1466,7 @@ background-image: url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKi
 .steps-theme-red .wizard > .steps .done a:active,
 .steps-theme-red .wizard > .steps .done:before,
 .steps-theme-red .wizard > .steps .done .number{
-    background: #F27D71;
+    background: #F84F52;
     color: #fff;
 }
 
@@ -1489,7 +1489,7 @@ background-image: url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKi
 .steps-theme-yellow .wizard > .steps .done a:active,
 .steps-theme-yellow .wizard > .steps .done:before,
 .steps-theme-yellow .wizard > .steps .done .number{
-    background:#F2B96A;
+    background:#F84F52;
     color: #fff;
 }
 
@@ -1530,7 +1530,7 @@ background-image: url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKi
 .steps-theme-primary .wizard > .steps .error a:active,
 .steps-theme-primary .wizard > .steps .error:before,
 .steps-theme-primary .wizard > .steps .error .number{
-    background: #ff3111;
+    background: #F84F52;
     color: #fff;
 }
 
