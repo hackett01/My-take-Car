@@ -19,29 +19,13 @@
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="../Temples Usuario/script.js"></script>
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
-
-        <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/user-styles.css">
-
-        <style>
-            #mail-box{
-                width: 336px;
-                resize: none;
-                line-height: 19px;
-                overflow: auto;
-                height: 124px;
-            }
-            #butt-mail, #butt-cont{
-                background-color: rgb(255, 255, 255);
-                border-radius: 0px;
-            }
-            #button-face{
-                background: #4568B2;
-                color: white;
-                border-radius: 0px;
-            }
-        </style>
-
-
+        <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
+        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-forms.css">
+        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-themes/red.css">
+        <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/noti-css.css">
+        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-forms.css">
+        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-addons.css">
+        <link rel="stylesheet" type="text/css"  href="css/font-awesome.min.css">
 
     </head>
     <body>
@@ -98,40 +82,91 @@
 
             <div class="row" >
 
+                <br>
+                <br>
+                <br>
                 <div class="col-md-3">
-                    <div id='cssmenu'>
+                          <div id='cssmenu'>
                         <ul>
                             <li><a href='Notificaciones_1.html'>Notificaciones</a></li>
-                            <li><a href='photos-videos-imagen.html'>Fotos, Símbolos y videos</a></li>
-                            <li><a href='identify.html'>Verificar Identidad</a></li>
-                            <li><a href='evaluations.html'>Evaluaciones</a></li>
-                            <li><a href='references.html'>Referencias</a></li>
+                            <li><a href='payment-methods.html'>Métodos de pago</a></li>
+                            <li><a href='payment-preferences.html'>Preferencias de pago</a></li>
+                            <li><a href='privacy.html'>Privacidad</a></li>
+                            <li><a href='security.html'>Seguridad</a></li>
+                            <li><a href='configuration.html'>Configuración</a></li>
                         </ul>
                     </div>
 
 
                 </div>
-                <div class=" col-md-8" style="margin-top: 30px;">
+                <div class=" col-md-8">
 
-                    <br>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Envío de notificaciones y mensajes de texto al móvil </div>
-                        <div class="panel-body">
-                            Panel content
-                        </div>
-                    </div>
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Configuración del correo electrónico </h3>
-                        </div>
-                        <div class="panel-body">
-                            Panel content
-                        </div>
-                    </div>
+                    <div class="smart-wrap">
+                        <div class="smart-forms smart-container wrap-0">
+
+                            <div class="form-header header-red">
+                                <h3>Cambiar pais de residencia</h3>
+                            </div><!-- end .form-header section -->
+                            <form method="post" action="/" id="contact">
+
+
+                                <br>
+                                <div class="frm-row">
+                                    <label class="field-label colm colm3 align-center">País de residencia. </label>
+                                    <div class="section colm colm3">
+                                        <label class="field select">
+                                            <select id="country" name="country">
+                                                <option value="">Pais</option>
+                                                <option value="AL">Albania</option>
+                                                <option value="DZ">Algeria</option>
+                                                <option value="AD">México</option>
+                                                <option value="AO">Angola</option>
+                                                <option value="AI">Anguilla</option>
+                                            </select>
+                                            <i class="arrow"></i>                    
+                                        </label>  
+                                    </div><!-- end section -->                  
+                                </div><!-- end .frm-row section -->
+                                <hr>
+
+                                <div class="form-footer">
+                                    <button type="submit" class="button btn-danger">Guardar país de residencia</button>
+                                </div><!-- end .form-footer section -->
+
+                            </form>
+
+                        </div><!-- end .smart-forms section -->
+                    </div><!-- end .smart-wrap section -->
+
+
+
+                    <div class="smart-wrap">
+                        <div class="smart-forms smart-container wrap-0">
+
+                            <div class="form-header header-red">
+                                <h3>Cancelar cuenta </h3>
+                            </div><!-- end .form-header section -->
+                            <form method="post" action="/" id="contact">
+
+
+
+
+                                <div class="form-footer">
+                                    <button type="submit" class="button btn-danger">Cancelar cuenta</button>
+                                </div><!-- end .form-footer section -->
+                            </form>
+
+                        </div><!-- end .smart-forms section -->
+                    </div><!-- end .smart-wrap section -->
+
 
 
                 </div>
+
+
+
+
             </div>
 
 
