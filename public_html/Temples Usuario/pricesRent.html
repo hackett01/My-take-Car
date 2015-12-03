@@ -66,7 +66,7 @@
                             required: true,
                             email: true
                         },
-                        typecar: {
+                        moneda: {
                             required: true
                         },
                         type: {
@@ -93,8 +93,8 @@
                         typecar: {
                             required: 'Please choose type-car'
                         },
-                        type: {
-                            required: 'Select type of car'
+                        moneda: {
+                            required: 'Select type of moneda'
                         },
                         details: {
                             required: 'Plece you details '
@@ -212,56 +212,44 @@
 
                                 <div class="form-header header-red">
                                     <h3>
-                                        Explica a los viajeros cómo es tu Auto
+                                        Establece una tarifa por noche para tu espacio
                                     </h3>
                                 </div><!-- end .form-header section -->
 
                                 <p id="text-paymenr">
-                                    Cada alojamiento de Airbnb es único. Explica cuáles son los principales atractivos de tu espacio para atraer la atención de los huéspedes que quieren alojarse en tu zona.
+                                    Puedes establecer un precio en el que tengas en cuenta el alojamiento, así como las prestaciones y servicios que ofreces como anfitrión.           
                                 </p>
+                                <hr>
 
                                 <form method="post" action="/" id="contactform">
-                                    <div class="form-body">
-
-
+                                    <div class="form-body" style="padding: 0px 30px 24px;">
+                                        <h3>Precio estándar</h3>
                                         <div class="frm-row">
-                                            <label class="field-label colm colm4 " style="margin-right: -79px;">Nombre de tu anuncio </label>
+                                            <label class="field-label colm colm4 " style="margin-right: -79px;">Precio por día</label>
                                             <div class="section colm colm8">
                                                 <label for="firstname" class="field prepend-icon">
                                                     <input type="text" name="Modelo" id="Modelo" class="gui-input" placeholder="Ofrece información clara y descriptiva">
-                                                    <span class="field-icon"><i class="fa fa-sticky-note"></i></span>  
+                                                    <span class="field-icon"><i class="fa fa-dollar"></i></span>  
                                                 </label>
                                             </div><!-- end section -->
                                         </div><!-- end .frm-row section -->    
 
-
                                         <div class="frm-row">
-                                            <div class="colm colm12">
+                                            <label class="field-label colm colm3  " style=" width: 144px; " >Moneda</label>
+                                            <div class="section colm colm5">
+                                                <label class="field select">
+                                                    <select id="country" name="moneda">
+                                                        <option value="">AED</option>
+                                                        <option value="AL">ARS</option>
+                                                        <option value="DZ">AUD</option>
+                                                    </select>
+                                                    <i class="arrow"></i>                    
+                                                </label>  
+                                            </div><!-- end section -->  
+                                        </div><!-- end .frm-row section -->   
 
-                                                <div class="section">
-                                                    <label for="details" class="field-label">Resumen</label>
-                                                    <label class="field">
-                                                        <textarea class="gui-textarea" id="details" name="details"
-                                                                  placeholder="Cuéntale a tu cliente que es lo que te gusta de tu vehiculo. Puedes contar ejemplo lo que cuenta tu auto"         ></textarea>
-                                                        <span class="input-hint"> <strong>Hint:</strong> A maxmum of 3000 words.</span>   
-                                                    </label>
-                                                </div><!-- end section -->                        
-
-                                            </div><!-- end .colm section -->
-
-                                        </div><!-- end .frm-row section -->
-
-                                        <div class="frm-row">
-                                            <div class="colm colm12">
-
-                                                <div class="section">
-                                                    <label for="details" class="field-label"> Puedes añadir más información para que los viajeros conozcan mejor tu alojamiento y el tipo de anfitrión que eres. </label>
-
-                                                </div><!-- end section -->                        
-
-                                            </div><!-- end .colm section -->
-
-                                        </div><!-- end .frm-row section -->
+                                        <p>Puedes establecer tarifas semanales y mensuales para ofrecer descuentos en estadías largas. </p>
+                                        <hr>
                                         <!-- custom errors will load here  -->
                                         <div class="notification alert-error errorsContainer">
                                             <p>The following errors occurred:</p>

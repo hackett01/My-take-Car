@@ -31,6 +31,7 @@
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-slider-pips.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-touch-punch.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/jquery.formShowHide.min.js"></script>    
+        <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
 
         <script type="text/javascript">
             $(function () {
@@ -195,7 +196,7 @@
                 margin-left: 29px;
             }
             #paymentform{
-                margin-top: -18px;
+                margin-top: -7px;
             }
             #chect-ok{
                 margin-left: 28px;
@@ -209,6 +210,11 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+
+
+
+
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -252,187 +258,143 @@
 
 
 
+        <div id="wrapper">
 
-        <div class="container">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            Start Bootstrap
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
 
-
-
-            <div class="row" >
-
-                <br>
-                <br>
-                <br>
-                <div class="col-md-3">
-                       <div id='cssmenu'>
-                        <ul>
-                            <li><a href='Notificaciones_1.html'>Notificaciones</a></li>
-                            <li><a href='payment-methods.html'>Métodos de pago</a></li>
-                            <li><a href='payment-preferences.html'>Preferencias de pago</a></li>
-                            <li><a href='privacy.html'>Privacidad</a></li>
-                            <li><a href='security.html'>Seguridad</a></li>
-                            <li><a href='configuration.html'>Configuración</a></li>
-                        </ul>
-                    </div>
-                    
-
-
-                </div>
-                <br>
-                <div class=" col-md-8">
-
-
-                    <div class="frm-row" id="paymentform">
-                        <div class="smart-wrap">
-                            <div class="smart-forms smart-container wrap-0">
-
-                                <div class="form-header header-red">
-                                    <h3>Conexiones sociales  </h3>
-                                </div><!-- end .form-header section -->
-
-                                <p id="text-paymenr">
-                                    Las conexiones sociales muestran tu actividad en nuestra página y permiten que aquellos amigos de Facebook que también tengan una cuenta en Airbnb vean tu nombre de usuario, tu foto de perfil de Facebook y algunos de los lugares que has visitado recientemente.
-                                </p>
-                                <p id="text-paymenr">
-                                    Si desactivas esta función, tu cuenta seguirá conectada a la de Facebook, pero tu actividad en Airbnb no se compartirá con tus amigos. Sin embargo, cualquier usuario podrá ver tu actividad pública de Airbnb, como tus Wish Lists o tus evaluaciones.
-                                </p>
-                                <p id="text-paymenr">
-                                    Si quieres desconectar tu cuenta de Facebook de la de Airbnb, ve a Confianza y verificaciones para obtener más información.
-                                </p>
-                                <div id="chect-ok" class="section">
-                                    <div class="option-group field">
-                                        <label class="option option-red">
-                                            <input type="checkbox" name="ppTerms" value="Paypal Tems">
-                                            <span class="checkbox"></span> 
-                                            Compartir mi actividad con los amigos de Facebook que también tengan una cuenta en Airbnb (recomendado)                 
-                                        </label>
-                                    </div>
-                                </div><!-- end section --> 
-                                <form method="post" action="/" id="account2">
-                                    <div class="form-body theme-red">
-
-                                        <div class="frm-row">
-
-
-                                            <hr>
-                                            <div class="section colm colm5">
-                                                <a id="btn-payment" href="#" class=" btn btn-danger " data-smart-modal="#smart-modal1">Save Social Connections</a>
-                                            </div><!-- end .col8 section -->	                        
-
-                                        </div><!-- end frm-row section -->                    
-
-
-
-                                    </div><!-- end .form-body section -->
-
-                                </form>
-
-                            </div><!-- end .smart-forms section -->
-                        </div><!-- end .smart-wrap section -->              
-
-                    </div>
-
-                    <div class="frm-row" id="paymentform">
-                        <div class="smart-wrap">
-                            <div class="smart-forms smart-container wrap-0">
-
-                                <div class="form-header header-red">
-                                    <h3>Tus anuncios y perfil en los motores de búsqueda  </h3>
-                                </div><!-- end .form-header section -->
-
-                                <p id="text-paymenr">
-                                    Los motores de búsqueda proporcionan gran cantidad de tráfico a tu anuncio y generan interés y reservas para nuestros anfitriones.
-                                </p>
-                                <p id="text-paymenr">
-                                    Si desactivas esta función, tu cuenta seguirá conectada a la de Facebook, pero tu actividad en Airbnb no se compartirá con tus amigos. Sin embargo, cualquier usuario podrá ver tu actividad pública de Airbnb, como tus Wish Lists o tus evaluaciones.
-                                </p>
-                                <p id="text-paymenr">
-                                    Si quieres desconectar tu cuenta de Facebook de la de Airbnb, ve a Confianza y verificaciones para obtener más información.
-                                </p>
-                                <div id="chect-ok" class="section">
-                                    <div class="option-group field">
-                                        <label class="option option-red">
-                                            <input type="checkbox" name="ppTerms" value="Paypal Tems">
-                                            <span class="checkbox"></span> 
-                                            Compartir mi actividad con los amigos de Facebook que también tengan una cuenta en Airbnb (recomendado)                 
-                                        </label>
-                                    </div>
-                                </div><!-- end section --> 
-                                <form method="post" action="/" id="account2">
-                                    <div class="form-body theme-red">
-
-                                        <div class="frm-row">
-
-
-                                            <div class="section colm colm5">
-                                                <a id="btn-payment" href="#" class=" btn btn-danger " data-smart-modal="#smart-modal1">Añadir método de pago</a>
-                                            </div><!-- end .col8 section -->	                        
-
-                                        </div><!-- end frm-row section -->                    
-
-
-
-                                    </div><!-- end .form-body section -->
-
-                                </form>
-
-                            </div><!-- end .smart-forms section -->
-                        </div><!-- end .smart-wrap section -->              
-
-                    </div>
-                </div>
+                    <li><a href='Notificaciones_1.html'>Notificaciones</a></li>
+                    <li><a href='payment-methods.html'>Métodos de pago</a></li>
+                    <li><a href='Payment-preferences.html'>Preferencias de pago</a></li>
+                    <li><a href='Privacy.html'>Privacidad</a></li>
+                    <li><a href='security.html'>Seguridad</a></li>
+                    <li><a href='configuration.html'>Configuración</a></li>
+                </ul>
             </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="frm-row" id="paymentform">
+                                <div class="smart-wrap">
+                                    <div class="smart-forms smart-container wrap-0">
+
+                                        <div class="form-header header-red">
+                                            <h3>Conexiones sociales  </h3>
+                                        </div><!-- end .form-header section -->
+
+                                        <p id="text-paymenr">
+                                            Las conexiones sociales muestran tu actividad en nuestra página y permiten que aquellos amigos de Facebook que también tengan una cuenta en Airbnb vean tu nombre de usuario, tu foto de perfil de Facebook y algunos de los lugares que has visitado recientemente.
+                                        </p>
+                                        <p id="text-paymenr">
+                                            Si desactivas esta función, tu cuenta seguirá conectada a la de Facebook, pero tu actividad en Airbnb no se compartirá con tus amigos. Sin embargo, cualquier usuario podrá ver tu actividad pública de Airbnb, como tus Wish Lists o tus evaluaciones.
+                                        </p>
+                                        <p id="text-paymenr">
+                                            Si quieres desconectar tu cuenta de Facebook de la de Airbnb, ve a Confianza y verificaciones para obtener más información.
+                                        </p>
+                                        <div id="chect-ok" class="section">
+                                            <div class="option-group field">
+                                                <label class="option option-red">
+                                                    <input type="checkbox" name="ppTerms" value="Paypal Tems">
+                                                    <span class="checkbox"></span> 
+                                                    Compartir mi actividad con los amigos de Facebook que también tengan una cuenta en Airbnb (recomendado)                 
+                                                </label>
+                                            </div>
+                                        </div><!-- end section --> 
+                                        <form method="post" action="/" id="account2">
+                                            <div class="form-body theme-red">
+
+                                                <div class="frm-row">
+
+
+                                                    <hr>
+                                                    <div class="section colm colm5">
+                                                        <a id="btn-payment" href="#" class=" btn btn-danger " data-smart-modal="#smart-modal1">Save Social Connections</a>
+                                                    </div><!-- end .col8 section -->	                        
+
+                                                </div><!-- end frm-row section -->                    
 
 
 
-        </div> <!-- /container -->    
-        <div id="footer-infer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <br>
-                        <br>
-                        <form role="form">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1">
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-                                <br>
-                                <select class="form-control" id="sel2">
-                                    <option>USD</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
+                                            </div><!-- end .form-body section -->
+
+                                        </form>
+
+                                    </div><!-- end .smart-forms section -->
+                                </div><!-- end .smart-wrap section -->              
 
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Empresas</h3>
-                        <p>Información</p>
-                        <p>Políticas</p>
-                        <p>Condiciones y privacidad</p>
-                        <p> y cookies</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Descubre Take my car</h3>
-                        <p>Confianza y seguridad</p>
-                        <p>Selección de take my car</p>
-                        <p>Viajes y negocios</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Busca tu auto</h3>
-                        <p>Publica tu auto</p>
-                        <p>Razones para compartir tu auto</p>
-                        <p>Viajes y negocios</p>
-                        <p>Ser un propietario ó conductor responsable</p>
+
+                            <div class="frm-row" id="paymentform">
+                                <div class="smart-wrap">
+                                    <div class="smart-forms smart-container wrap-0">
+
+                                        <div class="form-header header-red">
+                                            <h3>Tus anuncios y perfil en los motores de búsqueda  </h3>
+                                        </div><!-- end .form-header section -->
+
+                                        <p id="text-paymenr">
+                                            Los motores de búsqueda proporcionan gran cantidad de tráfico a tu anuncio y generan interés y reservas para nuestros anfitriones.
+                                        </p>
+                                        <p id="text-paymenr">
+                                            Si desactivas esta función, tu cuenta seguirá conectada a la de Facebook, pero tu actividad en Airbnb no se compartirá con tus amigos. Sin embargo, cualquier usuario podrá ver tu actividad pública de Airbnb, como tus Wish Lists o tus evaluaciones.
+                                        </p>
+                                        <p id="text-paymenr">
+                                            Si quieres desconectar tu cuenta de Facebook de la de Airbnb, ve a Confianza y verificaciones para obtener más información.
+                                        </p>
+                                        <div id="chect-ok" class="section">
+                                            <div class="option-group field">
+                                                <label class="option option-red">
+                                                    <input type="checkbox" name="ppTerms" value="Paypal Tems">
+                                                    <span class="checkbox"></span> 
+                                                    Compartir mi actividad con los amigos de Facebook que también tengan una cuenta en Airbnb (recomendado)                 
+                                                </label>
+                                            </div>
+                                        </div><!-- end section --> 
+                                        <form method="post" action="/" id="account2">
+                                            <div class="form-body theme-red">
+
+                                                <div class="frm-row">
+
+
+                                                    <div class="section colm colm5">
+                                                        <a id="btn-payment" href="#" class=" btn btn-danger " data-smart-modal="#smart-modal1">Añadir método de pago</a>
+                                                    </div><!-- end .col8 section -->	                        
+
+                                                </div><!-- end frm-row section -->                    
+
+
+
+                                            </div><!-- end .form-body section -->
+
+                                        </form>
+
+                                    </div><!-- end .smart-forms section -->
+                                </div><!-- end .smart-wrap section -->              
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- /#page-content-wrapper -->
+
         </div>
+        <!-- /#wrapper -->
+
         <script src="../js/vendor/bootstrap.min.js"></script>
 
     </body>

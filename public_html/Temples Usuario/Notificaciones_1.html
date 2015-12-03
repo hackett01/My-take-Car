@@ -24,6 +24,8 @@
         <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-forms.css">
         <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-themes/red.css">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/noti-css.css">
+        <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
+
 
 
 
@@ -76,27 +78,30 @@
 
 
 
-        <div class="container">
 
+        <div id="wrapper">
 
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            Start Bootstrap
+                        </a>
+                    </li>
+                    <li><a href='Notificaciones_1.html'>Notificaciones</a></li>
+                    <li><a href='payment-methods.html'>Métodos de pago</a></li>
+                    <li><a href='Payment-preferences.html'>Preferencias de pago</a></li>
+                    <li><a href='Privacy.html'>Privacidad</a></li>
+                    <li><a href='security.html'>Seguridad</a></li>
+                    <li><a href='configuration.html'>Configuración</a></li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
 
-            <div class="row" >
-
-                <div class="col-md-3">
-                    <div id='cssmenu'>
-                        <ul>
-                            <li><a href='Notificaciones_1.html'>Notificaciones</a></li>
-                            <li><a href='payment-methods.html'>Métodos de pago</a></li>
-                            <li><a href='payment-preferences.html'>Preferencias de pago</a></li>
-                            <li><a href='privacy.html'>Privacidad</a></li>
-                            <li><a href='security.html'>Seguridad</a></li>
-                            <li><a href='configuration.html'>Configuración</a></li>
-                        </ul>
-                    </div>
-
-
-                </div>
-                <div class=" col-md-8">
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
 
                     <div class="smart-wrap">
                         <div class="smart-forms smart-container wrap-0">
@@ -247,64 +252,17 @@
 
                         </div><!-- end .smart-forms section -->
                     </div><!-- end .smart-wrap section -->
-
-
-
-
                 </div>
+
+
+
             </div>
+            <!-- /#page-content-wrapper -->
 
 
-
-        </div> <!-- /container -->    
-        <div id="footer-infer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <br>
-                        <br>
-                        <form role="form">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1">
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-                                <br>
-                                <select class="form-control" id="sel2">
-                                    <option>USD</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Empresas</h3>
-                        <p>Información</p>
-                        <p>Políticas</p>
-                        <p>Condiciones y privacidad</p>
-                        <p> y cookies</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Descubre Take my car</h3>
-                        <p>Confianza y seguridad</p>
-                        <p>Selección de take my car</p>
-                        <p>Viajes y negocios</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Busca tu auto</h3>
-                        <p>Publica tu auto</p>
-                        <p>Razones para compartir tu auto</p>
-                        <p>Viajes y negocios</p>
-                        <p>Ser un propietario ó conductor responsable</p>
-                    </div>
-                </div>
-            </div>
         </div>
+        <!-- /#wrapper -->
+
         <script src="../js/vendor/bootstrap.min.js"></script>
 
     </body>
