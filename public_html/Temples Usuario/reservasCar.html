@@ -22,7 +22,7 @@
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/noti-css.css">
 
-
+        <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-forms.css">
         <script type="text/javascript" src="../Javascript enhancements/js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/additional-methods.min.js"></script>
@@ -132,7 +132,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -159,9 +159,9 @@
                                 <span class="fa fa-cog fa-2x" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="index-user.html">Perfil</a></li>
+                                <li><a href="Notificaciones_1.html">Cuenta</a></li>
+                                <li><a href="new-post.html">Tus anuncios</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
@@ -173,40 +173,37 @@
             </div><!--/.container-fluid -->
         </nav>
 
+          <div id="wrapper">
 
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            Start Bootstrap
+                        </a>
+                    </li>
+                    <li><a href='carEssentials.html'>Datos Básicos</a></li>
+                    <li><a href='describeAdd.html'>Descripción</a></li>
+                    <li><a href='customerLocation.html'>Ubicación</a></li>
+                    <li><a href='carImage.html'>Fotos</a></li>
+                    <li><a href='autoServices.html'>Servicios </a></li>
+                    <li><a href='vehicleServices.html'>Seguridad</a></li>
+                    <li><a href='pricesRent.html'>Precios</a></li>
+                    <li><a href='reservasCar.html'>Reserva</a></li>
+                    <li><a href='calendarReser.html'>Calendario</a></li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
 
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
 
-        <div class="container">
-
-
-
-            <div class="row" >
-
-                <br>
-                <br>
-                <br>
-                <div class="col-md-3">
-                    <div id='cssmenu'>
-                        <ul>
-                            <li><a href='carEssentials.html'>Datos Básicos</a></li>
-                            <li><a href='describeAdd.html'>Descripción</a></li>
-                            <li><a href='customerLocation.html'>Ubicación</a></li>
-                            <li><a href='carImage.html'>Fotos</a></li>
-                            <li><a href='autoServices.html'>Servicios </a></li>
-                            <li><a href='vehicleServices.html'>Seguridad</a></li>
-                            <li><a href='pricesRent.html'>Precios</a></li>
-                            <li><a href='reservasCar.html'>Reserva</a></li>
-                            <li><a href='calendarReser.html'>Calendario</a></li>
-                        </ul>
-                    </div>
-
-
-
-                </div>
-                <div class=" col-md-8">
-
-                    <div class="smart-wrap">
-                        <div class="smart-forms smart-container wrap-2">
+                                <div class="smart-wrap">
+                        <div class="smart-forms smart-container wrap-0">
 
                             <div class="form-header header-custom">
                                 <h3>Selecciona la forma en la que tus huéspedes pueden reservar</h3>
@@ -270,61 +267,15 @@
 
                         </div><!-- end .smart-forms section -->
                     </div><!-- end .smart-wrap section -->
-
-                </div>
-            </div>
-
-
-
-        </div> <!-- /container -->    
-        <div id="footer-infer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <br>
-                        <br>
-                        <form role="form">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1">
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-                                <br>
-                                <select class="form-control" id="sel2">
-                                    <option>USD</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Empresas</h3>
-                        <p>Información</p>
-                        <p>Políticas</p>
-                        <p>Condiciones y privacidad</p>
-                        <p> y cookies</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Descubre Take my car</h3>
-                        <p>Confianza y seguridad</p>
-                        <p>Selección de take my car</p>
-                        <p>Viajes y negocios</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Busca tu auto</h3>
-                        <p>Publica tu auto</p>
-                        <p>Razones para compartir tu auto</p>
-                        <p>Viajes y negocios</p>
-                        <p>Ser un propietario ó conductor responsable</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- /#page-content-wrapper -->
+
         </div>
+
+      
         <script src="../js/vendor/bootstrap.min.js"></script>
 
     </body>

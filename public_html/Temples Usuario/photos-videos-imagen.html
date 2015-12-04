@@ -29,6 +29,7 @@
         <script type="text/javascript" src="../Javascript enhancements/js/smartforms-modal.min.js"></script>
         <script type="text/javascript" src="../Temples Usuario/script.js"></script>
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
+        <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
 
 
         <!--
@@ -252,7 +253,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -279,9 +280,9 @@
                                 <span class="fa fa-cog fa-2x" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="index-user.html">Perfil</a></li>
+                                <li><a href="Notificaciones_1.html">Cuenta</a></li>
+                                <li><a href="new-post.html">Tus anuncios</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
@@ -295,176 +296,122 @@
 
 
 
-
-        <div class="container">
-
+        <div id="wrapper">
 
 
-            <div class="row" >
-                <div class="col-md-3">
-                    <div id='cssmenu'>
-                        <ul>
-                            <li><a href='index-user.html'>Editar perfil</a></li>
-                            <li><a href='photos-videos-imagen.html'>Fotos, Símbolos y videos</a></li>
-                            <li><a href='identify.html'>Verificar Identidad</a></li>
-                            <li><a href='identify.html'>Evaluaciones</a></li>
-                            <li><a href='references.html'>Referencias</a></li>
-                        </ul>
-                    </div>
-
-
-                </div>
-                <div class=" col-md-8">
-                    <br>
-                    <br>
-                    <div class="panel panel-default" id="panel-superior">
-                        <div class="panel-heading">Foto del perfil</div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class=" col-md-3 ">
-
-                                    <div class="ih-item circle colored effect13 top_to_bottom"><a href="#">
-                                            <div class="img"><img src="../img/foto_0120101007231731.png" alt="img" width="100" ></div>
-                                            <div class="info">
-                                                <div class="info-back">
-                                                    <h3>Truman Capote </h3>
-                                                </div>
-                                            </div></a></div>
-                                </div>
-                                <div class=" col-md-1 ">
-
-                                </div>
-                                <div class=" col-md-8 ">
-                                    <p>Las fotos frontales son muy importantes para que los anfitriones y huéspedes puedan conocerse mejor. ¡Hospedar a un paisaje no es muy divertido que digamos! Por favor, sube una foto en la que se vea claramente tu cara.</p>
-
-                                    <div class="smart-wrap">
-                                        <div class="smart-forms smart-container ">
-
-                                            <div class="section">
-                                                <label for="file1" class="field file">
-                                                    <span class="button btn-primary">Elige tu foto</span>
-                                                    <input type="file" class="gui-file" name="upload1" id="file1" onChange="document.getElementById('uploader1').value = this.value;">
-                                                    <input type="text" class="gui-input" id="uploader1" placeholder="no file selected" readonly>
-                                                </label>
-                                            </div><!-- end  section -->
-                                        </div><!-- end .smart-forms section -->
-                                    </div><!-- end .smart-wrap section -->
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Video de Perfil</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class=" col-md-3 ">
-
-
-                                </div>
-                                <div class=" col-md-3 ">
-
-                                </div>
-                                <div class=" col-md-5 ">
-                                    <h3>Consejos de grabación</h3>
-
-                                    <ul>
-                                        <li> Nos encantan los primeros planos, pero es mejor que dejes una distancia prudencial.</li>
-                                        <li>Tienes 30 segundos, ¡así que intenta ir al grano!</li>
-                                        <li> Procura que el foco de luz esté frente a ti, no detrás.</li>
-                                        <li> Mira a la cámara para crear una conexión personal.</li>
-                                        <li> Podrás previsualizar el vídeo antes de subirlo. </li>
-                                    </ul> 
-                                    <div class="smart-wrap">
-                                        <div class="smart-forms smart-container ">
-
-                                            <div class="section">
-                                                <label for="file1" class="field file">
-                                                    <span class="button btn-primary">Video</span>
-                                                </label>
-                                            </div><!-- end  section -->
-                                        </div><!-- end .smart-forms section -->
-                                    </div><!-- end .smart-wrap section -->
-                                </div>
-                            </div>
-                            <div class="row">
-
-                                <div class=" col-md-12 ">
-                                    <h3>Consejos de grabación</h3>
-
-                                    <p>Puedes presentarte y responder a las siguientes preguntas, ¡aunque nada te impide utilizar algunas de tu propia cosecha!</p>
-
-                                    <ul>
-                                        <li>¿De dónde eres? </li>
-                                        <li>¿Cuáles son tus intereses? </li>
-                                        <li>¿Qué te gusta hacer en tu tiempo libre? </li>
-                                        <li>¿Tienes alguna anécdota curiosa? </li>
-                                        <li>¿Qué cosas te apasionan? </li>
-                                    </ul> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-
-                </div>
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li><a href='index-user.html'>Editar perfil</a></li>
+                    <li><a href='photos-videos-imagen.html'>Fotos, Símbolos y videos</a></li>
+                    <li><a href='identify.html'>Verificar Identidad</a></li>
+                    <li><a href='evaluations.html'>Evaluaciones</a></li>
+                    <li><a href='references.html'>Referencias</a></li>
+                </ul>
             </div>
+            <!-- /#sidebar-wrapper -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default" id="panel-superior">
+                                <div class="panel-heading">Foto del perfil</div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class=" col-md-3 ">
+
+                                            <div class="ih-item circle colored effect13 top_to_bottom"><a href="#">
+                                                    <div class="img"><img src="../img/foto_0120101007231731.png" alt="img" width="100" ></div>
+                                                    <div class="info">
+                                                        <div class="info-back">
+                                                            <h3>Truman Capote </h3>
+                                                        </div>
+                                                    </div></a></div>
+                                        </div>
+                                        <div class=" col-md-1 ">
+
+                                        </div>
+                                        <div class=" col-md-8 ">
+                                            <p>Las fotos frontales son muy importantes para que los anfitriones y huéspedes puedan conocerse mejor. ¡Hospedar a un paisaje no es muy divertido que digamos! Por favor, sube una foto en la que se vea claramente tu cara.</p>
+
+                                            <div class="smart-wrap">
+                                                <div class="smart-forms smart-container ">
+
+                                                    <div class="section">
+                                                        <label for="file1" class="field file">
+                                                            <span class="button btn-primary">Elige tu foto</span>
+                                                            <input type="file" class="gui-file" name="upload1" id="file1" onChange="document.getElementById('uploader1').value = this.value;">
+                                                            <input type="text" class="gui-input" id="uploader1" placeholder="no file selected" readonly>
+                                                        </label>
+                                                    </div><!-- end  section -->
+                                                </div><!-- end .smart-forms section -->
+                                            </div><!-- end .smart-wrap section -->
+                                        </div>
+                                    </div>
 
 
-
-        </div> <!-- /container -->    
-        <div id="footer-infer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <br>
-                        <br>
-                        <form role="form">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1">
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-                                <br>
-                                <select class="form-control" id="sel2">
-                                    <option>USD</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-
+                                </div>
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Empresas</h3>
-                        <p>Información</p>
-                        <p>Políticas</p>
-                        <p>Condiciones y privacidad</p>
-                        <p> y cookies</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Descubre Take my car</h3>
-                        <p>Confianza y seguridad</p>
-                        <p>Selección de take my car</p>
-                        <p>Viajes y negocios</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Busca tu auto</h3>
-                        <p>Publica tu auto</p>
-                        <p>Razones para compartir tu auto</p>
-                        <p>Viajes y negocios</p>
-                        <p>Ser un propietario ó conductor responsable</p>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Video de Perfil</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class=" col-md-3 ">
+
+
+                                        </div>
+                                        <div class=" col-md-3 ">
+
+                                        </div>
+                                        <div class=" col-md-5 ">
+                                            <h3>Consejos de grabación</h3>
+
+                                            <ul>
+                                                <li> Nos encantan los primeros planos, pero es mejor que dejes una distancia prudencial.</li>
+                                                <li>Tienes 30 segundos, ¡así que intenta ir al grano!</li>
+                                                <li> Procura que el foco de luz esté frente a ti, no detrás.</li>
+                                                <li> Mira a la cámara para crear una conexión personal.</li>
+                                                <li> Podrás previsualizar el vídeo antes de subirlo. </li>
+                                            </ul> 
+                                            <div class="smart-wrap">
+                                                <div class="smart-forms smart-container ">
+
+                                                    <div class="section">
+                                                        <label for="file1" class="field file">
+                                                            <span class="button btn-primary">Video</span>
+                                                        </label>
+                                                    </div><!-- end  section -->
+                                                </div><!-- end .smart-forms section -->
+                                            </div><!-- end .smart-wrap section -->
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class=" col-md-12 ">
+                                            <h3>Consejos de grabación</h3>
+
+                                            <p>Puedes presentarte y responder a las siguientes preguntas, ¡aunque nada te impide utilizar algunas de tu propia cosecha!</p>
+
+                                            <ul>
+                                                <li>¿De dónde eres? </li>
+                                                <li>¿Cuáles son tus intereses? </li>
+                                                <li>¿Qué te gusta hacer en tu tiempo libre? </li>
+                                                <li>¿Tienes alguna anécdota curiosa? </li>
+                                                <li>¿Qué cosas te apasionan? </li>
+                                            </ul> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
                     </div>
                 </div>
             </div>

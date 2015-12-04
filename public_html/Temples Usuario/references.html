@@ -17,8 +17,8 @@
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="../Temples Usuario/script.js"></script>
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
-
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/user-styles.css">
+        <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
 
         <style>
             #mail-box{
@@ -46,7 +46,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -73,9 +73,9 @@
                                 <span class="fa fa-cog fa-2x" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="index-user.html">Perfil</a></li>
+                                <li><a href="Notificaciones_1.html">Cuenta</a></li>
+                                <li><a href="new-post.html">Tus anuncios</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
@@ -90,209 +90,162 @@
 
 
 
-        <div class="container">
+
+        <div id="wrapper">
 
 
-
-            <div class="row" >
-                <div class="col-md-3">
-                    <div id='cssmenu' style="margin-top: 107px;">
-                        <ul>
-                            <li><a href='index-user.html'>Editar perfil</a></li>
-                            <li><a href='photos-videos-imagen.html'>Fotos, Símbolos y videos</a></li>
-                            <li><a href='identify.html'>Verificar Identidad</a></li>
-                            <li><a href='evaluations.html'>Evaluaciones</a></li>
-                            <li><a href='references.html'>Referencias</a></li>
-                        </ul>
-                    </div>
-
-
-                </div>
-                <div class=" col-md-8">
-                    <main>
-
-                        <input id="tab1" type="radio" name="tabs" checked>
-                        <label for="tab1">Solicitar referencia</label>
-
-                        <input id="tab2" type="radio" name="tabs">
-                        <label for="tab2">Referecias que han escrito sobre de ti</label>
-
-
-                        <section id="content1">
-                            <div class=" row">
-                                <div class=" col-md-1">
-
-                                </div>
-                                <div class=" col-md-10">
-                                    <div class="panel panel-default">
-                                        <div class="panel-body">
-                                            <p>Airbnb se basa en la confianza y la reputación. Puedes solicitar referencias a tu red de contactos personales. Aparecerán publicadas en tu perfil de Airbnb para que otros miembros puedan conocerte mejor. Pídeselo solo a personas que te conozcan bien. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" col-md-1">
-
-                                </div>
-
-                            </div>
-
-                            <div class=" row">
-                                <div class=" col-md-1">
-                                </div>
-                                <div class=" col-md-10">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">Envía un correo electrónico a tus amigo</div>
-                                        <div class="panel-body">
-                                            <div class="col-md-5" >
-                                                <p>Envía un correo a tus amigos para que se registren en Airbnb y te dejen una referencia personal. Puedes revisarlas y aceptarlas o ignorarlas antes de que aparezcan publicadas en tu perfil. </p>
-                                            </div>
-
-                                            <div class="col-md-3" >
-                                                <textarea id="mail-box" class="form-control" placeholder="Enter here for comments..." rows="3"></textarea>
-                                                <br>
-                                                <button id="butt-mail" type="button" class="btn btn-default">Enviar correos electrónicos con la solicitud</button>
-                                                <br>
-                                                <br>
-                                                <button id="butt-cont" type="button" class="btn btn-default">Importa tus contactos</button>
-
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class=" row">
-                                <div class=" col-md-1">
-                                </div>
-                                <div class=" col-md-10">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-
-                                            Pendientes de aprobación </div>
-                                        <div class="panel-body">
-                                            <div class="col-md-8" >
-                                                <p>Conecta tu cuenta de Facebook para ver qué amigos están en Airbnb. Podrás pedirles referencias desde aquí.</p>
-                                            </div>
-
-                                            <div class="col-md-3" >
-                                                <button id="button-face" type="button" class="btn btn-default">
-                                                    <span class="fa fa-facebook"> </span> Conéctate a Facebook
-
-                                                </button>
-
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-
-                        <section id="content2">
-
-                            <div class=" row">
-                                <div class=" col-md-1">
-                                </div>
-                                <div class=" col-md-10">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">Pendientes de aprobación </div>
-                                        <div class="panel-body">
-                                            <div class="col-md-12" >
-                                                <p>Cuando aceptes una referencia, aparecerá publicada en tu perfil. Si la ignoras, no aparecerá en él ni se notificará a la persona que la ha escrito al respecto. </p>
-                                            </div>
-
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class=" row">
-                                <div class=" col-md-1">
-                                </div>
-                                <div class=" col-md-10">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading"> Referencias que han escrito sobre ti en el pasado </div>
-                                        <div class="panel-body">
-                                            <div class="col-md-12" >
-                                                <p>Solo los miembros con una foto de perfil podrán dejar referencias sobre ti. En caso contrario, no aparecerán en tu perfil público. </p>
-                                            </div>
-
-
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-
-
-
-                    </main>
-
-
-
-
-                </div>
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li><a href='index-user.html'>Editar perfil</a></li>
+                    <li><a href='photos-videos-imagen.html'>Fotos, Símbolos y videos</a></li>
+                    <li><a href='identify.html'>Verificar Identidad</a></li>
+                    <li><a href='evaluations.html'>Evaluaciones</a></li>
+                    <li><a href='references.html'>Referencias</a></li>
+                </ul>
             </div>
+            <!-- /#sidebar-wrapper -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <main>
+
+                                <input id="tab1" type="radio" name="tabs" checked>
+                                <label for="tab1">Solicitar referencia</label>
+
+                                <input id="tab2" type="radio" name="tabs">
+                                <label for="tab2">Referecias que han escrito sobre de ti</label>
+
+
+                                <section id="content1">
+                                    <div class=" row">
+                                        <div class=" col-md-1">
+
+                                        </div>
+                                        <div class=" col-md-10">
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <p>Airbnb se basa en la confianza y la reputación. Puedes solicitar referencias a tu red de contactos personales. Aparecerán publicadas en tu perfil de Airbnb para que otros miembros puedan conocerte mejor. Pídeselo solo a personas que te conozcan bien. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=" col-md-1">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class=" row">
+                                        <div class=" col-md-1">
+                                        </div>
+                                        <div class=" col-md-10">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">Envía un correo electrónico a tus amigo</div>
+                                                <div class="panel-body">
+                                                    <div class="col-md-5" >
+                                                        <p>Envía un correo a tus amigos para que se registren en Airbnb y te dejen una referencia personal. Puedes revisarlas y aceptarlas o ignorarlas antes de que aparezcan publicadas en tu perfil. </p>
+                                                    </div>
+
+                                                    <div class="col-md-3" >
+                                                        <textarea id="mail-box" class="form-control" placeholder="Enter here for comments..." rows="3"></textarea>
+                                                        <br>
+                                                        <button id="butt-mail" type="button" class="btn btn-default">Enviar correos electrónicos con la solicitud</button>
+                                                        <br>
+                                                        <br>
+                                                        <button id="butt-cont" type="button" class="btn btn-default">Importa tus contactos</button>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class=" row">
+                                        <div class=" col-md-1">
+                                        </div>
+                                        <div class=" col-md-10">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+
+                                                    Pendientes de aprobación </div>
+                                                <div class="panel-body">
+                                                    <div class="col-md-8" >
+                                                        <p>Conecta tu cuenta de Facebook para ver qué amigos están en Airbnb. Podrás pedirles referencias desde aquí.</p>
+                                                    </div>
+
+                                                    <div class="col-md-3" >
+                                                        <button id="button-face" type="button" class="btn btn-default">
+                                                            <span class="fa fa-facebook"> </span> Conéctate a Facebook
+
+                                                        </button>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </section>
+
+                                <section id="content2">
+
+                                    <div class=" row">
+                                        <div class=" col-md-1">
+                                        </div>
+                                        <div class=" col-md-10">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">Pendientes de aprobación </div>
+                                                <div class="panel-body">
+                                                    <div class="col-md-12" >
+                                                        <p>Cuando aceptes una referencia, aparecerá publicada en tu perfil. Si la ignoras, no aparecerá en él ni se notificará a la persona que la ha escrito al respecto. </p>
+                                                    </div>
 
 
 
-        </div> <!-- /container -->    
-        <div id="footer-infer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <br>
-                        <br>
-                        <form role="form">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1">
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-                                <br>
-                                <select class="form-control" id="sel2">
-                                    <option>USD</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" row">
+                                        <div class=" col-md-1">
+                                        </div>
+                                        <div class=" col-md-10">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading"> Referencias que han escrito sobre ti en el pasado </div>
+                                                <div class="panel-body">
+                                                    <div class="col-md-12" >
+                                                        <p>Solo los miembros con una foto de perfil podrán dejar referencias sobre ti. En caso contrario, no aparecerán en tu perfil público. </p>
+                                                    </div>
 
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Empresas</h3>
-                        <p>Información</p>
-                        <p>Políticas</p>
-                        <p>Condiciones y privacidad</p>
-                        <p> y cookies</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Descubre Take my car</h3>
-                        <p>Confianza y seguridad</p>
-                        <p>Selección de take my car</p>
-                        <p>Viajes y negocios</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Busca tu auto</h3>
-                        <p>Publica tu auto</p>
-                        <p>Razones para compartir tu auto</p>
-                        <p>Viajes y negocios</p>
-                        <p>Ser un propietario ó conductor responsable</p>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+
+
+
+                            </main>
+
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
         <script src="../js/vendor/bootstrap.min.js"></script>
 
     </body>

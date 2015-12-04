@@ -17,8 +17,9 @@
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="../Temples Usuario/script.js"></script>
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
-        
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/user-styles.css">
+        <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
+
 
 
         <script>
@@ -139,7 +140,7 @@
             });
         </script>
 
-   
+
 
 
 
@@ -148,7 +149,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -175,9 +176,9 @@
                                 <span class="fa fa-cog fa-2x" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="index-user.html">Perfil</a></li>
+                                <li><a href="Notificaciones_1.html">Cuenta</a></li>
+                                <li><a href="new-post.html">Tus anuncios</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
@@ -191,28 +192,25 @@
 
 
 
-
-        <div class="container">
-
+        <div id="wrapper">
 
 
-            <div class="row" >
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li><a href='index-user.html'>Editar perfil</a></li>
+                    <li><a href='photos-videos-imagen.html'>Fotos, Símbolos y videos</a></li>
+                    <li><a href='identify.html'>Verificar Identidad</a></li>
+                    <li><a href='evaluations.html'>Evaluaciones</a></li>
+                    <li><a href='references.html'>Referencias</a></li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
 
-                <div class="col-md-3">
-                    <div id='cssmenu'>
-                        <ul>
-                            <li><a href='index-user.html'>Editar perfil</a></li>
-                            <li><a href='photos-videos-imagen.html'>Fotos, Símbolos y videos</a></li>
-                            <li><a href='identify.html'>Verificar Identidad</a></li>
-                            <li><a href='evaluations.html'>Evaluaciones</a></li>
-                            <li><a href='references.html'>Referencias</a></li>
-                        </ul>
-                    </div>
-
-
-                </div>
-                <div class=" col-md-8">
-
+                    <div class="row">
+                        <div class="col-lg-12">
                             <main>
 
                                 <input id="tab1" type="radio" name="tabs" checked>
@@ -224,101 +222,101 @@
 
 
                                 <section id="content1">
-                                        <div class="panel ">
-                                            <div class="panel-heading">Evaluaciones antiguas</div>
-                                            <div class="panel-body">
-                                                <ul class="media-list"  style="overflow: scroll;height: 282px;">
-                                                    <li class="media">
-                                                        <a href="#" class="pull-left">
-                                                            <img src="../img/foto_0120101007231731.png" style="height: 50px;" alt="" class="img-circle">
-                                                        </a>
-                                                        <div class="media-body">
-                                                            <span class="text-muted pull-right">
-                                                                <small class="text-muted">30 min ago</small>
-                                                            </span>
-                                                            <strong class=" text-danger ">@ Rexona Kumi</strong>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
-                                                            </p>
+                                    <div class="panel ">
+                                        <div class="panel-heading">Evaluaciones antiguas</div>
+                                        <div class="panel-body">
+                                            <ul class="media-list"  style="overflow: scroll;height: 282px;">
+                                                <li class="media">
+                                                    <a href="#" class="pull-left">
+                                                        <img src="../img/foto_0120101007231731.png" style="height: 50px;" alt="" class="img-circle">
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <span class="text-muted pull-right">
+                                                            <small class="text-muted">30 min ago</small>
+                                                        </span>
+                                                        <strong class=" text-danger ">@ Rexona Kumi</strong>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                            Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                        </p>
 
-                                                            <div id="stars" class="starrr"></div>
-
-
-                                                        </div>
+                                                        <div id="stars" class="starrr"></div>
 
 
-                                                    </li>
-                                                    <li class="media">
-                                                        <a href="#" class="pull-left">
-                                                            <img src="../img/foto_0120101007231731.png" style="height: 50px;" alt="" class="img-circle">
-                                                        </a>
-                                                        <div class="media-body">
-                                                            <span class="text-muted pull-right">
-                                                                <small class="text-muted">30 min ago</small>
-                                                            </span>
-                                                            <strong class=" text-danger ">@ Rexona Kumi</strong>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
-                                                            </p>
-
-                                                            <div id="stars" class="starrr"></div>
+                                                    </div>
 
 
-                                                        </div>
-                                                    </li>
-                                                    <li class="media">
-                                                        <a href="#" class="pull-left">
-                                                            <img src="../img/foto_0120101007231731.png" style="height: 50px;" alt="" class="img-circle">
-                                                        </a>
-                                                        <div class="media-body">
-                                                            <span class="text-muted pull-right">
-                                                                <small class="text-muted">30 min ago</small>
-                                                            </span>
-                                                            <strong class=" text-danger ">@ Rexona Kumi</strong>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
-                                                            </p>
+                                                </li>
+                                                <li class="media">
+                                                    <a href="#" class="pull-left">
+                                                        <img src="../img/foto_0120101007231731.png" style="height: 50px;" alt="" class="img-circle">
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <span class="text-muted pull-right">
+                                                            <small class="text-muted">30 min ago</small>
+                                                        </span>
+                                                        <strong class=" text-danger ">@ Rexona Kumi</strong>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                            Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                        </p>
 
-                                                        </div>
-                                                    </li>
-                                                    <li class="media">
-                                                        <a href="#" class="pull-left">
-                                                            <img src="../img/foto_0120101007231731.png" style="height: 50px;"  alt="" class="img-circle">
-                                                        </a>
-                                                        <div class="media-body">
-                                                            <span class="text-muted pull-right">
-                                                                <small class="text-muted">30 min ago</small>
-                                                            </span>
-                                                            <strong class="text-danger">@ John Doe</strong>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                Lorem ipsum dolor <a href="#"># ipsum dolor </a>adipiscing elit.
-                                                            </p>
+                                                        <div id="stars" class="starrr"></div>
 
-                                                        </div>
-                                                    </li>
-                                                    <li class="media">
-                                                        <a href="#" class="pull-left">
-                                                            <img src="../img/foto_0120101007231731.png" style="height: 50px;"  alt="" class="img-circle">
-                                                        </a>
-                                                        <div class="media-body">
-                                                            <span class="text-muted pull-right">
-                                                                <small class="text-muted">30 min ago</small>
-                                                            </span>
-                                                            <strong class="text-danger">@ Madonae Jonisyi</strong>
-                                                            <p>
-                                                                Lorem ipsum dolor <a href="#"># sit amet</a> sit amet, consectetur adipiscing elit.
-                                                            </p>
 
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                                <span class="text-danger">237K users active</span>
-                                            </div>
+                                                    </div>
+                                                </li>
+                                                <li class="media">
+                                                    <a href="#" class="pull-left">
+                                                        <img src="../img/foto_0120101007231731.png" style="height: 50px;" alt="" class="img-circle">
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <span class="text-muted pull-right">
+                                                            <small class="text-muted">30 min ago</small>
+                                                        </span>
+                                                        <strong class=" text-danger ">@ Rexona Kumi</strong>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                            Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                        </p>
+
+                                                    </div>
+                                                </li>
+                                                <li class="media">
+                                                    <a href="#" class="pull-left">
+                                                        <img src="../img/foto_0120101007231731.png" style="height: 50px;"  alt="" class="img-circle">
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <span class="text-muted pull-right">
+                                                            <small class="text-muted">30 min ago</small>
+                                                        </span>
+                                                        <strong class="text-danger">@ John Doe</strong>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                            Lorem ipsum dolor <a href="#"># ipsum dolor </a>adipiscing elit.
+                                                        </p>
+
+                                                    </div>
+                                                </li>
+                                                <li class="media">
+                                                    <a href="#" class="pull-left">
+                                                        <img src="../img/foto_0120101007231731.png" style="height: 50px;"  alt="" class="img-circle">
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <span class="text-muted pull-right">
+                                                            <small class="text-muted">30 min ago</small>
+                                                        </span>
+                                                        <strong class="text-danger">@ Madonae Jonisyi</strong>
+                                                        <p>
+                                                            Lorem ipsum dolor <a href="#"># sit amet</a> sit amet, consectetur adipiscing elit.
+                                                        </p>
+
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <span class="text-danger">237K users active</span>
                                         </div>
+                                    </div>
                                 </section>
 
                                 <section id="content2">
@@ -445,63 +443,12 @@
                             </main>
 
 
-
-
-
-                </div>
-            </div>
-
-
-
-        </div> <!-- /container -->    
-        <div id="footer-infer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <br>
-                        <br>
-                        <form role="form">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1">
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-                                <br>
-                                <select class="form-control" id="sel2">
-                                    <option>USD</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Empresas</h3>
-                        <p>Información</p>
-                        <p>Políticas</p>
-                        <p>Condiciones y privacidad</p>
-                        <p> y cookies</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Descubre Take my car</h3>
-                        <p>Confianza y seguridad</p>
-                        <p>Selección de take my car</p>
-                        <p>Viajes y negocios</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Busca tu auto</h3>
-                        <p>Publica tu auto</p>
-                        <p>Razones para compartir tu auto</p>
-                        <p>Viajes y negocios</p>
-                        <p>Ser un propietario ó conductor responsable</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <script src="../js/vendor/bootstrap.min.js"></script>
 
     </body>

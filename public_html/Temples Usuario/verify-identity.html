@@ -25,7 +25,7 @@
         Css modal
         -->
 
-
+        <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-forms.css">
         <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-addons.css">
         <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/font-awesome.min.css">
@@ -138,9 +138,9 @@
                                 <span class="fa fa-cog fa-2x" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="index-user.html">Perfil</a></li>
+                                <li><a href="Notificaciones_1.html">Cuenta</a></li>
+                                <li><a href="new-post.html">Tus anuncios</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
@@ -153,219 +153,168 @@
         </nav>
 
 
+        <div id="wrapper">
 
 
-        <div class="container">
-
-
-
-            <div class="row" >
-                <div class="col-md-3">
-                    <div id='cssmenu'>
-                        <ul>
-                            <li><a href='index-user.html'>Editar perfil</a></li>
-                            <li><a href='photos-videos-imagen.html'>Fotos, Símbolos y videos</a></li>
-                            <li><a href='identify.html'>Verificar Identidad</a></li>
-                            <li><a href='evaluations.html'>Evaluaciones</a></li>
-                            <li><a href='references.html'>Referencias</a></li>
-                        </ul>
-                    </div>
-
-
-                </div>
-                <div class=" col-md-8">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            Start Bootstrap
+                        </a>
+                    </li>
+                    <li><a href='index-user.html'>Editar perfil</a></li>
+                    <li><a href='photos-videos-imagen.html'>Fotos, Símbolos y videos</a></li>
+                    <li><a href='identify.html'>Verificar Identidad</a></li>
+                    <li><a href='evaluations.html'>Evaluaciones</a></li>
+                    <li><a href='references.html'>Referencias</a></li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
 
                     <div class="row">
-                        <div class="smart-wrap">
-                            <div class="smart-forms smart-container wrap-1">
+                        <div class="col-lg-12">
+                            <div class="smart-wrap">
+                                <div class="smart-forms smart-container wrap-1">
 
-                                <div class="form-body smart-steps">
-                                    <form method="post" action="php/formprocess.php" id="smart-form">
-                                        <h2>Verificame</h2>
-                                        <fieldset>
+                                    <div class="form-body smart-steps">
+                                        <form method="post" action="php/formprocess.php" id="smart-form">
+                                            <h2>Verificame</h2>
+                                            <fieldset>
 
-                                            <div class="frm-row">
-                                                <div class="section colm colm12">
-                                                    <h3>Necesitamos comprobar tu identificación virtual</h3>
-                                                </div><!-- end section -->
+                                                <div class="frm-row">
+                                                    <div class="section colm colm12">
+                                                        <h3>Necesitamos comprobar tu identificación virtual</h3>
+                                                    </div><!-- end section -->
 
-                                            </div><!-- end .frm-row section -->
+                                                </div><!-- end .frm-row section -->
 
-                                            <div class="frm-row">
-                                                <div class="section colm colm12">
-                                                    <p>
-                                                        Al verificar tu identidad, nos ayudas a aumentar la confianza en la comunidad de Airbnb. Creemos que el anonimato merma la confianza, y es por ello que verificamos la identidad de los huéspedes y anfitriones. De esta forma, garantizamos la seguridad de nuestra cada vez más numerosa comunidad. Más información
-                                                    </p>
-                                                </div><!-- end section -->
+                                                <div class="frm-row">
+                                                    <div class="section colm colm12">
+                                                        <p>
+                                                            Al verificar tu identidad, nos ayudas a aumentar la confianza en la comunidad de Airbnb. Creemos que el anonimato merma la confianza, y es por ello que verificamos la identidad de los huéspedes y anfitriones. De esta forma, garantizamos la seguridad de nuestra cada vez más numerosa comunidad. Más información
+                                                        </p>
+                                                    </div><!-- end section -->
 
-                                            </div><!-- end .frm-row section -->
+                                                </div><!-- end .frm-row section -->
 
-                                            <div class="frm-row">
-                                                <div class="section colm colm10">
-                                                    <p>
-                                                        Al verificar tu identidad, nos ayudas a aumentar la confianza en la comunidad de Airbnb. Creemos que el anonimato merma la confianza, y es por ello que verificamos la identidad de los huéspedes y anfitriones. De esta forma, garantizamos la seguridad de nuestra cada vez más numerosa comunidad. Más información
-                                                    </p>
-                                                </div><!-- end section -->
+                                                <div class="frm-row">
+                                                    <div class="section colm colm10">
+                                                        <p>
+                                                            Al verificar tu identidad, nos ayudas a aumentar la confianza en la comunidad de Airbnb. Creemos que el anonimato merma la confianza, y es por ello que verificamos la identidad de los huéspedes y anfitriones. De esta forma, garantizamos la seguridad de nuestra cada vez más numerosa comunidad. Más información
+                                                        </p>
+                                                    </div><!-- end section -->
 
-                                            </div><!-- end .frm-row section -->
-
-
-                                        </fieldset>
-
-                                        <h2>Tu identidad</h2>
-                                        <fieldset>
-
-                                            <div class="frm-row">
-                                                <div class="section colm colm12">
-                                                    <h1>Facilítanos un documento de identificación oficial</h1>
-                                                </div><!-- end section -->        
-                                            </div><!-- end frm-row section -->
-
-                                            <div class="frm-row">
-                                                <div class="section colm colm9">
-                                                    <p>Verificar un documento de identidad oficial contribuye a generar confianza entre huéspedes y anfitriones antes de que se conozcan en persona. No compartiremos tus datos de identificación oficiales con el huésped. </p>
-                                                </div><!-- end section -->
-
-                                            </div><!-- end frm-row section -->
-
-                                            <div class="frm-row">
-                                                <div class="section colm colm6">
-                                                    <p>Haz una foto a uno de tus documentos de identidad (como, por ejemplo, tu permiso de conducción o pasaporte) o captúralo con la webcam de tu computadora. </p>
-                                                </div><!-- end section -->
-                                            </div><!-- end frm-row section -->
-
-                                            <div class="frm-row">
-                                                <div class="section colm colm6">
-                                                    <i class="fa fa-smile-o " > Seguro</i>
-                                                    <p>Sistema Jumio</p>
-                                                </div><!-- end section -->
-                                            </div><!-- end frm-row section -->
+                                                </div><!-- end .frm-row section -->
 
 
+                                            </fieldset>
 
-                                        </fieldset>
+                                            <h2>Tu identidad</h2>
+                                            <fieldset>
 
-                                        <h2>Sistema Jumio</h2>
-                                        <fieldset>
+                                                <div class="frm-row">
+                                                    <div class="section colm colm12">
+                                                        <h1>Facilítanos un documento de identificación oficial</h1>
+                                                    </div><!-- end section -->        
+                                                </div><!-- end frm-row section -->
 
-                                            <div class="section">
-                                                <p class="small-text fine-grey">Ingresa tu archivo de verificación </p>
-                                            </div><!-- end section -->
+                                                <div class="frm-row">
+                                                    <div class="section colm colm9">
+                                                        <p>Verificar un documento de identidad oficial contribuye a generar confianza entre huéspedes y anfitriones antes de que se conozcan en persona. No compartiremos tus datos de identificación oficiales con el huésped. </p>
+                                                    </div><!-- end section -->
+
+                                                </div><!-- end frm-row section -->
+
+                                                <div class="frm-row">
+                                                    <div class="section colm colm6">
+                                                        <p>Haz una foto a uno de tus documentos de identidad (como, por ejemplo, tu permiso de conducción o pasaporte) o captúralo con la webcam de tu computadora. </p>
+                                                    </div><!-- end section -->
+                                                </div><!-- end frm-row section -->
+
+                                                <div class="frm-row">
+                                                    <div class="section colm colm6">
+                                                        <i class="fa fa-smile-o " > Seguro</i>
+                                                        <p>Sistema Jumio</p>
+                                                    </div><!-- end section -->
+                                                </div><!-- end frm-row section -->
 
 
 
+                                            </fieldset>
 
-                                            <div id="ctr_paypal" class="hiddenbox">
-
-
-
-
-
-
+                                            <h2>Sistema Jumio</h2>
+                                            <fieldset>
 
                                                 <div class="section">
-                                                    <div class="option-group field">
-                                                        <label class="option">
-                                                            <input type="checkbox" name="ppTerms" value="Paypal Tems">
-                                                            <span class="checkbox"></span> 
-                                                            Yes, I've read and agree to the terms                
-                                                        </label>
+                                                    <p class="small-text fine-grey">Ingresa tu archivo de verificación </p>
+                                                </div><!-- end section -->
+
+
+
+
+                                                <div id="ctr_paypal" class="hiddenbox">
+
+
+
+
+
+
+
+                                                    <div class="section">
+                                                        <div class="option-group field">
+                                                            <label class="option">
+                                                                <input type="checkbox" name="ppTerms" value="Paypal Tems">
+                                                                <span class="checkbox"></span> 
+                                                                Yes, I've read and agree to the terms                
+                                                            </label>
+                                                        </div>
+                                                    </div><!-- end section -->                                     
+
+                                                </div><!-- end payment section -->
+                                            </fieldset>                            
+
+                                            <h2>Complete</h2>
+                                            <fieldset>
+                                                <div class="section">
+                                                    <div class="notification alert-info">
+                                                        <p>Plese cross check your information before submitting this order</p>
                                                     </div>
-                                                </div><!-- end section -->                                     
-
-                                            </div><!-- end payment section -->
-                                        </fieldset>                            
-
-                                        <h2>Complete</h2>
-                                        <fieldset>
-                                            <div class="section">
-                                                <div class="notification alert-info">
-                                                    <p>Plese cross check your information before submitting this order</p>
-                                                </div>
-                                            </div><!-- end section -->
-
-                                            <div class="section">
+                                                </div><!-- end section -->
 
                                                 <div class="section">
-                                                    <div class="option-group field">
-                                                        <label class="option">
-                                                            <input type="checkbox" name="generalTerms" value="General Terms">
-                                                            <span class="checkbox"></span> 
-                                                            Please <a href="#" class="smart-link"> read and agree </a> to our the terms                
-                                                        </label>
-                                                    </div>
-                                                </div><!-- end section -->                                 
 
-                                            </div><!-- end section -->
+                                                    <div class="section">
+                                                        <div class="option-group field">
+                                                            <label class="option">
+                                                                <input type="checkbox" name="generalTerms" value="General Terms">
+                                                                <span class="checkbox"></span> 
+                                                                Please <a href="#" class="smart-link"> read and agree </a> to our the terms                
+                                                            </label>
+                                                        </div>
+                                                    </div><!-- end section -->                                 
 
-                                            <div class="result"></div>
+                                                </div><!-- end section -->
 
-                                        </fieldset>
-                                    </form>                                                                                   
-                                </div><!-- end .form-body section -->
+                                                <div class="result"></div>
 
-                            </div><!-- end .smart-forms section -->
-                        </div><!-- end .smart-wrap section -->
+                                            </fieldset>
+                                        </form>                                                                                   
+                                    </div><!-- end .form-body section -->
 
+                                </div><!-- end .smart-forms section -->
+                            </div><!-- end .smart-wrap section -->
 
-                    </div>
-
-
-
-                </div>
-            </div>
-
-
-
-        </div> <!-- /container -->    
-        <div id="footer-infer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <br>
-                        <br>
-                        <form role="form">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1">
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-                                <br>
-                                <select class="form-control" id="sel2">
-                                    <option>USD</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Empresas</h3>
-                        <p>Información</p>
-                        <p>Políticas</p>
-                        <p>Condiciones y privacidad</p>
-                        <p> y cookies</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Descubre Take my car</h3>
-                        <p>Confianza y seguridad</p>
-                        <p>Selección de take my car</p>
-                        <p>Viajes y negocios</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Busca tu auto</h3>
-                        <p>Publica tu auto</p>
-                        <p>Razones para compartir tu auto</p>
-                        <p>Viajes y negocios</p>
-                        <p>Ser un propietario ó conductor responsable</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
         <script src="../js/vendor/bootstrap.min.js"></script>
 
     </body>

@@ -21,7 +21,7 @@
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/noti-css.css">
-
+        <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-forms.css">
         <script type="text/javascript" src="../Javascript enhancements/js/jquery.validate.min.js"></script>
@@ -36,9 +36,6 @@
             #text-paymenr{
                 width: 90%;
                 margin-left: 29px;
-            }
-            #paymentform{
-                margin-top: -18px;
             }
             #chect-ok{
                 margin-left: 28px;
@@ -132,7 +129,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -159,9 +156,9 @@
                                 <span class="fa fa-cog fa-2x" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="index-user.html">Perfil</a></li>
+                                <li><a href="Notificaciones_1.html">Cuenta</a></li>
+                                <li><a href="new-post.html">Tus anuncios</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
@@ -175,134 +172,133 @@
 
 
 
+        <div id="wrapper">
 
-        <div class="container">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            Start Bootstrap
+                        </a>
+                    </li>
+                    <li><a href='carEssentials.html'>Datos Básicos</a></li>
+                    <li><a href='describeAdd.html'>Descripción</a></li>
+                    <li><a href='customerLocation.html'>Ubicación</a></li>
+                    <li><a href='carImage.html'>Fotos</a></li>
+                    <li><a href='autoServices.html'>Servicios </a></li>
+                    <li><a href='vehicleServices.html'>Seguridad</a></li>
+                    <li><a href='pricesRent.html'>Precios</a></li>
+                    <li><a href='reservasCar.html'>Reserva</a></li>
+                    <li><a href='calendarReser.html'>Calendario</a></li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
 
-
-
-            <div class="row" >
-
-                <br>
-                <br>
-                <br>
-                <div class="col-md-3">
-                    <div id='cssmenu'>
-                        <ul>
-                            <li><a href='carEssentials.html'>Datos Básicos</a></li>
-                            <li><a href='describeAdd.html'>Descripción</a></li>
-                            <li><a href='customerLocation.html'>Ubicación</a></li>
-                            <li><a href='carImage.html'>Fotos</a></li>
-                            <li><a href='autoServices.html'>Servicios </a></li>
-                            <li><a href='vehicleServices.html'>Seguridad</a></li>
-                            <li><a href='pricesRent.html'>Precios</a></li>
-                            <li><a href='reservasCar.html'>Reserva</a></li>
-                            <li><a href='calendarReser.html'>Calendario</a></li>
-                        </ul>
-                    </div>
-
-
-
-                </div>
-                <br>
-                <div class=" col-md-8">
-
-                    <div class="frm-row" id="paymentform">
-                        <div class="smart-wrap">
-                            <div class="smart-forms smart-container wrap-0">
-
-                                <div class="form-header header-red">
-                                    <h3>Seguridad en el camino</h3>
-                                </div><!-- end .form-header section -->
-
-                                <p id="text-paymenr">
-                                    Aunque no son frecuentes, de vez en cuando se producen situaciones de emergencia. Ayuda a tus huéspedes a estar preparados. Más información sobre seguridad.
-                                </p>
-                                <hr>
-
-                                <form method="post" action="/" id="contactform">
-                                    <div class="form-body" style="padding: 0px 30px 24px;">
-
-                                        <div class="colm colm4">
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
 
 
-                                            <h3>Lista de comprobaciones de seguridad</h3>
+                            <div class="frm-row" id="paymentform">
+                                <div class="smart-wrap">
+                                    <div class="smart-forms smart-container wrap-0">
 
-                                            <div class="section">
+                                        <div class="form-header header-red">
+                                            <h3>Seguridad en el camino</h3>
+                                        </div><!-- end .form-header section -->
 
-                                                <label class="option block spacer-b10">
-                                                    <input type="checkbox" name="services" value="Open CMS">
-                                                    <span class="checkbox"></span> Open CMS              
-                                                </label>
-
-                                                <label class="option block spacer-b10">
-                                                    <input type="checkbox" name="services" value="Free logo">
-                                                    <span class="checkbox"></span> Free logo               
-                                                </label>
-
-                                                <label class="option block spacer-b10">
-                                                    <input type="checkbox" name="services" value="Free business cards">
-                                                    <span class="checkbox"></span> Free business cards            
-                                                </label>                                
-
-                                                <label class="option block">
-                                                    <input type="checkbox" name="services" value="One page website">
-                                                    <span class="checkbox"></span> Single page website            
-                                                </label>                                                        
-
-                                            </div><!-- end section -->                                                  
-
-                                        </div><!-- end .colm section -->
+                                        <p id="text-paymenr">
+                                            Aunque no son frecuentes, de vez en cuando se producen situaciones de emergencia. Ayuda a tus huéspedes a estar preparados. Más información sobre seguridad.
+                                        </p>
                                         <hr>
 
-                                        <h3>Ficha de instrucciones de seguridad</h3>
-                                        <p>Un recurso útil que debería aparecer en tu anuncio para los huéspedes. También se incluye una copia en el itinerario del huésped.</p>
-                                        <h3>¿Dónde se encuentran las funciones de seguridad?</h3>
-                                         <div class="frm-row">
-                                            <label class="field-label colm colm4 " style="margin-right: -79px;">Extintor de incendios </label>
-                                            <div class="section colm colm8">
-                                                <label for="firstname" class="field prepend-icon">
-                                                    <input type="text" name="Modelo" id="Modelo" class="gui-input" placeholder="Ofrece información clara y descriptiva">
-                                                    <span class="field-icon"><i class="fa fa-sticky-note"></i></span>  
-                                                </label>
-                                            </div><!-- end section -->
-                                        </div><!-- end .frm-row section -->   
-                                        
-                                        <div class="frm-row">
-                                            <label class="field-label colm colm4 " style="margin-right: -79px;">Alarma de incendios </label>
-                                            <div class="section colm colm8">
-                                                <label for="firstname" class="field prepend-icon">
-                                                    <input type="text" name="Modelo" id="Modelo" class="gui-input" placeholder="Ofrece información clara y descriptiva">
-                                                    <span class="field-icon"><i class="fa fa-sticky-note"></i></span>  
-                                                </label>
-                                            </div><!-- end section -->
-                                        </div><!-- end .frm-row section --> 
-                                        <div class="frm-row">
-                                            <label class="field-label colm colm4 " style="margin-right: -79px;">Válvula de cierre del gas </label>
-                                            <div class="section colm colm8">
-                                                <label for="firstname" class="field prepend-icon">
-                                                    <input type="text" name="Modelo" id="Modelo" class="gui-input" placeholder="Ofrece información clara y descriptiva">
-                                                    <span class="field-icon"><i class="fa fa-sticky-note"></i></span>  
-                                                </label>
-                                            </div><!-- end section -->
-                                        </div><!-- end .frm-row section --> 
+                                        <form method="post" action="/" id="contactform">
+                                            <div class="form-body" style="padding: 0px 30px 24px;">
+
+                                                <div class="colm colm4">
 
 
-                                        <h3>Instrucciones sobre salidas de emergencia</h3>
-                                                  <div class="frm-row">
-                                            <div class="colm colm12">
+                                                    <h3>Lista de comprobaciones de seguridad</h3>
 
-                                                <div class="section">
-                                                    <label for="details" class="field-label">Instrucciones sobre salidas de emergencia</label>
-                                                    <label class="field">
-                                                        <textarea class="gui-textarea" id="details" name="details"
-                                                                  placeholder="¿Cúal es la forma más seguras de evacuar tu auto?" ></textarea>
-                                                        <span class="input-hint"> <strong>Hint:</strong> A maxmum of 3000 words.</span>   
-                                                    </label>
-                                                </div><!-- end section -->                        
+                                                    <div class="section">
 
-                                            </div><!-- end .colm section -->
+                                                        <label class="option block spacer-b10">
+                                                            <input type="checkbox" name="services" value="Open CMS">
+                                                            <span class="checkbox"></span> Open CMS              
+                                                        </label>
 
-                                        </div><!-- end .frm-row section -->
+                                                        <label class="option block spacer-b10">
+                                                            <input type="checkbox" name="services" value="Free logo">
+                                                            <span class="checkbox"></span> Free logo               
+                                                        </label>
+
+                                                        <label class="option block spacer-b10">
+                                                            <input type="checkbox" name="services" value="Free business cards">
+                                                            <span class="checkbox"></span> Free business cards            
+                                                        </label>                                
+
+                                                        <label class="option block">
+                                                            <input type="checkbox" name="services" value="One page website">
+                                                            <span class="checkbox"></span> Single page website            
+                                                        </label>                                                        
+
+                                                    </div><!-- end section -->                                                  
+
+                                                </div><!-- end .colm section -->
+                                                <hr>
+
+                                                <h3>Ficha de instrucciones de seguridad</h3>
+                                                <p>Un recurso útil que debería aparecer en tu anuncio para los huéspedes. También se incluye una copia en el itinerario del huésped.</p>
+                                                <h3>¿Dónde se encuentran las funciones de seguridad?</h3>
+                                                <div class="frm-row">
+                                                    <label class="field-label colm colm4 " style="margin-right: -79px;">Extintor de incendios </label>
+                                                    <div class="section colm colm8">
+                                                        <label for="firstname" class="field prepend-icon">
+                                                            <input type="text" name="Modelo" id="Modelo" class="gui-input" placeholder="Ofrece información clara y descriptiva">
+                                                            <span class="field-icon"><i class="fa fa-sticky-note"></i></span>  
+                                                        </label>
+                                                    </div><!-- end section -->
+                                                </div><!-- end .frm-row section -->   
+
+                                                <div class="frm-row">
+                                                    <label class="field-label colm colm4 " style="margin-right: -79px;">Alarma de incendios </label>
+                                                    <div class="section colm colm8">
+                                                        <label for="firstname" class="field prepend-icon">
+                                                            <input type="text" name="Modelo" id="Modelo" class="gui-input" placeholder="Ofrece información clara y descriptiva">
+                                                            <span class="field-icon"><i class="fa fa-sticky-note"></i></span>  
+                                                        </label>
+                                                    </div><!-- end section -->
+                                                </div><!-- end .frm-row section --> 
+                                                <div class="frm-row">
+                                                    <label class="field-label colm colm4 " style="margin-right: -79px;">Válvula de cierre del gas </label>
+                                                    <div class="section colm colm8">
+                                                        <label for="firstname" class="field prepend-icon">
+                                                            <input type="text" name="Modelo" id="Modelo" class="gui-input" placeholder="Ofrece información clara y descriptiva">
+                                                            <span class="field-icon"><i class="fa fa-sticky-note"></i></span>  
+                                                        </label>
+                                                    </div><!-- end section -->
+                                                </div><!-- end .frm-row section --> 
+
+
+                                                <h3>Instrucciones sobre salidas de emergencia</h3>
+                                                <div class="frm-row">
+                                                    <div class="colm colm12">
+
+                                                        <div class="section">
+                                                            <label for="details" class="field-label">Instrucciones sobre salidas de emergencia</label>
+                                                            <label class="field">
+                                                                <textarea class="gui-textarea" id="details" name="details"
+                                                                          placeholder="¿Cúal es la forma más seguras de evacuar tu auto?" ></textarea>
+                                                                <span class="input-hint"> <strong>Hint:</strong> A maxmum of 3000 words.</span>   
+                                                            </label>
+                                                        </div><!-- end section -->                        
+
+                                                    </div><!-- end .colm section -->
+
+                                                </div><!-- end .frm-row section -->
 
 
 
@@ -310,81 +306,38 @@
 
 
 
-                                        <!-- custom errors will load here  -->
-                                        <div class="notification alert-error errorsContainer">
-                                            <p>The following errors occurred:</p>
-                                            <ul id="smartErrors">
+                                                <!-- custom errors will load here  -->
+                                                <div class="notification alert-error errorsContainer">
+                                                    <p>The following errors occurred:</p>
+                                                    <ul id="smartErrors">
 
-                                            </ul>
-                                        </div>                   
+                                                    </ul>
+                                                </div>                   
 
-                                    </div><!-- end .form-body section -->
-                                    <div class="form-footer">
-                                        <button type="submit" class="button btn-primary"> Crear Anuncio</button>
-                                        <button type="reset" class="button"> Cancel </button>
-                                    </div><!-- end .form-footer section -->
-                                </form>
-
-
-
-                            </div><!-- end .smart-forms section -->
-                        </div><!-- end .smart-wrap section -->              
-
-                    </div>
-                </div>
-            </div>
+                                            </div><!-- end .form-body section -->
+                                            <div class="form-footer">
+                                                <button type="submit" class="button btn-primary"> Crear Anuncio</button>
+                                                <button type="reset" class="button"> Cancel </button>
+                                            </div><!-- end .form-footer section -->
+                                        </form>
 
 
 
-        </div> <!-- /container -->    
-        <div id="footer-infer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <br>
-                        <br>
-                        <form role="form">
-                            <div class="form-group">
-                                <select class="form-control" id="sel1">
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
-                                <br>
-                                <select class="form-control" id="sel2">
-                                    <option>USD</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                    <option>Español</option>
-                                </select>
+                                    </div><!-- end .smart-forms section -->
+                                </div><!-- end .smart-wrap section -->              
 
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Empresas</h3>
-                        <p>Información</p>
-                        <p>Políticas</p>
-                        <p>Condiciones y privacidad</p>
-                        <p> y cookies</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Descubre Take my car</h3>
-                        <p>Confianza y seguridad</p>
-                        <p>Selección de take my car</p>
-                        <p>Viajes y negocios</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>Busca tu auto</h3>
-                        <p>Publica tu auto</p>
-                        <p>Razones para compartir tu auto</p>
-                        <p>Viajes y negocios</p>
-                        <p>Ser un propietario ó conductor responsable</p>
+
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- /#page-content-wrapper -->
+
         </div>
+
+
+
         <script src="../js/vendor/bootstrap.min.js"></script>
 
     </body>
