@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../Temples Usuario/script.js"></script>
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
         <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
+        <script type="text/javascript" src="../Temples Usuario/css-user/menu-top.js"></script>
 
         <!--
         Css modal
@@ -34,13 +35,15 @@
 
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/user-styles.css">
 
+        <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
+
 
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-          <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -51,7 +54,14 @@
                     </button>
                     <a class="navbar-brand" href="#">Take my car</a>
                 </div>
+
                 <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-left" method="GET" role="search">
+                        <div class="form-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </form>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active">
@@ -69,7 +79,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="index-user.html">Perfil</a></li>
                                 <li><a href="Notificaciones_1.html">Cuenta</a></li>
-                                <li><a href="new-post.html">Tus anuncios</a></li>
+                                <li><a href="ListoFads.html">Tus anuncios</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
@@ -80,7 +90,6 @@
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
         </nav>
-
         <div id="wrapper">
 
 
@@ -97,106 +106,108 @@
             <!-- /#sidebar-wrapper -->
             <div id="page-content-wrapper">
                 <div class="container-fluid">
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class=" fa fa-bars "></span></a>
 
-                    <div class="row">
+
+                     <div class="frm-row" id="paymentform">
                         <div class="col-lg-12">
-                    <div class="panel panel-default" style="margin-top: 31px;">
-                        <div class="panel-body">
-                            <div class=" col-md-5">
-                                <h3>Verifica tu identidad</h3>
-                                <p>Verificar tu identidad es una forma sencilla de contribuir a mantener la confianza en la comunidad de Airbnb. Para hacerlo, comprobaremos si los datos de tu documento de identidad coinciden con la información de tu cuenta. Obtén más información. </p>
-                                <p>También tienes la opción de elegir más abajo qué verificaciones quieres completar. </p>
-                            </div>
-                            <div class=" col-md-6">
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <a  href="verify-identity.html" id="button-identify"  class="btn btn-danger">Veríficame</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" style="margin-top: 31px;">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Tus verificaciones</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class=" col-md-12">
-                                    <h3>Correo electrónico</h3>
-                                    <p>Has confirmado tu dirección de correo electrónico: mariorz665@gmail.com. Realizar este paso es importante, ya que nos permite comunicarnos contigo de forma segura.  </p>
-
-                                </div>   
-                            </div>
-                            <div class="row">
-                                <div class=" col-md-12">
-                                    <h3>Número de teléfono</h3>
-                                    <p> No te preocupes: tu número solo se comparte con otros miembros de Airbnb cuando tienes una reserva confirmada con ellos. </p>
-
-                                </div>    
+                            <div class="panel panel-default" style="margin-top: 31px;">
+                                <div class="panel-body">
+                                    <div class=" col-md-5">
+                                        <h3>Verifica tu identidad</h3>
+                                        <p>Verificar tu identidad es una forma sencilla de contribuir a mantener la confianza en la comunidad de Airbnb. Para hacerlo, comprobaremos si los datos de tu documento de identidad coinciden con la información de tu cuenta. Obtén más información. </p>
+                                        <p>También tienes la opción de elegir más abajo qué verificaciones quieres completar. </p>
+                                    </div>
+                                    <div class=" col-md-6">
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <a  href="verify-identity.html" id="button-identify"  class="btn btn-danger">Veríficame</a>
+                                    </div>
+                                </div>
                             </div>
 
+                            <div class="panel panel-default" style="margin-top: 31px;">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Tus verificaciones</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class=" col-md-12">
+                                            <h3>Correo electrónico</h3>
+                                            <p>Has confirmado tu dirección de correo electrónico: mariorz665@gmail.com. Realizar este paso es importante, ya que nos permite comunicarnos contigo de forma segura.  </p>
 
-                        </div>
-                    </div>
+                                        </div>   
+                                    </div>
+                                    <div class="row">
+                                        <div class=" col-md-12">
+                                            <h3>Número de teléfono</h3>
+                                            <p> No te preocupes: tu número solo se comparte con otros miembros de Airbnb cuando tienes una reserva confirmada con ellos. </p>
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Añade más verificaciones </h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class=" col-md-7">
-                                    <h3>Facebook</h3>
-                                    <p>Conéctate con Facebook y muestra tus conexiones fiables a anfitriones y huéspedes de todo el mundo. </p>
+                                        </div>    
+                                    </div>
 
-                                </div> 
-                                <br>
-                                <br>
-                                <br>
-                                <div class=" col-md-5">
-
-                                    <button style=" float: right; " type="button" class="btn btn-default">Conectar</button>
-
-                                </div> 
-                            </div>
-                            <div class="row">
-                                <div class=" col-md-7">
-                                    <h3>Google</h3>
-                                    <p>Conecta tu cuenta de Airbnb a tu cuenta de Google para que todo sea más fácil.  </p>
-
-                                </div>    
-
-                                <br>
-                                <br>
-                                <br>
-                                <div class=" col-md-5">
-                                    <button  style=" float: right; " type="button" class="btn btn-default">Conectar</button>
-
-                                </div> 
-                            </div>
-                            <div class="row">
-
-                                <div class=" col-md-7">
-                                    <h3>LinkedIn</h3>
-                                    <p>Crea un enlace a tu vida profesional: conecta tu cuenta de Airbnb a la de LinkedIn. </p>
 
                                 </div>
-                                <br>
-                                <br>
-                                <br>
-                                <div class=" col-md-5">
-                                    <button style=" float: right; " type="button" class="btn btn-default " >conectar</button>
-
-
-                                </div> 
                             </div>
 
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Añade más verificaciones </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class=" col-md-7">
+                                            <h3>Facebook</h3>
+                                            <p>Conéctate con Facebook y muestra tus conexiones fiables a anfitriones y huéspedes de todo el mundo. </p>
 
-                        </div>
-                    </div>
+                                        </div> 
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <div class=" col-md-5">
+
+                                            <button style=" float: right; " type="button" class="btn btn-default">Conectar</button>
+
+                                        </div> 
+                                    </div>
+                                    <div class="row">
+                                        <div class=" col-md-7">
+                                            <h3>Google</h3>
+                                            <p>Conecta tu cuenta de Airbnb a tu cuenta de Google para que todo sea más fácil.  </p>
+
+                                        </div>    
+
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <div class=" col-md-5">
+                                            <button  style=" float: right; " type="button" class="btn btn-default">Conectar</button>
+
+                                        </div> 
+                                    </div>
+                                    <div class="row">
+
+                                        <div class=" col-md-7">
+                                            <h3>LinkedIn</h3>
+                                            <p>Crea un enlace a tu vida profesional: conecta tu cuenta de Airbnb a la de LinkedIn. </p>
+
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <div class=" col-md-5">
+                                            <button style=" float: right; " type="button" class="btn btn-default " >conectar</button>
+
+
+                                        </div> 
+                                    </div>
+
+
+                                </div>
+                            </div>
 
 
 
@@ -205,7 +216,14 @@
                 </div>
             </div>
         </div>
-   
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+
+        </script>
+
         <script src="../js/vendor/bootstrap.min.js"></script>
 
     </body>

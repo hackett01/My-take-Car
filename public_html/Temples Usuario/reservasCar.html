@@ -21,29 +21,13 @@
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/noti-css.css">
-
         <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-forms.css">
         <script type="text/javascript" src="../Javascript enhancements/js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/additional-methods.min.js"></script>
+        <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
 
 
-        <style>
-            #btn-payment{
-                border-radius: 0px;
-                background-color: #F84F52;
-            }
-            #text-paymenr{
-                width: 90%;
-                margin-left: 29px;
-            }
-            #paymentform{
-                margin-top: -18px;
-            }
-            #chect-ok{
-                margin-left: 28px;
-            }
-        </style>
 
         <script type="text/javascript">
 
@@ -132,7 +116,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -143,7 +127,14 @@
                     </button>
                     <a class="navbar-brand" href="#">Take my car</a>
                 </div>
+
                 <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-left" method="GET" role="search">
+                        <div class="form-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </form>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active">
@@ -161,7 +152,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="index-user.html">Perfil</a></li>
                                 <li><a href="Notificaciones_1.html">Cuenta</a></li>
-                                <li><a href="new-post.html">Tus anuncios</a></li>
+                                <li><a href="ListoFads.html">Tus anuncios</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
@@ -172,8 +163,7 @@
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
         </nav>
-
-          <div id="wrapper">
+        <div id="wrapper">
 
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
@@ -199,74 +189,77 @@
             <!-- Page Content -->
             <div id="page-content-wrapper">
                 <div class="container-fluid">
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class=" fa fa-bars "></span></a>
+
                     <div class="row">
                         <div class="col-lg-12">
-
+                            <div class="frm-row" id="paymentform">
                                 <div class="smart-wrap">
-                        <div class="smart-forms smart-container wrap-0">
+                                    <div class="smart-forms smart-container wrap-0">
 
-                            <div class="form-header header-custom">
-                                <h3>Selecciona la forma en la que tus huéspedes pueden reservar</h3>
-                            </div><!-- end .form-header section -->
+                                        <div class="form-header header-custom">
+                                            <h3>Selecciona la forma en la que tus huéspedes pueden reservar</h3>
+                                        </div><!-- end .form-header section -->
 
-                            <form method="post" action="/" id="account2">
-                                <div class="form-body">
+                                        <form method="post" action="/" id="account2">
+                                            <div class="form-body">
 
-                                    <p>Prepárate para los huéspedes eligiendo cómo prefieres recibir las reservas.</p>
+                                                <p>Prepárate para los huéspedes eligiendo cómo prefieres recibir las reservas.</p>
 
-                                    <div class="frm-row">
+                                                <div class="frm-row">
 
-                                        <div class="colm colm6">
-                                            <div class="section">
+                                                    <div class="colm colm6">
+                                                        <div class="section">
 
-                                                <div class="price-box">                             
-                                                    <h5> Consulta todas las solicitudes </h5>
-                                                    <br>
-                                                    <div class="spacer spacer-t20 spacer-b20"></div>
-                                                    <ul>
-                                                        <li>Los huéspedes envían una solicitud de reserva.</li>
-                                                    </ul>
-                                                    <br>
-                                                    <ul>
-                                                        <li>Aprueba o rechaza las solicitudes en un máximo de 24 horas.</li>
-                                                    </ul>
-                                                    <div class="spacer spacer-t20 spacer-b20"></div>
-                                                    <a href="#" class="button block pushed expand"> Learn more </a>
-                                                </div><!-- end .colm-box section -->
-                                            </div><!-- end .section section -->
-                                        </div><!-- end .colm section -->
+                                                            <div class="price-box">                             
+                                                                <h5> Consulta todas las solicitudes </h5>
+                                                                <br>
+                                                                <div class="spacer spacer-t20 spacer-b20"></div>
+                                                                <ul>
+                                                                    <li>Los huéspedes envían una solicitud de reserva.</li>
+                                                                </ul>
+                                                                <br>
+                                                                <ul>
+                                                                    <li>Aprueba o rechaza las solicitudes en un máximo de 24 horas.</li>
+                                                                </ul>
+                                                                <div class="spacer spacer-t20 spacer-b20"></div>
+                                                                <a href="#" class="button block pushed expand"> Learn more </a>
+                                                            </div><!-- end .colm-box section -->
+                                                        </div><!-- end .section section -->
+                                                    </div><!-- end .colm section -->
 
-                                        <div class="colm colm6">
+                                                    <div class="colm colm6">
 
-                                            <div class="section">
-                                                <div class="price-box selected-box">
-                                                    <div class="ribbon-large"> <div class="ribbon-inner">POPULAR</div> </div>
-                                                    <h5> Los huéspedes reservan automáticamente </h5>
-                                                    <div class="spacer spacer-t20 spacer-b20"></div>
-                                                    <ul>
-                                                        <li>Establece controles para decidir quién puede reservar y cuándo.</li>
-                                                    </ul>
-                                                    <ul>
-                                                        <li>Los huéspedes pueden reservar sin necesidad de que se acepten sus solicitudes.</li>
-                                                    </ul>
-                                                    <div class="spacer spacer-t20 spacer-b20"></div>
-                                                    <a href="#" class="button btn-primary block pushed expand"> Learn more </a>
-                                                </div><!-- end .colm-box section -->
-                                            </div><!-- end .section section -->
-
-
-                                        </div><!-- end section -->
-
-                                    </div><!-- end frm-row section --> 
+                                                        <div class="section">
+                                                            <div class="price-box selected-box">
+                                                                <div class="ribbon-large"> <div class="ribbon-inner">POPULAR</div> </div>
+                                                                <h5> Los huéspedes reservan automáticamente </h5>
+                                                                <div class="spacer spacer-t20 spacer-b20"></div>
+                                                                <ul>
+                                                                    <li>Establece controles para decidir quién puede reservar y cuándo.</li>
+                                                                </ul>
+                                                                <ul>
+                                                                    <li>Los huéspedes pueden reservar sin necesidad de que se acepten sus solicitudes.</li>
+                                                                </ul>
+                                                                <div class="spacer spacer-t20 spacer-b20"></div>
+                                                                <a href="#" class="button btn-primary block pushed expand"> Learn more </a>
+                                                            </div><!-- end .colm-box section -->
+                                                        </div><!-- end .section section -->
 
 
+                                                    </div><!-- end section -->
 
-                                </div><!-- end .form-body section -->
+                                                </div><!-- end frm-row section --> 
 
-                            </form>
 
-                        </div><!-- end .smart-forms section -->
-                    </div><!-- end .smart-wrap section -->
+
+                                            </div><!-- end .form-body section -->
+
+                                        </form>
+
+                                    </div><!-- end .smart-forms section -->
+                                </div><!-- end .smart-wrap section -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -275,7 +268,13 @@
 
         </div>
 
-      
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+
+        </script>
         <script src="../js/vendor/bootstrap.min.js"></script>
 
     </body>

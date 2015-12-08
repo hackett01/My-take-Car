@@ -22,25 +22,11 @@
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/noti-css.css">
         <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
-
         <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-forms.css">
         <script type="text/javascript" src="../Javascript enhancements/js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/additional-methods.min.js"></script>
+        <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
 
-
-        <style>
-            #btn-payment{
-                border-radius: 0px;
-                background-color: #F84F52;
-            }
-            #text-paymenr{
-                width: 90%;
-                margin-left: 29px;
-            }
-            #chect-ok{
-                margin-left: 28px;
-            }
-        </style>
 
         <script type="text/javascript">
 
@@ -129,7 +115,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -140,7 +126,14 @@
                     </button>
                     <a class="navbar-brand" href="#">Take my car</a>
                 </div>
+
                 <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-left" method="GET" role="search">
+                        <div class="form-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </form>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active">
@@ -158,7 +151,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="index-user.html">Perfil</a></li>
                                 <li><a href="Notificaciones_1.html">Cuenta</a></li>
-                                <li><a href="new-post.html">Tus anuncios</a></li>
+                                <li><a href="ListoFads.html">Tus anuncios</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
@@ -169,7 +162,6 @@
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
         </nav>
-
 
         <div id="wrapper">
 
@@ -197,6 +189,8 @@
             <!-- Page Content -->
             <div id="page-content-wrapper">
                 <div class="container-fluid">
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class=" fa fa-bars "></span></a>
+
                     <div class="row">
                         <div class="col-lg-12">
 
@@ -254,8 +248,7 @@
 
                                             </div><!-- end .form-body section -->
                                             <div class="form-footer">
-                                                <button type="submit" class="button btn-primary"> Siguiente </button>
-                                                <button type="reset" class="button"> Cancel </button>
+                                                <button id="next" type="submit" class="button btn-primary"> Siguiente</button>
                                             </div><!-- end .form-footer section -->
                                         </form>
 
@@ -273,7 +266,13 @@
 
         </div>
 
+  <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
 
+        </script>
 
         <script src="../js/vendor/bootstrap.min.js"></script>
 

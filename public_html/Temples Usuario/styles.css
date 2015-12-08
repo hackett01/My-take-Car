@@ -3,110 +3,560 @@
 #cssmenu ul,
 #cssmenu ul li,
 #cssmenu ul li a {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  list-style: none;
-  line-height: 1;
-  display: block;
-  position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 #cssmenu {
-  width: 220px;
-  font-family: Raleway, sans-serif;
-  color: #ffffff;
-  margin-top: 50px;
+    width: 220px;
+    font-family: Raleway, sans-serif;
+    color: #ffffff;
+    margin-top: 50px;
 }
 #cssmenu ul ul {
-  display: none;
+    display: none;
 }
 #cssmenu > ul > li.active > ul {
-  display: block;
+    display: block;
 }
 .align-right {
-  float: right;
+    float: right;
 }
 #cssmenu > ul > li > a {
-  padding: 16px 22px;
-  cursor: pointer;
-  z-index: 2;
-  font-size: 16px;
-  text-decoration: none;
-  color: #565A5C;
-  background: #ffffff;
-  -webkit-transition: color .2s ease;
-  -o-transition: color .2s ease;
-  transition: color .2s ease;
+    padding: 16px 22px;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 16px;
+    text-decoration: none;
+    color: #565A5C;
+    background: #ffffff;
+    -webkit-transition: color .2s ease;
+    -o-transition: color .2s ease;
+    transition: color .2s ease;
 }
 #cssmenu > ul > li > a:hover {
- color: #565A5C;
+    color: #565A5C;
 }
 #cssmenu ul > li.has-sub > a:after {
-  position: absolute;
-  right: 26px;
-  top: 19px;
-  z-index: 5;
-  display: block;
-  height: 10px;
-  width: 2px;
-  background: #ffffff;
-  content: "";
-  -webkit-transition: all 0.1s ease-out;
-  -moz-transition: all 0.1s ease-out;
-  -ms-transition: all 0.1s ease-out;
-  -o-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
+    position: absolute;
+    right: 26px;
+    top: 19px;
+    z-index: 5;
+    display: block;
+    height: 10px;
+    width: 2px;
+    background: #ffffff;
+    content: "";
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
 }
 #cssmenu ul > li.has-sub > a:before {
-  position: absolute;
-  right: 22px;
-  top: 23px;
-  display: block;
-  width: 10px;
-  height: 2px;
-  background: #ffffff;
-  content: "";
-  -webkit-transition: all 0.1s ease-out;
-  -moz-transition: all 0.1s ease-out;
-  -ms-transition: all 0.1s ease-out;
-  -o-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
+    position: absolute;
+    right: 22px;
+    top: 23px;
+    display: block;
+    width: 10px;
+    height: 2px;
+    background: #ffffff;
+    content: "";
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
 }
 #cssmenu ul > li.has-sub.open > a:after,
 #cssmenu ul > li.has-sub.open > a:before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 #cssmenu ul ul li a {
-  padding: 14px 22px;
-  cursor: pointer;
-  z-index: 2;
-  font-size: 14px;
-  text-decoration: none;
-  color: #dddddd;
-  background: #49505a;
-  -webkit-transition: color .2s ease;
-  -o-transition: color .2s ease;
-  transition: color .2s ease;
+    padding: 14px 22px;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 14px;
+    text-decoration: none;
+    color: #dddddd;
+    background: #49505a;
+    -webkit-transition: color .2s ease;
+    -o-transition: color .2s ease;
+    transition: color .2s ease;
 }
 #cssmenu ul ul ul li a {
-  padding-left: 32px;
+    padding-left: 32px;
 }
 #cssmenu ul ul li a:hover {
-  color: #ffffff;
+    color: #ffffff;
 }
 #cssmenu ul ul > li.has-sub > a:after {
-  top: 16px;
-  right: 26px;
-  background: #dddddd;
+    top: 16px;
+    right: 26px;
+    background: #dddddd;
 }
 #cssmenu ul ul > li.has-sub > a:before {
-  top: 20px;
-  background: #dddddd;
+    top: 20px;
+    background: #dddddd;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: rgba(168, 168, 168, 0.21);
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+
+#mycar, #empresa, #car {
+    color: white;
+}
+
+#register{
+    color:#F84F52;
+}
+#session{
+    color:#F84F52;
+}
+#cuenta{
+    color:#F84F52;
+}
+#cog{
+    color:#F84F52;
+}
+#buttonTravel{
+    opacity: 0.5;
+}
+
+
+
+.login-block h1 {
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.login-block input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: Montserrat;
+    padding: 0 20px 0 50px;
+    outline: none;
+}
+
+.login-block input#username {
+    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#username:focus {
+    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#password {
+    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#password:focus {
+    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input:active, .login-block input:focus {
+    border: 1px solid #ff656c;
+}
+
+.remodal-bg.with-red-theme.remodal-is-opening,
+.remodal-bg.with-red-theme.remodal-is-opened {
+    filter: none;
+}
+
+.remodal-overlay.with-red-theme {
+    background-color: #f44336;
+}
+
+.remodal.with-red-theme {
+    background: #fff;
+}
+h1{font-family: 'Didact Gothic', sans-serif;}
+h3{
+    font-family: 'Didact Gothic', sans-serif;
+}
+h2{
+    font-family: 'Didact Gothic', sans-serif;
+
+}
+
+p{
+    font-family: "Didact Gothic",sans-serif;
+    color: #4A4A4A;
+
+}
+#backinf{
+    background: #c8284e;
+    background-image: url('img/Sin título-1-08.png'); 
+    background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 );
+    width:101%;
+    margin-top: -15px;
+}
+#superior-1{
+    background: rgba(23, 22, 22, 0.5) none repeat scroll 0% 0%;margin-top: -98px;position: inherit;
+    width:101%;
+}
+#shearh{
+    margin-top: -4%;
+    text-align: center;
+}
+#sel3{
+    margin-top: -1%;
+    font-family: 'Didact Gothic', sans-serif;
+}
+#lupa{
+    margin-top: -4px; 
+}
+#nav01{
+    margin-top: 20px;
+    border-radius: 36px;
+    width: 84%;
+}
+#carAl{
+    color: white;
+}
+#car-public{
+    background: rgba(206, 206, 206, 0) none repeat scroll 0% 0%;color: white;
+}
+#ca-container
+{
+    background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
+    width: 86%;
+}
+#pass{
+    color: #F84F52;
+    font-family: 'Didact Gothic', sans-serif;
+}
+#cuent-re{
+    color:black;
+    font-family: 'Didact Gothic', sans-serif;
+}
+#remenber{
+    color: #F84F52;
+    font-family: 'Didact Gothic', sans-serif;
+}
+#faceboton{
+    background: rgb(69, 104, 178) none repeat scroll 0% 0%; border: medium none rgb(69, 104, 178);
+}
+#g-button{
+    width: 192px;
+}
+#googleplus{
+    color: red; margin-left: -16px;
+}
+#footer-infer{
+    background: #c8284e;
+    background-image: url('../img/Sin título-1-08.png'); /* fallback */
+    background-image: url('../img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 ); /* W3C */
+
+}
+
+#politic{
+    font-family: 'Didact Gothic', sans-serif;
+    text-align: justify; color: black;
+}
+#text-caption{
+    min-width: 300px;
+}
+
+#lineaInfe{
+    border-color: #989898 -moz-use-text-color -moz-use-text-color;
+
+}
+.text-danger{
+    color: #FC696E;
+}
+a{
+    color: #FC696E;
+}
+#button-identify{
+    float: right;
+    border-radius: 0px;
+}
+
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#panel-superior{
+    margin-top: 10px;
+}
+
+
+#btn-payment{
+    border-radius: 0px;
+    background-color: #F84F52;
+}
+#text-paymenr{
+    width: 90%;
+    margin-left: 29px;
+}
+#paymentform{
+    margin-top: -18px;
+}
+
+#btn-payment{
+    border-radius: 0px;
+    background-color: #F84F52;
+}
+#text-paymenr{
+    width: 90%;
+    margin-left: 29px;
+}
+#paymentform{
+    margin-top: -7px;
+}
+#chect-ok{
+    margin-left: 28px;
+}
+
+
+#mail-box{
+    width: 336px;
+    resize: none;
+    line-height: 19px;
+    overflow: auto;
+    height: 124px;
+}
+#butt-mail, #butt-cont{
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px;
+}
+#button-face{
+    background: #4568B2;
+    color: white;
+    border-radius: 0px;
+}
+
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: rgba(168, 168, 168, 0.21);
+}
+
+
+#mycar, #empresa, #car {
+    color: white;
+}
+
+#register{
+    color:#F84F52;
+}
+#session{
+    color:#F84F52;
+}
+#cuenta{
+    color:#F84F52;
+}
+#cog{
+    color:#F84F52;
+}
+#buttonTravel{
+    opacity: 0.5;
+}
+
+
+
+.login-block h1 {
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.login-block input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: Montserrat;
+    padding: 0 20px 0 50px;
+    outline: none;
+}
+
+.login-block input#username {
+    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#username:focus {
+    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#password {
+    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input#password:focus {
+    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+
+.login-block input:active, .login-block input:focus {
+    border: 1px solid #ff656c;
+}
+
+.remodal-bg.with-red-theme.remodal-is-opening,
+.remodal-bg.with-red-theme.remodal-is-opened {
+    filter: none;
+}
+
+.remodal-overlay.with-red-theme {
+    background-color: #f44336;
+}
+
+.remodal.with-red-theme {
+    background: #fff;
+}
+h1{font-family: 'Didact Gothic', sans-serif;}
+h3{
+    font-family: 'Didact Gothic', sans-serif;
+}
+h2{
+    font-family: 'Didact Gothic', sans-serif;
+
+}
+
+p{
+    font-family: "Didact Gothic",sans-serif;
+    color: #4A4A4A;
+
+}
+#backinf{
+    background: #c8284e;
+    background-image: url('img/Sin título-1-08.png'); 
+    background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 );
+    width:101%;
+    margin-top: -15px;
+}
+#superior-1{
+    background: rgba(23, 22, 22, 0.5) none repeat scroll 0% 0%;margin-top: -98px;position: inherit;
+    width:101%;
+}
+#shearh{
+    margin-top: -4%;
+    text-align: center;
+}
+#sel3{
+    margin-top: -1%;
+    font-family: 'Didact Gothic', sans-serif;
+}
+#lupa{
+    margin-top: -4px; 
+}
+#nav01{
+    margin-top: 20px;
+    border-radius: 36px;
+    width: 84%;
+}
+#carAl{
+    color: white;
+}
+#car-public{
+    background: rgba(206, 206, 206, 0) none repeat scroll 0% 0%;color: white;
+}
+#ca-container
+{
+    background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
+    width: 86%;
+}
+#pass{
+    color: #F84F52;
+    font-family: 'Didact Gothic', sans-serif;
+}
+#cuent-re{
+    color:black;
+    font-family: 'Didact Gothic', sans-serif;
+}
+#remenber{
+    color: #F84F52;
+    font-family: 'Didact Gothic', sans-serif;
+}
+#faceboton{
+    background: rgb(69, 104, 178) none repeat scroll 0% 0%; border: medium none rgb(69, 104, 178);
+}
+#g-button{
+    width: 192px;
+}
+#googleplus{
+    color: red; margin-left: -16px;
+}
+#footer-infer{
+    background: #c8284e;
+    background-image: url('../img/Sin título-1-08.png'); /* fallback */
+    background-image: url('../img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 ); /* W3C */
+
+}
+
+#politic{
+    font-family: 'Didact Gothic', sans-serif;
+    text-align: justify; color: black;
+}
+#text-caption{
+    min-width: 300px;
+}
+
+#lineaInfe{
+    border-color: #989898 -moz-use-text-color -moz-use-text-color;
+
+}
+.text-danger{
+    color: #FC696E;
+}
+a{
+    color: #FC696E;
+}
+#button-identify{
+    float: right;
+    border-radius: 0px;
+}
+
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#next{
+    float: right;
 }

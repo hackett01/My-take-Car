@@ -22,25 +22,11 @@
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/noti-css.css">
         <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
-
         <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-forms.css">
         <script type="text/javascript" src="../Javascript enhancements/js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/additional-methods.min.js"></script>
-
-
-        <style>
-            #btn-payment{
-                border-radius: 0px;
-                background-color: #F84F52;
-            }
-            #text-paymenr{
-                width: 90%;
-                margin-left: 29px;
-            }
-            #chect-ok{
-                margin-left: 28px;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
+        <link rel="stylesheet" href="../EfectosImg/dist/styles/main.css"/>
 
         <script type="text/javascript">
 
@@ -142,7 +128,14 @@
                     </button>
                     <a class="navbar-brand" href="#">Take my car</a>
                 </div>
+
                 <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-left" method="GET" role="search">
+                        <div class="form-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </form>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active">
@@ -160,7 +153,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="index-user.html">Perfil</a></li>
                                 <li><a href="Notificaciones_1.html">Cuenta</a></li>
-                                <li><a href="new-post.html">Tus anuncios</a></li>
+                                <li><a href="ListoFads.html">Tus anuncios</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
                                 <li><a href="#">Separated link</a></li>
@@ -198,6 +191,8 @@
             <!-- Page Content -->
             <div id="page-content-wrapper">
                 <div class="container-fluid">
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class=" fa fa-bars "></span></a>
+
                     <div class="row">
                         <div class="col-lg-12">
 
@@ -226,7 +221,8 @@
                                                         Upload photos samples - <span class="small-text fine-grey"> (ONLY JPG : PNG ) </span> 
                                                     </label>
                                                     <label class="field prepend-icon file">
-                                                        <span class="button btn-red"> Choose File </span>
+                                                        <span class="button btn-red"><i class="fa fa-cloud-upload"></i>
+                                                            Choose File </span>
                                                         <input type="file" class="gui-file" name="upload1" id="file1" 
                                                                onChange="document.getElementById('uploader1').value = this.value;">
                                                         <input type="text" class="gui-input" id="uploader1" placeholder="no file selected" readonly>
@@ -244,12 +240,60 @@
                                                     <ul id="smartErrors">
 
                                                     </ul>
-                                                </div>                   
+                                                </div>   
+
+                                                <div class="col-xs-1 col-md-1">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-3 col-md-2">
+                                                        <div class="ih-item square effect13 left_to_right"><a href="#">
+                                                                <div class="img"><img src="../img/88964_937f120b3b_low_res.jpg" alt="img" width="100"></div>
+                                                                <div class="info">
+                                                                    <p style="float: right;"><i class="fa fa-trash-o fa-2x"></i></p>
+                                                                </div></a></div>
+                                                    </div>
+                                                    <div class="col-xs-2 col-md-3">
+                                                    </div>
+
+                                                    <div class="col-xs-3 col-md-2">
+                                                        <div class="ih-item square effect13 left_to_right"><a href="#">
+                                                                <div class="img"><img src="../img/996040_21f89fda25_low_res.jpg" alt="img"></div>
+                                                                <div class="info">
+                                                                    <p style="float: right;"><i class="fa fa-trash-o fa-2x"></i></p>
+                                                                </div></a></div>
+                                                    </div>
+
+
+
+                                                </div>
+                                                <div class="col-xs-1 col-md-1">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-3 col-md-2">
+                                                        <div class="ih-item square effect13 left_to_right"><a href="#">
+                                                                <div class="img"><img src="../img/996040_21f89fda25_low_res.jpg" alt="img" width="100"></div>
+                                                                <div class="info">
+                                                                    <p style="float: right;"><i class="fa fa-trash-o fa-2x"></i></p>
+                                                                </div></a></div>
+                                                    </div>
+                                                    <div class="col-xs-2 col-md-3">
+                                                    </div>
+
+                                                    <div class="col-xs-3 col-md-2">
+                                                        <div class="ih-item square effect13 left_to_right"><a href="#">
+                                                                <div class="img"><img src="../img/maxresdefault.jpg" alt="img"></div>
+                                                                <div class="info"> 
+                                                                    <p style="float: right;"><i class="fa fa-trash-o fa-2x"></i></p>
+                                                                </div></a></div>
+                                                    </div>
+
+
+
+                                                </div>
 
                                             </div><!-- end .form-body section -->
                                             <div class="form-footer">
-                                                <button type="submit" class="button btn-primary"> Siguiente </button>
-                                                <button type="reset" class="button"> Cancel </button>
+                                                <button id="next" type="submit" class="button btn-primary"> Siguiente</button>
                                             </div><!-- end .form-footer section -->
                                         </form>
 
@@ -269,7 +313,13 @@
             <!-- /#page-content-wrapper -->
 
         </div>
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
 
+        </script>
         <script src="../js/vendor/bootstrap.min.js"></script>
 
     </body>

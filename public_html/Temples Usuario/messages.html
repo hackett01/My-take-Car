@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<!--
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.css">
+        <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>  
+        <script type="text/javascript" src="../Temples Usuario/script.js"></script>
+        <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
+        <link rel="stylesheet" type="text/css"  href="../Temples Usuario/responsive-css-tabs/css/user-styles.css">
+        <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
+        <script src="../js/vendor/bootstrap.min.js"></script>
+        <style>
+            #mail-box{
+                width: 336px;
+                resize: none;
+                line-height: 19px;
+                overflow: auto;
+                height: 124px;
+            }
+            #butt-mail, #butt-cont{
+                background-color: rgb(255, 255, 255);
+                border-radius: 0px;
+            }
+            #button-face{
+                background: #4568B2;
+                color: white;
+                border-radius: 0px;
+            }
+            #fand{
+                border-radius: 0px;
+                background: #009AAB;
+                border-color: #009AAB;
+                color: white;
+            }
+            #remove{
+                border-radius: 0px;
+                background: #F84F52;
+                border-color: #F84F52;
+                color: white;
+            }
+            #newAdd{
+                background: #F84F52;
+                border-color: #F84F52;
+                margin-left: 20px;
+                margin-right: 21px;
+                text-align: center;
+                color: white;
+            }
+            #btGroup{
+
+                position: relative;
+                margin-top: 45px;
+            }
+
+            .checkbox label:after, 
+            .radio label:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+
+            .checkbox .cr,
+            .radio .cr {
+                position: relative;
+                display: inline-block;
+                border: 1px solid #a9a9a9;
+                border-radius: .25em;
+                width: 1.3em;
+                height: 1.3em;
+                float: left;
+                margin-right: .2em;
+            }
+
+            .radio .cr {
+                border-radius: 50%;
+            }
+
+            .checkbox .cr .cr-icon,
+            .radio .cr .cr-icon {
+                position: absolute;
+                font-size: .8em;
+                line-height: 0;
+                top: 50%;
+                left: 20%;
+            }
+
+            .radio .cr .cr-icon {
+                margin-left: 0.04em;
+            }
+
+            .checkbox label input[type="checkbox"],
+            .radio label input[type="radio"] {
+                display: none;
+            }
+
+            .checkbox label input[type="checkbox"] + .cr > .cr-icon,
+            .radio label input[type="radio"] + .cr > .cr-icon {
+                transform: scale(3) rotateZ(-20deg);
+                opacity: 0;
+                transition: all .3s ease-in;
+            }
+
+            .checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+            .radio label input[type="radio"]:checked + .cr > .cr-icon {
+                transform: scale(1) rotateZ(0deg);
+                opacity: 1;
+            }
+
+            .checkbox label input[type="checkbox"]:disabled + .cr,
+            .radio label input[type="radio"]:disabled + .cr {
+                opacity: .5;
+            }
+            #check-mail{
+                margin-top: -13px;
+                margin-bottom: -24px;
+            }
+
+
+
+        </style>
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Take my car</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li>
+                            <a id="session" href="#modals"  >Iniciar sesión</a>
+                        </li>
+                        <li><a id="cuenta" href="#">Mi cuenta</a></li>
+                        <li class="dropdown" id="listaOption">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+                                <span class="fa fa-cog fa-2x" id="cog"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index-user.html">Perfil</a></li>
+                                <li><a href="Notificaciones_1.html">Cuenta</a></li>
+                                <li><a href="new-post.html">Tus anuncios</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+
+
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+
+                    <li>
+                        <a href="#">Tus anucios</a>
+                    </li>
+                    <li>
+                        <a href="#">Tus reservas</a>
+                    </li>
+                    <li>
+                        <a href="#">Requisitos de reserva</a>
+                    </li>
+                    <li>
+                        <a id="newAdd" href="new-post.html">Crear anuncio +</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class=" row">
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="row">
+                                <div class=" col-lg-2">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Todos los mensajes
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">Favoritos(0)</a></li>
+                                            <li><a href="#">No Leidos(0)</a></li>
+                                            <li><a href="#">Reservas(0)</a></li>
+                                            <li><a href="#">Solicitudes pendientes(0)</a></li>
+                                            <li><a href="#">Archivados(0)</a></li>
+                                        </ul>
+                                    </div>  
+                                </div>
+                                <div class=" col-lg-1">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+
+                                        Refresh <span class=" fa fa-refresh "></span>
+                                    </button>
+
+
+                                </div>
+                                <div class=" col-lg-1">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Mas
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">Marcar como leido(0)</a></li>
+                                            <li><a href="#">Eliminar</a></li>
+
+                                        </ul>
+                                    </div>  
+                                </div>
+
+                            </div>
+
+
+                            <br>
+
+
+
+                            <div class="frm-row" id="paymentform">
+                                <div class="smart-wrap">
+                                    <div class="smart-forms smart-container wrap-0">
+                                        <table id="example" class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+
+
+                                            <tbody>
+                                                <tr>
+                                                    <td WIDTH="50" >
+                                                        <div class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td WIDTH="50"> 
+                                                        <div  class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-star"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Kendo UI Team</td>
+                                                    <td>Save evaluation time with these tips-</td>
+                                                    <td>13:25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td WIDTH="50" >
+                                                        <div class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td WIDTH="50"> 
+                                                        <div  class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-star"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Kendo UI Team</td>
+                                                    <td>Save evaluation time with these tips-</td>
+                                                    <td>13:25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td WIDTH="50" >
+                                                        <div class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td WIDTH="50"> 
+                                                        <div  class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-star"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Kendo UI Team</td>
+                                                    <td>Save evaluation time with these tips-</td>
+                                                    <td>13:25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td WIDTH="50" >
+                                                        <div class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td WIDTH="50"> 
+                                                        <div  class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-star"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Kendo UI Team</td>
+                                                    <td>Save evaluation time with these tips-</td>
+                                                    <td>13:25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td WIDTH="50" >
+                                                        <div class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td WIDTH="50"> 
+                                                        <div  class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-star"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Kendo UI Team</td>
+                                                    <td>Save evaluation time with these tips-</td>
+                                                    <td>13:25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td WIDTH="50" >
+                                                        <div class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td WIDTH="50"> 
+                                                        <div  class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-star"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Kendo UI Team</td>
+                                                    <td>Save evaluation time with these tips-</td>
+                                                    <td>13:25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td WIDTH="50" >
+                                                        <div class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td WIDTH="50"> 
+                                                        <div  class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-star"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Kendo UI Team</td>
+                                                    <td>Save evaluation time with these tips-</td>
+                                                    <td>13:25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td WIDTH="50" >
+                                                        <div class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td WIDTH="50"> 
+                                                        <div  class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-star"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Kendo UI Team</td>
+                                                    <td>Save evaluation time with these tips-</td>
+                                                    <td>13:25</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td WIDTH="50" >
+                                                        <div class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td WIDTH="50"> 
+                                                        <div  class="checkbox" id="check-mail">
+                                                            <label>
+                                                                <input type="checkbox" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-star"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Kendo UI Team</td>
+                                                    <td>Save evaluation time with these tips-</td>
+                                                    <td>13:25</td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
+                            <script src="jquery.simplePagination.js"></script>
+                            <script>
+                                $(function () {
+                                    $("#example").simplePagination({
+                                        previousButtonClass: "btn btn-danger",
+                                        nextButtonClass: "btn btn-danger"
+
+                                    });
+
+
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+
+        <script src="../minimal/jquery.simplePagination.js"></script>
+
+    </body>
+</html>
