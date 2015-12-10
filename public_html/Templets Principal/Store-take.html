@@ -32,6 +32,7 @@
                 padding-bottom: 20px;
                 -moz-osx-font-smoothing: grayscale;
                 background-color: rgba(168, 168, 168, 0.21);
+                font-family: 'Didact Gothic', sans-serif;
             }
 
 
@@ -737,20 +738,20 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="lista1">
                         <h3>Empresas</h3>
                         <p>Información</p>
                         <p>Políticas</p>
                         <p>Condiciones y privacidad</p>
                         <p> y cookies</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="lista2">
                         <h3>Descubre Take my car</h3>
                         <p>Confianza y seguridad</p>
                         <p>Selección de take my car</p>
                         <p>Viajes y negocios</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="lista3">
                         <h3>Busca tu auto</h3>
                         <p>Publica tu auto</p>
                         <p>Razones para compartir tu auto</p>
@@ -762,6 +763,80 @@
         </div>
         <script src="../js/vendor/bootstrap.min.js"></script>
 
+        <script>
+            $(document).ready(function ($) {
+                $(window).resize(function () {
+                    if ($(window).width() <= 800) {
+                        $("#text-caption").css({'position': 'absolute',
+                            'left': '15%',
+                            'right': '15%',
+                            'bottom': '200px'
+                        });
+                        $(".carousel-indicators").css({'position': 'absolute',
+                            'bottom': '100px'
+                        });
+                        $("#signin").css({
+                            'border': 'medium none'
+                        });
+                        $("#salida").hide();
+                        $("#llegada").hide();
+                        $("#lupa").hide();
+                        $("#sel3").hide();
+                        $("#lista1").hide();
+                        $("#lista2").hide();
+                        $("#lista3").hide();
+                    }
+                    if ($(window).width() > 800) {
+                        $("#salida").show();
+                        $("#llegada").show();
+                        $("#sel3").show();
+                        $("#lupa").show();
+
+                        setTimeout('document.location.reload()', 10);
+                    }
+
+                    if ($(window).width() <= 768) {
+
+                        $("#shearh").css({
+                            'margin-top': '5px',
+                            'width': '500px'
+                        });
+                        $("#lupa").show();
+
+                        $("#lupa").css({
+                            'margin-top': '-136px',
+                            'margin-left': '502px'
+                        });
+
+
+                    }
+
+                    if ($(window).width() <= 680) {
+
+                        $("#shearh").css({
+                            'margin-top': '5px',
+                            'width': '403px'
+                        });
+                        $("#lupa").show();
+
+                        $("#lupa").css({
+                            'margin-top': '-138px',
+                            'margin-left': '406px'
+                        });
+                    }
+
+                    if ($(window).width() <= 400) {
+
+                        $("#shearh").css({
+                            'margin-top': '5px',
+                            'width': '218px'
+                        });
+                        $("#lupa").show();
+                    }
+
+                });
+            });
+        </script>
 
     </body>
 </html>

@@ -24,7 +24,7 @@
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-touch-punch.min.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/smartforms-modal.min.js"></script>
-
+        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-forms.css">
 
         <!--
         Css modal
@@ -153,6 +153,7 @@
                 padding-bottom: 20px;
                 -moz-osx-font-smoothing: grayscale;
                 background-color: rgba(168, 168, 168, 0.21);
+                font-family: 'Didact Gothic', sans-serif;
             }
 
 
@@ -335,6 +336,241 @@
                 color: #FC696E;
             }
         </style>
+
+
+        <script type="text/javascript">
+
+            $(function () {
+
+                $("#slider").slider({
+                    range: "min",
+                    min: 10,
+                    max: 100,
+                    value: 80
+                });
+                $("#slider1").slider({
+                    range: true,
+                    values: [17, 83]
+                });
+
+                $("#slider2").slider({
+                    range: "min",
+                    value: 140,
+                    min: 1,
+                    max: 800,
+                    slide: function (event, ui) {
+                        $("#amount").val("$" + ui.value);
+                    }
+                });
+
+                $("#amount").val(
+                        "$" + $("#slider2").slider("value")
+                        );
+
+                $("#slider3").slider({
+                    range: "max",
+                    min: 1,
+                    max: 10,
+                    value: 2,
+                    slide: function (event, ui) {
+                        $("#bedrooms").val(ui.value);
+                    }
+                });
+
+                $("#bedrooms").val(
+                        $("#slider3").slider("value")
+                        );
+
+
+                var select = $("#guests");
+                var guestnumber = $("#slider4").slider({
+                    min: 1,
+                    max: 10,
+                    range: "min",
+                    value: select[0].selectedIndex + 1,
+                    slide: function (event, ui) {
+                        select[0].selectedIndex = ui.value - 1;
+                    }
+                });
+
+                $("#guests").change(function () {
+                    guestnumber.slider("value", this.selectedIndex + 1);
+                });
+
+                $("#slider5").slider({
+                    value: 100,
+                    min: 0,
+                    max: 500,
+                    step: 50,
+                    range: "min",
+                    slide: function (event, ui) {
+                        $("#donation").val(ui.value);
+                    }
+                });
+
+                $("#donation").val($("#slider5").slider("value"));
+                $("#donation").blur(function () {
+                    $("#slider5").slider("value", $(this).val());
+                });
+
+                $("#slider6").slider({
+                    orientation: "vertical",
+                    range: "min",
+                    min: 0,
+                    max: 100,
+                    value: 60,
+                    slide: function (event, ui) {
+                        $("#volume").val(ui.value);
+                    }
+                });
+
+                $("#volume").val(
+                        $("#slider6").slider("value")
+                        );
+
+                $("#slider7").slider({
+                    orientation: "vertical",
+                    range: true,
+                    values: [27, 67],
+                    slide: function (event, ui) {
+                        $("#sales").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                    }
+                });
+                $("#sales").val("$" + $("#slider7").slider("values", 0) + " - $" + $("#slider7").slider("values", 1));
+
+                $("#eq > .sliderv-wrapper").each(function () {
+                    var value = parseInt($(this).text(), 10);
+                    $(this).empty().slider({
+                        value: value,
+                        range: "min",
+                        animate: true,
+                        orientation: "vertical"
+                    });
+                });
+
+                $("#eq2 > .sliderv-wrapper").each(function () {
+                    var value = parseInt($(this).text(), 10);
+                    $(this).empty().slider({
+                        value: value,
+                        range: "min",
+                        animate: true,
+                        orientation: "vertical"
+                    });
+                });
+
+
+                $('#slider8').slider({
+                    range: true,
+                    values: [500, 1500],
+                    min: 10,
+                    max: 2000,
+                    step: 10,
+                    slide: function (event, ui) {
+                        $("#budget").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                    }
+                });
+
+                $("#budget").val("$" + $("#slider8").slider("values", 0) + " - $" + $("#slider8").slider("values", 1));
+
+                var initialYear = 1980;
+                var yearTooltip = function (event, ui) {
+                    var curYear = ui.value || initialYear
+                    var yeartip = '<span class="slider-tip">' + curYear + '</span>';
+                    $(this).find('.ui-slider-handle').html(yeartip);
+                }
+
+                $("#slider10").slider({
+                    value: initialYear,
+                    range: "min",
+                    min: 1950,
+                    max: 2020,
+                    step: 1,
+                    create: yearTooltip,
+                    slide: yearTooltip
+                });
+
+                $("#slider-range").slider({
+                    range: true,
+                    min: 0,
+                    max: 500,
+                    values: [100, 380],
+                    slide: function (event, ui) {
+                        $("#amounts").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                    }
+                });
+
+                $("#amounts").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+
+
+                $("#slider11").slider({
+                    min: 100,
+                    max: 1000,
+                    step: 10,
+                    values: [300, 700],
+                    range: true,
+                    slide: function (event, ui) {
+                        for (var i = 0; i < ui.values.length; ++i) {
+                            $(".sliderValue[data-index=" + i + "]").val(ui.values[i]);
+                        }
+                    }
+                });
+
+                $(".sliderValue").change(function () {
+                    var $this = $(this);
+                    $("#slider11").slider("values", $this.data("index"), $this.val());
+                });
+
+
+                var valtooltip = function (sliderObj, ui) {
+                    val1 = '<span class="slider-tip">' + sliderObj.slider("values", 0) + '</span>';
+                    val2 = '<span class="slider-tip">' + sliderObj.slider("values", 1) + '</span>';
+                    sliderObj.find('.ui-slider-handle:first').html(val1);
+                    sliderObj.find('.ui-slider-handle:last').html(val2);
+                };
+
+                $("#slider-range2").slider({
+                    range: true,
+                    min: 0,
+                    max: 500,
+                    values: [180, 400],
+                    create: function (event, ui) {
+                        valtooltip($(this), ui);
+                    },
+                    slide: function (event, ui) {
+                        valtooltip($(this), ui);
+                        $("#amountx").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                    },
+                    stop: function (event, ui) {
+                        valtooltip($(this), ui);
+                    }
+
+                });
+
+                $("#amountx").val("$" + $("#slider-range2").slider("values", 0) + " - $" + $("#slider-range2").slider("values", 1));
+
+                var initialSpark = 60;
+                var sparkTooltip = function (event, ui) {
+                    var curSpark = ui.value || initialSpark
+                    var sparktip = '<span class="slider-tip">' + curSpark + '</span>';
+                    $(this).find('.ui-slider-handle').html(sparktip);
+                }
+
+                $("#slider9").slider({
+                    orientation: "vertical",
+                    range: "min",
+                    min: 1,
+                    max: 100,
+                    step: 1,
+                    value: initialSpark,
+                    create: sparkTooltip,
+                    slide: sparkTooltip
+                });
+
+
+            });
+
+        </script>
+
 
     </head>
     <body>
@@ -571,16 +807,15 @@
                                 </div><!-- end section -->
                             </div><!-- end .frm-row section -->
 
-                            <div class="spacer-t40 spacer-b40">
-                                <div class="tagline"><span> Rango de Precios </span></div><!-- .tagline -->
-                            </div><!-- end .spacer section --> 
+                           
+
                             <div class="section">
                                 <div class="spacer-b15">
-                                    <label for="amount">Maximum price:</label>
-                                    <input type="text" id="amount" class="slider-input"> 
-                                </div><!-- end .spacer -->                   
-                                <div class="slider-wrapper red-slider">
-                                    <div id="slider2"></div>
+                                    <label for="budget">Project Budget:</label>
+                                    <input type="text" id="budget" class="slider-input"> 
+                                </div><!-- end .spacer -->                     
+                                <div class="slider-wrapper purple-slider">
+                                    <div id="slider8"></div>
                                 </div><!-- end .slider-wrapper -->
                             </div><!-- end section -->
 
@@ -595,7 +830,7 @@
             </div><!-- end .smart-wrap section -->
 
 
-
+            <br>
             <div class="smart-wrap">
                 <div class="smart-forms smart-container ">
 
@@ -605,88 +840,88 @@
                         <br>
                         <div class="frm-row" >
                             <div class="colm colm8"  style="overflow: scroll;">
-                            <div class=" colm colm2" style=" width: 338px; height: 300px;">
+                                <div class=" colm colm2" style=" width: 338px; height: 300px;">
 
-                                <div class="ih-item square effect13 left_to_right"><a href="#">
-                                        <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
-                                        <div class="info">
-                                            <h3>$550</h3>
-                                            <p>Description goes here</p>
-                                        </div></a></div>
-                                <br>
-                                <!-- end normal -->
-                                <!-- normal -->
-                                <div class="ih-item square effect13 left_to_right"><a href="#">
-                                        <div class="img"><img src="../img/Dodge_Caliber_001.JPG" alt="img"></div>
-                                        <div class="info">
-                                            <h3>$550</h3>
-                                            <p>Description goes here</p>
-                                        </div></a></div>
-                                <br>
-                                <!-- end normal -->
+                                    <div class="ih-item square effect13 left_to_right"><a href="#">
+                                            <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
+                                            <div class="info">
+                                                <h3>$550</h3>
+                                                <p>Description goes here</p>
+                                            </div></a></div>
+                                    <br>
+                                    <!-- end normal -->
+                                    <!-- normal -->
+                                    <div class="ih-item square effect13 left_to_right"><a href="#">
+                                            <div class="img"><img src="../img/Dodge_Caliber_001.JPG" alt="img"></div>
+                                            <div class="info">
+                                                <h3>$550</h3>
+                                                <p>Description goes here</p>
+                                            </div></a></div>
+                                    <br>
+                                    <!-- end normal -->
 
-                                <div class="ih-item square effect13 left_to_right"><a href="#">
-                                        <div class="img"><img src="../img/dic-amda-1315894.jpg" alt="img"></div>
-                                        <div class="info">
-                                            <h3>$550</h3>
-                                            <p>Description goes here</p>
-                                        </div></a></div>
-                                <br>
-                                <!-- end normal -->
-                                <!-- normal -->
-                                <div class="ih-item square effect13 left_to_right"><a href="#">
-                                        <div class="img"><img src="../img/ford_fusion_2011_01.jpg" alt="img"></div>
-                                        <div class="info">
-                                            <h3>$550</h3>
-                                            <p>Description goes here</p>
-                                        </div></a></div>
-                                <!-- end normal -->
+                                    <div class="ih-item square effect13 left_to_right"><a href="#">
+                                            <div class="img"><img src="../img/dic-amda-1315894.jpg" alt="img"></div>
+                                            <div class="info">
+                                                <h3>$550</h3>
+                                                <p>Description goes here</p>
+                                            </div></a></div>
+                                    <br>
+                                    <!-- end normal -->
+                                    <!-- normal -->
+                                    <div class="ih-item square effect13 left_to_right"><a href="#">
+                                            <div class="img"><img src="../img/ford_fusion_2011_01.jpg" alt="img"></div>
+                                            <div class="info">
+                                                <h3>$550</h3>
+                                                <p>Description goes here</p>
+                                            </div></a></div>
+                                    <!-- end normal -->
 
-                            </div><!-- end .colm2 section -->
-                             <div class=" colm colm2" style=" width: 338px; height: 300px;">
+                                </div><!-- end .colm2 section -->
+                                <div class=" colm colm2" style=" width: 338px; height: 300px;">
 
-                                <div class="ih-item square effect13 left_to_right"><a href="#">
-                                        <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
-                                        <div class="info">
-                                            <h3>$550</h3>
-                                            <p>Description goes here</p>
-                                        </div></a></div>
-                                <br>
-                                <!-- end normal -->
-                                <!-- normal -->
-                                <div class="ih-item square effect13 left_to_right"><a href="#">
-                                        <div class="img"><img src="../img/Dodge_Caliber_001.JPG" alt="img"></div>
-                                        <div class="info">
-                                            <h3>$550</h3>
-                                            <p>Description goes here</p>
-                                        </div></a></div>
-                                <br>
-                                <!-- end normal -->
+                                    <div class="ih-item square effect13 left_to_right"><a href="#">
+                                            <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
+                                            <div class="info">
+                                                <h3>$550</h3>
+                                                <p>Description goes here</p>
+                                            </div></a></div>
+                                    <br>
+                                    <!-- end normal -->
+                                    <!-- normal -->
+                                    <div class="ih-item square effect13 left_to_right"><a href="#">
+                                            <div class="img"><img src="../img/Dodge_Caliber_001.JPG" alt="img"></div>
+                                            <div class="info">
+                                                <h3>$550</h3>
+                                                <p>Description goes here</p>
+                                            </div></a></div>
+                                    <br>
+                                    <!-- end normal -->
 
-                                <div class="ih-item square effect13 left_to_right"><a href="#">
-                                        <div class="img"><img src="../img/dic-amda-1315894.jpg" alt="img"></div>
-                                        <div class="info">
-                                            <h3>$550</h3>
-                                            <p>Description goes here</p>
-                                        </div></a></div>
-                                <br>
-                                <!-- end normal -->
-                                <!-- normal -->
-                                <div class="ih-item square effect13 left_to_right"><a href="#">
-                                        <div class="img"><img src="../img/ford_fusion_2011_01.jpg" alt="img"></div>
-                                        <div class="info">
-                                            <h3>$550</h3>
-                                            <p>Description goes here</p>
-                                        </div></a></div>
-                                <!-- end normal -->
+                                    <div class="ih-item square effect13 left_to_right"><a href="#">
+                                            <div class="img"><img src="../img/dic-amda-1315894.jpg" alt="img"></div>
+                                            <div class="info">
+                                                <h3>$550</h3>
+                                                <p>Description goes here</p>
+                                            </div></a></div>
+                                    <br>
+                                    <!-- end normal -->
+                                    <!-- normal -->
+                                    <div class="ih-item square effect13 left_to_right"><a href="#">
+                                            <div class="img"><img src="../img/ford_fusion_2011_01.jpg" alt="img"></div>
+                                            <div class="info">
+                                                <h3>$550</h3>
+                                                <p>Description goes here</p>
+                                            </div></a></div>
+                                    <!-- end normal -->
 
-                            </div><!-- end .colm2 section -->
+                                </div><!-- end .colm2 section -->
                             </div>
                             <div class="colm colm2">
                             </div><!-- end .colm6 section -->
                             <div class="colm colm2">
                             </div><!-- end .colm6 section -->
-                             <div class="colm colm2">
+                            <div class="colm colm2">
                             </div><!-- end .colm6 section -->
                             <div class="colm colm4">
                                 <div class="map-container">
@@ -702,6 +937,61 @@
             </div><!-- end .smart-wrap section -->
 
 
+            <div class="smart-wrap" style="visibility: hidden;">
+                <div class="smart-forms smart-container wrap-0">
+
+
+
+                    <div class="form-body">
+
+
+
+
+                        <div class="frm-row">
+                            <div class="section colm colm6">
+                                <div class="spacer-b20">
+                                    <label for="guests" class="field-label">Update select value</label>
+                                    <label class="field select">
+                                        <select name="guests" id="guests">
+                                            <option>1</option>
+                                            <option selected>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>                                
+                                        </select>
+                                        <i class="arrow double"></i>
+                                    </label> 
+                                </div><!-- end .spacer -->                  
+                                <div class="slider-wrapper">
+                                    <div id="slider4"></div>
+                                </div><!-- end .slider-wrapper -->
+                            </div><!-- end section -->
+
+
+                        </div><!-- end .frm-row -->
+
+
+                        <div class="frm-row">
+
+
+
+                        </div><!-- end frm-row section -->
+
+                        <div class="frm-row">
+
+
+                        </div> <!-- end frm-row section -->
+
+                    </div><!-- end .form-body section -->
+
+
+                </div><!-- end .smart-forms section -->
+            </div><!-- end .smart-wrap section -->
 
             <div id="smart-modal1" class="smartforms-modal" role="alert">
                 <div class="smartforms-modal-container">
@@ -839,7 +1129,7 @@
 
                                             </div><!-- end .frm-row section -->
 
-                                         
+
 
                                         </div><!-- end .form-body section -->
                                         <div class="form-footer">
@@ -881,20 +1171,20 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="lista1">
                         <h3>Empresas</h3>
                         <p>Información</p>
                         <p>Políticas</p>
                         <p>Condiciones y privacidad</p>
                         <p> y cookies</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="lista2">
                         <h3>Descubre Take my car</h3>
                         <p>Confianza y seguridad</p>
                         <p>Selección de take my car</p>
                         <p>Viajes y negocios</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="lista3">
                         <h3>Busca tu auto</h3>
                         <p>Publica tu auto</p>
                         <p>Razones para compartir tu auto</p>
@@ -906,31 +1196,78 @@
         </div>
         <script src="../js/vendor/bootstrap.min.js"></script>
         <script>
-            $(document).ready(function ($) {
-                $(window).resize(function () {
-                    if ($(window).width() <= 800) {
-                        $("#coments").css({
-                            'margin-top': '17px',
-                            'margin-left': '13px',
-                            'width': '316px'
-                        });
+        $(document).ready(function ($) {
+            $(window).resize(function () {
+                if ($(window).width() <= 800) {
+                    $("#text-caption").css({'position': 'absolute',
+                        'left': '15%',
+                        'right': '15%',
+                        'bottom': '200px'
+                    });
+                    $(".carousel-indicators").css({'position': 'absolute',
+                        'bottom': '100px'
+                    });
+                    $("#signin").css({
+                        'border': 'medium none'
+                    });
+                    $("#salida").hide();
+                    $("#llegada").hide();
+                    $("#lupa").hide();
+                    $("#sel3").hide();
+                    $("#lista1").hide();
+                    $("#lista2").hide();
+                    $("#lista3").hide();
+                }
+                if ($(window).width() > 800) {
+                    $("#salida").show();
+                    $("#llegada").show();
+                    $("#sel3").show();
+                    $("#lupa").show();
 
-                        $(".ih-item.square").css({
-                            'position': 'relative',
-                            'width': '200px',
-                            'height': '134px'
-                        });
+                    setTimeout('document.location.reload()', 10);
+                }
+
+                if ($(window).width() <= 768) {
+
+                    $("#shearh").css({
+                        'margin-top': '5px',
+                        'width': '500px'
+                    });
+                    $("#lupa").show();
+
+                    $("#lupa").css({
+                        'margin-top': '-136px',
+                        'margin-left': '502px'
+                    });
 
 
-                    }
+                }
 
-                    if ($(window).width() > 1000) {
-                        setTimeout('document.location.reload()', 10);
+                if ($(window).width() <= 680) {
 
-                    }
+                    $("#shearh").css({
+                        'margin-top': '5px',
+                        'width': '403px'
+                    });
+                    $("#lupa").show();
 
-                });
+                    $("#lupa").css({
+                        'margin-top': '-138px',
+                        'margin-left': '406px'
+                    });
+                }
+
+                if ($(window).width() <= 400) {
+
+                    $("#shearh").css({
+                        'margin-top': '5px',
+                        'width': '218px'
+                    });
+                    $("#lupa").show();
+                }
+
             });
+        });
         </script>
 
 

@@ -1,0 +1,1176 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.css">
+        <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../EfectosImg/dist/styles/main.css"/>
+        <link rel="stylesheet" type="text/css"  href="../Template samples/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-themes/red.css">
+        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-forms.css">
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-custom.min.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-timepicker.min.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-touch-punch.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+        <link rel="stylesheet" href="../EfectosImg/dist/styles/main.css"/>
+
+        <script type="text/javascript">
+
+            $(function () {
+
+                var smartpickerWrapper = '<div class="smart-forms"><div class="red-slider"></div></div>';
+
+                $('#dtpicker').datetimepicker({
+                    altField: "#dtpfield",
+                    altFieldTimeOnly: false,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>'
+                });
+
+                $('#dtpicker').wrapInner('<div class="red-slider"></div>');
+
+
+
+                $('#timepicker2').timepicker({
+                    timeFormat: 'HH:mm:ss:TT',
+                    showSecond: true,
+                    beforeShow: function (input, inst) {
+                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
+                        var smartpikr = inst.dpDiv.parent();
+                        if (!smartpikr.hasClass('smart-forms')) {
+                            inst.dpDiv.wrap(smartpickerWrapper);
+                        }
+                    },
+                    onClose: function (input, inst) {
+                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
+                    }
+
+                });
+
+                $('#dtimepicker2').datetimepicker({
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    beforeShow: function (input, inst) {
+                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
+                        var smartpikr = inst.dpDiv.parent();
+                        if (!smartpikr.hasClass('smart-forms')) {
+                            inst.dpDiv.wrap(smartpickerWrapper);
+                        }
+                    },
+                    onClose: function (input, inst) {
+                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
+                    }
+
+                });
+
+                $("#datepicker2").datepicker({
+                    numberOfMonths: 1,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    showButtonPanel: false
+                });
+
+                $("#datepicker3").datepicker({
+                    numberOfMonths: 1,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    showButtonPanel: false
+                });
+            });
+
+        </script>
+
+        <script type="text/javascript">
+
+            function initialize() {
+                var mapOptions = {
+                    zoom: 10,
+                    center: new google.maps.LatLng(29.760193, -95.369390),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    draggable: false,
+                    position: new google.maps.LatLng(29.760193, -95.369390)
+                });
+            }
+            google.maps.event.addDomListener(window, 'resize', initialize);
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+        </script>   
+
+        <script type="text/javascript">
+
+            $(function () {
+
+
+
+
+                $("#slider2").slider({
+                    range: "min",
+                    value: 140,
+                    min: 1,
+                    max: 5000,
+                    slide: function (event, ui) {
+                        $("#amount").val("$" + ui.value);
+                    }
+                });
+
+                $("#amount").val(
+                        "$" + $("#slider2").slider("value")
+                        );
+            });
+
+        </script>
+
+
+
+
+        <style>
+
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+                -moz-osx-font-smoothing: grayscale;
+                background-color: rgba(168, 168, 168, 0.21);
+                font-family: 'Didact Gothic', sans-serif;
+            }
+
+
+            #mycar, #empresa, #car {
+                color: white;
+            }
+
+            #register{
+                color:#F84F52;
+            }
+            #session{
+                color:#F84F52;
+            }
+            #cuenta{
+                color:#F84F52;
+            }
+            #cog{
+                color:#F84F52;
+            }
+            #buttonTravel{
+                opacity: 0.5;
+            }
+
+
+
+            .login-block h1 {
+                text-align: center;
+                color: #000;
+                font-size: 18px;
+                text-transform: uppercase;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            .login-block input {
+                width: 100%;
+                height: 42px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-bottom: 20px;
+                font-size: 14px;
+                font-family: Montserrat;
+                padding: 0 20px 0 50px;
+                outline: none;
+            }
+
+            .login-block input#username {
+                background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#username:focus {
+                background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#password {
+                background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#password:focus {
+                background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input:active, .login-block input:focus {
+                border: 1px solid #ff656c;
+            }
+
+            .remodal-bg.with-red-theme.remodal-is-opening,
+            .remodal-bg.with-red-theme.remodal-is-opened {
+                filter: none;
+            }
+
+            .remodal-overlay.with-red-theme {
+                background-color: #f44336;
+            }
+
+            .remodal.with-red-theme {
+                background: #fff;
+            }
+            h1{font-family: 'Didact Gothic', sans-serif;}
+            h3{
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            h2{
+                font-family: 'Didact Gothic', sans-serif;
+
+            }
+
+            p{
+                font-family: "Didact Gothic",sans-serif;
+                color: #4A4A4A;
+
+            }
+            #backinf{
+                background: #c8284e;
+                background-image: url('img/Sin título-1-08.png'); 
+                background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 );
+                width:101%;
+                margin-top: -15px;
+            }
+            #superior-1{
+                background: rgba(23, 22, 22, 0.5) none repeat scroll 0% 0%;margin-top: -98px;position: inherit;
+                width:101%;
+            }
+            #shearh{
+                margin-top: -4%;
+                text-align: center;
+            }
+            #sel3{
+                margin-top: -1%;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #lupa{
+                margin-top: -4px; 
+            }
+            #nav01{
+                margin-top: 20px;
+                border-radius: 36px;
+                width: 84%;
+            }
+            #carAl{
+                color: white;
+            }
+            #car-public{
+                background: rgba(206, 206, 206, 0) none repeat scroll 0% 0%;color: white;
+            }
+            #ca-container
+            {
+                background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
+                width: 86%;
+            }
+            #pass{
+                color: #F84F52;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #cuent-re{
+                color:black;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #remenber{
+                color: #F84F52;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #faceboton{
+                background: rgb(69, 104, 178) none repeat scroll 0% 0%; border: medium none rgb(69, 104, 178);
+            }
+            #g-button{
+                width: 192px;
+            }
+            #googleplus{
+                color: red; margin-left: -16px;
+            }
+            #footer-infer{
+                background: #c8284e;
+                background-image: url('../img/Sin título-1-08.png'); /* fallback */
+                background-image: url('../img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 ); /* W3C */
+
+            }
+
+            #politic{
+                font-family: 'Didact Gothic', sans-serif;
+                text-align: justify; color: black;
+            }
+            #text-caption{
+                min-width: 300px;
+            }
+
+            #lineaInfe{
+                border-color: #989898 -moz-use-text-color -moz-use-text-color;
+
+            }
+            .text-danger{
+                color: #FC696E;
+            }
+            a{
+                color: #FC696E;
+            }
+            #photoUser{
+                width: 50px;
+                height: 50px;
+                position: fixed;
+                top: 157px;
+                right: 5px;
+            }
+
+            .card {
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            }
+
+            .card {
+                margin-top: 10px;
+                box-sizing: border-box;
+                border-radius: 2px;
+                background-clip: padding-box;
+            }
+            .card span.card-title {
+                color: #fff;
+                font-size: 24px;
+                font-weight: 300;
+                text-transform: uppercase;
+            }
+
+            .card .card-image {
+                position: relative;
+                overflow: hidden;
+            }
+            .card .card-image img {
+                border-radius: 2px 2px 0 0;
+                background-clip: padding-box;
+                position: relative;
+                z-index: -1;
+            }
+            .card .card-image span.card-title {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 16px;
+            }
+            .card .card-content {
+                padding: 16px;
+                border-radius: 0 0 2px 2px;
+                background-clip: padding-box;
+                box-sizing: border-box;
+            }
+            .card .card-content p {
+                margin: 0;
+                color: inherit;
+            }
+            .card .card-content span.card-title {
+                line-height: 48px;
+            }
+            .card .card-action {
+                border-top: 1px solid rgba(160, 160, 160, 0.2);
+                padding: 16px;
+            }
+            .card .card-action a {
+                color: #ffab40;
+                margin-right: 16px;
+                transition: color 0.3s ease;
+                text-transform: uppercase;
+            }
+            .card .card-action a:hover {
+                color: #ffd8a6;
+                text-decoration: none;
+            }
+            #stick{
+                border-radius: 10px;
+                color: #FFF;
+                font-weight: bold;
+                display: inline-block;
+                padding: 19px 9px;
+                min-width: 53px;
+                position: relative;
+                overflow: hidden;
+                background: transparent linear-gradient(140deg, #FFC333 55%, #FFB400 55%, #FFB400 100%) repeat scroll 0% 0%;
+            }
+            #eval{
+                color: rgb(74, 74, 74);
+            }
+            #stick2{
+                border-radius: 10px;
+                color: #FFF;
+                font-weight: bold;
+                display: inline-block;
+                padding: 19px 9px;
+                min-width: 53px;
+                position: relative;
+                overflow: hidden;
+                background: transparent linear-gradient(140deg, #F84F52 55%, #E00609 55%, #B42326 100%) repeat scroll 0% 0%;
+
+            }
+            #eval{
+                margin-top: 1.25px;
+            }
+            .fa-li{
+                color: #8D8D8D;
+            }
+            #panel-hus{
+                margin-bottom: 20px;
+                background-color: #FFF;
+                border: 0px solid transparent;
+                border-radius: 0px;
+                box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.05);
+                width: 88%;
+                height: 500px;
+                overflow: scroll;
+            }
+            hr{
+                width: 642px;
+                margin-left: 73px;
+                border-color: #A7A7A7 -moz-use-text-color -moz-use-text-color;
+            }
+            #panel-an{
+                margin-bottom: 20px;
+                background-color: #FFF;
+                border: 0px solid transparent;
+                border-radius: 0px;
+                box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.05);
+                width: 88%;
+                height: 500px;
+                overflow: scroll;
+
+            }
+            #panel-ref{
+                margin-bottom: 20px;
+                background-color: #FFF;
+                border: 0px solid transparent;
+                border-radius: 0px;
+                box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.05);
+                width: 88%;
+                height: 500px;
+                overflow: scroll;
+            }
+            .row-space-4{
+                font-family: "Didact Gothic",sans-serif;
+            }
+            #img-app{
+                width: 233px;
+                height: 157px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Take my car</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-left" method="GET" role="search">
+                        <div class="form-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </form>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li>
+                            <a id="session" href="#modals"  >Iniciar sesión</a>
+                        </li>
+                        <li>
+                            <a id="session" href="http://localhost:8383/My-take-Car/Temples%20Usuario/new-post.html"  >Anunciate</a>
+                        </li>
+                        <li class="dropdown" id="listaOption">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+                                <span class="fa fa-cog fa-2x" id="cog"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+
+
+
+
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-responsive" src="../img/personas/1.jpg">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Identificación verificada</div>
+                        <div class="panel-body">
+                            <ul class="fa-ul">
+                                <li><i class="fa-li fa fa-envelope-o" ></i>Correo electrónico </li>
+                                <li><i class="fa-li fa fa-phone"></i>Número de teléfono:<p>55555555</p></li>
+                                <li><i class="fa-li fa fa-facebook-official"></i>Amigos en Facebook: <p>(45)</p></li>
+                                <li><i class="fa-li fa fa-linkedin"></i>LinkedIn </li>
+                                <li><i class="fa-li fa fa-thumbs-o-up"></i>Con evaluaciones  </li>
+                                <li><i class="fa-li fa fa-check-square-o"></i>Identificación offline </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3>Sobre mí</h3> </div>
+                        <div class="panel-body">
+                            <h3>Centro educativo</h3>
+                            <p>The Chicago School of Professional Psychology</p>
+                            <h3>Idiomas</h3>
+                            <p>English, Français</p>
+
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3>Anuncios</h3> </div>
+                        <div class="panel-body">
+
+                            <div id="img-app" class="ih-item square effect13 left_to_right"><a href="#">
+                                    <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
+                                    <div class="info">
+                                        <h3>Hermosa camioneta</h3>
+                                    </div></a></div>
+                            <br>
+                             <div id="img-app" class="ih-item square effect13 left_to_right"><a href="#">
+                                    <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
+                                    <div class="info">
+                                        <h3>Hermosa camioneta</h3>
+                                    </div></a></div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-9">
+                    <h1>¡Hola, soy Roman!</h1>
+                    <p id="labe10"> Ostuni, Italia · Miembro desde Noviembre de 2010 </p>
+                    <div class="row" >
+                        <div class=" col-lg-12">
+                            <p>Hi! I'm Anna and the one with me in the pic is my mum Tonia. After some years spend in different european cities, I decided to come back home and work in this area. At the moment I'm living in the cottage close to our trulli therefore if you have questions, you need something or you just wanna have a chat and drink a coffee/glass of wine, I'm there. My parents live at about 100 meters from the trulli and we are a big family, we love animals and we have no prejudice at all. Feel free to get in contact with us and we will be glad to let you spend a wonderful holiday. </p>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row" >
+                        <div class=" col-lg-2 ">
+                            <a>
+                                <div class=" text-center ">
+                                    <div class=" badge  " id="stick">
+                                        <span>12</span>
+                                    </div>
+                                    <div class=" row" id="eval">evaluaciones</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class=" col-lg-2 ">
+                            <a>
+                                <div class=" text-center ">
+                                    <div class=" badge  " id="stick2">
+                                        <span class=" fa fa-credit-card  "></span>
+                                    </div>
+                                    <div class=" row" id="eval">IDENTIFICACIÓN VERIFICADA</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row" >
+                        <div class=" col-lg-8 ">
+                            <h3>Evaluaciones <small>(63)</small></h3>
+                        </div>
+                    </div>
+
+                    <div class="row" >
+                        <div class=" col-lg-8 ">
+                            <h4 class="row-space-4" >Evaluaciones de huéspedes  </h4>
+                        </div>
+                    </div>
+
+                    <div class="row" >
+
+                        <div class="col-md-12">
+
+                            <div id="coments" class="twt-wrapper">
+                                <div class="panel " id="panel-hus">
+                                    <div class="panel-body">
+                                        <div class="clearfix"></div>
+                                        <ul class="media-list">
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/1.jpg" style="height: 50px;" alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                    </p>
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/2.jpg" style="height: 50px;" alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                    </p>
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/3.jpg" style="height: 50px;" alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                    </p>
+
+                                                    <small class="text-muted">
+                                                        Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/4.jpg" style="height: 50px;"  alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor <a href="#"># ipsum dolor </a>adipiscing elit.
+                                                    </p>
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/5.jpg" style="height: 50px;"  alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor <a href="#"># sit amet</a> sit amet, consectetur adipiscing elit.
+                                                    </p>
+                                                    <small class="text-muted">
+                                                        Desde Pibrac, Francia · Octubre de 2015 </small>
+
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- TWEET WRAPPER END -->
+
+
+                        </div>
+                    </div>
+
+                    <div class="row" >
+                        <div class=" col-lg-5 ">
+                            <h3>Evaluaciones de anfitriones  </h3>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="row" >
+
+                        <div class="col-md-12">
+
+                            <div id="coments" class="twt-wrapper">
+                                <div class="panel " id="panel-an">
+                                    <div class="panel-body">
+                                        <div class="clearfix"></div>
+                                        <ul class="media-list">
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/1.jpg" style="height: 50px;" alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                    </p>
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/2.jpg" style="height: 50px;" alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                    </p>
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/3.jpg" style="height: 50px;" alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                    </p>
+
+                                                    <small class="text-muted">
+                                                        Desde Pibrac, Francia · Octubre de 2015 </small>
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/4.jpg" style="height: 50px;"  alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor <a href="#"># ipsum dolor </a>adipiscing elit.
+                                                    </p>
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/5.jpg" style="height: 50px;"  alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor <a href="#"># sit amet</a> sit amet, consectetur adipiscing elit.
+                                                    </p>
+                                                    <small class="text-muted">
+                                                        Desde Pibrac, Francia · Octubre de 2015 </small>
+
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- TWEET WRAPPER END -->
+
+
+                        </div>
+                    </div>
+
+                    <div class="row" >
+                        <div class=" col-lg-4 ">
+                            <h3>Referencias (2)</h3>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="row" >
+
+                        <div class="col-md-12">
+
+                            <div id="coments" class="twt-wrapper">
+                                <div class="panel " id="panel-ref">
+                                    <div class="panel-body">
+                                        <div class="clearfix"></div>
+                                        <ul class="media-list">
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/1.jpg" style="height: 50px;" alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                    </p>
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/2.jpg" style="height: 50px;" alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                    </p>
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/3.jpg" style="height: 50px;" alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                                    </p>
+
+                                                    <small class="text-muted">
+                                                        Desde Pibrac, Francia · Octubre de 2015 </small>
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/4.jpg" style="height: 50px;"  alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Lorem ipsum dolor <a href="#"># ipsum dolor </a>adipiscing elit.
+                                                    </p>
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#" class="pull-left">
+                                                    <img src="../img/personas/5.jpg" style="height: 50px;"  alt="" class="img-circle">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="text-muted pull-right">
+                                                        <small class="text-muted">
+                                                            Desde Pibrac, Francia · Octubre de 2015 </small>
+                                                    </span>
+                                                    <strong class=" text-danger ">
+                                                        <a>@ Rexona Kumi</a></strong>
+                                                    <p>
+                                                        Lorem ipsum dolor <a href="#"># sit amet</a> sit amet, consectetur adipiscing elit.
+                                                    </p>
+                                                    <small class="text-muted">
+                                                        Desde Pibrac, Francia · Octubre de 2015 </small>
+
+
+                                                </div>
+                                                <hr>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- TWEET WRAPPER END -->
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div> <!-- /container -->    
+        <div id="footer-infer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <br>
+                        <br>
+                        <form role="form">
+                            <div class="form-group">
+                                <select class="form-control" id="sel1">
+                                    <option>Español</option>
+                                    <option>Español</option>
+                                    <option>Español</option>
+                                    <option>Español</option>
+                                </select>
+                                <br>
+                                <select class="form-control" id="sel2">
+                                    <option>USD</option>
+                                    <option>Español</option>
+                                    <option>Español</option>
+                                    <option>Español</option>
+                                </select>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-3" id="lista1">
+                        <h3>Empresas</h3>
+                        <p>Información</p>
+                        <p>Políticas</p>
+                        <p>Condiciones y privacidad</p>
+                        <p> y cookies</p>
+                    </div>
+                    <div class="col-md-3" id="lista2">
+                        <h3>Descubre Take my car</h3>
+                        <p>Confianza y seguridad</p>
+                        <p>Selección de take my car</p>
+                        <p>Viajes y negocios</p>
+                    </div>
+                    <div class="col-md-3" id="lista3">
+                        <h3>Busca tu auto</h3>
+                        <p>Publica tu auto</p>
+                        <p>Razones para compartir tu auto</p>
+                        <p>Viajes y negocios</p>
+                        <p>Ser un propietario ó conductor responsable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/vendor/bootstrap.min.js"></script>
+        <script src="../Templets Principal/Find-your-car.html"></script>
+        <script>
+            $(document).ready(function ($) {
+                $(window).resize(function () {
+                    if ($(window).width() <= 800) {
+                        $("#coments").css({
+                            'margin-top': '17px',
+                            'margin-left': '13px',
+                            'width': '316px'
+                        });
+
+                        $(".ih-item.square").css({
+                            'position': 'relative',
+                            'width': '200px',
+                            'height': '134px'
+                        });
+
+
+                    }
+
+                    if ($(window).width() > 1000) {
+                        setTimeout('document.location.reload()', 10);
+
+                    }
+
+                });
+            });
+        </script>
+
+
+        <script>
+            $(document).ready(function ($) {
+                $(window).resize(function () {
+                    if ($(window).width() <= 800) {
+                        $("#text-caption").css({'position': 'absolute',
+                            'left': '15%',
+                            'right': '15%',
+                            'bottom': '200px'
+                        });
+                        $(".carousel-indicators").css({'position': 'absolute',
+                            'bottom': '100px'
+                        });
+                        $("#signin").css({
+                            'border': 'medium none'
+                        });
+                        $("#salida").hide();
+                        $("#llegada").hide();
+                        $("#lupa").hide();
+                        $("#sel3").hide();
+                        $("#lista1").hide();
+                        $("#lista2").hide();
+                        $("#lista3").hide();
+                    }
+                    if ($(window).width() > 800) {
+                        $("#salida").show();
+                        $("#llegada").show();
+                        $("#sel3").show();
+                        $("#lupa").show();
+
+                        setTimeout('document.location.reload()', 10);
+                    }
+
+                    if ($(window).width() <= 768) {
+
+                        $("#shearh").css({
+                            'margin-top': '5px',
+                            'width': '500px'
+                        });
+                        $("#lupa").show();
+
+                        $("#lupa").css({
+                            'margin-top': '-136px',
+                            'margin-left': '502px'
+                        });
+
+
+                    }
+
+                    if ($(window).width() <= 680) {
+
+                        $("#shearh").css({
+                            'margin-top': '5px',
+                            'width': '403px'
+                        });
+                        $("#lupa").show();
+
+                        $("#lupa").css({
+                            'margin-top': '-138px',
+                            'margin-left': '406px'
+                        });
+                    }
+
+                    if ($(window).width() <= 400) {
+
+                        $("#shearh").css({
+                            'margin-top': '5px',
+                            'width': '218px'
+                        });
+                        $("#lupa").show();
+                    }
+
+                });
+            });
+        </script>
+
+
+    </body>
+</html>
