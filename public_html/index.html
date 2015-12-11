@@ -21,8 +21,67 @@
         <link rel="stylesheet" href="Remodal-master/dist/remodal.css">
         <link rel="stylesheet" href="Remodal-master/dist/remodal-default-theme.css">
         <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css"  href="Javascript enhancements/css/smart-forms.css">
+        <link rel="stylesheet" type="text/css"  href="Javascript enhancements/css/smart-themes/red.css">
+        <link rel="stylesheet" type="text/css"  href="Javascript enhancements/css/font-awesome.min.css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="Javascript enhancements/js/jquery-ui-custom.min.js"></script>
+        
+        <script type="text/javascript">
 
+            $(function () {
 
+                $("#from").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: false,
+                    numberOfMonths: 1,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    onClose: function (selectedDate) {
+                        $("#to").datepicker("option", "minDate", selectedDate);
+                    }
+                });
+
+                $("#to").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: false,
+                    numberOfMonths: 1,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    onClose: function (selectedDate) {
+                        $("#from").datepicker("option", "maxDate", selectedDate);
+                    }
+                });
+
+                $("#datepicker1").datepicker({
+                    numberOfMonths: 1,
+                    showOn: 'button',
+                    buttonText: '<i class="fa fa-calendar"></i>',
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    showButtonPanel: true
+                });
+
+                $("#datepicker2").datepicker({
+                    numberOfMonths: 1,
+                    showOn: 'button',
+                    buttonText: '<i class="fa fa-calendar"></i>',
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    showButtonPanel: true
+                });
+
+                $(".inline-calender").datepicker({
+                    numberOfMonths: 1,
+                    minDate: -20,
+                    maxDate: "+1M -10D",
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>'
+                });
+
+            });
+
+        </script>
         <style>
 
             body {
@@ -35,8 +94,8 @@
             .carousel-inner > .item > img,
             .carousel-inner > .item > a > img {
                 width: 100%;
-                height: 560px;
                 margin: auto;
+                height: 565px;
             }
             #mycar, #empresa, #car {
                 color: white;
@@ -140,8 +199,9 @@
                 margin-top: -15px;
             }
             #superior-1{
-                background: rgba(23, 22, 22, 0.5) none repeat scroll 0% 0%;margin-top: -98px;position: inherit;
-                width:101%;
+                background: rgba(23, 22, 22, 0.5) none repeat scroll 0% 0%;
+                margin-top: -164px;
+                position: inherit;
             }
             #shearh{
                 margin-top: -4%;
@@ -291,17 +351,17 @@
 
                         </div>
                     </div>
-                    <img src="img/Turismo/shutterstock_97767131_mod.jpg" alt="Chania">
+                    <img src="img/footer/town-on-the-falls.jpg" alt="Chania">
 
 
                 </div>
 
                 <div class="item">
-                    <img src="img/zoom-38688792-3.jpg" alt="Chania" >
+                    <img src="img/footer/hd_wallpaper_nature_landscape_trees_grass-1500x500.jpg" alt="Chania">
                 </div>
 
                 <div class="item">
-                    <img src="img/familia-feliz.jpg" alt="Chania" >
+                    <img src="img/footer/hd_wallpaper_nature_landscape_trees_grass-1500x500.jpg" alt="Chania">
                 </div>
 
             </div>
@@ -318,63 +378,62 @@
         </header>
 
 
-        <div class="row" id="superior-1">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-8">
-                <nav class="navbar navbar-default" id="nav01" >
-                    <div class="container-fluid">
 
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-
-                        </div>
+        <div class="col-md-12" id="superior-1">
 
 
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                            <form id="signin" class="navbar-form navbar-right" role="form">
+            <div class="smart-wrap">
+                <div class="smart-forms smart-container wrap-0" style="height: 63px;">
 
-                                <div class="input-group">
-                                    <input  type="text" class="form-control  " id="shearh" placeholder="A dónde quieres ir?">
-
-                                    <br>
-                                </div>
-                                <div class="input-group">
-                                    <input id="salida"  class="form-control " name="Salida"  placeholder="Salida">   
-                                </div>
-
-                                <div class="input-group">
-                                    <input id="llegada"  class="form-control " name="Llegada"  placeholder="llegada">                                          
-                                </div>
+                    <form  method="post" action="/" id="smart-form">
+                        <div class="form-body theme-red" style="padding: 12px;">
 
 
-                                <select class="form-control " id="sel3" >
-                                    <option>Personas</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
 
-                                <div class="input-group">
-                                    <button id="lupa" type="submit" class="btn btn-default"><i class="fa fa-search "></i> </button>
-                                </div>
+                            <div class="frm-row">
 
-                            </form>
+                                <div class="section colm colm4">
+                                    <label class="field">
+                                        <input type="email" class="gui-input" placeholder="Buscar">  
+                                    </label>
+                                </div><!-- end section -->
+                                <div class="section colm colm3" id="salida">
+                                    <label class="field prepend-icon">
+                                        <input type="text" id="from" name="from" class="gui-input">
+                                        <span class="field-icon"><i class="fa fa-calendar"></i></span>  
+                                    </label>
+                                </div><!-- end section -->
 
-                        </div>
-                    </div>
-                </nav>
+                                <div class="section colm colm3" id="llegada" >
+                                    <label class="field prepend-icon">
+                                        <input type="text" id="to" name="to" class="gui-input">
+                                        <span class="field-icon"><i class="fa fa-calendar"></i></span>  
+                                    </label>
+                                </div><!-- end section -->
 
-            </div>
-            <div class="col-md-2">
-            </div>
+                                <div class="section colm colm1">
+                                    <button id="buscar" type="submit" class="button btn-red"> Buscar</button>
+                                </div><!-- end section -->
+                            </div><!-- end .frm-row section -->
+
+
+
+
+
+
+
+                        </div><!-- end .form-body section -->
+                    </form>
+
+                </div><!-- end .smart-forms section -->
+            </div><!-- end .smart-wrap section --> 
+
         </div>
+
+
+
+
 
 
         <div class="row" id="backinf">
@@ -441,6 +500,9 @@
         </div>
 
 
+
+
+        <div></div><!-- end section -->
 
         <div class="remodal" data-remodal-id="modals" role="dialog" aria-labelledby="modal2Title" aria-describedby="modal1Desc">
             <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
@@ -637,7 +699,7 @@
             <br>
 
             <div class="row" style=" background-image: url(img/zoom-38688792-3.jpg)  ">
-                <div id="ca-container" class="ca-container" >
+                <div id="ca-container" class="ca-container" style ="width: 500px; border:1px solid black; overflow-x:scroll" >
                     <div class="ca-wrapper">
                         <div class="ca-item ca-item-1">
                             <img src="img/folder/1.png" alt="Chania" >
@@ -732,19 +794,7 @@
         </div>
 
 
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="DCalendar/dcalendar.picker.js"></script>
-        <script>
-            $('#salida').dcalendarpicker();
-            $('#calendar-salida').dcalendar(); //creates the calendar
-        </script>
-        <script>
-            $('#llegada').dcalendarpicker();
-            $('#calendar-llegada').dcalendar(); //creates the calendar
-        </script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script type="text/javascript" src="CircularContentCarousel/js/jquery.easing.1.3.js"></script>
         <script type="text/javascript" src="CircularContentCarousel/js/jquery.mousewheel.js"></script>
         <script type="text/javascript" src="CircularContentCarousel/js/jquery.contentcarousel.js"></script>
@@ -753,36 +803,12 @@
         </script>
 
 
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="Remodal-master/dist/remodal.js"></script>
 
-        <!-- Events -->
-        <script>
-            $(document).on('opening', '.remodal', function () {
-                console.log('opening');
-            });
-            $(document).on('opened', '.remodal', function () {
-                console.log('opened');
-            });
-            $(document).on('closing', '.remodal', function (e) {
-                console.log('closing' + (e.reason ? ', reason: ' + e.reason : ''));
-            });
-            $(document).on('closed', '.remodal', function (e) {
-                console.log('closed' + (e.reason ? ', reason: ' + e.reason : ''));
-            });
-            $(document).on('confirmation', '.remodal', function () {
-                console.log('confirmation');
-            });
-            $(document).on('cancellation', '.remodal', function () {
-                console.log('cancellation');
-            });
-            $('[data-remodal-id=modal2]').remodal({
-                modifier: 'with-red-theme'
-            });
-        </script>
-        
-        <script>
+
+
+
+        <script >
             $(document).ready(function ($) {
                 $(window).resize(function () {
                     if ($(window).width() <= 800) {
@@ -800,7 +826,7 @@
                         $("#salida").hide();
                         $("#llegada").hide();
                         $("#lupa").hide();
-                        $("#sel3").hide();
+                        $("#buscar").hide();
                         $("#lista1").hide();
                         $("#lista2").hide();
                         $("#lista3").hide();
@@ -856,9 +882,6 @@
                 });
             });
         </script>
-
-
-
 
     </body>
 </html>
