@@ -10,7 +10,7 @@
 	$.fn.simplePagination = function(options) {
 		
 		var defaults = {
-			perPage: 5,
+			perPage: 2,
 			containerClass: '',
 			previousButtonClass: '',
 			nextButtonClass: '',
