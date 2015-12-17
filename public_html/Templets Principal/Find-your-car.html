@@ -12,331 +12,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../font-awesome-4.4.0/css/font-awesome.css">
+        <link rel="stylesheet" href="../font-awesome-4.5.0/css/font-awesome.css">
         <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css"  href="../Template samples/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-themes/red.css">
-        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-forms.css">
-        <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-custom.min.js"></script>
-        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-timepicker.min.js"></script>
-        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-touch-punch.min.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-        <script type="text/javascript" src="../Javascript enhancements/js/smartforms-modal.min.js"></script>
         <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-forms.css">
+        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-themes/red.css">
+        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-custom.min.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery.maskedinput.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/additional-methods.min.js"></script>   
+        <link href="../leastjs2.2.0/src/css/least.min.css" rel="stylesheet" />
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
 
-        <link rel="stylesheet" href="../EfectosImg/dist/styles/main.css"/>
-        <!--
-        Css modal
-        -->
-
-        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-addons.css">
-
-        <script type="text/javascript">
-
-            $(function () {
-
-                var smartpickerWrapper = '<div class="smart-forms"><div class="red-slider"></div></div>';
-
-                $('#dtpicker').datetimepicker({
-                    altField: "#dtpfield",
-                    altFieldTimeOnly: false,
-                    prevText: '<i class="fa fa-chevron-left"></i>',
-                    nextText: '<i class="fa fa-chevron-right"></i>'
-                });
-
-                $('#dtpicker').wrapInner('<div class="red-slider"></div>');
-
-
-
-                $('#timepicker2').timepicker({
-                    timeFormat: 'HH:mm:ss:TT',
-                    showSecond: true,
-                    beforeShow: function (input, inst) {
-                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
-                        var smartpikr = inst.dpDiv.parent();
-                        if (!smartpikr.hasClass('smart-forms')) {
-                            inst.dpDiv.wrap(smartpickerWrapper);
-                        }
-                    },
-                    onClose: function (input, inst) {
-                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
-                    }
-
-                });
-
-                $('#dtimepicker2').datetimepicker({
-                    prevText: '<i class="fa fa-chevron-left"></i>',
-                    nextText: '<i class="fa fa-chevron-right"></i>',
-                    beforeShow: function (input, inst) {
-                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
-                        var smartpikr = inst.dpDiv.parent();
-                        if (!smartpikr.hasClass('smart-forms')) {
-                            inst.dpDiv.wrap(smartpickerWrapper);
-                        }
-                    },
-                    onClose: function (input, inst) {
-                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
-                    }
-
-                });
-
-                $("#datepicker2").datepicker({
-                    numberOfMonths: 1,
-                    prevText: '<i class="fa fa-chevron-left"></i>',
-                    nextText: '<i class="fa fa-chevron-right"></i>',
-                    showButtonPanel: false
-                });
-
-                $("#datepicker3").datepicker({
-                    numberOfMonths: 1,
-                    prevText: '<i class="fa fa-chevron-left"></i>',
-                    nextText: '<i class="fa fa-chevron-right"></i>',
-                    showButtonPanel: false
-                });
-            });
-
-        </script>
-
-        <script type="text/javascript">
-
+        <script>
             function initialize() {
-                var mapOptions = {
-                    zoom: 10,
-                    center: new google.maps.LatLng(29.760193, -95.369390),
+                var mapProp = {
+                    center: new google.maps.LatLng(51.508742, -0.120850),
+                    zoom: 5,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
-
-                var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-                var marker = new google.maps.Marker({
-                    map: map,
-                    draggable: false,
-                    position: new google.maps.LatLng(29.760193, -95.369390)
-                });
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
             }
-            google.maps.event.addDomListener(window, 'resize', initialize);
             google.maps.event.addDomListener(window, 'load', initialize);
-
-        </script>   
-
-        <script type="text/javascript">
-
-            $(function () {
-
-
-
-
-                $("#slider2").slider({
-                    range: "min",
-                    value: 140,
-                    min: 1,
-                    max: 5000,
-                    slide: function (event, ui) {
-                        $("#amount").val("$" + ui.value);
-                    }
-                });
-
-                $("#amount").val(
-                        "$" + $("#slider2").slider("value")
-                        );
-            });
-
         </script>
-
-
-
-
-        <style>
-
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-                -moz-osx-font-smoothing: grayscale;
-                background-color: rgba(168, 168, 168, 0.21);
-                font-family: 'Didact Gothic', sans-serif;
+        <script>
+            function initialize() {
+                var mapProp = {
+                    center: new google.maps.LatLng(51.508742, -0.120850),
+                    zoom: 5,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
             }
-
-
-            #mycar, #empresa, #car {
-                color: white;
-            }
-
-            #register{
-                color:#F84F52;
-            }
-            #session{
-                color:#F84F52;
-            }
-            #cuenta{
-                color:#F84F52;
-            }
-            #cog{
-                color:#F84F52;
-            }
-            #buttonTravel{
-                opacity: 0.5;
-            }
-
-
-
-            .login-block h1 {
-                text-align: center;
-                color: #000;
-                font-size: 18px;
-                text-transform: uppercase;
-                margin-top: 0;
-                margin-bottom: 20px;
-            }
-
-            .login-block input {
-                width: 100%;
-                height: 42px;
-                box-sizing: border-box;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                margin-bottom: 20px;
-                font-size: 14px;
-                font-family: Montserrat;
-                padding: 0 20px 0 50px;
-                outline: none;
-            }
-
-            .login-block input#username {
-                background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
-                background-size: 16px 80px;
-            }
-
-            .login-block input#username:focus {
-                background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
-                background-size: 16px 80px;
-            }
-
-            .login-block input#password {
-                background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
-                background-size: 16px 80px;
-            }
-
-            .login-block input#password:focus {
-                background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
-                background-size: 16px 80px;
-            }
-
-            .login-block input:active, .login-block input:focus {
-                border: 1px solid #ff656c;
-            }
-
-            .remodal-bg.with-red-theme.remodal-is-opening,
-            .remodal-bg.with-red-theme.remodal-is-opened {
-                filter: none;
-            }
-
-            .remodal-overlay.with-red-theme {
-                background-color: #f44336;
-            }
-
-            .remodal.with-red-theme {
-                background: #fff;
-            }
-            h1{font-family: 'Didact Gothic', sans-serif;}
-            h3{
-                font-family: 'Didact Gothic', sans-serif;
-            }
-            h2{
-                font-family: 'Didact Gothic', sans-serif;
-
-            }
-
-            p{
-                font-family: "Didact Gothic",sans-serif;
-                color: #4A4A4A;
-
-            }
-            #backinf{
-                background: #c8284e;
-                background-image: url('img/Sin título-1-08.png'); 
-                background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 );
-                width:101%;
-                margin-top: -15px;
-            }
-            #superior-1{
-                background: rgba(23, 22, 22, 0.5) none repeat scroll 0% 0%;margin-top: -98px;position: inherit;
-                width:101%;
-            }
-            #shearh{
-                margin-top: -4%;
-                text-align: center;
-            }
-            #sel3{
-                margin-top: -1%;
-                font-family: 'Didact Gothic', sans-serif;
-            }
-            #lupa{
-                margin-top: -4px; 
-            }
-            #nav01{
-                margin-top: 20px;
-                border-radius: 36px;
-                width: 84%;
-            }
-            #carAl{
-                color: white;
-            }
-            #car-public{
-                background: rgba(206, 206, 206, 0) none repeat scroll 0% 0%;color: white;
-            }
-            #ca-container
-            {
-                background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
-                width: 86%;
-            }
-            #pass{
-                color: #F84F52;
-                font-family: 'Didact Gothic', sans-serif;
-            }
-            #cuent-re{
-                color:black;
-                font-family: 'Didact Gothic', sans-serif;
-            }
-            #remenber{
-                color: #F84F52;
-                font-family: 'Didact Gothic', sans-serif;
-            }
-            #faceboton{
-                background: rgb(69, 104, 178) none repeat scroll 0% 0%; border: medium none rgb(69, 104, 178);
-            }
-            #g-button{
-                width: 192px;
-            }
-            #googleplus{
-                color: red; margin-left: -16px;
-            }
-            #footer-infer{
-                background: #c8284e;
-                background-image: url('../img/Sin título-1-08.png'); /* fallback */
-                background-image: url('../img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 ); /* W3C */
-
-            }
-
-            #politic{
-                font-family: 'Didact Gothic', sans-serif;
-                text-align: justify; color: black;
-            }
-            #text-caption{
-                min-width: 300px;
-            }
-
-            #lineaInfe{
-                border-color: #989898 -moz-use-text-color -moz-use-text-color;
-
-            }
-            .text-danger{
-                color: #FC696E;
-            }
-            a{
-                color: #FC696E;
-            }
-        </style>
-
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
 
         <script type="text/javascript">
 
@@ -572,6 +281,316 @@
         </script>
 
 
+        <script type="text/javascript">
+
+            $(function () {
+
+                /* @telephone number masking 
+                 ---------------------------------- */
+                $("#guestelephone").mask('(999) 999-999999', {placeholder: 'X'});
+
+                /* @ date range datepicker 
+                 ---------------------------------- */
+                $("#checkin").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: false,
+                    numberOfMonths: 1,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    onClose: function (selectedDate) {
+                        $("#checkout").datepicker("option", "minDate", selectedDate);
+                    }
+                });
+
+                $("#checkout").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: false,
+                    numberOfMonths: 1,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    onClose: function (selectedDate) {
+                        $("#checkin").datepicker("option", "maxDate", selectedDate);
+                    }
+                });
+
+                /* @ validation and submition
+                 ---------------------------------- */
+                $("#smart-form").validate({
+                    errorClass: "state-error",
+                    validClass: "state-success",
+                    errorElement: "em",
+                    rules: {
+                        guestname: {
+                            required: true
+                        },
+                        guestemail: {
+                            required: true,
+                            email: true
+                        },
+                        adults: {
+                            required: true,
+                            number: true
+                        },
+                        children: {
+                            required: true,
+                            number: true
+                        },
+                        checkin: {
+                            required: true
+                        },
+                        checkout: {
+                            required: true
+                        },
+                        comment: {
+                            required: true
+                        }
+                    },
+                    messages: {
+                        guestname: {
+                            required: 'Enter your name'
+                        },
+                        guestemail: {
+                            required: 'Enter your email address',
+                            email: 'Enter a VALID email address'
+                        },
+                        adults: {
+                            required: 'Enter the number of adult guests',
+                            number: 'Please enter a VALID number'
+                        },
+                        children: {
+                            required: 'Confirm the number of child guests',
+                            number: 'Please enter a VALID number'
+                        },
+                        checkin: {
+                            required: 'Please select checkin date'
+                        },
+                        checkout: {
+                            required: 'Please select checkout date'
+                        },
+                        comment: {
+                            required: 'Please enter your comments'
+                        }
+                    },
+                    highlight: function (element, errorClass, validClass) {
+                        $(element).closest('.field').addClass(errorClass).removeClass(validClass);
+                    },
+                    unhighlight: function (element, errorClass, validClass) {
+                        $(element).closest('.field').removeClass(errorClass).addClass(validClass);
+                    },
+                    errorPlacement: function (error, element) {
+                        if (element.is(":radio") || element.is(":checkbox")) {
+                            element.closest('.option-group').after(error);
+                        } else {
+                            error.insertAfter(element.parent());
+                        }
+                    }
+
+                });
+
+            });
+
+
+        </script>
+
+
+
+
+
+
+        <style>
+
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+                -moz-osx-font-smoothing: grayscale;
+                background-color: rgba(168, 168, 168, 0.21);
+                font-family: 'Didact Gothic', sans-serif;
+            }
+
+
+            #mycar, #empresa, #car {
+                color: white;
+            }
+
+            #register{
+                color:#F84F52;
+            }
+            #session{
+                color:#F84F52;
+            }
+            #cuenta{
+                color:#F84F52;
+            }
+            #cog{
+                color:#F84F52;
+            }
+            #buttonTravel{
+                opacity: 0.5;
+            }
+
+
+
+            .login-block h1 {
+                text-align: center;
+                color: #000;
+                font-size: 18px;
+                text-transform: uppercase;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            .login-block input {
+                width: 100%;
+                height: 42px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-bottom: 20px;
+                font-size: 14px;
+                font-family: Montserrat;
+                padding: 0 20px 0 50px;
+                outline: none;
+            }
+
+            .login-block input#username {
+                background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#username:focus {
+                background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#password {
+                background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input#password:focus {
+                background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+                background-size: 16px 80px;
+            }
+
+            .login-block input:active, .login-block input:focus {
+                border: 1px solid #ff656c;
+            }
+
+            .remodal-bg.with-red-theme.remodal-is-opening,
+            .remodal-bg.with-red-theme.remodal-is-opened {
+                filter: none;
+            }
+
+            .remodal-overlay.with-red-theme {
+                background-color: #f44336;
+            }
+
+            .remodal.with-red-theme {
+                background: #fff;
+            }
+            h1{font-family: 'Didact Gothic', sans-serif;}
+            h3{
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            h2{
+                font-family: 'Didact Gothic', sans-serif;
+
+            }
+
+            p{
+                font-family: "Didact Gothic",sans-serif;
+                color: #4A4A4A;
+
+            }
+            #backinf{
+                background: #c8284e;
+                background-image: url('img/Sin título-1-08.png'); 
+                background-image: url('img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 );
+                width:101%;
+                margin-top: -15px;
+            }
+            #superior-1{
+                background: rgba(23, 22, 22, 0.5) none repeat scroll 0% 0%;margin-top: -98px;position: inherit;
+                width:101%;
+            }
+            #shearh{
+                margin-top: -4%;
+                text-align: center;
+            }
+            #sel3{
+                margin-top: -1%;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #lupa{
+                margin-top: -4px; 
+            }
+            #nav01{
+                margin-top: 20px;
+                border-radius: 36px;
+                width: 84%;
+            }
+            #carAl{
+                color: white;
+            }
+            #car-public{
+                background: rgba(206, 206, 206, 0) none repeat scroll 0% 0%;color: white;
+            }
+            #ca-container
+            {
+                background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
+                width: 86%;
+            }
+            #pass{
+                color: #F84F52;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #cuent-re{
+                color:black;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #remenber{
+                color: #F84F52;
+                font-family: 'Didact Gothic', sans-serif;
+            }
+            #faceboton{
+                background: rgb(69, 104, 178) none repeat scroll 0% 0%; border: medium none rgb(69, 104, 178);
+            }
+            #g-button{
+                width: 192px;
+            }
+            #googleplus{
+                color: red; margin-left: -16px;
+            }
+            #footer-infer{
+                background: #c8284e;
+                background-image: url('../img/Sin título-1-08.png'); /* fallback */
+                background-image: url('../img/Sin título-1-08.png'), linear-gradient( to bottom right, #c8284e , #ff8070 ); /* W3C */
+
+            }
+
+            #politic{
+                font-family: 'Didact Gothic', sans-serif;
+                text-align: justify; color: black;
+            }
+            #text-caption{
+                min-width: 300px;
+            }
+
+            #lineaInfe{
+                border-color: #989898 -moz-use-text-color -moz-use-text-color;
+
+            }
+            .text-danger{
+                color: #FC696E;
+            }
+            a{
+                color: #FC696E;
+            }
+        </style>
+
+
+
+
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -627,447 +646,319 @@
             <div class="row">
                 <div class="col-lg-12">
 
-                    <div class="frm-row" id="paymentform">
-                        <div class="smart-wrap">
-                            <div class="smart-forms smart-container ">
 
+                    <div class="smart-wrap">
+                        <div class="smart-forms  ">
 
+                            <form method="post" action="/" id="smart-form">
+                                <div class="form-body theme-red">
 
-                                <form method="post" action="/" id="contactform">
-                                    <div class="form-body">
+                                    <div class="section">
+                                        <label for="guestname" class="field-label">Buscar</label>
+                                        <label for="guestname" class="field prepend-icon">
+                                            <input type="text" name="guestname" id="guestname" class="gui-input" placeholder="Tu auto...">
+                                            <span class="field-icon"><i class="fa fa-car"></i></span>  
+                                        </label>
+                                    </div><!-- end section --> 
 
+                                    <div class="section">
+                                        <div class="spacer-b15">
+                                            <label for="amounts">Rango de precio:</label>
+                                            <input type="text" id="amounts" class="slider-input">
+                                        </div><!-- end .spacer -->            	
+                                        <div class="slider-wrapper red-slider">
+                                            <div id="slider-range"></div>  
+                                        </div><!-- end .slider-wrapper -->
+                                    </div><!-- end section -->
 
+                                    <div class="frm-row">
+                                        <div class="section colm colm3">
+                                            <label class="field select">
+                                                <select id="country" name="country">
+                                                    <option value="">Tipo</option>
+                                                    <option value="AL">Grande</option>
+                                                    <option value="DZ">Mediana</option>
+                                                    <option value="AD">pequeña</option>
+                                                    <option value="AO">Blindados</option>
+                                                    <option value="AI">Ejecutivos</option>
+                                                </select>
+                                                <i class="arrow"></i>                    
+                                            </label>  
+                                        </div><!-- end section -->                     
 
-
-
-                                        <div class="frm-row">
-                                            <label class="field-label colm colm1 align-right">Fechas:</label>
-                                            <div class="section colm colm8">
-                                                <label class="field prepend-icon">
-                                                    <input type="text" name="lastaddr" id="lastaddr" class="gui-input" placeholder="Street address 2">
-                                                    <span class="field-icon"><i class="fa fa-map-marker"></i></span>  
-                                                </label>
-                                            </div><!-- end section -->
-                                        </div>
-
-
-
-                                        <div class="frm-row">
-                                            <label class="field-label colm colm1 align-right"></label>
-                                            <div class="section colm colm3">
-                                                <label for="datepicker2" class="field prepend-icon">
-                                                    <input type="text" id="datepicker2" name="datepicker2" class="gui-input">
-                                                    <span class="field-icon"><i class="fa fa-calendar"></i></span>  
-                                                </label>
-                                            </div><!-- end section -->
-                                            <div class="section colm colm3">
-                                                <label for="datepicker3" class="field prepend-icon">
-                                                    <input type="text" id="datepicker3" name="datepicker3" class="gui-input">
-                                                    <span class="field-icon"><i class="fa fa-calendar"></i></span>  
-                                                </label>
-                                            </div><!-- end section -->  
-
-                                            <div class="section colm colm3">
-                                                <label class="field select">
-                                                    <select id="location" name="location">
-                                                        <option value="">Personas</option>
-                                                        <option value="AL">1</option>
-                                                        <option value="DZ">2</option>
-                                                        <option value="AD">3</option>
-                                                        <option value="AO">3</option>
-                                                        <option value="AI">4</option>
-                                                    </select>
-                                                    <i class="arrow double"></i>                    
-                                                </label>  
-                                            </div><!-- end section -->   
-                                        </div><!-- end .frm-row section -->
-
-
-
-
-                                        <div class="frm-row">
-                                            <label class="field-label colm colm1 align-right"></label>
-
-                                            <div class="section colm colm3">
-                                                <label class="field select">
-                                                    <select id="states" name="states">
-                                                        <option value="">Tipo</option>
-                                                        <option value="AK">Chicos</option>
-                                                        <option value="AZ">Grandes</option>
-                                                        <option value="AZ">Clase Ejecutiva</option>
-                                                        <option value="AZ">Camionetas pe pasajero</option>
-                                                        <option value="AZ">Renta de camiones y Maquinaria pesada</option>
-                                                        <option value="CT">Motos</option>
-
-
-                                                    </select>
-                                                    <i class="arrow double"></i>
-                                                </label>                   
-                                            </div><!-- end .col8 section -->
-
-                                            <div class="section colm colm3">
-                                                <label class="field select">
-                                                    <select id="states" name="states">
-                                                        <option value="">Marca</option>
-                                                        <option value="AL">Ford</option>
-                                                        <option value="AK">Chevrolet</option>
-                                                        <option value="AZ">Mercedez Benz</option>
-                                                        <option value="AR">KIA</option>
-                                                        <option value="CA">Seat</option>
-                                                        <option value="CO">Audi</option>
-
-                                                    </select>
-                                                    <i class="arrow double"></i>
-                                                </label>                   
-                                            </div><!-- end .col8 section -->	                        
-                                            <div class="section colm colm3">
-                                                <label class="field select">
-                                                    <select id="states" name="states">
-                                                        <option value="">Año</option>
-                                                        <option value="AL">1940</option>
-                                                        <option value="AL">1940</option>
-                                                        <option value="AL">1940</option><option value="AL">1940</option>
-
-                                                    </select>
-                                                    <i class="arrow double"></i>
-                                                </label>                   
-                                            </div><!-- end .col8 section -->	                        
-
-
-                                        </div><!-- end frm-row section -->    
-
-
-
-
-
-
-
-                                        <div class="frm-row">
-                                            <div class="colm colm12">
-
-                                                <div class="section">
-                                                    <label for="details" class="field-label">Busquedas Avanzadas</label>
-
-                                                </div><!-- end section -->                        
-
-                                            </div><!-- end .colm section -->
-
-                                        </div><!-- end .frm-row section -->
-                                        <!-- custom errors will load here  -->     
-
-
-                                        <div class="section">
-                                            <div class="spacer-b15">
-                                                <label for="budget">Project Budget:</label>
-                                                <input type="text" id="budget" class="slider-input"> 
-                                            </div><!-- end .spacer -->                     
-                                            <div class="slider-wrapper purple-slider">
-                                                <div id="slider8"></div>
-                                            </div><!-- end .slider-wrapper -->
+                                        <div class="section colm colm3">
+                                            <label class="field select">
+                                                <select id="location" name="location">
+                                                    <option value="">Marca</option>
+                                                    <option value="AL">Ford</option>
+                                                    <option value="DZ">Mercedez Benz</option>
+                                                    <option value="AD">Chevrolet</option>
+                                                    <option value="AO">Cadillac</option>
+                                                    <option value="AI">Audi</option>
+                                                </select>
+                                                <i class="arrow double"></i>                    
+                                            </label>  
+                                        </div><!-- end section --> 
+                                        <div class="section colm colm3">
+                                            <label class="field select">
+                                                <select id="location" name="location">
+                                                    <option value="">Modelo</option>
+                                                    <option value="AL">2015</option>
+                                                    <option value="DZ">2014</option>
+                                                    <option value="AD">2013</option>
+                                                    <option value="AO">2012</option>
+                                                    <option value="AI">2011</option>
+                                                </select>
+                                                <i class="arrow double"></i>                    
+                                            </label>  
+                                        </div><!-- end section --> 
+                                        <div class="section colm colm3">
+                                            <label class="field select">
+                                                <select id="location" name="location">
+                                                    <option value="">Estados</option>
+                                                    <option value="AL">Veracruz</option>
+                                                    <option value="DZ">Guerrero</option>
+                                                    <option value="AD">Baja California</option>
+                                                    <option value="AO">Monterrey</option>
+                                                    <option value="AI">Yucatan</option>
+                                                </select>
+                                                <i class="arrow double"></i>                    
+                                            </label>  
+                                        </div><!-- end section -->
+                                    </div><!-- end .frm-row section --> 
+                                    <div class="frm-row">
+                                        <div class="section colm colm6">
+                                            <label for="checkin" class="field-label">Check-in Date</label>
+                                            <label for="checkin" class="field prepend-icon">
+                                                <input type="text" id="checkin" name="checkin" class="gui-input" placeholder="mm/dd/yyyy">
+                                                <span class="field-icon"><i class="fa fa-calendar"></i></span>  
+                                            </label>
                                         </div><!-- end section -->
 
+                                        <div class="section colm colm6">
+                                            <label for="checkout" class="field-label">Check-out Date</label>
+                                            <label for="checkout" class="field prepend-icon">
+                                                <input type="text" id="checkout" name="checkout" class="gui-input" placeholder="mm/dd/yyyy">
+                                                <span class="field-icon"><i class="fa fa-calendar"></i></span>  
+                                            </label>
+                                        </div><!-- end section -->
+                                    </div><!-- end .frm-row section -->
+
+
+                                    <div class="panel-group">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a class=" btn btn-default " data-toggle="collapse" href="#collapse1">Más filtros +</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapse1" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <div class="frm-row">
+
+                                                        <div class="section colm colm2">
+                                                            <label class="option block">
+                                                                <input type="checkbox" name="languages" value="FR">
+                                                                <span class="checkbox"></span> GPS           
+                                                            </label>
+                                                        </div><!-- end section -->                     
+
+                                                        <div class="section colm colm3">
+                                                            <label class="option block">
+                                                                <input type="checkbox" name="languages" value="FR">
+                                                                <span class="checkbox"></span> Aire acondicionado           
+                                                            </label>
+                                                        </div><!-- end section -->
+
+                                                        <div class="section colm colm2">
+                                                            <label class="option block">
+                                                                <input type="checkbox" name="languages" value="FR">
+                                                                <span class="checkbox"></span> Frenos ABS           
+                                                            </label>
+                                                        </div><!-- end section -->
+
+                                                        <div class="section colm colm2">
+                                                            <label class="option block">
+                                                                <input type="checkbox" name="languages" value="FR">
+                                                                <span class="checkbox"></span> Frenos ABS           
+                                                            </label>
+                                                        </div><!-- end section -->
+                                                        <div class="section colm colm2">
+                                                            <label class="option block">
+                                                                <input type="checkbox" name="languages" value="FR">
+                                                                <span class="checkbox"></span> Frenos ABS           
+                                                            </label>
+                                                        </div><!-- end section -->
+
+
+                                                    </div><!-- end .frm-row section --> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
 
 
-                                        <div class="frm-row">
+                                </div><!-- end .form-body section -->
 
-                                            <div class="section colm colm2">
+                                <div class="form-footer" style="overflow: hidden;
+                                     padding: 25px 25px 20px;
+                                     background: #ECECEC none repeat scroll 0% 0%;">
+                                    <button type="submit" class="button btn-blue"> Buscar </button>
+                                </div><!-- end .form-footer section -->
+                            </form>
 
-                                                <label class="option option-red block spacer-b10">
-                                                    <input type="checkbox" name="response">
-                                                    <span class="checkbox"></span>Eléctrico                
-                                                </label>
-
-                                                <label class="option option-red block spacer-b10">
-                                                    <input type="checkbox" name="support">
-                                                    <span class="checkbox"></span> GPS               
-                                                </label>
-
-                                                <label class="option option-red block">
-                                                    <input type="checkbox" name="updates">
-                                                    <span class="checkbox"></span> Aire acondicionado                
-                                                </label>                                                        
-
-                                            </div><!-- end section -->
-                                            <div class="section colm colm2">
-
-                                                <label class="option option-red block spacer-b10">
-                                                    <input type="checkbox" name="invoicing">
-                                                    <span class="checkbox"></span> Asientos de piel                  
-                                                </label>
-
-                                                <label class="option option-red block spacer-b10">
-                                                    <input type="checkbox" name="social">
-                                                    <span class="checkbox"></span> Asientos avatibles             
-                                                </label>
-
-                                                <label class="option option-red block">
-                                                    <input type="checkbox" name="reports">
-                                                    <span class="checkbox"></span> Quemacocos                
-                                                </label> 
-
-                                            </div><!-- end section -->
-                                            <div class="section colm colm2">
-
-                                                <label class="option option-red block spacer-b10">
-                                                    <input type="checkbox" name="invoicing">
-                                                    <span class="checkbox"></span> Estereo                  
-                                                </label>
-
-                                                <label class="option option-red block spacer-b10">
-                                                    <input type="checkbox" name="social">
-                                                    <span class="checkbox"></span> CD             
-                                                </label>
-
-                                                <label class="option option-red block">
-                                                    <input type="checkbox" name="reports">
-                                                    <span class="checkbox"></span> USB              
-                                                </label> 
-
-                                            </div><!-- end section -->
-                                            <div class="section colm colm2">
-
-                                                <label class="option option-red block spacer-b10">
-                                                    <input type="checkbox" name="invoicing">
-                                                    <span class="checkbox"></span> Auxiliar                  
-                                                </label>
-
-                                                <label class="option option-red block spacer-b10">
-                                                    <input type="checkbox" name="social">
-                                                    <span class="checkbox"></span> Bluetooth             
-                                                </label>
-
-                                                <label class="option option-red block">
-                                                    <input type="checkbox" name="reports">
-                                                    <span class="checkbox"></span> Radio               
-                                                </label> 
-
-                                            </div><!-- end section -->
-                                            <div class="section colm colm4">
-
-                                                <label class="option option-red block spacer-b10">
-                                                    <input type="checkbox" name="invoicing">
-                                                    <span class="checkbox"></span> Pantalla de video                  
-                                                </label>
-
-                                                <label class="option option-red block spacer-b10">
-                                                    <input type="checkbox" name="social">
-                                                    <span class="checkbox"></span> Refacciones de emergencia             
-                                                </label>
-
-                                                <label class="option option-red block">
-                                                    <input type="checkbox" name="reports">
-                                                    <span class="checkbox"></span> Sistema de alarma                
-                                                </label> 
-
-                                            </div><!-- end section -->
-                                        </div><!-- end .frm-row section -->
-
-                                    </div><!-- end .form-body section -->
-                                    <div class="form-footer">
-                                        <button id="next" type="submit" class="button btn-primary"> Siguiente</button>
-                                    </div><!-- end .form-footer section -->
-                                </form>
-
-
-
-                            </div><!-- end .smart-forms section -->
-                        </div><!-- end .smart-wrap section -->              
-
-                    </div>
-
+                        </div><!-- end .smart-forms section -->
+                    </div><!-- end .smart-wrap section -->
 
                 </div>
             </div>
+            <br>
+            <div class="row ">
+                <div class=" col-lg-8 col-md-8 col-sm-8 " style="height: 400px;overflow: scroll;"  >
+                    <section id="least">
 
+                        <!-- Least Gallery: Fullscreen Preview -->
+                        <div class="least-preview"></div>
 
+                        <!-- Least Gallery: Thumbnails -->
+                        <ul class="least-gallery">
+                            <!-- 1 || Element with data-caption ||-->
+                            <li>
+                                <a href="../leastjs2.2.0/src/media/big/01@2x.jpg" title="Skateboard" data-subtitle="View Picture" data-caption="<strong>Bold text</strong> normal caption text">
+                                    <img src="../img/033_cooper_s-600-001.jpg" alt="Alt Image Text" />
+                                </a>
+                            </li>
 
-            <div class="row">
-                <div class=" col-lg-12">
-                    <table id="example" >
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
+                            <!-- 2 || Element with data-caption as href-attribute ||-->
+                            <li>
+                                <a href="src/media/big/02.jpg" title="Train Rails" data-subtitle="View Picture" data-caption="Now it's possibe to add an URL-Link into caption text - <a href='http://www.google.com' target='_blank'>GOOGLE</a>">
+                                    <img src="../img/1440_volkswagen-golf-gti-12.jpg" alt="Alt Image Text" />
+                                </a>
+                            </li>
 
+                            <!-- 3 -->
+                            <li>
+                                <a href="src/media/big/03.jpg" title="Apple" data-subtitle="View Picture">
+                                    <img src="../img/88964_937f120b3b_low_res.jpg" alt="Alt Image Text" />
+                                </a>
+                            </li>
 
-                        <tbody>
-                            <tr>
-                                <td >
-                                    <div class="ih-item square effect13 left_to_right">
-                                        <a href="#">
-                                            <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
-                                            <div class="info">
-                                                <h3>$550</h3>
-                                                <p>Description goes here</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                                <td > 
-                                    <div class="ih-item square effect13 left_to_right" >
-                                        <a href="#">
-                                            <div class="img"><img src="../img/033_cooper_s-600-001.jpg" alt="img"></div>
-                                            <div class="info">
-                                                <h3>$550</h3>
-                                                <p>Description goes here</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        
-                              <tr>
-                                <td >
-                                    <div class="ih-item square effect13 left_to_right">
-                                        <a href="#">
-                                            <div class="img"><img src="../img/88964_937f120b3b_low_res.jpg" alt="img"></div>
-                                            <div class="info">
-                                                <h3>$550</h3>
-                                                <p>Description goes here</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                                <td > 
-                                    <div class="ih-item square effect13 left_to_right">
-                                        <a href="#">
-                                            <div class="img"><img src="../img/car-pictures.cars.com.png" alt="img"></div>
-                                            <div class="info">
-                                                <h3>$550</h3>
-                                                <p>Description goes here</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        
-                            
-                               <tr>
-                                <td >
-                                    <div class="ih-item square effect13 left_to_right" >
-                                        <a href="#">
-                                            <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
-                                            <div class="info">
-                                                <h3>$550</h3>
-                                                <p>Description goes here</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                                <td > 
-                                    <div class="ih-item square effect13 left_to_right" >
-                                        <a href="#">
-                                            <div class="img"><img src="../img/chevrolet-captiva-che_cap_08_sport_1.jpg" alt="img"></div>
-                                            <div class="info">
-                                                <h3>$550</h3>
-                                                <p>Description goes here</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        
-                              <tr>
-                                <td >
-                                    <div class="ih-item square effect13 left_to_right">
-                                        <a href="#">
-                                            <div class="img"><img src="../img/1440_volkswagen-golf-gti-12.jpg" alt="img"></div>
-                                            <div class="info">
-                                                <h3>$550</h3>
-                                                <p>Description goes here</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                                <td > 
-                                    <div class="ih-item square effect13 left_to_right" >
-                                        <a href="#">
-                                            <div class="img"><img src="../img/chevrolet-suburban-13.jpg" alt="img"></div>
-                                            <div class="info">
-                                                <h3>$550</h3>
-                                                <p>Description goes here</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                          
-                          
-                        </tbody>
-                    </table>
+                            <!-- 4 -->
+                            <li>
+                                <a href="src/media/big/04.jpg" title="Road Trip" data-subtitle="View Picture">
+                                    <img src="../img/DSC9249.jpg" alt="Alt Image Text" />
+                                </a>
+                            </li>
+
+                            <!-- 5 -->
+                            <li>
+                                <a href="src/media/big/05.jpg" title="Desert" data-subtitle="View Picture">
+                                    <img src="../img/chevrolet-suburban-13.jpg" alt="Alt Image Text" />
+                                </a>
+                            </li>
+
+                            <!-- 6 -->
+                            <li>
+                                <a href="src/media/big/06.jpg" title="Tree" data-subtitle="View Picture">
+                                    <img src="../img/dic-amda-1315894.jpg" alt="Alt Image Text" />
+                                </a>
+                            </li>
+
+                            <!-- 7 -->
+                            <li>
+                                <a href="src/media/big/07.jpg" title="MacBook" data-subtitle="View Picture">
+                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
+                                </a>
+                            </li>
+
+                            <!-- 8 -->
+                            <li>
+                                <a href="src/media/big/08.jpg" title="Clock" data-subtitle="View Picture">
+                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
+                                </a>
+                            </li>
+
+                            <!-- 9 -->
+                            <li>
+                                <a href="src/media/big/09.jpg" title="iPhone" data-subtitle="View Picture">
+                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
+                                </a>
+                            </li>
+
+                            <!-- 10 -->
+                            <li>
+                                <a href="src/media/big/10.jpg" title="New York" data-subtitle="View Picture">
+                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="src/media/big/08.jpg" title="Clock" data-subtitle="View Picture">
+                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
+                                </a>
+                            </li>
+
+                            <!-- 9 -->
+                            <li>
+                                <a href="src/media/big/09.jpg" title="iPhone" data-subtitle="View Picture">
+                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
+                                </a>
+                            </li>
+
+                            <!-- 10 -->
+
+                        </ul>
+
+                    </section>
                 </div>
-
-
+                <div class=" col-sm-3 ">
+                    <div id="googleMap" style="width:500px;height:380px;"></div>
+                </div>
             </div>
 
+            <br>
+
+            <div class="smart-wrap" style=" display: none">
+                <div class="smart-forms ">
+
+                    <form method="post" action="/" id="smart-form">
+                        <div class="form-body">
 
 
 
 
-            <div class="smart-wrap" style="visibility: hidden;">
-                <div class="smart-forms smart-container wrap-0">
+                            <div class="frm-row">
+                                <div class="section colm colm6">
+                                    <div class="spacer-b20">
+                                        <label for="guests" class="field-label">Update select value</label>
+                                        <label class="field select">
+                                            <select name="guests" id="guests">
+                                                <option>1</option>
+                                                <option selected>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>                                
+                                            </select>
+                                            <i class="arrow double"></i>
+                                        </label> 
+                                    </div><!-- end .spacer -->        
+                                </div><!-- end section -->
+
+                            </div><!-- end .frm-row -->
 
 
 
-                    <div class="form-body">
-
-
-
-
-                        <div class="frm-row">
-                            <div class="section colm colm6">
-                                <div class="spacer-b20">
-                                    <label for="guests" class="field-label">Update select value</label>
-                                    <label class="field select">
-                                        <select name="guests" id="guests">
-                                            <option>1</option>
-                                            <option selected>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>                                
-                                        </select>
-                                        <i class="arrow double"></i>
-                                    </label> 
-                                </div><!-- end .spacer -->                  
-                                <div class="slider-wrapper">
-                                    <div id="slider4"></div>
-                                </div><!-- end .slider-wrapper -->
-                            </div><!-- end section -->
-
-
-                        </div><!-- end .frm-row -->
-
-
-                        <div class="frm-row">
-
-
-
-                        </div><!-- end frm-row section -->
-
-                        <div class="frm-row">
-
-
-                        </div> <!-- end frm-row section -->
-
-                    </div><!-- end .form-body section -->
-
+                        </div><!-- end .form-body section -->
+                    </form>
 
                 </div><!-- end .smart-forms section -->
             </div><!-- end .smart-wrap section -->
-
-
 
         </div> <!-- /container -->    
         <div id="footer-infer">
@@ -1194,29 +1085,11 @@
             });
         </script>
 
-        <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
-        <script src="jquery.simplePagination.js"></script>
-        <script>
-            $(function () {
-                $("#example").simplePagination({
-                    previousButtonClass: "btn btn-danger",
-                    nextButtonClass: "btn btn-danger"
-
-                });
 
 
-            });
-        </script>
-    </div>
-</div>
-</div>
-</div>
-<!-- /#page-content-wrapper -->
-
-</div>
+        <!-- /#page-content-wrapper -->
 
 
-<script src="../minimal/jquery.simplePagination.js"></script>
-<script src="../js/vendor/responces.js"></script>
-</body>
+
+    </body>
 </html>

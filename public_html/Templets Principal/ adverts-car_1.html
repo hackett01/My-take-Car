@@ -24,7 +24,14 @@
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-touch-punch.min.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
+        <link rel="stylesheet" href="../animated-svg-image-slider/css/reset.css"> <!-- CSS reset -->
+        <link rel="stylesheet" href="../animated-svg-image-slider/css/style.css"> <!-- Resource style -->
+        <script src="../animated-svg-image-slider/js/modernizr.js"></script> <!-- Modernizr -->
 
+
+        <script src="../animated-svg-image-slider/js/jquery.mobile.custom.min.js"></script>
+        <script src="../animated-svg-image-slider/js/snap.svg-min.js"></script>
+        <script src="../animated-svg-image-slider/js/main.js"></script> <!-- Resource jQuery -->
         <script type="text/javascript">
 
             $(function () {
@@ -149,6 +156,29 @@
                 font-family: 'Didact Gothic', sans-serif;
             }
 
+            #stick{
+                border-radius: 10px;
+                color: #FFF;
+                font-weight: bold;
+                display: inline-block;
+                padding: 19px 9px;
+                min-width: 53px;
+                position: relative;
+                overflow: hidden;
+                background: transparent linear-gradient(140deg, #FFC333 55%, #FFB400 55%, #FFB400 100%) repeat scroll 0% 0%;
+            }
+            #stick2{
+                border-radius: 10px;
+                color: #FFF;
+                font-weight: bold;
+                display: inline-block;
+                padding: 19px 9px;
+                min-width: 53px;
+                position: relative;
+                overflow: hidden;
+                background: transparent linear-gradient(140deg, #6E6B6B 55%, #179E18 55%, #15DE74 100%) repeat scroll 0% 0%;
+
+            }
 
             #mycar, #empresa, #car {
                 color: white;
@@ -396,74 +426,137 @@
 
         <div class="container">
 
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="cd-slider-wrapper">
+                        <ul class="cd-slider" data-step1="M1402,800h-2c0,0,0-213,0-423s0-377,0-377h1c0.6,0,1,0.4,1,1V800z" data-step2="M1400,800H724c0,0-297-155-297-423C427,139,728,0,728,0h671c0.6,0,1,0.4,1,1V800z" data-step3="M1400,800H0c0,0,1-213,1-423S1,0,1,0h1398c0.6,0,1,0.4,1,1V800z" data-step4="M-2,800h2c0,0,0-213,0-423S0,0,0,0h-1c-0.6,0-1,0.4-1,1V800z" data-step5="M0,800h676c0,0,297-155,297-423C973,139,672,0,672,0L1,0C0.4,0,0,0.4,0,1L0,800z" data-step6="M0,800h1400c0,0-1-213-1-423s0-377,0-377L1,0C0.4,0,0,0.4,0,1L0,800z">
+                            <li class="visible">
+                                <div class="cd-svg-wrapper">
+                                    <svg viewBox="0 0 1400 800">
+                                    <title>Aimated SVG</title>
+                                    <defs>
+                                    <clipPath id="cd-image-1">
+                                        <path id="cd-changing-path-1" d="M1400,800H0c0,0,1-213,1-423S1,0,1,0h1398c0.6,0,1,0.4,1,1V800z"/>
+                                    </clipPath>
+                                    </defs>
+
+                                    <image height='800px' width="1400px" clip-path="url(#cd-image-1)" xlink:href="../animated-svg-image-slider/img/img-1.jpg"></image>
+                                    </svg>
+                                </div> <!-- .cd-svg-wrapper -->
+                            </li>
+
+                            <li>
+                                <div class="cd-svg-wrapper">
+                                    <svg viewBox="0 0 1400 800">
+                                    <title>Aimated SVG</title>
+                                    <defs>
+                                    <clipPath id="cd-image-2">
+                                        <path id="cd-changing-path-2" d="M1400,800H0c0,0,1-213,1-423S1,0,1,0h1398c0.6,0,1,0.4,1,1V800z"/>
+                                    </clipPath>
+                                    </defs>
+
+                                    <image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="../animated-svg-image-slider/img/img-2.jpg"></image>
+                                    </svg>
+                                </div> <!-- .cd-svg-wrapper -->
+                            </li>
+
+                            <li>
+                                <div class="cd-svg-wrapper">
+                                    <svg viewBox="0 0 1400 800">
+                                    <title>Aimated SVG</title>
+                                    <defs>
+                                    <clipPath id="cd-image-3">
+                                        <path id="cd-changing-path-3" d="M1400,800H0c0,0,1-213,1-423S1,0,1,0h1398c0.6,0,1,0.4,1,1V800z"/>
+                                    </clipPath>
+                                    </defs>
+
+                                    <image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="../animated-svg-image-slider/img/img-3.jpg"></image>
+                                    </svg>
+                                </div> <!-- .cd-svg-wrapper -->
+                            </li>
+
+                            <li>
+                                <div class="cd-svg-wrapper">
+                                    <svg viewBox="0 0 1400 800">
+                                    <title>Aimated SVG</title>
+                                    <defs>
+                                    <clipPath id="cd-image-4">
+                                        <path id="cd-changing-path-4" d="M1400,800H0c0,0,1-213,1-423S1,0,1,0h1398c0.6,0,1,0.4,1,1V800z"/>
+                                    </clipPath>
+                                    </defs>
+
+                                    <image height='800px' width="1400px" clip-path="url(#cd-image-4)" xlink:href="../animated-svg-image-slider/img/img-4.jpg"></image>
+                                    </svg>
+                                </div> <!-- .cd-svg-wrapper -->
+                            </li>
+
+                        </ul> <!-- .cd-slider -->
+
+                        <ul class="cd-slider-navigation">
+                            <li><a href="#0" class="next-slide">Next</a></li>
+                            <li><a href="#0" class="prev-slide">Prev</a></li>
+                        </ul> <!-- .cd-slider-navigation -->
+
+                        <ol class="cd-slider-controls">
+                            <li class="selected"><a href="#0"><em>Item 1</em></a></li>
+                            <li><a href="#0"><em>Item 2</em></a></li>
+                            <li><a href="#0"><em>Item 3</em></a></li>
+                            <li><a href="#0"><em>Item 4</em></a></li>
+                        </ol> <!-- .cd-slider-controls -->
+
+
+                    </div> <!-- .cd-slider-wrapper -->
+                </div>
+
+                <div class="col-md-4">
+                    <h1>Ford Lobo</h1>
+                    <p>Información sobre el propietario </p>
+                    <p>Truman Capote es muy tranquilo </p>
+                    <p>Hola soy originario de B.C sur resido en puerto escondido Oaxaca,
+                        Me gusta conocer gente de todo el mundo.</p>
+                    <a>Ver perfil completo.</a>
+                    <p>Puerto esconndido,México</p>
+                    <p>Miembro desde Febrero del 2015</p>
+                    <p>Ratio de respuesta 100%</p>
+                    <p>Tiempo de respuesta: en pocas horas</p>
+                    <h3>$1500 por día</h3>  
+                    <br>
+                </div>
+            </div>
+
+
+
 
             <div class="smart-wrap">
-                <div class="smart-forms smart-container ">
+                <div class="smart-forms ">
 
                     <div class="form-body theme-red" style="margin-top: -49px;">
                         <div class="frm-row">
 
-                            <div class=" colm colm2" style=" width: 338px; height: 300px;">
-
-                                <br>
-                                <br>
-
-                                <div class="ih-item square effect13 left_to_right"><a href="#">
-                                        <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
-                                        <div class="info">
-                                            <h3>$1550</h3>
-                                            <p>Description goes here</p>
-                                        </div></a></div>
-                                <br>
-
-
-                            </div><!-- end .colm2 section -->
-
-                            <div class="colm colm2">
-                            </div><!-- end .colm6 section -->
-                            <div class="colm colm2">
-                            </div><!-- end .colm6 section -->
-                            <div class="colm colm7">
+                            <div class="col-md-12">
 
                                 <form method="post" action="" id="form-ui">
                                     <div  class="form-body theme-red" style="margin-top: -49px;">
-                                        <div class="spacer-t40 spacer-b40">
-                                            <div class="tagline"><span>Auto ideal </span></div><!-- .tagline -->
-                                            <h1>Ford Lobo</h1>
-                                        </div><!-- end .spacer section --> 
-
-
-                                        <p>Información sobre el propietario </p>
-                                        <p>Truman Capote es muy tranquilo </p>
-                                        <p>Hola soy originario de B.C sur resido en puerto escondido Oaxaca,
-                                            Me gusta conocer gente de todo el mundo.</p>
-                                        <a>Ver perfil completo.</a>
-                                        <p>Puerto esconndido,México</p>
-                                        <p>Miembro desde Febrero del 2015</p>
-                                        <p>Ratio de respuesta 100%</p>
-                                        <p>Tiempo de respuesta: en pocas horas</p>
-                                        <br>
-                                        <h3>$1500 por día</h3>  
-                                        <h3>Confiabilidad</h3>   
 
                                         <div class="frm-row">
 
 
                                             <label class="field-label colm colm1 align-right">Fechas:</label>
-                                            <div class="section colm colm4">
+                                            <div class="section colm colm3">
                                                 <label for="datepicker2" class="field prepend-icon">
                                                     <input type="text" id="datepicker2" name="datepicker2" class="gui-input">
                                                     <span class="field-icon"><i class="fa fa-calendar"></i></span>  
                                                 </label>
                                             </div><!-- end section -->
-                                            <div class="section colm colm4">
+                                            <div class="section colm colm3">
                                                 <label for="datepicker3" class="field prepend-icon">
                                                     <input type="text" id="datepicker3" name="datepicker3" class="gui-input">
                                                     <span class="field-icon"><i class="fa fa-calendar"></i></span>  
                                                 </label>
                                             </div><!-- end section -->  
 
-                                            <div class="section colm colm3">
+                                            <div class="section colm colm2">
                                                 <label class="field select">
                                                     <select id="location" name="location">
                                                         <option value="">Personas</option>
@@ -476,32 +569,18 @@
                                                     <i class="arrow double"></i>                    
                                                 </label>  
                                             </div><!-- end section -->   
-
-
+                                            <div class="section colm colm3">
+                                                <a   style="float: right;" href="../Templets Principal/Store-take.html" class="btn btn-default" >
+                                                    <span class="fa fa-car fa-lg"></span> 
+                                                    Reserva inmediata
+                                                </a>
+                                            </div><!-- end section -->   
                                         </div><!-- end .frm-row section -->
-
-
-
-
-
                                     </div><!-- end .form-body section -->
-                                    <div class="form-footer">
-                                        <a   style="float: right;" href="../Templets Principal/Store-take.html" class="btn btn-default" >
-                                            <span class="fa fa-car fa-lg"></span> 
-                                            Reserva inmediata
-                                        </a>
-
-                                    </div><!-- end .form-footer section -->
                                 </form>
 
                             </div><!-- end .colm6 section -->
-                            <div class="colm colm2">
-                            </div><!-- end .colm6 section -->
-                            <div class="colm colm2">
-                            </div><!-- end .colm6 section -->
-                            <div class="colm colm6">
 
-                            </div><!-- end .colm6 section -->
 
                         </div><!-- end .frm-row section -->                              
 
@@ -515,17 +594,12 @@
             <div class="row" style="  margin-bottom: -15px; ">
                 <div class="col-md-4">
 
-                    <div class="col-md-1">
+                    <div class="col-md-4">
                         <br>
 
                         <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="100" height="100" border="0" class="img-circle">
                     </div>
-                    <div class="col-md-3">
-                    </div>
                     <div class="col-md-8">
-                        <br>
-                        <br>
-                        <br>
                         <div class="col-lg-12">
                             <p>Información sobre el propietario </p>
                             <p>Truman Capote es muy tranquilo </p>
@@ -536,31 +610,33 @@
                             <p>Miembro desde Febrero del 2015</p>
                             <p>Ratio de respuesta 100%</p>
                             <p>Tiempo de respuesta: en pocas horas</p>
-                            <br>
-                            <br>
-                            <h3>Confiabilidad</h3>   
                         </div>
-                    </div>
+                        <div class="col-lg-12">
+                            <h3>Confiabilidad</h3>   
+                            <div class="row" >
+                                <div class=" col-lg-5 ">
+                                    <a>
+                                        <div class=" text-center ">
+                                            <div class=" badge  " id="stick">
+                                                <span>12</span>
+                                            </div>
+                                            <div class=" row" id="eval">evaluaciones</div>
+                                        </div>
+                                    </a>
+                                </div>
 
-
-                    <div class="col-sm-2">
-
-
-                    </div>
-
-
-                    <div class="col-sm-4">
-
-                        <img src="../img/folder/1.png" alt="Moustiers Sainte Marie" style="width:150px;height:150px">
-                        <p style=" text-align: center; margin-left: 40%; ">Identificación Verificada</p>
-
-                    </div>
-
-
-                    <div class="col-sm-4">
-
-                        <img src="../img/folder/1.png" alt="Moustiers Sainte Marie" style="width:150px;height:150px">
-                        <p style="text-align: center; margin-left: 40%;">Evaluaciones</p>
+                                <div class=" col-lg-5 ">
+                                    <a>
+                                        <div class=" text-center ">
+                                            <div class=" badge  " id="stick2">
+                                                <span class=" fa fa-check-circle-o fa-lg  "></span>
+                                            </div>
+                                            <div class=" row" id="eval">IDENTIFICACIÓN VERIFICADA</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
