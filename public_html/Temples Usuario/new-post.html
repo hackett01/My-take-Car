@@ -24,8 +24,6 @@
         <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
 
-
-
         <script type="text/javascript">
 
             $(function () {
@@ -37,10 +35,10 @@
                     validClass: "state-success",
                     errorElement: "li",
                     rules: {
-                        city: {
+                        Modelo: {
                             required: true
                         },
-                        lastname: {
+                        ans: {
                             required: true
                         },
                         useremail: {
@@ -50,10 +48,10 @@
                         typecar: {
                             required: true
                         },
-                        languages: {
+                        type: {
                             required: true
                         },
-                        country: {
+                        person: {
                             required: true
                         }
 
@@ -61,11 +59,11 @@
 
                     },
                     messages: {
-                        city: {
-                            required: 'Enter your city'
+                        Modelo: {
+                            required: 'Enter your Modelo'
                         },
-                        lastname: {
-                            required: 'Enter your last name'
+                        ans: {
+                            required: 'Enter year of the car'
                         },
                         useremail: {
                             required: 'Enter your email address',
@@ -74,10 +72,10 @@
                         typecar: {
                             required: 'Please choose type-car'
                         },
-                        languages: {
-                            required: 'Select laguages spoken'
+                        type: {
+                            required: 'Select type of car'
                         },
-                        country: {
+                        person: {
                             required: 'Select number of persons '
                         }
 
@@ -170,7 +168,7 @@
             <div class="row" >
 
 
-                <div class=" col-md-12" style="margin-top: -33px;">
+                <div class=" col-md-12" >
 
 
                     <div class="smart-wrap">
@@ -197,54 +195,9 @@
                                         </div><!-- end section -->
 
 
-                                    </div><!-- end .frm-row section -->                                    
-                                    <div class="spacer-b30">
-                                        <div class="tagline"><span>Tipo de auto </span></div><!-- .tagline -->
-                                    </div>
-
-                                    <div class="frm-row">
-
-                                        <div class="section colm colm4">
-                                            <label for="Grande" class="option block">
-                                                <input type="radio" name="typecar"  id="Grande" >
-                                                <span class="radio"></span> Grande 
-                                            </label>
-                                        </div><!-- end section -->                     
-
-                                        <div class="section colm colm4">
-                                            <label for="Mediano" class="option block spacer-t10">
-                                                <input type="radio" name="typecar" id="Mediano" >
-                                                <span class="radio"></span> Mediano                
-                                            </label>  
-                                        </div><!-- end section -->
-
-                                        <div class="section colm colm4">
-
-                                            <label for="other" class="option block spacer-t10">
-                                                <input type="radio" name="typecar" id="other" value="other">
-                                                <span class="radio"></span> Chico                
-                                            </label>
-                                        </div><!-- end section -->
-
-                                    </div><!-- end .frm-row section --> 
+                                    </div><!-- end .frm-row section -->           
 
 
-                                    <div class="frm-row">
-                                        <label class="field-label colm colm2 ">Capacidad</label>
-                                        <div class="section colm colm3">
-                                            <label class="field select">
-                                                <select id="country" name="country">
-                                                    <option value="">Personas</option>
-                                                    <option value="AL">1 personas</option>
-                                                    <option value="DZ">2 personas</option>
-                                                    <option value="AD">3 personas</option>
-                                                    <option value="AO">4 personas</option>
-                                                    <option value="AI">5 personas</option>
-                                                </select>
-                                                <i class="arrow"></i>                    
-                                            </label>  
-                                        </div><!-- end section -->  
-                                    </div><!-- end .frm-row section -->
 
                                     <!-- custom errors will load here  -->
                                     <div class="notification alert-error errorsContainer">

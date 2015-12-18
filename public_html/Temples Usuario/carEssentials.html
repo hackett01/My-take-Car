@@ -28,6 +28,11 @@
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
 
 
+        <style>
+            #texto-card{
+                font-size: 20px;
+            }
+        </style>
 
         <script type="text/javascript">
 
@@ -41,6 +46,9 @@
                     errorElement: "li",
                     rules: {
                         Modelo: {
+                            required: true
+                        },
+                        Marca: {
                             required: true
                         },
                         ans: {
@@ -172,9 +180,10 @@
                     <li><a href='carEssentials.html'>Datos Básicos</a></li>
                     <li><a href='describeAdd.html'>Descripción</a></li>
                     <li><a href='customerLocation.html'>Ubicación</a></li>
-                    <li><a href='carImagen.html'>Fotos</a></li>
+                    <li><a href='carImage.html'>Fotos</a></li>
                     <li><a href='autoServices.html'>Servicios </a></li>
                     <li><a href='vehicleServices.html'>Seguridad</a></li>
+                    <li><a href='insurance-policy.html'>Poliza</a></li>
                     <li><a href='pricesRent.html'>Precios</a></li>
                     <li><a href='reservasCar.html'>Reserva</a></li>
                     <li><a href='calendarReser.html'>Calendario</a></li>
@@ -218,7 +227,7 @@
                                                     <label class="field-label colm colm2  " style=" width: 50px;">Año</label>
                                                     <div class="section colm colm2">
                                                         <label class="field select">
-                                                            <select id="country" name="ans">
+                                                            <select id="ans" name="ans">
                                                                 <option value="">Año</option>
                                                                 <option value="AL">2015</option>
                                                                 <option value="DZ">2014</option>
@@ -230,10 +239,10 @@
                                                         </label>  
                                                     </div><!-- end section -->  
 
-                                                    <label class="field-label colm colm2 ">Capacidad</label>
+                                                    <label class="field-label colm colm1 ">Capacidad</label>
                                                     <div class="section colm colm3">
                                                         <label class="field select">
-                                                            <select id="country" name="person">
+                                                            <select id="person" name="person">
                                                                 <option value="">Personas</option>
                                                                 <option value="AL">1 personas</option>
                                                                 <option value="DZ">2 personas</option>
@@ -249,8 +258,8 @@
                                                 </div><!-- end .frm-row section -->    
 
                                                 <div class="frm-row">
-                                                    <label class="field-label colm colm3  " style=" width: 116px; " >Tipo de Veiculo</label>
-                                                    <div class="section colm colm5">
+                                                    <label class="field-label colm colm4  " style=" width: 122px; " >Tipo de vehículo</label>
+                                                    <div class="section colm colm2" style="width: 20%;">
                                                         <label class="field select">
                                                             <select id="country" name="type">
                                                                 <option value="">Tipo</option>
@@ -263,82 +272,181 @@
                                                             <i class="arrow"></i>                    
                                                         </label>  
                                                     </div><!-- end section -->  
-                                                </div><!-- end .frm-row section -->   
-                                                <div class="spacer-b30">
-                                                    <div class="tagline"><span>Tipo de auto </span></div><!-- .tagline -->
-                                                </div>
 
-                                                <div class="frm-row">
-
-                                                    <div class="section colm colm4">
-                                                        <label for="Grande" class="option block">
-                                                            <input type="radio" name="typecar"  id="Grande" >
-                                                            <span class="radio"></span> Grande 
+                                                    <label class="field-label colm colm1 " style="width: 44px;">Marca</label>
+                                                    <div class="section colm colm2">
+                                                        <label for="firstname" class="field prepend-icon">
+                                                            <input type="text" name="Marca" id="Marca" class="gui-input" placeholder="Ford...">
+                                                            <span class="field-icon"><i class="fa fa-car"></i></span>  
                                                         </label>
-                                                    </div><!-- end section -->                     
+                                                    </div><!-- end section -->
 
-                                                    <div class="section colm colm4">
-                                                        <label for="Mediano" class="option block spacer-t10">
-                                                            <input type="radio" name="typecar" id="Mediano" >
-                                                            <span class="radio"></span> Mediano                
+                                                    <label class="field-label colm colm1  "  style=" width: 80px; ">Transmisión </label>
+                                                    <div class="section colm colm3">
+                                                        <label class="field select">
+                                                            <select id="transmicion" name="type">
+                                                                <option value="">Automatica</option>
+                                                                <option value="AL">Estandar</option>
+                                                            </select>
+                                                            <i class="arrow"></i>                    
                                                         </label>  
                                                     </div><!-- end section -->
+                                                </div><!-- end .frm-row section -->   
 
-                                                    <div class="section colm colm4">
-
-                                                        <label for="other" class="option block spacer-t10">
-                                                            <input type="radio" name="typecar" id="other" value="other">
-                                                            <span class="radio"></span> Chico                
-                                                        </label>
-                                                    </div><!-- end section -->
+                                                <div class="frm-row">
+                                                    <label class="field-label colm colm3  "  style=" width: 122px;" >Combustibles</label>
+                                                    <div class="section colm colm2" style="width: 20%;">
+                                                        <label class="field select">
+                                                            <select id="combustible" name="type">
+                                                                <option value="">Gasolina</option>
+                                                                <option value="AL">Diésel</option>
+                                                                <option value="DZ">Etanol</option>
+                                                                <option value="AD">Gas Natural</option>
+                                                                <option value="AO">Electricidad</option>
+                                                                <option value="AI">Hidrógeno</option>
+                                                                <option value="AI">Biodiesel</option>
+                                                            </select>
+                                                            <i class="arrow"></i>                    
+                                                        </label>  
+                                                    </div><!-- end section -->  
 
                                                 </div><!-- end .frm-row section --> 
 
+                                                <div class="spacer-b10">
+                                                    <p id="texto-card" class="small-text fine-grey">Unico dueño</p>
+                                                </div><!-- end section -->                     
+
+                                                <div class="section">
+                                                    <div class="option-group field">
+                                                        <label class="option">
+                                                            <input type="checkbox" name="xboxes" value="Error" class="smartfm-ctrl" data-show-id="box_error">
+                                                            <span class="checkbox"></span> Si           
+                                                        </label>
+                                                        <label class="option">
+                                                            <input type="checkbox" name="xboxes" value="Success" class="smartfm-ctrl" data-show-id="box_success">
+                                                            <span class="checkbox"></span> No          
+                                                        </label>
+                                                        <br>
+                                                    </div><!-- end .option-group section --> 
+
+                                                    <div class="spacer-b10">
+                                                        <br>
+                                                        <p id="texto-card" class="small-text fine-grey">Todas las tenencias pagadas:</p>
+                                                    </div><!-- end section -->                     
+
+                                                    <div class="section">
+                                                        <div class="option-group field">
+                                                            <label class="option">
+                                                                <input type="checkbox" name="xboxes" value="Error" class="smartfm-ctrl" data-show-id="box_error">
+                                                                <span class="checkbox"></span> Si           
+                                                            </label>
+                                                            <label class="option">
+                                                                <input type="checkbox" name="xboxes" value="Success" class="smartfm-ctrl" data-show-id="box_success">
+                                                                <span class="checkbox"></span> No          
+                                                            </label>
+                                                            <br>
+                                                        </div><!-- end .option-group section --> 
+
+                                                        <div class="spacer-b10">
+                                                            <br>
+                                                            <p id="texto-card" class="small-text fine-grey">Verificación</p>
+                                                        </div><!-- end section -->                     
+
+                                                        <div class="section">
+                                                            <div class="option-group field">
+                                                                <label class="option">
+                                                                    <input type="checkbox" name="xboxes" value="Error" class="smartfm-ctrl" data-show-id="box_error">
+                                                                    <span class="checkbox"></span> Si           
+                                                                </label>
+                                                                <label class="option">
+                                                                    <input type="checkbox" name="xboxes" value="Success" class="smartfm-ctrl" data-show-id="box_success">
+                                                                    <span class="checkbox"></span> No          
+                                                                </label>
+
+                                                            </div><!-- end .option-group section --> 
+                                                        </div><!-- end section -->   
+                                                        <div class="spacer-b10">
+                                                            <p id="texto-card" class="small-text fine-grey">Días que no circula</p>
+                                                        </div><!-- end section -->                     
+
+                                                        <div class="section">
+                                                            <div class="option-group field">
+                                                                <label class="option">
+                                                                    <input type="checkbox" name="xboxes" value="Error" class="smartfm-ctrl" data-show-id="box_error">
+                                                                    <span class="checkbox"></span> Lunes           
+                                                                </label>
+                                                                <label class="option">
+                                                                    <input type="checkbox" name="xboxes" value="Success" class="smartfm-ctrl" data-show-id="box_success">
+                                                                    <span class="checkbox"></span> Martes          
+                                                                </label>
+                                                                <label class="option">
+                                                                    <input type="checkbox" name="xboxes" value="Information" class="smartfm-ctrl" data-show-id="box_info">
+                                                                    <span class="checkbox"></span> Miercoles            
+                                                                </label>
+                                                                <label class="option">
+                                                                    <input type="checkbox" name="xboxes" value="warning" class="smartfm-ctrl" data-show-id="box_warning">
+                                                                    <span class="checkbox"></span> Jueves            
+                                                                </label>
+                                                                <label class="option">
+                                                                    <input type="checkbox" name="xboxes" value="warning" class="smartfm-ctrl" data-show-id="box_warning">
+                                                                    <span class="checkbox"></span> Viernes            
+                                                                </label> 
+                                                                <label class="option">
+                                                                    <input type="checkbox" name="xboxes" value="warning" class="smartfm-ctrl" data-show-id="box_warning">
+                                                                    <span class="checkbox"></span> Sabado            
+                                                                </label> 
+                                                                <label class="option">
+                                                                    <input type="checkbox" name="xboxes" value="warning" class="smartfm-ctrl" data-show-id="box_warning">
+                                                                    <span class="checkbox"></span> Domingo            
+                                                                </label> 
+                                                            </div><!-- end .option-group section --> 
+                                                        </div><!-- end section -->   
 
 
 
-                                                <!-- custom errors will load here  -->
-                                                <div class="notification alert-error errorsContainer">
-                                                    <p>The following errors occurred:</p>
-                                                    <ul id="smartErrors">
 
-                                                    </ul>
-                                                </div>                   
+                                                        <!-- custom errors will load here  -->
+                                                        <div class="notification alert-error errorsContainer">
+                                                            <p>The following errors occurred:</p>
+                                                            <ul id="smartErrors">
 
-                                            </div><!-- end .form-body section -->
-                                            <div class="form-footer">
-                                                <button id="next" type="submit" class="button btn-primary"> Siguiente</button>
-                                            </div><!-- end .form-footer section -->
-                                        </form>
+                                                            </ul>
+                                                        </div>                   
+
+                                                    </div><!-- end .form-body section -->
+                                                    <div class="form-footer">
+                                                        <button id="next" type="submit" class="button btn-primary"> Siguiente</button>
+                                                    </div><!-- end .form-footer section -->
+                                                    </form>
 
 
 
-                                    </div><!-- end .smart-forms section -->
-                                </div><!-- end .smart-wrap section -->              
+                                                </div><!-- end .smart-forms section -->
+                                            </div><!-- end .smart-wrap section -->              
 
+                                    </div>
+
+
+                                </div>
                             </div>
-
-
                         </div>
+
                     </div>
+                    <!-- /#page-content-wrapper -->
+
                 </div>
-             
-            </div>
-            <!-- /#page-content-wrapper -->
-
-        </div>
 
 
 
 
-        <script>
-            $("#menu-toggle").click(function (e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
+                <script>
+                    $("#menu-toggle").click(function (e) {
+                        e.preventDefault();
+                        $("#wrapper").toggleClass("toggled");
+                    });
 
-        </script>
-        <script src="../js/vendor/bootstrap.min.js"></script>
-        <script src="../js/vendor/responces.js"></script>
-    </body>
-</html>
+                </script>
+                <script src="../js/vendor/bootstrap.min.js"></script>
+                <script src="../js/vendor/responces.js"></script>
+                </body>
+                </html>
