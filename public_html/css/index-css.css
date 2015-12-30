@@ -76,6 +76,21 @@ body {
     background-size: 16px 80px;
 }
 
+
+
+
+.login-block input#email {
+    background: #FFF url("https://cdn4.iconfinder.com/data/icons/linecon/512/message-16.png") no-repeat scroll 5% 44%;
+}
+
+
+.login-block input#email:focus {
+    background: #fff url('https://cdn2.iconfinder.com/data/icons/fatcow/16x16/mail_red.png') no-repeat scroll 5% 44%;
+}
+
+
+
+
 .login-block input#password {
     background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
     background-size: 16px 80px;

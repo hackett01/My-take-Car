@@ -28,6 +28,9 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="Javascript enhancements/js/jquery-ui-custom.min.js"></script>
 
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
 
 
 
@@ -272,18 +275,31 @@
 
                 <div class="logo"></div>
                 <div class="login-block">
-                    <form class="signup-form" id="registration">
-                        <h1>Take my car  :3</h1>
-                        <input type="text" value="" placeholder="Correo Electrónico" id="username" />
-                        <input type="password" value="" placeholder="Contraseña" id="password" />
+
+
+                    <form id="signup" method="post" action=""  name="validation">
+                        <h1 >Take my car  :3</h1>
+
+                        <input type="text" name="username" class="form-control" id="username" placeholder="User Name"  required>
+
+                        <input type="text" name="email" class="form-control" id="email" placeholder="Email"  required>
+
+                        <input type="password" value="" name="password" placeholder="Contraseña" id="password" />
                         <br>
-                        <p id="remenber">¿Olvidaste tu contraseña?</p>
-                        <hr>
-                        <p id="cuent-re">¿No tienes una cuenta? ¡Registrate!</p>
                         <br>
-                        <button>Sign Up</button>
+                        <b id="list-posts">
+
+                        </b>
                         <br>
+                        <br>
+                        <button type="submit" class="btn btn-danger">Crear cuenta </button>
                     </form>
+
+
+
+
+                    <br>
+                    <br>
 
                     <button id="faceboton" type="submit" class="btn btn-primary">
                         <span class="fa fa-facebook-f "></span>
@@ -320,7 +336,7 @@
                 <div class="logo"></div>
                 <div class="login-block">
                     <h1>Take my car</h1>
-                    <input type="text" value="" placeholder="Correo Electrónico" id="username" />
+                    <input type="text" value="" placeholder="Correo Electrónico" id="username"  />
                     <input type="password" value="" placeholder="Contraseña" id="password" />
                     <br>
                     <p id="pass">¿Olvidaste tu contraseña?</p>
@@ -337,10 +353,6 @@
                         <span class="fa fa-google-plus " id="googleplus"></span>
                         Registrate con google
                     </button>
-                    <br>
-                    <br>
-
-
                 </div>
             </div>
             <br>
@@ -510,6 +522,7 @@
 
 
 
+
         </div> <!-- /container -->
         <div id="footer-infer">
             <div class="container">
@@ -648,6 +661,66 @@
 
                 });
             });
+        </script>
+
+
+
+
+        <script>
+            Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
+
+            var ParseObj = Parse.Object.extend('User'); //create local parse object from your Parse class
+
+
+            $('#signup').submit(function (e) {
+                //on form submit
+                e.preventDefault();
+
+                var data = {
+                    username: $("#username").val(),
+                    email: $("#email").val(),
+                    password: $("#password").val()
+                };
+
+                console.log("datos:" + data);
+
+
+                //create new Parse object
+                parseObj = new ParseObj();
+
+
+                //match the key values from the form, to your parse class, then save it
+                parseObj.signUp(data, {
+                    //if successful
+                    success: function (parseObj) {
+
+                        var output = "";
+
+                        output += "<b  style='color: green;'>" + "Bienvenido" + "</b>";
+                        $("#list-posts").html(output);
+
+
+
+                        $('#signup').each(function () {
+                            this.reset();
+                        });
+
+                    }
+                    ,
+                    error: function (parseObj, error) {
+                        var output = "";
+
+                        output += "<b style='color: red;'>" + error.message + "</b>";
+                        $("#list-posts").html(output);
+                    }
+                }
+                );
+
+
+
+            });
+
+
         </script>
     </body>
 </html>
