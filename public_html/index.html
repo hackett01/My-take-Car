@@ -19,19 +19,18 @@
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/jquery.jscrollpane.css" media="all" />
         <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">
         <link href="DCalendar/dcalendar.picker.css" rel="stylesheet" type="text/css">
+
         <link rel="stylesheet" href="Remodal-master/dist/remodal.css">
         <link rel="stylesheet" href="Remodal-master/dist/remodal-default-theme.css">
+
         <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css"  href="Javascript enhancements/css/smart-forms.css">
         <link rel="stylesheet" type="text/css"  href="Javascript enhancements/css/smart-themes/red.css">
         <link rel="stylesheet" type="text/css"  href="css/index-css.css">
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="Javascript enhancements/js/jquery-ui-custom.min.js"></script>
-
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
-
-
 
 
 
@@ -116,6 +115,9 @@
                         <li>
                             <a id="session" href="#modals"  >Iniciar sesión</a>
                         </li>
+                        <li >
+                            <a id="current-user"> </a>
+                        </li>
                         <li>
                             <a id="session" href="http://localhost:8383/My-take-Car/Temples%20Usuario/new-post.html"  >Anunciate</a>
                         </li>
@@ -124,7 +126,7 @@
                                 <span class="fa fa-cog" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
+                                <li><a href="#" id="logouts">Salir</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li role="separator" class="divider"></li>
@@ -263,101 +265,111 @@
 
 
 
+        <div id="Registro-take">
+            <div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+                <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+                <div >
 
-        <br>
-        <br>
-
-
-
-        <div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
-            <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
-            <div>
-
-                <div class="logo"></div>
-                <div class="login-block">
+                    <div class="logo"></div>
+                    <div class="login-block">
 
 
-                    <form id="signup" method="post" action=""  name="validation">
-                        <h1 >Take my car  :3</h1>
+                        <form id="signup" method="post" action=""  name="validation">
+                            <h1 >Take my car  :3</h1>
 
-                        <input type="text" name="username" class="form-control" id="username" placeholder="User Name"  required>
+                            <input type="text" name="username" class="form-control" id="username" placeholder="User Name"  required>
 
-                        <input type="text" name="email" class="form-control" id="email" placeholder="Email"  required>
+                            <input type="text" name="email" class="form-control" id="email" placeholder="Email"  required>
 
-                        <input type="password" value="" name="password" placeholder="Contraseña" id="password" />
+                            <input type="password" value="" name="password" placeholder="Contraseña" id="password" />
+                            <br>
+                            <br>
+                            <b id="list-posts">
+
+                            </b>
+                            <br>
+                            <br>
+                            <button type="submit" class="btn btn-danger">Crear cuenta </button>
+                        </form>
                         <br>
                         <br>
-                        <b id="list-posts">
 
-                        </b>
+                        <button id="faceboton" type="submit" class="btn btn-primary">
+                            <span class="fa fa-facebook-f "></span>
+                            Registrate con facebook
+                        </button>
                         <br>
                         <br>
-                        <button type="submit" class="btn btn-danger">Crear cuenta </button>
-                    </form>
+                        <button  id="g-button" type="submit" class="btn btn-default" >
+                            <span class="fa fa-google-plus " id="googleplus"></span>
+                            Registrate con google
+                        </button>
+                        <br>
+                        <br>
 
+                        <p id="politic">Al registrarme acepto las Condiciones del servicio,
+                            la politica de privacidad y de cookies, la politica de reembolso al huésped y las condiciones
+                            de la garantía al anfitrión de Take  my car
+                        </p>
 
-
-
-                    <br>
-                    <br>
-
-                    <button id="faceboton" type="submit" class="btn btn-primary">
-                        <span class="fa fa-facebook-f "></span>
-                        Registrate con facebook
-                    </button>
-                    <br>
-                    <br>
-                    <button  id="g-button" type="submit" class="btn btn-default" >
-                        <span class="fa fa-google-plus " id="googleplus"></span>
-                        Registrate con google
-                    </button>
-                    <br>
-                    <br>
-
-                    <p id="politic">Al registrarme acepto las Condiciones del servicio,
-                        la politica de privacidad y de cookies, la politica de reembolso al huésped y las condiciones
-                        de la garantía al anfitrión de Take  my car
-                    </p>
-
+                    </div>
                 </div>
-            </div>
-            <br>
+                <br>
+            </div> 
         </div>
 
 
 
 
-        <div></div><!-- end section -->
+        <div id="login-take">
+            <div class="remodal" data-remodal-id="modals" role="dialog" aria-labelledby="modal2Title" aria-describedby="modal1Desc">
+                <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+                <div>
+                    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+                    <div class="logo"></div>
+                    <div class="login-block">
 
-        <div class="remodal" data-remodal-id="modals" role="dialog" aria-labelledby="modal2Title" aria-describedby="modal1Desc">
-            <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
-            <div>
-                <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-                <div class="logo"></div>
-                <div class="login-block">
-                    <h1>Take my car</h1>
-                    <input type="text" value="" placeholder="Correo Electrónico" id="username"  />
-                    <input type="password" value="" placeholder="Contraseña" id="password" />
-                    <br>
-                    <p id="pass">¿Olvidaste tu contraseña?</p>
-                    <hr>
-                    <p id="cuent-re">¿No tienes una cuenta? <a href="#modal">¡Registrate!</a></p>
-                    <br>
-                    <button id="faceboton" type="submit" class="btn btn-primary">
-                        <span class="fa fa-facebook-f "></span>
-                        Registrate con facebook
-                    </button>
-                    <br>
-                    <br>
-                    <button  id="g-button" type="submit" class="btn btn-default" >
-                        <span class="fa fa-google-plus " id="googleplus"></span>
-                        Registrate con google
-                    </button>
+
+
+                        <form id="login" class="contact-form" method="post" action=""  name="validation">
+                            <h1>Take my car :p</h1>
+                            <input type="text" name="login-name" class="form-control" id="login-name" placeholder="User-name" required >
+
+                            <input type="password" value="" name="login-password" placeholder="Contraseña" id="login-password" />
+
+                            <br>
+                            <br>
+                            <button type="submit" class="btn btn-danger">SEND </button>
+
+
+                            <p id="pass">¿Olvidaste tu contraseña?</p>
+                            <hr>
+                            <p id="cuent-re">¿No tienes una cuenta? <a href="#modal">¡Registrate!</a></p>
+                            <br>
+                            <button id="faceboton" type="submit" class="btn btn-primary">
+                                <span class="fa fa-facebook-f "></span>
+                                Registrate con facebook
+                            </button>
+                            <br>
+                            <br>
+                            <button  id="g-button" type="submit" class="btn btn-default" >
+                                <span class="fa fa-google-plus " id="googleplus"></span>
+                                Registrate con google
+                            </button> 
+
+                        </form>
+
+                    </div>
                 </div>
+                <br>
+
             </div>
-            <br>
-            <button data-remodal-action="cancel" class="remodal-cancel">Iniciar Sesión</button>
+
         </div>
+
+
+
+
 
 
 
@@ -519,6 +531,7 @@
 
             <br>
 
+            <div id="current-user"> </div>
 
 
 
@@ -695,12 +708,12 @@
                     success: function (parseObj) {
 
                         var output = "";
-
                         output += "<b  style='color: green;'>" + "Bienvenido" + "</b>";
                         $("#list-posts").html(output);
+                        checkLogin();
+                        location.reload();
 
-
-
+                        $.modal.close();
                         $('#signup').each(function () {
                             this.reset();
                         });
@@ -720,6 +733,47 @@
 
             });
 
+            $('#login').submit(function (event) {
+                //on form submit
+                event.preventDefault();
+                var name = $("#login-name").val();
+                var password = $("#login-password").val();
+
+
+                Parse.User.logIn(name, password, {
+                    success: function (user) {
+                        console.log("log in Success");
+                        location.reload();
+                        checkLogin();
+                    },
+                    error: function (user, error) {
+                        console.log("log is error" + error.message);
+                    }
+                });
+
+            });
+
+            $('#logouts').click(function (event) {
+                Parse.User.logOut();
+                location.reload();
+                checkLogin();
+            });
+
+            function checkLogin() {
+                if (Parse.User.current()) {
+                    $("#current-user").html("Bienvenido : " + Parse.User.current().get("username"));
+                    $("#register").remove();
+                    $("#session").remove();
+                    $("#Registro-take").remove();
+                    $("#login-take").remove();
+
+
+                } else {
+                    $("#current-user").html("")
+                }
+            }
+
+            checkLogin();
 
         </script>
     </body>
