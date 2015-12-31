@@ -90,6 +90,12 @@
             });
 
         </script>
+
+        <style>
+
+
+
+        </style>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -109,30 +115,21 @@
                 <div id="navbar" class="navbar-collapse collapse">
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
+                        <li class="active" id="filtro">
                             <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
                         </li>
-                        <li>
+                        <li id="mensajes">
                             <a id="session" href="#modals"  >Iniciar sesión</a>
                         </li>
                         <li >
                             <a id="current-user"> </a>
                         </li>
-                        <li>
-                            <a id="session" href="http://localhost:8383/My-take-Car/Temples%20Usuario/new-post.html"  >Anunciate</a>
-                        </li>
                         <li class="dropdown" id="listaOption">
-                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="fa fa-cog" id="cog"></span>
+                            <a  href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-cog fa-lg" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#" id="logouts">Salir</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li id="exit" ></li>
                             </ul>
                         </li>
                     </ul>
@@ -339,7 +336,7 @@
 
                             <br>
                             <br>
-                            <button type="submit" class="btn btn-danger">SEND </button>
+                            <button type="submit" class="btn btn-danger">Iniciar sesión</button>
 
 
                             <p id="pass">¿Olvidaste tu contraseña?</p>
@@ -753,28 +750,43 @@
 
             });
 
-            $('#logouts').click(function (event) {
+
+
+
+            $('#exit').click(function (event)
+            {
+                event.preventDefault();
                 Parse.User.logOut();
                 location.reload();
                 checkLogin();
+
             });
 
             function checkLogin() {
                 if (Parse.User.current()) {
-                    $("#current-user").html("Bienvenido : " + Parse.User.current().get("username"));
+                    $("#current-user").html("" + Parse.User.current().get("username"));
                     $("#register").remove();
                     $("#session").remove();
                     $("#Registro-take").remove();
                     $("#login-take").remove();
+                    $("#exit").html("<a href='#' id='logouts'>Salir</a>");
 
+                    $(window).load(function () {
+                        console.log("window loaded");
+                    });
 
                 } else {
-                    $("#current-user").html("")
+                    $("#current-user").html("");
                 }
             }
 
             checkLogin();
 
+
+
         </script>
+
+
+
     </body>
 </html>
