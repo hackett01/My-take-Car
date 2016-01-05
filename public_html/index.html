@@ -121,17 +121,6 @@
                         <li id="mensajes">
                             <a id="session" href="#modals"  >Iniciar sesión</a>
                         </li>
-                        <li >
-                            <a id="current-user"> </a>
-                        </li>
-                        <li class="dropdown" id="listaOption">
-                            <a  href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="fa fa-cog fa-lg" id="cog"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li id="exit" ></li>
-                            </ul>
-                        </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
@@ -272,7 +261,7 @@
 
 
                         <form id="signup" method="post" action=""  name="validation">
-                            <h1 >Take my car  :3</h1>
+                            <h1 >Registro</h1>
 
                             <input type="text" name="username" class="form-control" id="username" placeholder="User Name"  required>
 
@@ -679,113 +668,78 @@
         <script>
             Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
 
-            var ParseObj = Parse.Object.extend('User'); //create local parse object from your Parse class
 
 
-            $('#signup').submit(function (e) {
-                //on form submit
-                e.preventDefault();
-
-                var data = {
-                    username: $("#username").val(),
-                    email: $("#email").val(),
-                    password: $("#password").val()
-                };
-
-                console.log("datos:" + data);
-
-
-                //create new Parse object
-                parseObj = new ParseObj();
-
-
-                //match the key values from the form, to your parse class, then save it
-                parseObj.signUp(data, {
-                    //if successful
-                    success: function (parseObj) {
-
-                        var output = "";
-                        output += "<b  style='color: green;'>" + "Bienvenido" + "</b>";
-                        $("#list-posts").html(output);
-                        checkLogin();
-                        location.reload();
-
-                        $.modal.close();
-                        $('#signup').each(function () {
-                            this.reset();
-                        });
-
-                    }
-                    ,
-                    error: function (parseObj, error) {
-                        var output = "";
-
-                        output += "<b style='color: red;'>" + error.message + "</b>";
-                        $("#list-posts").html(output);
-                    }
-                }
-                );
-
-
-
-            });
-
-            $('#login').submit(function (event) {
+////User registration
+            $('#signup').submit(function (event) {
                 //on form submit
                 event.preventDefault();
-                var name = $("#login-name").val();
-                var password = $("#login-password").val();
+
+                var name = $("#username").val();
+                var pass = $("#password").val();
+                var email = $("#email").val();
+
+                var user = new Parse.User();
+                user.set("username", name);
+                user.set("password", pass);
+                user.set("email", email);
 
 
-                Parse.User.logIn(name, password, {
+                user.signUp(null, {
                     success: function (user) {
-                        console.log("log in Success");
-                        location.reload();
-                        checkLogin();
+                        var output = "";
+
+                        output += "<h1>" + " Registro exitoso  " + "</h1>";
+
+                        $("#list-posts").html(output);
                     },
                     error: function (user, error) {
-                        console.log("log is error" + error.message);
+                        // Show the error message somewhere and let the user try again.
+                        alert("Error: " + error.code + " " + error.message);
                     }
                 });
 
             });
 
 
+////////////////////////////////////
 
 
-            $('#exit').click(function (event)
-            {
+////////////////Iniciar sesión
+
+            $('#login').submit(function (event) {
                 event.preventDefault();
-                Parse.User.logOut();
-                location.reload();
-                checkLogin();
-
+                var name = $("#login-name").val();
+                var pass = $("#login-password").val();
+                Parse.User.logIn(name, pass, {
+                    success: function (user) {
+                        console.log("Log success");
+                        window.location.href = "http://localhost:8383/My-take-Car/Temples%20Usuario/index-user.html";
+                    },
+                    error: function (user, error) {
+                        console.log("Log in error" + error.message);
+                    }
+                });
             });
 
-            function checkLogin() {
-                if (Parse.User.current()) {
-                    $("#current-user").html("" + Parse.User.current().get("username"));
-                    $("#register").remove();
-                    $("#session").remove();
-                    $("#Registro-take").remove();
-                    $("#login-take").remove();
-                    $("#exit").html("<a href='#' id='logouts'>Salir</a>");
-
-                    $(window).load(function () {
-                        console.log("window loaded");
-                    });
-
-                } else {
-                    $("#current-user").html("");
-                }
-            }
-
-            checkLogin();
+////////////////////////////
 
 
+////////////////Salir
+
+            $('#logout').click(function (event) {
+                event.preventDefault();
+                Parse.User.logOut();
+                
+                console.log("salir");
+             
+            });
+            
+            
+
+////////////////////////////
 
         </script>
-
 
 
     </body>

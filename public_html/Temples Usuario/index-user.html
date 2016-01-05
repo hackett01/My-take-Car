@@ -13,7 +13,6 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../font-awesome-4.5.0/css/font-awesome.min.css">
         <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
@@ -25,15 +24,13 @@
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-custom.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-timepicker.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-touch-punch.min.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/smartforms-modal.min.js"></script>
         <script type="text/javascript" src="../Temples Usuario/script.js"></script>
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
         <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
-        <link rel="stylesheet" href="../back-to-top 2/css/reset.css"> <!-- CSS reset -->
-        <link rel="stylesheet" href="../back-to-top 2/css/style.css"> <!-- Gem style -->
-        <script src="../back-to-top 2/js/modernizr.js"></script> <!-- Modernizr -->
-        <script src="../back-to-top 2/js/main.js"></script> <!-- Gem jQuery -->
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
+
 
 
 
@@ -41,7 +38,6 @@
         Css modal
         -->
 
-        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-addons.css">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
 
 
@@ -75,13 +71,7 @@
                     </form>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li>
-                            <a id="session" href="#modals"  >Iniciar sesión</a>
-                        </li>
-                        <li><a id="cuenta" href="#">Mi cuenta</a></li>
+                        <li><a id="cuenta" href="#">Mario</a></li>
                         <li class="dropdown" id="listaOption">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
@@ -91,10 +81,10 @@
                                 <li><a href="index-user.html">Perfil</a></li>
                                 <li><a href="Notificaciones_1.html">Cuenta</a></li>
                                 <li><a href="ListoFads.html">Tus anuncios</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li>
+                                    <a id="logout" href="#"  >Salir</a>
+                                </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -802,15 +792,63 @@
                     </div>
                 </div>
 
-              
+
             </div>
         </div>
 
 
         <script>
-            $("#menu-toggle").click(function (e) {
-                e.preventDefault();
+            $("#menu-toggle").click(function (event) {
+                event.preventDefault();
                 $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+
+
+
+
+
+
+        <script>
+
+            $(document).ready(function ()
+            {
+                Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
+////////////////Salir
+                $('#logout').click(function (event) {
+                    event.preventDefault();
+                    Parse.User.logOut();
+                    console.log("salir");
+                    window.location.href = "http://localhost:8383/My-take-Car/index.html";
+                });
+////////////////
+
+
+                var currentUser = Parse.User.current();
+                var test = JSON.stringify(currentUser);
+                var jsontext = test;
+                var contact = JSON.parse(jsontext);
+                
+                if(contact.username){
+                    
+                }
+                else{
+                    console.log("error");
+                }
+               
+                //      var output = "";
+                //    output += " " + Username;
+                //   $("#cuenta").html(output);
+
+
+
+
+
+
+
+
+
+
             });
         </script>
 
