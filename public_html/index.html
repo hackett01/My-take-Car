@@ -19,10 +19,8 @@
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/jquery.jscrollpane.css" media="all" />
         <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">
         <link href="DCalendar/dcalendar.picker.css" rel="stylesheet" type="text/css">
-
         <link rel="stylesheet" href="Remodal-master/dist/remodal.css">
         <link rel="stylesheet" href="Remodal-master/dist/remodal-default-theme.css">
-
         <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css"  href="Javascript enhancements/css/smart-forms.css">
         <link rel="stylesheet" type="text/css"  href="Javascript enhancements/css/smart-themes/red.css">
@@ -31,9 +29,6 @@
         <script type="text/javascript" src="Javascript enhancements/js/jquery-ui-custom.min.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
-
-
-
 
         <script type="text/javascript">
 
@@ -90,12 +85,6 @@
             });
 
         </script>
-
-        <style>
-
-
-
-        </style>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -114,7 +103,8 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
 
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul id="menu" class="nav navbar-nav navbar-right">
+                        <li><a id="Dashborn" href="#"></a></li>
                         <li class="active" id="filtro">
                             <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
                         </li>
@@ -353,15 +343,7 @@
 
         </div>
 
-
-
-
-
-
-
-
         <div class="container">
-
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header" style="text-align: center;">
@@ -666,32 +648,25 @@
 
 
         <script>
+
+
             Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
-
-
-
 ////User registration
             $('#signup').submit(function (event) {
                 //on form submit
                 event.preventDefault();
-
                 var name = $("#username").val();
                 var pass = $("#password").val();
                 var email = $("#email").val();
-
                 var user = new Parse.User();
                 user.set("username", name);
                 user.set("password", pass);
                 user.set("email", email);
-
-
                 user.signUp(null, {
                     success: function (user) {
-                        var output = "";
+                        window.location.href = "http://localhost:8383/My-take-Car/Temples%20Usuario/index-user.html";
 
-                        output += "<h1>" + " Registro exitoso  " + "</h1>";
-
-                        $("#list-posts").html(output);
+                        checklogin();
                     },
                     error: function (user, error) {
                         // Show the error message somewhere and let the user try again.
@@ -714,7 +689,7 @@
                 Parse.User.logIn(name, pass, {
                     success: function (user) {
                         console.log("Log success");
-                        window.location.href = "http://localhost:8383/My-take-Car/Temples%20Usuario/index-user.html";
+                        window.location.href = "/My-take-Car/Temples%20Usuario/index-user.html";
                     },
                     error: function (user, error) {
                         console.log("Log in error" + error.message);
@@ -723,21 +698,22 @@
             });
 
 ////////////////////////////
+            var currentUser = Parse.User.current();
+            var test = JSON.stringify(currentUser);
+            var jsontext = test;
+            var contact = JSON.parse(jsontext);
 
-
-////////////////Salir
-
-            $('#logout').click(function (event) {
-                event.preventDefault();
-                Parse.User.logOut();
-                
-                console.log("salir");
-             
-            });
-            
-            
-
-////////////////////////////
+            var Username = contact.username;
+            if (Username) {
+                console.log("Este es el usuario : " + Username);
+                $("#session").remove();
+                $("#register").remove();
+                var output = "";
+                output += "Bienvenido :  " + Username + "    ";
+                $("#cuenta").html(output);
+                output += "<a class='fa fa-bars' href='/My-take-Car/Temples%20Usuario/index-user.html'>" + " " + "</a>";
+                $("#Dashborn").html(output);
+            }
 
         </script>
 

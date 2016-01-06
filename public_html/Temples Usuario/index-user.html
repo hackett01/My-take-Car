@@ -17,18 +17,21 @@
         <link rel="stylesheet" href="../font-awesome-4.5.0/css/font-awesome.min.css">
         <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="../EfectosImg/dist/styles/main.css"/>
-        <link rel="stylesheet" type="text/css"  href="../Template samples/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-themes/red.css">
-        <link rel="stylesheet" type="text/css"  href="../Template samples/css/smart-forms.css">
-        <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-custom.min.js"></script>
-        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-timepicker.min.js"></script>
-        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-touch-punch.min.js"></script>
-        <script type="text/javascript" src="../Javascript enhancements/js/smartforms-modal.min.js"></script>
         <script type="text/javascript" src="../Temples Usuario/script.js"></script>
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/styles.css">
         <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
+        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-forms.css">
+        <link rel="stylesheet" type="text/css"  href="../Javascript enhancements/css/smart-themes/red.css">
+
+
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-custom.min.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery.maskedinput.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../Javascript enhancements/js/additional-methods.min.js"></script>   
+
 
 
 
@@ -45,6 +48,135 @@
 
 
 
+
+        <script type="text/javascript">
+
+            $(function () {
+
+                /* @telephone number masking 
+                 ---------------------------------- */
+                $("#guestelephone").mask('(999) 999-999999', {placeholder: 'X'});
+
+                /* @ date range datepicker 
+                 ---------------------------------- */
+                $("#checkin").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: false,
+                    numberOfMonths: 1,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    onClose: function (selectedDate) {
+                        $("#checkout").datepicker("option", "minDate", selectedDate);
+                    }
+                });
+
+                $("#checkout").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: false,
+                    numberOfMonths: 1,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    onClose: function (selectedDate) {
+                        $("#checkin").datepicker("option", "maxDate", selectedDate);
+                    }
+                });
+
+                /* @ validation and submition
+                 ---------------------------------- */
+                $("#smart-form").validate({
+                    errorClass: "state-error",
+                    validClass: "state-success",
+                    errorElement: "em",
+                    rules: {
+                        name: {
+                            required: true
+                        },
+                        firstname: {
+                            required: true
+                        },
+                        lastname: {
+                            required: true
+                        },
+                         month: {
+                            required: true
+                        },
+                        guestemail: {
+                            required: true,
+                            email: true
+                        },
+                        day: {
+                            required: true
+                        },
+                        year: {
+                            required: true
+                        }
+                        ,
+                        location: {
+                            required: true
+                        }
+                        ,gender: {
+                            required: true
+                        },comment: {
+                            required: true
+                        }
+                        
+                    },
+                    messages: {
+                        name: {
+                            required: 'Enter your name'
+                        },
+                        firstname:{
+                             required: 'Enter your firstname'
+                        },
+                        lastname:{
+                             required: 'Enter your lastname'
+                        },
+                        month:{
+                             required: 'Enter your month'
+                        },
+                        guestemail: {
+                            required: 'Enter your email address',
+                            email: 'Enter a VALID email address'
+                        }
+                        ,
+                        day:{
+                             required: 'Enter your day'
+                        }
+                         ,
+                        year:{
+                             required: 'Enter your year'
+                        },
+                        location:{
+                             required: 'Enter your location'
+                        },
+                        gender:{
+                             required: 'Enter your gender'
+                        },
+                        comment:{
+                             required: 'Enter your comment'
+                        }
+                    },
+                    highlight: function (element, errorClass, validClass) {
+                        $(element).closest('.field').addClass(errorClass).removeClass(validClass);
+                    },
+                    unhighlight: function (element, errorClass, validClass) {
+                        $(element).closest('.field').removeClass(errorClass).addClass(validClass);
+                    },
+                    errorPlacement: function (error, element) {
+                        if (element.is(":radio") || element.is(":checkbox")) {
+                            element.closest('.option-group').after(error);
+                        } else {
+                            error.insertAfter(element.parent());
+                        }
+                    }
+
+                });
+
+            });
+
+
+        </script>
+
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -59,7 +191,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Take my car</a>
+                    <a class="navbar-brand" href="http://localhost:8383/My-take-Car/index.html">Take my car</a>
                 </div>
 
                 <div id="navbar" class="navbar-collapse collapse">
@@ -71,11 +203,11 @@
                     </form>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a id="cuenta" href="#">Mario</a></li>
+                        <li><a id="cuenta" href="#"></a></li>
                         <li class="dropdown" id="listaOption">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
-                                <span class="fa fa-cog fa-2x" id="cog"></span>
+                                <span class="fa fa-bars" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="index-user.html">Perfil</a></li>
@@ -115,27 +247,35 @@
 
                             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class=" fa fa-bars "></span></a>
                             <div class="frm-row" id="paymentform">
+
+
+
+
                                 <div class="smart-wrap">
                                     <div class="smart-forms smart-container wrap-0">
 
-
-                                        <form method="post" action="/" id="account">
+                                        <form method="post" action="/" id="smart-form">
                                             <div class="form-body theme-red">
 
-                                                <div class="spacer-b30">
-                                                    <div class="tagline"><span>Datos Obligatorios </span></div><!-- .tagline -->
-                                                </div>
+                                                <div class="section">
+                                                    <label for="guestname" class="field-label">Your Names</label>
+                                                    <label for="guestname" class="field prepend-icon">
+                                                        <input type="text" name="name" id="name" class="gui-input" placeholder="Your name...">
+                                                        <span class="field-icon"><i class="fa fa-user"></i></span>  
+                                                    </label>
+                                                </div><!-- end section --> 
+
                                                 <label for="names" class="field-label">Your names</label>
                                                 <div class="frm-row">
 
-                                                    <div class="section colm colm6">
+                                                    <div class="section colm colm4">
                                                         <label class="field prepend-icon">
                                                             <input type="text" name="firstname" id="firstname" class="gui-input" placeholder="First name...">
                                                             <span class="field-icon"><i class="fa fa-user"></i></span>  
                                                         </label>
                                                     </div><!-- end section -->
 
-                                                    <div class="section colm colm6">
+                                                    <div class="section colm colm4">
                                                         <label class="field prepend-icon">
                                                             <input type="text" name="lastname" id="lastname" class="gui-input" placeholder="Last name...">
                                                             <span class="field-icon"><i class="fa fa-user"></i></span>  
@@ -143,6 +283,25 @@
                                                     </div><!-- end section --> 
 
                                                 </div><!-- end frm-row section -->
+
+                                                <div class="frm-row">
+                                                    <div class="section colm colm6">
+                                                        <label for="guestemail" class="field-label">Email Address</label>
+                                                        <label for="guestemail" class="field prepend-icon">
+                                                            <input type="email" name="guestemail" id="guestemail" class="gui-input" placeholder="Email address">
+                                                            <span class="field-icon"><i class="fa fa-envelope"></i></span>  
+                                                        </label>
+                                                    </div><!-- end section -->
+
+                                                    <div class="section colm colm6">
+                                                        <label for="guestelephone" class="field-label">Telephone / Mobile</label>
+                                                        <label for="guestelephone" class="field prepend-icon">
+                                                            <input type="text" name="guestelephone" id="guestelephone" class="gui-input" placeholder="Telephone / moble number">
+                                                            <span class="field-icon"><i class="fa fa-phone-square"></i></span>  
+                                                        </label>
+                                                    </div><!-- end section -->
+                                                </div><!-- end .frm-row section --> 
+
 
 
                                                 <label for="birthday" class="field-label">Your birthday</label>
@@ -396,28 +555,14 @@
                                                         <i class="arrow double"></i>                    
                                                     </label>  
                                                 </div><!-- end section -->
+             
 
-                                                <div class="section">
-                                                    <label for="email" class="field-label">Your email address</label>
-                                                    <label class="field prepend-icon">
-                                                        <input type="email" name="email" id="email" class="gui-input" placeholder="example@domain.com...">
-                                                        <span class="field-icon"><i class="fa fa-envelope"></i></span>  
-                                                    </label>
-                                                </div><!-- end section -->                    
-
-                                                <div class="section">
-                                                    <label for="mobile" class="field-label">Mobile phone </label>
-                                                    <label class="field prepend-icon">
-                                                        <input type="tel" name="mobile" id="mobile" class="gui-input" placeholder="+256">
-                                                        <span class="field-icon"><i class="fa fa-phone-square"></i></span>  
-                                                    </label>
-                                                </div><!-- end section -->
 
 
                                                 <div class="section">
                                                     <label for="mobile" class="field-label">Describete</label>
                                                     <label class="field prepend-icon">
-                                                        <textarea class="gui-textarea" id="comment" name="comment" placeholder="Enter message..."></textarea>
+                                                        <textarea class="gui-textarea" id="descrip" name="comment" placeholder="Enter message..."></textarea>
                                                         <span class="field-icon"><i class="fa fa-comments"></i></span>
                                                         <span class="input-hint"> <strong>USE HTML TAGS:</strong> 
                                                             &lt;blockquote&gt;, &lt;strong&gt;&lt;a&gt;, &lt;b&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;code&gt;
@@ -465,7 +610,7 @@
                                                     <div class="section">
                                                         <div class="section colm colm4">
                                                             <label for="month" class="field select">
-                                                                <select id="h-z" name="month">
+                                                                <select id="horario" name="month">
                                                                     <option value=""></option>
                                                                     <option value="International Date Line West">(GMT-11:00) International Date Line West</option>
                                                                     <option value="Midway Island">(GMT-11:00) Midway Island</option>
@@ -679,122 +824,36 @@
                                                 <p>Añade los idiomas que hablas.</p>
 
 
+
+
+
                                             </div><!-- end .form-body section -->
                                             <div class="form-footer">
-                                                <button type="submit" class="button btn-red">Guardar</button>
+                                                <button type="submit" class="button btn-red"> Submit Booking </button>
+                                                <button type="reset" class="button"> Cancel </button>
                                             </div><!-- end .form-footer section -->
                                         </form>
 
                                     </div><!-- end .smart-forms section -->
                                 </div><!-- end .smart-wrap section -->
+
                             </div>
-
-
-
-
-
-
-
-
-
-                            <div id="smart-modal1" class="smartforms-modal" role="alert">
-                                <div class="smartforms-modal-container">
-                                    <div class="smartforms-modal-header">
-                                        <h3>Idiomas</h3>
-                                        <a href="#" class="smartforms-modal-close">&times;</a>            
-                                    </div><!-- .smartforms-modal-header -->
-                                    <div class="smartforms-modal-body">
-                                        <div class="smart-wrap">
-                                            <div class="smart-forms smart-container wrap-full">
-                                                <div class="form-body">
-
-                                                    <form method="post" action="" id="form-ui">
-                                                        <div   >
-
-                                                            <label for="names" class="field-label">¿Qué idiomas puedes hablar con fluidez? Hay muchos viajeros que agradecen que los anfitriones puedan hablar su idioma.</label>
-                                                            <div class="frm-row">
-                                                                <div class="section colm colm5">
-
-                                                                    <label class="option option-red block spacer-b10">
-                                                                        <input type="checkbox" name="invoicing">
-                                                                        <span class="checkbox"></span>Bahasa Indonesia                
-                                                                    </label>
-
-                                                                    <label class="option option-red block spacer-b10">
-                                                                        <input type="checkbox" name="social">
-                                                                        <span class="checkbox"></span>  Bahasa Malaysia             
-                                                                    </label>
-
-                                                                    <label class="option option-red block">
-                                                                        <input type="checkbox" name="reports">
-                                                                        <span class="checkbox"></span>  Bahasa Malaysia                
-                                                                    </label> 
-
-                                                                </div><!-- end section -->
-                                                                <div class="section colm colm3">
-
-                                                                    <label class="option option-red block spacer-b10">
-                                                                        <input type="checkbox" name="invoicing">
-                                                                        <span class="checkbox"></span>  Dansk                  
-                                                                    </label>
-
-                                                                    <label class="option option-red block spacer-b10">
-                                                                        <input type="checkbox" name="social">
-                                                                        <span class="checkbox"></span>  Deutsch             
-                                                                    </label>
-
-                                                                    <label class="option option-red block">
-                                                                        <input type="checkbox" name="reports">
-                                                                        <span class="checkbox"></span>  English              
-                                                                    </label> 
-
-                                                                </div><!-- end section -->
-                                                                <div class="section colm colm4">
-
-                                                                    <label class="option option-red block spacer-b10">
-                                                                        <input type="checkbox" name="invoicing">
-                                                                        <span class="checkbox"></span>  Español                  
-                                                                    </label>
-
-                                                                    <label class="option option-red block spacer-b10">
-                                                                        <input type="checkbox" name="social">
-                                                                        <span class="checkbox"></span>  Français             
-                                                                    </label>
-
-                                                                    <label class="option option-red block">
-                                                                        <input type="checkbox" name="reports">
-                                                                        <span class="checkbox"></span>  Hindi               
-                                                                    </label> 
-
-                                                                </div><!-- end section -->
-
-                                                            </div><!-- end .frm-row section -->
-
-
-
-                                                        </div><!-- end .form-body section -->
-                                                        <div class="form-footer">
-                                                            <button style="color: #FFF;
-                                                                    float: right;" type="button" class="btn btn-danger btn-lg">Guardar</button>
-                                                        </div><!-- end .form-footer section -->
-                                                    </form>                                                                                
-                                                </div><!-- end .form-body section -->
-                                            </div><!-- end .smart-forms section -->
-                                        </div><!-- end .smart-wrap section -->            
-                                    </div><!-- .smartforms-modal-body -->
-                                </div><!-- .smartforms-modal-container -->
-
-
-                            </div><!-- .smartforms-modal 1 --> 
-
-
                         </div>
                     </div>
+
+
+
+
+
+
+
+
                 </div>
-
-
             </div>
         </div>
+
+
+
 
 
         <script>
@@ -803,44 +862,116 @@
                 $("#wrapper").toggleClass("toggled");
             });
         </script>
-
-
-
-
-
-
         <script>
 
-            $(document).ready(function ()
-            {
-                Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
+            Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
 ////////////////Salir
-                $('#logout').click(function (event) {
-                    event.preventDefault();
-                    Parse.User.logOut();
-                    console.log("salir");
-                    window.location.href = "http://localhost:8383/My-take-Car/index.html";
-                });
+            $('#logout').click(function (event) {
+                event.preventDefault();
+                Parse.User.logOut();
+                console.log("salir");
+                window.location.href = "http://localhost:8383/My-take-Car/index.html";
+            });
 ////////////////
+            var currentUser = Parse.User.current();
+            var test = JSON.stringify(currentUser);
+            var jsontext = test;
+            var contact = JSON.parse(jsontext);
+
+            var Username = contact.username;
+            var output = "";
+            output += "Bienvenido :  " + Username;
+            $("#cuenta").html(output);
 
 
-                var currentUser = Parse.User.current();
-                var test = JSON.stringify(currentUser);
-                var jsontext = test;
-                var contact = JSON.parse(jsontext);
-                
-                if(contact.username){
-                    
-                }
-                else{
-                    console.log("error");
-                }
-               
-                //      var output = "";
-                //    output += " " + Username;
-                //   $("#cuenta").html(output);
+
+            $('#post-form').submit(function (e) {
+                e.preventDefault();
+                var GameScore = Parse.Object.extend("GameScore");
+                var gameScore = new GameScore();
+
+                var score = $("#score").val();
+                var playerName = $("#playerName").val();
+                var user = Parse.User.current();
+
+                gameScore.set("user", user);
+                gameScore.set("score", score);
+                gameScore.set("playerName", playerName);
+                gameScore.set("cheatMode", false);
 
 
+                gameScore.save({
+                    success: function (gameScore) {
+                        // Execute any logic that should take place after the object is saved.
+                        alert('New object created with objectId: ' + gameScore.id);
+
+
+                    },
+                    error: function (gameScore, error) {
+                        // Execute any logic that should take place if the save fails.
+                        // error is a Parse.Error with an error code and message.
+                        alert('Failed to create new object, with error code: ' + error.message);
+                    }
+                });
+            });
+
+
+
+
+            $('#smart-form').submit(function (e) {
+                e.preventDefault();
+
+
+                var ProfileUser = Parse.Object.extend("profileUser");
+                var profileUser = new ProfileUser();
+
+                var Name = $("#name").val();
+                var firstname = $("#firstname").val();
+                var lastname = $("#lastname").val();
+                var month = $("#month").val();
+                var day = $("#day").val();
+                var year = $("#year").val();
+                var location = $("#location").val();
+                var gender = $("#gender").val();
+                var email = $("#email").val();
+                var mobile = $("#mobile").val();
+                var descrip = $("#descrip").val();
+                var education = $("#education").val();
+                var job = $("#job").val();
+                var month = $("#month").val();
+                ///
+                var user = Parse.User.current();
+                ///
+                profileUser.set("user", user);
+                profileUser.set("Name", Name);
+                profileUser.set("firstname", firstname);
+                profileUser.set("lastname", lastname);
+                profileUser.set("month", month);
+                profileUser.set("day", day);
+                profileUser.set("year", year);
+                profileUser.set("location", location);
+                profileUser.set("gender", gender);
+                profileUser.set("email", email);
+                profileUser.set("mobile", mobile);
+                profileUser.set("descrip", descrip);
+                profileUser.set("education", education);
+                profileUser.set("job", job);
+                profileUser.set("month", month);
+
+
+
+                profileUser.save({
+                    success: function (profileUser) {
+                        $('#smart-form').each(function () {
+                            this.reset();
+                        });
+
+
+                    },
+                    error: function (profileUser, error) {
+                        alert('Failed to create new object, with error code: ' + error.message);
+                    }
+                });
 
 
 
@@ -850,6 +981,11 @@
 
 
             });
+
+
+
+
+
         </script>
 
         <script src="../js/vendor/bootstrap.min.js"></script>
