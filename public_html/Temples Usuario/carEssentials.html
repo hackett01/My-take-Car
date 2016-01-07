@@ -26,6 +26,7 @@
         <script type="text/javascript" src="../Javascript enhancements/js/additional-methods.min.js"></script>
         <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
 
 
         <style>
@@ -124,6 +125,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -133,7 +135,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Take my car</a>
+                    <a class="navbar-brand" href="http://localhost:8383/My-take-Car/index.html">Take my car</a>
                 </div>
 
                 <div id="navbar" class="navbar-collapse collapse">
@@ -144,33 +146,31 @@
                         <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                     </form>
 
+
+
+
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li>
-                            <a id="session" href="#modals"  >Iniciar sesión</a>
-                        </li>
-                        <li><a id="cuenta" href="#">Mi cuenta</a></li>
+                        <li><a id="cuenta" href="#"></a></li>
                         <li class="dropdown" id="listaOption">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
-                                <span class="fa fa-cog fa-2x" id="cog"></span>
+                                <span class="fa fa-bars" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="index-user.html">Perfil</a></li>
                                 <li><a href="Notificaciones_1.html">Cuenta</a></li>
                                 <li><a href="ListoFads.html">Tus anuncios</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li>
+                                    <a id="logout" href="#"  >Salir</a>
+                                </li>
+
                             </ul>
                         </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
         </nav>
+
 
         <div id="wrapper">
 
@@ -229,11 +229,11 @@
                                                         <label class="field select">
                                                             <select id="ans" name="ans">
                                                                 <option value="">Año</option>
-                                                                <option value="AL">2015</option>
-                                                                <option value="DZ">2014</option>
-                                                                <option value="AD">2013</option>
-                                                                <option value="AO">2012</option>
-                                                                <option value="AI">2013</option>
+                                                                <option value="2015">2015</option>
+                                                                <option value="2014">2014</option>
+                                                                <option value="2013">2013</option>
+                                                                <option value="2012">2012</option>
+                                                                <option value="2013">2013</option>
                                                             </select>
                                                             <i class="arrow"></i>                    
                                                         </label>  
@@ -244,11 +244,11 @@
                                                         <label class="field select">
                                                             <select id="person" name="person">
                                                                 <option value="">Personas</option>
-                                                                <option value="AL">1 personas</option>
-                                                                <option value="DZ">2 personas</option>
-                                                                <option value="AD">3 personas</option>
-                                                                <option value="AO">4 personas</option>
-                                                                <option value="AI">5 personas</option>
+                                                                <option value="1">1 personas</option>
+                                                                <option value="2">2 personas</option>
+                                                                <option value="3">3 personas</option>
+                                                                <option value="4">4 personas</option>
+                                                                <option value="5">5 personas</option>
                                                             </select>
                                                             <i class="arrow"></i>                    
                                                         </label>  
@@ -263,11 +263,11 @@
                                                         <label class="field select">
                                                             <select id="country" name="type">
                                                                 <option value="">Tipo</option>
-                                                                <option value="AL">Particular</option>
-                                                                <option value="DZ">Carga</option>
-                                                                <option value="AD">Maquinaria Agricola</option>
-                                                                <option value="AO">Naval</option>
-                                                                <option value="AI">Moto</option>
+                                                                <option value="Particular">Particular</option>
+                                                                <option value="Carga">Carga</option>
+                                                                <option value="Maquinaria Agricola">Maquinaria Agricola</option>
+                                                                <option value="Naval">Naval</option>
+                                                                <option value="Moto">Moto</option>
                                                             </select>
                                                             <i class="arrow"></i>                    
                                                         </label>  
@@ -285,8 +285,9 @@
                                                     <div class="section colm colm3">
                                                         <label class="field select">
                                                             <select id="transmicion" name="type">
-                                                                <option value="">Automatica</option>
-                                                                <option value="AL">Estandar</option>
+                                                                <option value="">Tipo</option>
+                                                                <option value="Automatico">Automatico</option>
+                                                                <option value="Estandar">Estandar</option>
                                                             </select>
                                                             <i class="arrow"></i>                    
                                                         </label>  
@@ -298,13 +299,14 @@
                                                     <div class="section colm colm2" style="width: 20%;">
                                                         <label class="field select">
                                                             <select id="combustible" name="type">
-                                                                <option value="">Gasolina</option>
-                                                                <option value="AL">Diésel</option>
-                                                                <option value="DZ">Etanol</option>
-                                                                <option value="AD">Gas Natural</option>
-                                                                <option value="AO">Electricidad</option>
-                                                                <option value="AI">Hidrógeno</option>
-                                                                <option value="AI">Biodiesel</option>
+                                                                <option value="">Tipo..</option>
+                                                                <option value="Gasolina">Gasolina</option>
+                                                                <option value="Diésel">Diésel</option>
+                                                                <option value="Etanol">Etanol</option>
+                                                                <option value="Gas Natural">Gas Natural</option>
+                                                                <option value="Electricidad">Electricidad</option>
+                                                                <option value="Hidrógeno">Hidrógeno</option>
+                                                                <option value="Biodiesel">Biodiesel</option>
                                                             </select>
                                                             <i class="arrow"></i>                    
                                                         </label>  
@@ -319,12 +321,8 @@
                                                 <div class="section">
                                                     <div class="option-group field">
                                                         <label class="option">
-                                                            <input type="checkbox" name="xboxes" value="Error" class="smartfm-ctrl" data-show-id="box_error">
+                                                            <input type="checkbox"  name="dueno" value="si" id="dueno" class="smartfm-ctrl" data-show-id="box_error">
                                                             <span class="checkbox"></span> Si           
-                                                        </label>
-                                                        <label class="option">
-                                                            <input type="checkbox" name="xboxes" value="Success" class="smartfm-ctrl" data-show-id="box_success">
-                                                            <span class="checkbox"></span> No          
                                                         </label>
                                                         <br>
                                                     </div><!-- end .option-group section --> 
@@ -337,13 +335,10 @@
                                                     <div class="section">
                                                         <div class="option-group field">
                                                             <label class="option">
-                                                                <input type="checkbox" name="xboxes" value="Error" class="smartfm-ctrl" data-show-id="box_error">
+                                                                <input type="checkbox"  name="tenencias" value="si" id="tenencias" class="smartfm-ctrl" data-show-id="box_error">
                                                                 <span class="checkbox"></span> Si           
                                                             </label>
-                                                            <label class="option">
-                                                                <input type="checkbox" name="xboxes" value="Success" class="smartfm-ctrl" data-show-id="box_success">
-                                                                <span class="checkbox"></span> No          
-                                                            </label>
+
                                                             <br>
                                                         </div><!-- end .option-group section --> 
 
@@ -355,12 +350,8 @@
                                                         <div class="section">
                                                             <div class="option-group field">
                                                                 <label class="option">
-                                                                    <input type="checkbox" name="xboxes" value="Error" class="smartfm-ctrl" data-show-id="box_error">
+                                                                    <input type="checkbox"  name="Verificacion" value="si" id="Verificacion" class="smartfm-ctrl" data-show-id="box_error">
                                                                     <span class="checkbox"></span> Si           
-                                                                </label>
-                                                                <label class="option">
-                                                                    <input type="checkbox" name="xboxes" value="Success" class="smartfm-ctrl" data-show-id="box_success">
-                                                                    <span class="checkbox"></span> No          
                                                                 </label>
 
                                                             </div><!-- end .option-group section --> 
@@ -372,31 +363,31 @@
                                                         <div class="section">
                                                             <div class="option-group field">
                                                                 <label class="option">
-                                                                    <input type="checkbox" name="xboxes" value="Error" class="smartfm-ctrl" data-show-id="box_error">
+                                                                    <input type="checkbox"  name="Lunes" value="Lunes" id="Lunes" class="smartfm-ctrl" data-show-id="box_error">
                                                                     <span class="checkbox"></span> Lunes           
                                                                 </label>
                                                                 <label class="option">
-                                                                    <input type="checkbox" name="xboxes" value="Success" class="smartfm-ctrl" data-show-id="box_success">
+                                                                    <input type="checkbox"  name="Martes" value="Martes" id="Martes" class="smartfm-ctrl" data-show-id="box_error">
                                                                     <span class="checkbox"></span> Martes          
                                                                 </label>
                                                                 <label class="option">
-                                                                    <input type="checkbox" name="xboxes" value="Information" class="smartfm-ctrl" data-show-id="box_info">
+                                                                    <input type="checkbox"  name="Miercoles" value="Miercoles" id="Miercoles" class="smartfm-ctrl" data-show-id="box_error">
                                                                     <span class="checkbox"></span> Miercoles            
                                                                 </label>
                                                                 <label class="option">
-                                                                    <input type="checkbox" name="xboxes" value="warning" class="smartfm-ctrl" data-show-id="box_warning">
+                                                                    <input type="checkbox"  name="Jueves" value="Jueves" id="Jueves" class="smartfm-ctrl" data-show-id="box_error">
                                                                     <span class="checkbox"></span> Jueves            
                                                                 </label>
                                                                 <label class="option">
-                                                                    <input type="checkbox" name="xboxes" value="warning" class="smartfm-ctrl" data-show-id="box_warning">
+                                                                    <input type="checkbox"  name="Viernes" value="Viernes" id="Viernes" class="smartfm-ctrl" data-show-id="box_error">
                                                                     <span class="checkbox"></span> Viernes            
                                                                 </label> 
                                                                 <label class="option">
-                                                                    <input type="checkbox" name="xboxes" value="warning" class="smartfm-ctrl" data-show-id="box_warning">
+                                                                    <input type="checkbox"  name="Sabado" value="Sabado" id="Sabado" class="smartfm-ctrl" data-show-id="box_error">
                                                                     <span class="checkbox"></span> Sabado            
                                                                 </label> 
                                                                 <label class="option">
-                                                                    <input type="checkbox" name="xboxes" value="warning" class="smartfm-ctrl" data-show-id="box_warning">
+                                                                    <input type="checkbox"  name="Domingo" value="Domingo" id="Domingo" class="smartfm-ctrl" data-show-id="box_error">
                                                                     <span class="checkbox"></span> Domingo            
                                                                 </label> 
                                                             </div><!-- end .option-group section --> 
@@ -417,36 +408,140 @@
                                                     <div class="form-footer">
                                                         <button id="next" type="submit" class="button btn-primary"> Siguiente</button>
                                                     </div><!-- end .form-footer section -->
-                                                    </form>
+
+
+                                                </div>
+                                            </div>
+                                        </form>
 
 
 
-                                                </div><!-- end .smart-forms section -->
-                                            </div><!-- end .smart-wrap section -->              
+                                    </div><!-- end .smart-forms section -->
+                                </div><!-- end .smart-wrap section -->              
 
-                                    </div>
-
-
-                                </div>
                             </div>
+
+
                         </div>
-
                     </div>
-                    <!-- /#page-content-wrapper -->
-
                 </div>
 
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
 
 
 
-                <script>
-                    $("#menu-toggle").click(function (e) {
-                        e.preventDefault();
-                        $("#wrapper").toggleClass("toggled");
-                    });
 
-                </script>
-                <script src="../js/vendor/bootstrap.min.js"></script>
-                <script src="../js/vendor/responces.js"></script>
-                </body>
-                </html>
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+
+        </script>
+
+
+        <script type="text/javascript">
+
+            Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
+
+            var paramstr = window.location.search.substr(1);
+            var paramarr = paramstr.split("&");
+            var params = {};
+
+            var currentUser = Parse.User.current();
+            var test = JSON.stringify(currentUser);
+            var jsontext = test;
+            var contact = JSON.parse(jsontext);
+
+            var Username = contact.username;
+            var output = "";
+            output += "Bienvenido :  " + Username;
+            $("#cuenta").html(output);
+
+            $('#logout').click(function (event) {
+                event.preventDefault();
+                Parse.User.logOut();
+                console.log("salir");
+                window.location.href = "http://localhost:8383/My-take-Car/index.html";
+            });
+
+
+            for (var i = 0; i < paramarr.length; i++) {
+                var tmparr = paramarr[i].split("=");
+                params[tmparr[0]] = tmparr[1];
+            }
+            $('#contactform').submit(function (e) {
+                //on form submit
+                e.preventDefault();
+                var Add = tmparr[1];
+                var modelo = $("#Modelo").val();
+                var ans = $("#ans").val();
+                var person = $("#person").val();
+                var country = $("#country").val();
+                var Marca = $("#Marca").val();
+                var transmicion = $("#transmicion").val();
+                var combustible = $("#combustible").val();
+                var dueno = $('input:checkbox[name=dueno]:checked').val();
+                var tenencias = $('input:checkbox[name=tenencias]:checked').val();
+                var Verificacion = $('input:checkbox[name=Verificacion]:checked').val();
+                var Lunes = $('input:checkbox[name=Lunes]:checked').val();
+                var Martes = $('input:checkbox[name=Martes]:checked').val();
+                var Miercoles = $('input:checkbox[name=Miercoles]:checked').val();
+                var Jueves = $('input:checkbox[name=Jueves]:checked').val();
+                var Viernes = $('input:checkbox[name=Viernes]:checked').val();
+                var Sabado = $('input:checkbox[name=Sabado]:checked').val();
+                var Domingo = $('input:checkbox[name=Domingo]:checked').val();
+                var Post = Parse.Object.extend("addUser");
+                var Vehiculo = Parse.Object.extend("Vehiculo");
+                var myPost = new Post();
+                var myVehiculo = new Vehiculo();
+                myVehiculo.set("modelo", modelo);
+                myVehiculo.set("ans", ans);
+                myVehiculo.set("person", person);
+                myVehiculo.set("country", country);
+                myVehiculo.set("Marca", Marca);
+                myVehiculo.set("transmicion", transmicion);
+                myVehiculo.set("combustible", combustible);
+                myVehiculo.set("dueno", dueno);
+                myVehiculo.set("tenencias", tenencias);
+                myVehiculo.set("Verificacion", Verificacion);
+                myVehiculo.set("Lunes", Lunes);
+                myVehiculo.set("Martes", Martes);
+                myVehiculo.set("Miercoles", Miercoles);
+                myVehiculo.set("Jueves", Jueves);
+                myVehiculo.set("Viernes", Viernes);
+                myVehiculo.set("Sabado", Sabado);
+                myVehiculo.set("Domingo", Domingo);
+                var post = new Post();
+                post.id = Add;
+                var user = Parse.User.current();
+                console.log(myPost);
+                myVehiculo.set("parent", post);
+                myVehiculo.set("user", user);
+                myVehiculo.save(null, {
+                    success: function (myVehiculo) {
+                        // Execute any logic that should take place after the object is saved.
+                        alert('New object created with objectId: ' + myVehiculo.id);
+                    },
+                    error: function (myVehiculo, error) {
+                        // Execute any logic that should take place if the save fails.
+                        // error is a Parse.Error with an error code and message.
+                        alert('Failed to create new object, with error code: ' + error.message);
+                    }
+                });
+
+            });
+
+
+
+
+
+
+        </script>
+        <script src="../js/vendor/bootstrap.min.js"></script>
+        <script src="../js/vendor/responces.js"></script>
+    </body>
+</html>

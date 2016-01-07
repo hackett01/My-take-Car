@@ -24,6 +24,12 @@
         <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
 
+
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
+        <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
+
+
         <script type="text/javascript">
 
             $(function () {
@@ -110,6 +116,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -119,7 +126,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Take my car</a>
+                    <a class="navbar-brand" href="http://localhost:8383/My-take-Car/index.html">Take my car</a>
                 </div>
 
                 <div id="navbar" class="navbar-collapse collapse">
@@ -130,34 +137,30 @@
                         <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                     </form>
 
+
+
+
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li>
-                            <a id="session" href="#modals"  >Iniciar sesión</a>
-                        </li>
-                        <li><a id="cuenta" href="#">Mi cuenta</a></li>
+                        <li><a id="cuenta" href="#"></a></li>
                         <li class="dropdown" id="listaOption">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
-                                <span class="fa fa-cog fa-2x" id="cog"></span>
+                                <span class="fa fa-bars" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="index-user.html">Perfil</a></li>
                                 <li><a href="Notificaciones_1.html">Cuenta</a></li>
                                 <li><a href="ListoFads.html">Tus anuncios</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li>
+                                    <a id="logout" href="#"  >Salir</a>
+                                </li>
+
                             </ul>
                         </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
         </nav>
-
 
 
 
@@ -189,46 +192,32 @@
                                     <div class="frm-row">
                                         <div class="section colm colm6">
                                             <label for="firstname" class="field prepend-icon">
-                                                <input type="text" name="city" id="city" class="gui-input" placeholder="First name...">
+                                                <input type="text" name="Add" id="Add" class="gui-input" placeholder="...">
                                                 <span class="field-icon"><i class="fa fa-folder-open"></i></span>  
                                             </label>
                                         </div><!-- end section -->
 
 
                                     </div><!-- end .frm-row section -->           
-
-
-
                                     <!-- custom errors will load here  -->
                                     <div class="notification alert-error errorsContainer">
                                         <p>The following errors occurred:</p>
                                         <ul id="smartErrors">
 
                                         </ul>
-                                    </div>                   
-
+                                    </div>                
                                 </div><!-- end .form-body section -->
                                 <div class="form-footer">
-                                    <a href="carEssentials.html" class="button btn-primary"> Crear Anuncio</a>
+                                    <button id="save" type="submit" class="button btn-primary">Crear Anuncio</button>
                                     <button type="reset" class="button"> Cancel </button>
                                 </div><!-- end .form-footer section -->
                             </form>
-
                         </div><!-- end .smart-forms section -->
                     </div><!-- end .smart-wrap section -->
 
                 </div>
             </div>
-
-
-
-        </div> <!-- /container -->    
-      
-        
-        
-        
-        
-
+        </div> <!-- /container -->   
         <script>
             $("#menu-toggle").click(function (e) {
                 e.preventDefault();
@@ -240,5 +229,57 @@
         <script src="../js/vendor/responces.js"></script>
 
 
+        <script type="text/javascript">
+            Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
+
+            var currentUser = Parse.User.current();
+            var test = JSON.stringify(currentUser);
+            var jsontext = test;
+            var contact = JSON.parse(jsontext);
+
+            var Username = contact.username;
+            var output = "";
+            output += "Bienvenido :  " + Username;
+            $("#cuenta").html(output);
+
+            $('#logout').click(function (event) {
+                event.preventDefault();
+                Parse.User.logOut();
+                console.log("salir");
+                window.location.href = "http://localhost:8383/My-take-Car/index.html";
+            });
+
+
+            $('#contactform').submit(function (e) {
+                //on form submit
+                e.preventDefault();
+
+
+                var AddUser = Parse.Object.extend("addUser");
+                var addUser = new AddUser();
+                var user = Parse.User.current();
+                var name = $("#Add").val();
+                addUser.set("user", user);
+                addUser.set("nameAdd", name);
+                addUser.save(null, {
+                    success: function (addUser) {
+                        window.location="carEssentials.html?num="+ addUser.id;
+                    },
+                    error: function (addUser, error) {
+                        // Execute any logic that should take place if the save fails.
+                        // error is a Parse.Error with an error code and message.
+                        alert('Failed to create new object, with error code: ' + error.message);
+                    }
+                });
+
+
+
+            });
+
+
+
+
+
+        </script>
     </body>
 </html>

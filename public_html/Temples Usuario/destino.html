@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<head>
+    <title>destino.html</title>
+    <script type="text/javascript">
+        var paramstr = window.location.search.substr(1);
+        var paramarr = paramstr.split("&");
+        var params = {};
+
+        for (var i = 0; i < paramarr.length; i++) {
+            var tmparr = paramarr[i].split("=");
+            params[tmparr[0]] = tmparr[1];
+        }
+        if (params['variable']) {
+            console.log('El valor del parámetro variable es: ' + params['variable']);
+        } else {
+            console.log('No se envió el parámetro variable');
+        }
+    </script>
+</head>

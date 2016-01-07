@@ -32,6 +32,10 @@
         <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
 
 
+
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
+
         <!--
         Css modal
         -->
@@ -47,6 +51,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -56,7 +61,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Take my car</a>
+                    <a class="navbar-brand" href="http://localhost:8383/My-take-Car/index.html">Take my car</a>
                 </div>
 
                 <div id="navbar" class="navbar-collapse collapse">
@@ -67,27 +72,24 @@
                         <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                     </form>
 
+
+
+
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li>
-                            <a id="session" href="#modals"  >Iniciar sesión</a>
-                        </li>
-                        <li><a id="cuenta" href="#">Mi cuenta</a></li>
+                        <li><a id="cuenta" href="#"></a></li>
                         <li class="dropdown" id="listaOption">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
-                                <span class="fa fa-cog fa-2x" id="cog"></span>
+                                <span class="fa fa-bars" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="index-user.html">Perfil</a></li>
                                 <li><a href="Notificaciones_1.html">Cuenta</a></li>
                                 <li><a href="ListoFads.html">Tus anuncios</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li>
+                                    <a id="logout" href="#"  >Salir</a>
+                                </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -127,7 +129,7 @@
                                         <div class=" col-md-3 ">
 
                                             <div class="ih-item circle colored effect13 top_to_bottom"><a href="#">
-                                                    <div class="img"><img src="../img/foto_0120101007231731.png" alt="img" width="100" ></div>
+                                                    <div class="img"  ><img id="profileImg"  width="100" ></div>
                                                     <div class="info">
                                                         <div class="info-back">
                                                             <h3>Truman Capote </h3>
@@ -141,16 +143,21 @@
                                             <p>Las fotos frontales son muy importantes para que los anfitriones y huéspedes puedan conocerse mejor. ¡Hospedar a un paisaje no es muy divertido que digamos! Por favor, sube una foto en la que se vea claramente tu cara.</p>
 
                                             <div class="smart-wrap">
-                                                <div class="smart-forms smart-container ">
+                                                <form id="photo-user">
+                                                    <div class="smart-forms smart-container ">
+                                                        <div class="section">
+                                                            <label for="file1" class="field file">
+                                                                <span class="button btn-primary">Elige tu foto</span>
+                                                                <input type="file" class="gui-file" name="profilePhotoFileUpload" id="profilePhotoFileUpload" onChange="document.getElementById('uploader1').value = this.value;">
+                                                                <input type="text" class="gui-input" id="uploader1" placeholder="no file selected" readonly>
+                                                            </label>
+                                                        </div><!-- end  section -->
 
-                                                    <div class="section">
-                                                        <label for="file1" class="field file">
-                                                            <span class="button btn-primary">Elige tu foto</span>
-                                                            <input type="file" class="gui-file" name="upload1" id="file1" onChange="document.getElementById('uploader1').value = this.value;">
-                                                            <input type="text" class="gui-input" id="uploader1" placeholder="no file selected" readonly>
-                                                        </label>
-                                                    </div><!-- end  section -->
-                                                </div><!-- end .smart-forms section -->
+                                                    </div><!-- end .smart-forms section -->
+
+                                                </form>
+
+
                                             </div><!-- end .smart-wrap section -->
                                         </div>
                                     </div>
@@ -219,15 +226,114 @@
                         </div>
                     </div>
                 </div>
-        
+
             </div>
         </div>
- 
+
         <script>
             $("#menu-toggle").click(function (e) {
                 e.preventDefault();
                 $("#wrapper").toggleClass("toggled");
             });
+        </script>
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript">
+
+
+
+
+
+
+            Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
+
+            var currentUser = Parse.User.current();
+            var test = JSON.stringify(currentUser);
+            var jsontext = test;
+            var contact = JSON.parse(jsontext);
+
+            var Username = contact.username;
+            var output = "";
+            output += "Bienvenido :  " + Username;
+            $("#cuenta").html(output);
+
+            $('#logout').click(function (event) {
+                event.preventDefault();
+                Parse.User.logOut();
+                console.log("salir");
+                window.location.href = "http://localhost:8383/My-take-Car/index.html";
+            });
+
+            function saveJobApp(objParseFile)
+            {
+                var user = Parse.User.current();
+                var jobApplication = new Parse.Object("photosProfile");
+                jobApplication.set("user", user);
+                jobApplication.set("title", "profile");
+                jobApplication.set("profileImg", objParseFile);
+                jobApplication.save(null,
+                        {
+                            success: function (gameScore) {
+                                // Execute any logic that should take place after the object is saved.
+                                var photo = gameScore.get("profileImg");
+                                $("#profileImg")[0].src = photo.url();
+                            },
+                            error: function (gameScore, error) {
+                                // Execute any logic that should take place if the save fails.
+                                // error is a Parse.Error with an error code and description.
+                                //   alert('Failed to create new object, with error code: ' + error.description);
+                            }
+                        });
+            }
+
+            $('#profilePhotoFileUpload').bind("change", function (e) {
+                var fileUploadControl = $("#profilePhotoFileUpload")[0];
+                var file = fileUploadControl.files[0];
+                var name = file.name; //This does *NOT* need to be a unique name
+                var parseFile = new Parse.File(name, file);
+
+                parseFile.save().then
+                        (
+                                function ()
+                                {
+                                    saveJobApp(parseFile);
+                                    $("#profilePhotoFileUpload").val("");
+                                },
+                                function (error)
+                                {
+                                    //  alert("error");
+                                }
+                        );
+            });
+
+
+
+            var GameScore = Parse.Object.extend("photosProfile");
+            var query = new Parse.Query(GameScore);
+            query.equalTo("title", "profile");
+            query.find({
+                success: function (results) {
+                    //   alert("Successfully retrieved " + results.length + " scores.");
+                    // Do something with the returned Parse.Object values
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+
+                        var photo = object.get('profileImg');
+                        $("#profileImg")[0].src = photo.url();
+                    }
+                },
+                error: function (error) {
+                    //   alert("Error: " + error.code + " " + error.message);
+                }
+            });
+
         </script>
         <script src="../js/vendor/bootstrap.min.js"></script>
         <script src="../js/vendor/responces.js"></script>
