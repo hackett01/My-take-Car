@@ -28,6 +28,9 @@
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
 
 
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
+
 
         <script type="text/javascript">
 
@@ -116,6 +119,8 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -125,7 +130,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Take my car</a>
+                    <a class="navbar-brand" href="http://localhost:8383/My-take-Car/index.html">Take my car</a>
                 </div>
 
                 <div id="navbar" class="navbar-collapse collapse">
@@ -136,27 +141,24 @@
                         <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                     </form>
 
+
+
+
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li>
-                            <a id="session" href="#modals"  >Iniciar sesión</a>
-                        </li>
-                        <li><a id="cuenta" href="#">Mi cuenta</a></li>
+                        <li><a id="cuenta" href="#"></a></li>
                         <li class="dropdown" id="listaOption">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
-                                <span class="fa fa-cog fa-2x" id="cog"></span>
+                                <span class="fa fa-bars" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="index-user.html">Perfil</a></li>
                                 <li><a href="Notificaciones_1.html">Cuenta</a></li>
                                 <li><a href="ListoFads.html">Tus anuncios</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li>
+                                    <a id="logout" href="#"  >Salir</a>
+                                </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -390,6 +392,130 @@
                 e.preventDefault();
                 $("#wrapper").toggleClass("toggled");
             });
+
+        </script>
+
+
+        <script type="text/javascript">
+
+            Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
+
+            var paramstr = window.location.search.substr(1);
+            var paramarr = paramstr.split("&");
+            var params = {};
+
+            var currentUser = Parse.User.current();
+            var test = JSON.stringify(currentUser);
+            var jsontext = test;
+            var contact = JSON.parse(jsontext);
+
+            var Username = contact.username;
+            var output = "";
+            output += "Bienvenido :  " + Username;
+            $("#cuenta").html(output);
+
+            $('#logout').click(function (event) {
+                event.preventDefault();
+                Parse.User.logOut();
+                console.log("salir");
+                window.location.href = "http://localhost:8383/My-take-Car/index.html";
+            });
+
+
+            for (var i = 0; i < paramarr.length; i++) {
+                var tmparr = paramarr[i].split("=");
+                params[tmparr[0]] = tmparr[1];
+            }
+            var Add = tmparr[1];
+
+
+            $('#servicesform').submit(function (e) {
+                //on form submit
+                e.preventDefault();
+                var Add = tmparr[1];
+                var idp = $("#idp").val();
+                var bluetooth = $('input:checkbox[name=bluetooth]:checked').val();
+                var cd = $('input:checkbox[name=cd]:checked').val();
+                var auxiliar = $('input:checkbox[name=auxiliar]:checked').val();
+                var ipod = $('input:checkbox[name=ipod]:checked').val();
+                var mp3 = $('input:checkbox[name=mp3]:checked').val();
+                var radio = $('input:checkbox[name=radio]:checked').val();
+                var usb = $('input:checkbox[name=usb]:checked').val();
+                var Post = Parse.Object.extend("addUser");
+                var Customer = Parse.Object.extend("servicesCar");
+                var myPost = new Post();
+                var myCustomer = new Customer();
+
+
+                var post = new Post();
+                post.id = Add;
+                var user = Parse.User.current();
+                console.log(myPost);
+                myCustomer.set("id", idp);
+                myCustomer.set("user", user);
+                myCustomer.set("bluetooth", bluetooth);
+                myCustomer.set("cd", cd);
+                myCustomer.set("auxiliar", auxiliar);
+                myCustomer.set("ipod", ipod);
+                myCustomer.set("mp3", mp3);
+                myCustomer.set("radio", radio);
+                myCustomer.set("usb", usb);
+                myCustomer.set("parent", post);
+                myCustomer.save(null, {
+                    success: function (myCustomer) {
+                        window.location = "insurance-policy.html?num=" + Add;
+                    },
+                    error: function (myCustomer, error) {
+                    }
+                });
+            });
+
+
+
+            function consult() {
+                var Post = Parse.Object.extend("addUser");
+                var Vehiculo = Parse.Object.extend("servicesCar");
+                var myPost = new Post();
+                var myVehiculo = new Vehiculo();
+                var user = Parse.User.current();
+                var Vehiculo = Parse.Object.extend("servicesCar");
+                var query = new Parse.Query(Vehiculo);
+                var post = new Post();
+                post.id = Add;
+                query.equalTo("parent", post);
+                query.find({
+                    success: function (results) {
+                        if (results.length > 0) {
+                            for (var i = 0; i < results.length; i++) {
+                                var object = results[i];
+
+                                console.log(object.get('bluetooth'));
+                                $("#idp").val(object.id);
+                                $("#bluetooth").val([object.get('bluetooth')]);
+                                $("#cd").val([object.get('cd')]);
+                                $("#ipod").val([object.get('ipod')]);
+                                $("#mp3").val([object.get('mp3')]);
+                                $("#radio").val([object.get('radio')]);
+                                $("#auxiliar").val([object.get('auxiliar')]);
+                                $("#usb").val([object.get('usb')]);
+
+
+
+                            }
+                        }
+                    },
+                    error: function (error) {
+                        //  alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+            }
+
+            consult();
+
+
+
+
+
 
         </script>
         <script src="../js/vendor/bootstrap.min.js"></script>

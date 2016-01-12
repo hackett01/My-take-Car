@@ -290,6 +290,14 @@
                                         <form method="post" action="/" id="contactform">
                                             <div class="form-body">
 
+                                                <div class="section" style="display: none;">
+                                                    <label for="guestname" class="field-label">Id</label>
+                                                    <label for="guestname" class="field prepend-icon">
+                                                        <input type="text" name="idp" id="idp" class="gui-input" >
+                                                        <span class="field-icon"><i class="fa fa-user"></i></span>  
+                                                    </label>
+                                                </div><!-- end section --> 
+
 
                                                 <div class="frm-row">
                                                     <label class="field-label colm colm1 ">Modelo</label>
@@ -395,45 +403,59 @@
                                                     <p id="texto-card" class="small-text fine-grey">Unico dueño</p>
                                                 </div><!-- end section -->                     
 
-                                                <div class="section">
-                                                    <div class="option-group field">
-                                                        <label class="option">
 
-                                                            <input type="checkbox" name="dueno" value="si" id="dueno">
-                                                            <span class="checkbox"></span> Si           
-                                                        </label>
-                                                        <br>
-                                                    </div><!-- end .option-group section --> 
+                                                <div class="frm-row">
+                                                    <div class="section colm colm2" >
+                                                        <label class="field select">
+                                                            <select id="dueno" name="type">
+                                                                <option value="">Select..</option>
+                                                                <option value="si">Si</option>
+                                                                <option value="no">No</option>
+                                                            </select>
+                                                            <i class="arrow"></i>                    
+                                                        </label>  
+                                                    </div><!-- end section -->  
+                                                </div><!-- end .frm-row section --> 
+
+                                                <div class="section">
 
                                                     <div class="spacer-b10">
-                                                        <br>
                                                         <p id="texto-card" class="small-text fine-grey">Todas las tenencias pagadas:</p>
                                                     </div><!-- end section -->                     
 
                                                     <div class="section">
-                                                        <div class="option-group field">
-                                                            <label class="option">
-                                                                <input type="checkbox" name="tenure" value="si" id="tenure">
-                                                                <span class="checkbox"></span> Si           
-                                                            </label>
 
-                                                            <br>
-                                                        </div><!-- end .option-group section --> 
+                                                        <div class="frm-row">
+                                                            <div class="section colm colm2" >
+                                                                <label class="field select">
+                                                                    <select id="tenure" name="type">
+                                                                        <option value="">Select..</option>
+                                                                        <option value="si">Si</option>
+                                                                        <option value="no">No</option>
+                                                                    </select>
+                                                                    <i class="arrow"></i>                    
+                                                                </label>  
+                                                            </div><!-- end section -->  
+                                                        </div><!-- end .frm-row section --> 
 
                                                         <div class="spacer-b10">
                                                             <br>
                                                             <p id="texto-card" class="small-text fine-grey">Verificación</p>
                                                         </div><!-- end section -->                     
 
-                                                        <div class="section">
-                                                            <div class="option-group field">
-                                                                <label class="option">
-                                                                    <input type="checkbox" name="verificacion" value="si" id="verificacion">
-                                                                    <span class="checkbox"></span> Si           
-                                                                </label>
 
-                                                            </div><!-- end .option-group section --> 
-                                                        </div><!-- end section -->   
+                                                        <div class="frm-row">
+                                                            <div class="section colm colm2" >
+                                                                <label class="field select">
+                                                                    <select id="verificacion" name="type">
+                                                                        <option value="">Select..</option>
+                                                                        <option value="si">Si</option>
+                                                                        <option value="no">No</option>
+                                                                    </select>
+                                                                    <i class="arrow"></i>                    
+                                                                </label>  
+                                                            </div><!-- end section -->  
+                                                        </div><!-- end .frm-row section --> 
                                                         <div class="spacer-b10">
                                                             <p id="texto-card" class="small-text fine-grey">Días que no circula</p>
                                                         </div><!-- end section -->                     
@@ -557,6 +579,7 @@
                 //on form submit
                 e.preventDefault();
                 var Add = tmparr[1];
+                var idp = $("#idp").val();
                 var modelo = $("#Modelo").val();
                 var ans = $("#ans").val();
                 var person = $("#person").val();
@@ -564,26 +587,15 @@
                 var Marca = $("#Marca").val();
                 var transmicion = $("#transmicion").val();
                 var combustible = $("#combustible").val();
-                var dueno = $('input:checkbox[name=dueno]:checked').val();
-                var tenure = $('input:checkbox[name=tenure]:checked').val();
-                var Verificacion = $('input:checkbox[name=verificacion]:checked').val();
-                var lunes = $('input:checkbox[name=lunes]:checked').val();
-                var martes = $('input:checkbox[name=martes]:checked').val();
-                var miercoles = $('input:checkbox[name=miercoles]:checked').val();
-                var jueves = $('input:checkbox[name=jueves]:checked').val();
-                var viernes = $('input:checkbox[name=viernes]:checked').val();
-                var sabado = $('input:checkbox[name=sabado]:checked').val();
-                var domingo = $('input:checkbox[name=domingo]:checked').val();
-
-
-
-
-
+                var dueno = $("#dueno").val();
+                var tenure = $("#tenure").val();
+                var verificacion = $("#verificacion").val();
 
                 var Post = Parse.Object.extend("addUser");
                 var Vehiculo = Parse.Object.extend("Vehiculo");
                 var myPost = new Post();
                 var myVehiculo = new Vehiculo();
+                myVehiculo.set("id", idp);
                 myVehiculo.set("modelo", modelo);
                 myVehiculo.set("ans", ans);
                 myVehiculo.set("person", person);
@@ -593,21 +605,7 @@
                 myVehiculo.set("combustible", combustible);
                 myVehiculo.set("dueno", dueno);
                 myVehiculo.set("tenure", tenure);
-                myVehiculo.set("Verificacion", Verificacion);
-                myVehiculo.set("lunes", dueno);
-                myVehiculo.set("martes", dueno);
-                myVehiculo.set("miercoles", dueno);
-                myVehiculo.set("jueves", dueno);
-                myVehiculo.set("sabado", dueno);
-                myVehiculo.set("domingo", dueno);
-
-
-
-
-
-
-
-
+                myVehiculo.set("verificacion", verificacion);
 
                 var post = new Post();
                 post.id = Add;
@@ -617,8 +615,7 @@
                 myVehiculo.set("user", user);
                 myVehiculo.save(null, {
                     success: function (myVehiculo) {
-                        // Execute any logic that should take place after the object is saved.
-                        //     alert('New object created with objectId: ' + myVehiculo.id);
+                        window.location = "describeAdd.html?num=" + Add;
                     },
                     error: function (myVehiculo, error) {
                         // Execute any logic that should take place if the save fails.
@@ -650,7 +647,7 @@
                             for (var i = 0; i < results.length; i++) {
                                 var object = results[i];
 
-                                //   console.log(object.id);
+                                $("#idp").val(object.id);
                                 $("#Modelo").val(object.get('modelo'));
                                 $("#ans").val(object.get('ans'));
                                 $("#person").val(object.get('person'));
@@ -659,15 +656,10 @@
                                 $("#transmicion").val(object.get('transmicion'));
                                 $("#combustible").val(object.get('combustible'));
                                 $("#dueno").val(object.get('dueno'));
-                                $("#tenencias").val(object.get('tenencias'));
-                                $("#Verificacion").val(object.get('Verificacion'));
-                                $("#Lunes").val(object.get('Lunes'));
-                                $("#Martes").val(object.get('Martes'));
-                                $("#Miercoles").val(object.get('Miercoles'));
-                                $("#Jueves").val(object.get('Jueves'));
-                                $("#Viernes").val(object.get('Viernes'));
-                                $("#Sabado").val(object.get('Sabado'));
-                                $("#Domingo").val(object.get('Domingo'));
+                                $("#tenure").val(object.get('tenure'));
+                                $("#verificacion").val(object.get('verificacion'));
+
+
 
 
 
@@ -681,11 +673,6 @@
             }
 
             consult();
-
-
-
-
-
 
         </script>
         <script src="../js/vendor/bootstrap.min.js"></script>

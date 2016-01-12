@@ -26,6 +26,7 @@
         <script type="text/javascript" src="../Javascript enhancements/js/additional-methods.min.js"></script>
         <link href="../startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
 
 
 
@@ -116,6 +117,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -125,7 +127,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Take my car</a>
+                    <a class="navbar-brand" href="http://localhost:8383/My-take-Car/index.html">Take my car</a>
                 </div>
 
                 <div id="navbar" class="navbar-collapse collapse">
@@ -136,27 +138,24 @@
                         <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                     </form>
 
+
+
+
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li>
-                            <a id="session" href="#modals"  >Iniciar sesión</a>
-                        </li>
-                        <li><a id="cuenta" href="#">Mi cuenta</a></li>
+                        <li><a id="cuenta" href="#"></a></li>
                         <li class="dropdown" id="listaOption">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
-                                <span class="fa fa-cog fa-2x" id="cog"></span>
+                                <span class="fa fa-bars" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="index-user.html">Perfil</a></li>
                                 <li><a href="Notificaciones_1.html">Cuenta</a></li>
                                 <li><a href="ListoFads.html">Tus anuncios</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li>
+                                    <a id="logout" href="#"  >Salir</a>
+                                </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -170,7 +169,7 @@
 
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
-               <ul class="sidebar-nav">
+                <ul class="sidebar-nav">
                     <li><a href='carEssentials.html'>Datos Básicos</a></li>
                     <li><a href='describeAdd.html'>Descripción</a></li>
                     <li><a href='customerLocation.html'>Ubicación</a></li>
@@ -207,8 +206,16 @@
                                             Cada alojamiento de Airbnb es único. Explica cuáles son los principales atractivos de tu espacio para atraer la atención de los huéspedes que quieren alojarse en tu zona.
                                         </p>
 
-                                        <form method="post" action="/" id="contactform">
+                                        <form method="post" action="/" id="descriptionform">
                                             <div class="form-body">
+
+                                                <div class="section" style="display: none;"  >
+                                                    <label for="guestname" class="field-label">Id</label>
+                                                    <label for="guestname" class="field prepend-icon">
+                                                        <input type="text" name="idp" id="idp" class="gui-input" >
+                                                        <span class="field-icon"><i class="fa fa-user"></i></span>  
+                                                    </label>
+                                                </div><!-- end section --> 
 
 
                                                 <div class="frm-row">
@@ -284,6 +291,120 @@
                 e.preventDefault();
                 $("#wrapper").toggleClass("toggled");
             });
+
+        </script>
+
+
+        <script type="text/javascript">
+
+            Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
+
+            var paramstr = window.location.search.substr(1);
+            var paramarr = paramstr.split("&");
+            var params = {};
+
+            var currentUser = Parse.User.current();
+            var test = JSON.stringify(currentUser);
+            var jsontext = test;
+            var contact = JSON.parse(jsontext);
+
+            var Username = contact.username;
+            var output = "";
+            output += "Bienvenido :  " + Username;
+            $("#cuenta").html(output);
+
+            $('#logout').click(function (event) {
+                event.preventDefault();
+                Parse.User.logOut();
+                console.log("salir");
+                window.location.href = "http://localhost:8383/My-take-Car/index.html";
+            });
+
+
+            for (var i = 0; i < paramarr.length; i++) {
+                var tmparr = paramarr[i].split("=");
+                params[tmparr[0]] = tmparr[1];
+            }
+            var Add = tmparr[1];
+
+
+
+            $('#descriptionform').submit(function (e) {
+                //on form submit
+                e.preventDefault();
+                var Add = tmparr[1];
+                var Post = Parse.Object.extend("addUser");
+                var myPost = new Post();
+                var AdDescription = Parse.Object.extend("description");
+                var addDescription = new AdDescription();
+                var user = Parse.User.current();
+                var idp = $("#idp").val();
+                var modelo = $("#Modelo").val();
+                var details = $("#details").val();
+                var post = new Post();
+                post.id = Add;
+                addDescription.set("id", idp);
+                addDescription.set("user", user);
+                addDescription.set("descriptions", modelo);
+                addDescription.set("details", details);
+                addDescription.set("parent", post);
+                addDescription.save(null, {
+                    success: function (addDescription) {
+                        window.location = "customerLocation.html?num=" + Add;
+                    },
+                    error: function (addDescription, error) {
+                        // Execute any logic that should take place if the save fails.
+                        // error is a Parse.Error with an error code and message.
+                        alert('Failed to create new object, with error code: ' + error.message);
+                    }
+                });
+            });
+
+            function consult() {
+                var Post = Parse.Object.extend("addUser");
+                var Vehiculo = Parse.Object.extend("description");
+                var myPost = new Post();
+                var myVehiculo = new Vehiculo();
+                var user = Parse.User.current();
+                var query = new Parse.Query(Vehiculo);
+                var post = new Post();
+                post.id = Add;
+                query.equalTo("parent", post);
+                query.find({
+                    success: function (results) {
+                        if (results.length > 0) {
+                            for (var i = 0; i < results.length; i++) {
+                                var object = results[i];
+
+                                //   console.log(object.id);
+                                var object = results[i];
+                                console.log(object.id);
+                                $("#idp").val(object.id);
+                                $("#Modelo").val(object.get('descriptions'));
+                                $("#details").val(object.get('details'));
+
+                            }
+                        }
+                    },
+                    error: function (error) {
+                        //  alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+            }
+
+            consult();
+
+
+
+
+
+
+
+
+
+
+
+
 
         </script>
         <script src="../js/vendor/bootstrap.min.js"></script>
