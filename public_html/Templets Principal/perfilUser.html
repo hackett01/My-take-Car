@@ -22,120 +22,12 @@
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-custom.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-timepicker.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/jquery-ui-touch-punch.min.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-
         <link rel="stylesheet" href="../EfectosImg/dist/styles/main.css"/>
-
-        <script type="text/javascript">
-
-            $(function () {
-
-                var smartpickerWrapper = '<div class="smart-forms"><div class="red-slider"></div></div>';
-
-                $('#dtpicker').datetimepicker({
-                    altField: "#dtpfield",
-                    altFieldTimeOnly: false,
-                    prevText: '<i class="fa fa-chevron-left"></i>',
-                    nextText: '<i class="fa fa-chevron-right"></i>'
-                });
-
-                $('#dtpicker').wrapInner('<div class="red-slider"></div>');
-
-
-
-                $('#timepicker2').timepicker({
-                    timeFormat: 'HH:mm:ss:TT',
-                    showSecond: true,
-                    beforeShow: function (input, inst) {
-                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
-                        var smartpikr = inst.dpDiv.parent();
-                        if (!smartpikr.hasClass('smart-forms')) {
-                            inst.dpDiv.wrap(smartpickerWrapper);
-                        }
-                    },
-                    onClose: function (input, inst) {
-                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
-                    }
-
-                });
-
-                $('#dtimepicker2').datetimepicker({
-                    prevText: '<i class="fa fa-chevron-left"></i>',
-                    nextText: '<i class="fa fa-chevron-right"></i>',
-                    beforeShow: function (input, inst) {
-                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
-                        var smartpikr = inst.dpDiv.parent();
-                        if (!smartpikr.hasClass('smart-forms')) {
-                            inst.dpDiv.wrap(smartpickerWrapper);
-                        }
-                    },
-                    onClose: function (input, inst) {
-                        inst.dpDiv.unwrap().unwrap(smartpickerWrapper);
-                    }
-
-                });
-
-                $("#datepicker2").datepicker({
-                    numberOfMonths: 1,
-                    prevText: '<i class="fa fa-chevron-left"></i>',
-                    nextText: '<i class="fa fa-chevron-right"></i>',
-                    showButtonPanel: false
-                });
-
-                $("#datepicker3").datepicker({
-                    numberOfMonths: 1,
-                    prevText: '<i class="fa fa-chevron-left"></i>',
-                    nextText: '<i class="fa fa-chevron-right"></i>',
-                    showButtonPanel: false
-                });
-            });
-
-        </script>
-
-        <script type="text/javascript">
-
-            function initialize() {
-                var mapOptions = {
-                    zoom: 10,
-                    center: new google.maps.LatLng(29.760193, -95.369390),
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
-
-                var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-                var marker = new google.maps.Marker({
-                    map: map,
-                    draggable: false,
-                    position: new google.maps.LatLng(29.760193, -95.369390)
-                });
-            }
-            google.maps.event.addDomListener(window, 'resize', initialize);
-            google.maps.event.addDomListener(window, 'load', initialize);
-
-        </script>   
-
-        <script type="text/javascript">
-
-            $(function () {
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
 
 
 
 
-                $("#slider2").slider({
-                    range: "min",
-                    value: 140,
-                    min: 1,
-                    max: 5000,
-                    slide: function (event, ui) {
-                        $("#amount").val("$" + ui.value);
-                    }
-                });
-
-                $("#amount").val(
-                        "$" + $("#slider2").slider("value")
-                        );
-            });
-
-        </script>
 
 
 
@@ -488,8 +380,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Take my car</a>
+                    <a class="navbar-brand" href="http://localhost:8383/My-take-Car/index.html">Take my car</a>
                 </div>
+
                 <div id="navbar" class="navbar-collapse collapse">
                     <form class="navbar-form navbar-left" method="GET" role="search">
                         <div class="form-group">
@@ -498,29 +391,24 @@
                         <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                     </form>
 
+
+
+
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li>
-                            <a id="session" href="#modals"  >Iniciar sesión</a>
-                        </li>
-                        <li>
-                            <a id="session" href="http://localhost:8383/My-take-Car/Temples%20Usuario/new-post.html"  >Anunciate</a>
-                        </li>
+                        <li><a id="cuenta" href="#"></a></li>
                         <li class="dropdown" id="listaOption">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
-                                <span class="fa fa-cog fa-2x" id="cog"></span>
+                                <span class="fa fa-bars" id="cog"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="index-user.html">Perfil</a></li>
+                                <li><a href="Notificaciones_1.html">Cuenta</a></li>
+                                <li><a href="ListoFads.html">Tus anuncios</a></li>
+                                <li>
+                                    <a id="logout" href="#"  >Salir</a>
+                                </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -538,7 +426,7 @@
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-image">
-                            <img style="width: 263px;" class="img-responsive" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R">
+                            <img style="width: 263px;" id="profileImg" class="img-responsive">
                         </div>
                     </div>
                     <br>
@@ -546,8 +434,8 @@
                         <div class="panel-heading">Identificación verificada</div>
                         <div class="panel-body">
                             <ul class="fa-ul">
-                                <li><i class="fa-li fa fa-envelope-o" ></i>Correo electrónico </li>
-                                <li><i class="fa-li fa fa-phone"></i>Número de teléfono:<p>55555555</p></li>
+                                <li><i class="fa-li fa fa-envelope-o" ></i>Correo electrónico:<p id="mail"></p> </li>
+                                <li><i class="fa-li fa fa-phone"></i>Número de teléfono:<p id="phone"></p></li>
                                 <li><i class="fa-li fa fa-facebook-official"></i>Amigos en Facebook: <p>(45)</p></li>
                                 <li><i class="fa-li fa fa-linkedin"></i>LinkedIn </li>
                                 <li><i class="fa-li fa fa-thumbs-o-up"></i>Con evaluaciones  </li>
@@ -561,9 +449,11 @@
                         <div class="panel-heading"><h3>Sobre mí</h3> </div>
                         <div class="panel-body">
                             <h3>Centro educativo</h3>
-                            <p>The Chicago School of Professional Psychology</p>
+                            <p id="School"></p>
                             <h3>Idiomas</h3>
                             <p>English, Français</p>
+                            <h3>Ocupación</h3>
+                            <p id="job"></p>
 
 
                         </div>
@@ -574,26 +464,21 @@
                         <div class="panel-body">
 
                             <div id="img-app" class="ih-item square effect13 left_to_right"><a href="#">
-                                    <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
+                                    <div class="img"><img id="carImagen"  src="../img/DSC9249.jpg" alt="img"></div>
                                     <div class="info">
                                         <h3>Hermosa camioneta</h3>
                                     </div></a></div>
-                            <br>
-                             <div id="img-app" class="ih-item square effect13 left_to_right"><a href="#">
-                                    <div class="img"><img src="../img/DSC9249.jpg" alt="img"></div>
-                                    <div class="info">
-                                        <h3>Hermosa camioneta</h3>
-                                    </div></a></div>
+                            
                         </div>
                     </div>
 
 
                 </div>
                 <div class="col-sm-9">
-                    <h1>¡Hola, soy Roman!</h1>
+                    <h1>¡Hola, soy <span id="Name"></span></h1>
                     <p id="labe10"> Ostuni, Italia · Miembro desde Noviembre de 2010 </p>
                     <div class="row" >
-                        <div class=" col-lg-12">
+                        <div class=" col-lg-12" id="contenprofile">
                             <p>Hi! I'm Anna and the one with me in the pic is my mum Tonia. After some years spend in different european cities, I decided to come back home and work in this area. At the moment I'm living in the cottage close to our trulli therefore if you have questions, you need something or you just wanna have a chat and drink a coffee/glass of wine, I'm there. My parents live at about 100 meters from the trulli and we are a big family, we love animals and we have no prejudice at all. Feel free to get in contact with us and we will be glad to let you spend a wonderful holiday. </p>
                         </div>
 
@@ -1169,6 +1054,174 @@
 
                 });
             });
+        </script>
+
+
+        <script type="text/javascript">
+
+            Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
+
+            var paramstr = window.location.search.substr(1);
+            var paramarr = paramstr.split("&");
+            var params = {};
+
+            var currentUser = Parse.User.current();
+            var test = JSON.stringify(currentUser);
+            var jsontext = test;
+            var contact = JSON.parse(jsontext);
+
+            var Username = contact.username;
+            var output = "";
+            output += "Bienvenido :  " + Username;
+            $("#cuenta").html(output);
+
+            $('#logout').click(function (event) {
+                event.preventDefault();
+                Parse.User.logOut();
+                console.log("salir");
+                window.location.href = "http://localhost:8383/My-take-Car/index.html";
+            });
+
+
+            for (var i = 0; i < paramarr.length; i++) {
+                var tmparr = paramarr[i].split("=");
+                params[tmparr[0]] = tmparr[1];
+            }
+            var Add = tmparr[1];
+
+
+
+            var user = Parse.User.current();
+
+
+
+
+
+            function consult() {
+                var user = Parse.User.current();
+                var ProfileUser = Parse.Object.extend("profileUser");
+                var query = new Parse.Query(ProfileUser);
+                query.equalTo("user", user);
+                query.find({
+                    success: function (results) {
+                        if (results.length > 0) {
+                            for (var i = 0; i < results.length; i++) {
+                                var object = results[i];
+
+                                var profile = "";
+                                var Des = "";
+                                var Mail = "";
+                                var Phone = "";
+                                var Scho = "";
+                                var Job ="";
+
+                                var Profile = results[i].get('Name');
+                                profile += "<span>" + Profile + "</span>";
+
+                                var des = results[i].get('descrip');
+                                Des += "<span>" + des + "</span>";
+
+                                var mail = results[i].get('email');
+                                Mail += "<p>" + mail + "</p>";
+
+                                var phone = results[i].get('mobile');
+                                Phone += "<p>" + phone + "</p>";
+
+                                var scho = results[i].get('education');
+                                Scho += "<span>" + scho + "</span>";
+                                
+                                var job = results[i].get('job');
+                                Job += "<span>" + job + "</span>";
+
+                            }
+
+                            $("#Name").html(profile);
+                            $("#contenprofile").html(Des);
+                            $("#mail").html(Mail);
+                            $("#phone").html(Phone);
+                            $("#School").html(scho);
+                            $("#job").html(Job);
+
+                        }
+                    },
+                    error: function (error) {
+                        alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+            }
+
+            consult();
+
+
+
+            function photos() {
+                var user = Parse.User.current();
+                var GameScore = Parse.Object.extend("photosProfile");
+                var query = new Parse.Query(GameScore);
+                console.log(user);
+                query.equalTo("user", user);
+                query.find({
+                    success: function (results) {
+                        //   alert("Successfully retrieved " + results.length + " scores.");
+                        // Do something with the returned Parse.Object values
+                        for (var i = 0; i < results.length; i++) {
+                            var object = results[i];
+
+                            var photo = object.get('profileImg');
+                            $("#profileImg")[0].src = photo.url();
+
+
+                        }
+                    },
+                    error: function (error) {
+                        //   alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+
+            }
+            photos();
+            
+            
+            function photoscar() {
+                var user = Parse.User.current();
+                var GameScore = Parse.Object.extend("photosCar");
+                var query = new Parse.Query(GameScore);
+                console.log(user);
+                query.equalTo("user", user);
+                query.find({
+                    success: function (results) {
+                        //   alert("Successfully retrieved " + results.length + " scores.");
+                        // Do something with the returned Parse.Object values
+                        for (var i = 0; i < results.length; i++) {
+                            var object = results[i];
+
+                            var photo = object.get('profileImg');
+                            $("#carImagen")[0].src = photo.url();
+
+
+                        }
+                    },
+                    error: function (error) {
+                        //   alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+
+            }
+            photoscar();
+            
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+
         </script>
 
 

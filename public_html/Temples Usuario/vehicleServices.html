@@ -26,8 +26,6 @@
         <script type="text/javascript" src="../Javascript enhancements/js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="../Javascript enhancements/js/additional-methods.min.js"></script>
         <link rel="stylesheet" type="text/css"  href="../Temples Usuario/css-user/styles.css">
-
-
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
 
 
@@ -173,16 +171,16 @@
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
-                    <li><a href='carEssentials.html'>Datos Básicos</a></li>
-                    <li><a href='describeAdd.html'>Descripción</a></li>
-                    <li><a href='customerLocation.html'>Ubicación</a></li>
-                    <li><a href='carImage.html'>Fotos</a></li>
-                    <li><a href='autoServices.html'>Servicios </a></li>
-                    <li><a href='vehicleServices.html'>Seguridad</a></li>
-                    <li><a href='insurance-policy.html'>Poliza</a></li>
-                    <li><a href='pricesRent.html'>Precios</a></li>
-                    <li><a href='reservasCar.html'>Reserva</a></li>
-                    <li><a href='calendarReser.html'>Calendario</a></li>
+                    <li><a href='#' id="w1s">Datos Básicos</a></li>
+                    <li><a href='#' id="w2s">Descripción</a></li>
+                    <li><a href='#' id="w3s">Ubicación</a></li>
+                    <li><a href='#' id="w4s">Fotos</a></li>
+                    <li><a href='#' id="w5s">Servicios </a></li>
+                    <li><a href='#' id="w6s">Seguridad</a></li>
+                    <li><a href='#' id="w7s">Poliza</a></li>
+                    <li><a href='#' id="w8s">Precios</a></li>
+                    <li><a href='#' id="w9s">Reserva</a></li>
+                    <li><a href='#' id="w10s">Calendario</a></li>
                 </ul>
             </div>
             <!-- /#sidebar-wrapper -->
@@ -209,7 +207,7 @@
                                         </p>
                                         <hr>
 
-                                        <form method="post" action="/" id="contactform">
+                                        <form method="post" action="/" id="servicesForm">
                                             <div class="form-body" style="padding: 0px 30px 24px;">
 
                                                 <div class="colm colm4">
@@ -221,64 +219,60 @@
                                                         <div class="row">
                                                             <div class=" col-lg-4">
                                                                 <label class="option block spacer-b10">
-                                                                    <input type="checkbox" name="services" value="Open CMS">
+                                                                    <input type="checkbox" name="luz" value="Luz de stop" id="luz">
                                                                     <span class="checkbox"></span> Luz de stop         
                                                                 </label>
 
                                                                 <label class="option block spacer-b10">
-                                                                    <input type="checkbox" name="services" value="Free logo">
+                                                                    <input type="checkbox" name="bolsas" id="bolsas" value="Bolsa de aire laterales">
                                                                     <span class="checkbox"></span> Bolsa de aire laterales                 
                                                                 </label>
 
                                                                 <label class="option block spacer-b10">
-                                                                    <input type="checkbox" name="services" value="Free business cards">
+                                                                    <input type="checkbox" name="espejos" id="espejos" value="Desempañador de espejos laterales ">
                                                                     <span class="checkbox"></span> Desempañador de espejos laterales            
                                                                 </label>                                
 
                                                                 <label class="option block">
-                                                                    <input type="checkbox" name="services" value="One page website">
+                                                                    <input type="checkbox" name="frenado" id="frenado" value="Repartidor electrónico de fuerza de frenado ">
                                                                     <span class="checkbox"></span>Repartidor electrónico de fuerza de frenado  
                                                                 </label>  
                                                             </div>
                                                             <div class=" col-lg-4">
                                                                 <label class="option block spacer-b10">
-                                                                    <input type="checkbox" name="services" value="Open CMS">
+                                                                    <input type="checkbox" name="abs" id="abs" value="ABS">
                                                                     <span class="checkbox"></span> ABS          
                                                                 </label>
 
                                                                 <label class="option block spacer-b10">
-                                                                    <input type="checkbox" name="services" value="Free logo">
+                                                                    <input type="checkbox" name="alarma" id="alarma" value="Alarma">
                                                                     <span class="checkbox"></span> 	Alarma                
                                                                 </label>
 
                                                                 <label class="option block spacer-b10">
-                                                                    <input type="checkbox" name="services" value="Free business cards">
+                                                                    <input type="checkbox" name="niebla" id="niebla" value="Faros de niebla delanteros">
                                                                     <span class="checkbox"></span> Faros de niebla delanteros             
                                                                 </label>                                
 
                                                                 <label class="option block">
-                                                                    <input type="checkbox" name="services" value="One page website">
+                                                                    <input type="checkbox" name="aire2" id="aire2" value="Bolsa de aire (Piloto)">
                                                                     <span class="checkbox"></span>Bolsa de aire (Piloto)  
                                                                 </label>  
                                                             </div>
                                                             <div class=" col-lg-4">
                                                                 <label class="option block spacer-b10">
-                                                                    <input type="checkbox" name="services" value="Open CMS">
+                                                                    <input type="checkbox" name="traccion" id="traccion" value="Control de tracción ">
                                                                     <span class="checkbox"></span>Control de tracción          
                                                                 </label>
 
                                                                 <label class="option block spacer-b10">
-                                                                    <input type="checkbox" name="services" value="Free logo">
+                                                                    <input type="checkbox" name="luces2" id="luces2" value="Luces de xenón">
                                                                     <span class="checkbox"></span> 	Luces de xenón                  
                                                                 </label>
 
-                                                                <label class="option block spacer-b10">
-                                                                    <input type="checkbox" name="services" value="Free business cards">
-                                                                    <span class="checkbox"></span> Bolsa de aire (Copiloto)            
-                                                                </label>                                
 
                                                                 <label class="option block">
-                                                                    <input type="checkbox" name="services" value="One page website">
+                                                                    <input type="checkbox" name="estabilidad" id="estabilidad" value="Control de estabilidad ">
                                                                     <span class="checkbox"></span>Control de estabilidad  
                                                                 </label>  
                                                             </div>
@@ -286,12 +280,12 @@
                                                         <div class="row">
                                                             <div class=" col-lg-4">
                                                                 <label class="option block spacer-b10">
-                                                                    <input type="checkbox" name="services" value="Open CMS">
+                                                                    <input type="checkbox" name="Cinturones" id="Cinturones" value="Cinturones de seguridad ">
                                                                     <span class="checkbox"></span> Cinturones de seguridad         
                                                                 </label>
 
                                                                 <label class="option block spacer-b10">
-                                                                    <input type="checkbox" name="services" value="Free logo">
+                                                                    <input type="checkbox" name="disco" id="discos" value="Frenos de disco traseros">
                                                                     <span class="checkbox"></span> Frenos de disco traseros                
                                                                 </label>
                                                             </div>
@@ -307,7 +301,7 @@
                                                     <label class="field-label colm colm4 " style="margin-right: -79px;">Extintor de incendios </label>
                                                     <div class="section colm colm8">
                                                         <label for="firstname" class="field prepend-icon">
-                                                            <input type="text" name="Modelo" id="Modelo" class="gui-input" placeholder="Ofrece información clara y descriptiva">
+                                                            <input type="text" name="Modelo" id="descrip01" class="gui-input" placeholder="Ofrece información clara y descriptiva">
                                                             <span class="field-icon"><i class="fa fa-sticky-note"></i></span>  
                                                         </label>
                                                     </div><!-- end section -->
@@ -317,7 +311,7 @@
                                                     <label class="field-label colm colm4 " style="margin-right: -79px;">Alarma de incendios </label>
                                                     <div class="section colm colm8">
                                                         <label for="firstname" class="field prepend-icon">
-                                                            <input type="text" name="Modelo" id="Modelo" class="gui-input" placeholder="Ofrece información clara y descriptiva">
+                                                            <input type="text" name="Modelo" id="descrip02" class="gui-input" placeholder="Ofrece información clara y descriptiva">
                                                             <span class="field-icon"><i class="fa fa-sticky-note"></i></span>  
                                                         </label>
                                                     </div><!-- end section -->
@@ -326,7 +320,7 @@
                                                     <label class="field-label colm colm4 " style="margin-right: -79px;">Válvula de cierre del gas </label>
                                                     <div class="section colm colm8">
                                                         <label for="firstname" class="field prepend-icon">
-                                                            <input type="text" name="Modelo" id="Modelo" class="gui-input" placeholder="Ofrece información clara y descriptiva">
+                                                            <input type="text" name="Modelo" id="descrip03"  class="gui-input" placeholder="Ofrece información clara y descriptiva">
                                                             <span class="field-icon"><i class="fa fa-sticky-note"></i></span>  
                                                         </label>
                                                     </div><!-- end section -->
@@ -427,22 +421,43 @@
                 params[tmparr[0]] = tmparr[1];
             }
             var Add = tmparr[1];
+            $("#w1s").attr("href", "carEssentials.html?num=" + Add);
+            $("#w2s").attr("href", "describeAdd.html?num=" + Add);
+            $("#w3s").attr("href", "customerLocation.html?num=" + Add);
+            $("#w4s").attr("href", "carImage.html?num=" + Add);
+            $("#w5s").attr("href", "autoServices.html?num=" + Add);
+            $("#w6s").attr("href", "vehicleServices.html?num=" + Add);
+            $("#w7s").attr("href", "insurance-policy.html?num=" + Add);
+            $("#w8s").attr("href", "pricesRent.html?num=" + Add);
+            $("#w9s").attr("href", "reservasCar.html?num=" + Add);
+            $("#w10s").attr("href", "calendarReser.html?num=" + Add);
 
 
-            $('#servicesform').submit(function (e) {
+            $('#servicesForm').submit(function (e) {
                 //on form submit
                 e.preventDefault();
                 var Add = tmparr[1];
                 var idp = $("#idp").val();
-                var bluetooth = $('input:checkbox[name=bluetooth]:checked').val();
-                var cd = $('input:checkbox[name=cd]:checked').val();
-                var auxiliar = $('input:checkbox[name=auxiliar]:checked').val();
-                var ipod = $('input:checkbox[name=ipod]:checked').val();
-                var mp3 = $('input:checkbox[name=mp3]:checked').val();
-                var radio = $('input:checkbox[name=radio]:checked').val();
-                var usb = $('input:checkbox[name=usb]:checked').val();
+                var Luz = $('input:checkbox[name=luz]:checked').val();
+                var bolsas = $('input:checkbox[name=bolsas]:checked').val();
+                var espejos = $('input:checkbox[name=espejos]:checked').val();
+                var frenado = $('input:checkbox[name=frenado]:checked').val();
+                var Cinturones = $('input:checkbox[name=Cinturones]:checked').val();
+                var discos = $('input:checkbox[name=discos]:checked').val();
+                var abs = $('input:checkbox[name=abs]:checked').val();
+                var alarma = $('input:checkbox[name=alarma]:checked').val();
+                var niebla = $('input:checkbox[name=niebla]:checked').val();
+                var aire2 = $('input:checkbox[name=aire2]:checked').val();
+                var traccion = $('input:checkbox[name=traccion]:checked').val();
+                var luces2 = $('input:checkbox[name=luces2]:checked').val();
+                var estabilidad = $('input:checkbox[name=estabilidad]:checked').val();
+                var descrip01 = $("#descrip01").val();
+                var descrip02 = $("#descrip02").val();
+                var descrip03 = $("#descrip03").val();
+                var details = $("#details").val();
+
                 var Post = Parse.Object.extend("addUser");
-                var Customer = Parse.Object.extend("servicesCar");
+                var Customer = Parse.Object.extend("SeguridadCar");
                 var myPost = new Post();
                 var myCustomer = new Customer();
 
@@ -453,13 +468,22 @@
                 console.log(myPost);
                 myCustomer.set("id", idp);
                 myCustomer.set("user", user);
-                myCustomer.set("bluetooth", bluetooth);
-                myCustomer.set("cd", cd);
-                myCustomer.set("auxiliar", auxiliar);
-                myCustomer.set("ipod", ipod);
-                myCustomer.set("mp3", mp3);
-                myCustomer.set("radio", radio);
-                myCustomer.set("usb", usb);
+                myCustomer.set("bolsas", bolsas);
+                myCustomer.set("espejos", espejos);
+                myCustomer.set("frenado", frenado);
+                myCustomer.set("Cinturones", Cinturones);
+                myCustomer.set("discos", discos);
+                myCustomer.set("abs", abs);
+                myCustomer.set("alarma", alarma);
+                myCustomer.set("niebla", niebla);
+                myCustomer.set("aire2", aire2);
+                myCustomer.set("traccion", traccion);
+                myCustomer.set("luces2", luces2);
+                myCustomer.set("estabilidad", estabilidad);
+                myCustomer.set("descrip01", descrip01);
+                myCustomer.set("descrip02", descrip02);
+                myCustomer.set("descrip03", descrip03);
+                myCustomer.set("details", details);
                 myCustomer.set("parent", post);
                 myCustomer.save(null, {
                     success: function (myCustomer) {
@@ -468,17 +492,19 @@
                     error: function (myCustomer, error) {
                     }
                 });
-            });
 
+
+
+            });
 
 
             function consult() {
                 var Post = Parse.Object.extend("addUser");
-                var Vehiculo = Parse.Object.extend("servicesCar");
+                var Vehiculo = Parse.Object.extend("SeguridadCar");
                 var myPost = new Post();
                 var myVehiculo = new Vehiculo();
                 var user = Parse.User.current();
-                var Vehiculo = Parse.Object.extend("servicesCar");
+                var Vehiculo = Parse.Object.extend("SeguridadCar");
                 var query = new Parse.Query(Vehiculo);
                 var post = new Post();
                 post.id = Add;
@@ -489,16 +515,22 @@
                             for (var i = 0; i < results.length; i++) {
                                 var object = results[i];
 
-                                console.log(object.get('bluetooth'));
                                 $("#idp").val(object.id);
-                                $("#bluetooth").val([object.get('bluetooth')]);
-                                $("#cd").val([object.get('cd')]);
-                                $("#ipod").val([object.get('ipod')]);
-                                $("#mp3").val([object.get('mp3')]);
-                                $("#radio").val([object.get('radio')]);
-                                $("#auxiliar").val([object.get('auxiliar')]);
-                                $("#usb").val([object.get('usb')]);
-
+                                $("#bolsas").val([object.get('bolsas')]);
+                                $("#espejos").val([object.get('espejos')]);
+                                $("#frenado").val([object.get('frenado')]);
+                                $("#Cinturones").val([object.get('Cinturones')]);
+                                $("#abs").val([object.get('abs')]);
+                                $("#alarma").val([object.get('alarma')]);
+                                $("#niebla").val([object.get('niebla')]);
+                                $("#aire2").val([object.get('aire2')]);
+                                $("#traccion").val([object.get('traccion')]);
+                                $("#luces2").val([object.get('luces2')]);
+                                $("#descrip01").val([object.get('descrip01')]);
+                                $("#descrip02").val([object.get('descrip02')]);
+                                $("#descrip03").val([object.get('descrip03')]);
+                                $("#estabilidad").val([object.get('estabilidad')]);
+                                $("#details").val([object.get('details')]);
 
 
                             }

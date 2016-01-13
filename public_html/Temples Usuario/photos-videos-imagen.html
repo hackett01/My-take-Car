@@ -321,6 +321,9 @@
 
                         var photo = object.get('profileImg');
                         $("#profileImg")[0].src = photo.url();
+                        
+                        console.log(object);
+                        
                     }
                 },
                 error: function (error) {

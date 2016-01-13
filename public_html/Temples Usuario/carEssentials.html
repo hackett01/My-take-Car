@@ -254,16 +254,16 @@
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
-                    <li><a href='carEssentials.html'>Datos Básicos</a></li>
-                    <li><a href='describeAdd.html'>Descripción</a></li>
-                    <li><a href='customerLocation.html'>Ubicación</a></li>
-                    <li><a href='carImage.html'>Fotos</a></li>
-                    <li><a href='autoServices.html'>Servicios </a></li>
-                    <li><a href='vehicleServices.html'>Seguridad</a></li>
-                    <li><a href='insurance-policy.html'>Poliza</a></li>
-                    <li><a href='pricesRent.html'>Precios</a></li>
-                    <li><a href='reservasCar.html'>Reserva</a></li>
-                    <li><a href='calendarReser.html'>Calendario</a></li>
+                    <li><a href='#' id="w1s">Datos Básicos</a></li>
+                    <li><a href='#' id="w2s">Descripción</a></li>
+                    <li><a href='#' id="w3s">Ubicación</a></li>
+                    <li><a href='#' id="w4s">Fotos</a></li>
+                    <li><a href='#' id="w5s">Servicios </a></li>
+                    <li><a href='#' id="w6s">Seguridad</a></li>
+                    <li><a href='#' id="w7s">Poliza</a></li>
+                    <li><a href='#' id="w8s">Precios</a></li>
+                    <li><a href='#' id="w9s">Reserva</a></li>
+                    <li><a href='#' id="w10s">Calendario</a></li>
                 </ul>
             </div>
             <!-- /#sidebar-wrapper -->
@@ -506,7 +506,7 @@
 
                                                     </div><!-- end .form-body section -->
                                                     <div class="form-footer">
-                                                        <button id="next" type="submit" class="button btn-primary"> Siguiente</button>
+                                                        <button id="next" type="submit" class="button btn-primary"> Guardar</button>
                                                     </div><!-- end .form-footer section -->
 
 
@@ -575,6 +575,17 @@
             }
             var Add = tmparr[1];
 
+            $("#w1s").attr("href", "carEssentials.html?num=" + Add);
+            $("#w2s").attr("href", "describeAdd.html?num=" + Add);
+            $("#w3s").attr("href", "customerLocation.html?num=" + Add);
+            $("#w4s").attr("href", "carImage.html?num=" + Add);
+            $("#w5s").attr("href", "autoServices.html?num=" + Add);
+            $("#w6s").attr("href", "vehicleServices.html?num=" + Add);
+            $("#w7s").attr("href", "insurance-policy.html?num=" + Add);
+            $("#w8s").attr("href", "pricesRent.html?num=" + Add);
+            $("#w9s").attr("href", "reservasCar.html?num=" + Add);
+            $("#w10s").attr("href", "calendarReser.html?num=" + Add);
+
             $('#contactform').submit(function (e) {
                 //on form submit
                 e.preventDefault();
@@ -606,7 +617,6 @@
                 myVehiculo.set("dueno", dueno);
                 myVehiculo.set("tenure", tenure);
                 myVehiculo.set("verificacion", verificacion);
-
                 var post = new Post();
                 post.id = Add;
                 var user = Parse.User.current();
@@ -615,7 +625,12 @@
                 myVehiculo.set("user", user);
                 myVehiculo.save(null, {
                     success: function (myVehiculo) {
-                        window.location = "describeAdd.html?num=" + Add;
+
+                        function redireccionar() {
+                            window.location = "describeAdd.html?num=" + Add;
+
+                        }
+                        redireccionar();
                     },
                     error: function (myVehiculo, error) {
                         // Execute any logic that should take place if the save fails.
@@ -625,6 +640,8 @@
                 });
 
             });
+
+
 
 
 
@@ -658,11 +675,6 @@
                                 $("#dueno").val(object.get('dueno'));
                                 $("#tenure").val(object.get('tenure'));
                                 $("#verificacion").val(object.get('verificacion'));
-
-
-
-
-
                             }
                         }
                     },
@@ -673,6 +685,11 @@
             }
 
             consult();
+
+
+
+
+
 
         </script>
         <script src="../js/vendor/bootstrap.min.js"></script>
