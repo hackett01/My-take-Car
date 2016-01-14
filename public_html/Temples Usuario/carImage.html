@@ -29,87 +29,19 @@
         <link rel="stylesheet" href="../Temples Usuario/css-user/car.css"/>
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
 
-        <script type="text/javascript">
 
-            $(function () {
+        <style>
+            #remove{
 
-                $(".errorsContainer").hide();
+                margin-left: 382px;
+                margin-top: -19px;
+                position: absolute;
 
-                $("#contactform").validate({
-                    errorClass: "state-error",
-                    validClass: "state-success",
-                    errorElement: "li",
-                    rules: {
-                        firstaddr: {
-                            required: true
-                        },
-                        lastaddr: {
-                            required: true
-                        },
-                        location: {
-                            required: true
-                        },
-                        typecar: {
-                            required: true
-                        },
-                        zip: {
-                            required: true
-                        },
-                        city: {
-                            required: true
-                        },
-                        states: {
-                            required: true
-                        }
-
-
-
-
-                    },
-                    messages: {
-                        firstaddr: {
-                            required: 'Enter your firstaddr'
-                        },
-                        lastaddr: {
-                            required: 'Enter year of the car'
-                        },
-                        location: {
-                            required: 'Please choose location'
-                        },
-                        zip: {
-                            required: 'Please you zip'
-                        },
-                        city: {
-                            required: 'Plece you city '
-                        },
-                        states: {
-                            required: 'Plece you states '
-                        }
-
-                    },
-                    invalidHandler: function (form, validator) {
-                        $(".errorsContainer").show();
-                    },
-                    highlight: function (element, errorClass, validClass) {
-                        $(element).closest('.field').addClass(errorClass).removeClass(validClass);
-                        if (this.numberOfInvalids() > 0) {
-                            $(".errorsContainer").show();
-                        }
-                    },
-                    unhighlight: function (element, errorClass, validClass) {
-                        $(element).closest('.field').removeClass(errorClass).addClass(validClass);
-                        if (this.numberOfInvalids() == 0) {
-                            $(".errorsContainer").hide();
-                        }
-                    },
-                    errorPlacement: function (error, element) {
-                        error.appendTo("#smartErrors");
-                    }
-                });
-
-            });
-
-        </script>
+            }
+            #cola{
+                margin-top: 9px;
+            }
+        </style>
 
 
 
@@ -226,22 +158,33 @@
 
 
 
-                                        <img src="" id="color"/>
+                                        <div class="row" id='otraDiv' style=" width: 96%; margin-left: 16px;
+                                             "> 
+                                            <br>
 
-                                    </div><!-- end .smart-forms section -->
-                                </div><!-- end .smart-wrap section -->              
+
+
+
+
+
+
+                                        </div><!-- end .smart-forms section -->
+                                    </div><!-- end .smart-wrap section -->              
+
+                                </div>
+
+
+
 
                             </div>
-
-
-
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- /#page-content-wrapper -->
+                <!-- /#page-content-wrapper -->
 
+            </div>
         </div>
+
 
         <script>
             $("#menu-toggle").click(function (e) {
@@ -285,7 +228,7 @@
             var Add = tmparr[1];
 
             $("#w1s").attr("href", "carEssentials.html?num=" + Add);
-      $("#w2s").attr("href", "describeAdd.html?num=" + Add);
+            $("#w2s").attr("href", "describeAdd.html?num=" + Add);
             $("#w3s").attr("href", "customerLocation.html?num=" + Add);
             $("#w4s").attr("href", "carImage.html?num=" + Add);
             $("#w5s").attr("href", "autoServices.html?num=" + Add);
@@ -305,7 +248,7 @@
                 var user = Parse.User.current();
                 var jobApplication = new Parse.Object("photosCar");
                 jobApplication.set("user", user);
-                jobApplication.set("title", "profile");
+                jobApplication.set("title", Add);
                 jobApplication.set("parent", post);
                 jobApplication.set("profileImg", objParseFile);
                 jobApplication.save(null,
@@ -313,7 +256,7 @@
                             success: function (gameScore) {
                                 // Execute any logic that should take place after the object is saved.
 
-                                window.location = "autoServices.html?num=" + Add;
+                                window.location = "carImage.html?num=" + Add;
                                 var photo = gameScore.get("profileImg");
                                 $("#profileImg")[0].src = photo.url();
 
@@ -326,6 +269,7 @@
                             }
                         });
             }
+
 
             $('#profilePhotoFileUpload').bind("change", function (e) {
                 var fileUploadControl = $("#profilePhotoFileUpload")[0];
@@ -349,30 +293,62 @@
 
 
 
-            var GameScore = Parse.Object.extend("photosCar");
-            var query = new Parse.Query(GameScore);
-            query.equalTo("title", "profile");
-            query.find({
-                success: function (results) {
-                    //   alert("Successfully retrieved " + results.length + " scores.");
-                    // Do something with the returned Parse.Object values
-                    imageURLs = [];
-                    for (var i = 0; i < results.length; i++) {
-                        var object = results[i];
-                        imageURLs.push(object.get('profileImg'));
+
+
+            function imagen() {
+                var Add = tmparr[1];
+                var user = Parse.User.current();
+                var GameScore = Parse.Object.extend("photosCar");
+                var query = new Parse.Query(GameScore);
+                console.log(user);
+                query.equalTo("title", Add);
+                query.find({
+                    success: function (results) {
+                        //   alert("Successfully retrieved " + results.length + " scores.");
+                        // Do something with the returned Parse.Object values
+
+                        var output = "";
+                        for (var i = 0; i < results.length; i++) {
+                            var object = results[i];
+
+                            var photo = object.get('profileImg');
+                            var url = photo.url();
+
+                            $("<div>", {
+                                id: 'trololo'
+                            }).append(
+                                    $('<div>', {
+                                        class: 'col-sm-6 '
+                                    }).append(
+                                    $('<div>', {
+                                        id: 'cola'
+                                    }).append(
+                                    $('<img />', {
+                                        id: 'lista-colas',
+                                        src: url,
+                                        width: 400
+                                    })
+                                    ),
+                                    $('<a />', {
+                                        class: "fa fa-times",
+                                        id: "remove"
+                                    })
+                                    , $('<br/>', {
+                                    })
+                                    )
+                                    ).hide().appendTo('#otraDiv').fadeIn('slow');
+
+                        }
+
+
+                    },
+                    error: function (error) {
+                        //   alert("Error: " + error.code + " " + error.message);
                     }
+                });
+            }
 
-                    console.log(imageURLs);
-
-
-                },
-                error: function (error) {
-                    //   alert("Error: " + error.code + " " + error.message);
-                }
-            });
-
-
-
+            imagen();
 
         </script>
 
