@@ -464,11 +464,11 @@
                         <div class="panel-body">
 
                             <div id="img-app" class="ih-item square effect13 left_to_right"><a href="#">
-                                    <div class="img"><img id="carImagen"  src="../img/DSC9249.jpg" alt="img"></div>
+                                    <div class="img"><img id="carImagen"   alt="img"></div>
                                     <div class="info">
                                         <h3>Hermosa camioneta</h3>
                                     </div></a></div>
-                            
+
                         </div>
                     </div>
 
@@ -1113,7 +1113,7 @@
                                 var Mail = "";
                                 var Phone = "";
                                 var Scho = "";
-                                var Job ="";
+                                var Job = "";
 
                                 var Profile = results[i].get('Name');
                                 profile += "<span>" + Profile + "</span>";
@@ -1129,7 +1129,7 @@
 
                                 var scho = results[i].get('education');
                                 Scho += "<span>" + scho + "</span>";
-                                
+
                                 var job = results[i].get('job');
                                 Job += "<span>" + job + "</span>";
 
@@ -1180,8 +1180,8 @@
 
             }
             photos();
-            
-            
+
+
             function photoscar() {
                 var user = Parse.User.current();
                 var GameScore = Parse.Object.extend("photosCar");
@@ -1208,11 +1208,11 @@
 
             }
             photoscar();
-            
-            
-            
-            
-            
+
+
+
+
+
 
 
 
