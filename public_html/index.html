@@ -18,17 +18,17 @@
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/style.css" />
         <link rel="stylesheet" type="text/css" href="CircularContentCarousel/css/jquery.jscrollpane.css" media="all" />
         <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">
-        <link href="DCalendar/dcalendar.picker.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="Remodal-master/dist/remodal.css">
         <link rel="stylesheet" href="Remodal-master/dist/remodal-default-theme.css">
         <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css"  href="Javascript enhancements/css/smart-forms.css">
         <link rel="stylesheet" type="text/css"  href="Javascript enhancements/css/smart-themes/red.css">
         <link rel="stylesheet" type="text/css"  href="css/index-css.css">
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
         <script type="text/javascript" src="Javascript enhancements/js/jquery-ui-custom.min.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 
         <script type="text/javascript">
 
@@ -180,7 +180,7 @@
 
                                 <div class="section colm colm4">
                                     <label class="field">
-                                        <input type="email" class="gui-input" placeholder="Buscar">
+                                        <input id="searchTextField" type="text" size="50"class="gui-input" placeholder="Buscar">
                                     </label>
                                 </div><!-- end section -->
                                 <div class="section colm colm3" id="salida">
@@ -401,6 +401,9 @@
                     <button id="buttonTravel" type="button" class="btn btn-default btn-lg btn-block">
                         Ver más destino
                     </button>
+
+
+
                 </div>
                 <div class="col-md-4">
 
@@ -714,6 +717,50 @@
                 output += "<a class='fa fa-bars' href='/My-take-Car/Temples%20Usuario/index-user.html'>" + " " + "</a>";
                 $("#Dashborn").html(output);
             }
+
+        </script>
+
+        <script>
+
+            var pac_input = document.getElementById('searchTextField');
+
+            (function pacSelectFirst(input) {
+                // store the original event binding function
+                var _addEventListener = (input.addEventListener) ? input.addEventListener : input.attachEvent;
+
+                function addEventListenerWrapper(type, listener) {
+                    // Simulate a 'down arrow' keypress on hitting 'return' when no pac suggestion is selected,
+                    // and then trigger the original listener.
+
+                    if (type == "keydown") {
+                        var orig_listener = listener;
+                        listener = function (event) {
+                            var suggestion_selected = $(".pac-item-selected").length > 0;
+                            if (event.which == 13 && !suggestion_selected) {
+                                var simulated_downarrow = $.Event("keydown", {keyCode: 40, which: 40})
+                                orig_listener.apply(input, [simulated_downarrow]);
+                            }
+
+                            orig_listener.apply(input, [event]);
+                        };
+                    }
+
+                    // add the modified listener
+                    _addEventListener.apply(input, [type, listener]);
+                }
+
+                if (input.addEventListener)
+                    input.addEventListener = addEventListenerWrapper;
+                else if (input.attachEvent)
+                    input.attachEvent = addEventListenerWrapper;
+
+            })(pac_input);
+
+
+            $(function () {
+                var autocomplete = new google.maps.places.Autocomplete(pac_input);
+            });
+
 
         </script>
 

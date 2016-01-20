@@ -1184,7 +1184,7 @@
 
             function photoscar() {
                 var user = Parse.User.current();
-                var GameScore = Parse.Object.extend("photosCar");
+                var GameScore = Parse.Object.extend("addUser");
                 var query = new Parse.Query(GameScore);
                 console.log(user);
                 query.equalTo("user", user);
@@ -1194,12 +1194,10 @@
                         // Do something with the returned Parse.Object values
                         for (var i = 0; i < results.length; i++) {
                             var object = results[i];
-
-                            var photo = object.get('profileImg');
-                            $("#carImagen")[0].src = photo.url();
-
-
                         }
+
+
+
                     },
                     error: function (error) {
                         //   alert("Error: " + error.code + " " + error.message);
@@ -1208,6 +1206,17 @@
 
             }
             photoscar();
+
+
+            var query = new Parse.Query("addUser");
+            query.equalTo("user", Parse.User.current());
+            query.find({
+                success: function (users) {
+                    
+                    console.log("Erro");
+                    
+                }
+            });
 
 
 

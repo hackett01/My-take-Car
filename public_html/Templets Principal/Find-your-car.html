@@ -24,28 +24,9 @@
         <link href="../leastjs2.2.0/src/css/least.min.css" rel="stylesheet" />
         <script src="http://maps.googleapis.com/maps/api/js"></script>
 
-        <script>
-            function initialize() {
-                var mapProp = {
-                    center: new google.maps.LatLng(51.508742, -0.120850),
-                    zoom: 5,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
-                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            }
-            google.maps.event.addDomListener(window, 'load', initialize);
-        </script>
-        <script>
-            function initialize() {
-                var mapProp = {
-                    center: new google.maps.LatLng(51.508742, -0.120850),
-                    zoom: 5,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
-                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            }
-            google.maps.event.addDomListener(window, 'load', initialize);
-        </script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
+
 
         <script type="text/javascript">
 
@@ -609,28 +590,13 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
+                    <ul id="menu" class="nav navbar-nav navbar-right">
+                        <li><a id="Dashborn" href="#"></a></li>
+                        <li class="active" id="filtro">
                             <a id="register" href="#modal">Registrate <span class="sr-only">(current)</span></a>
                         </li>
-                        <li>
+                        <li id="mensajes">
                             <a id="session" href="#modals"  >Iniciar sesión</a>
-                        </li>
-                        <li><a id="cuenta" href="#">Mi cuenta</a></li>
-                        <li class="dropdown" id="listaOption">
-                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-
-                                <span class="fa fa-cog fa-2x" id="cog"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
                         </li>
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -650,7 +616,7 @@
                     <div class="smart-wrap">
                         <div class="smart-forms  ">
 
-                            <form method="post" action="/" id="smart-form">
+                            <form  id="SearchFilter">
                                 <div class="form-body theme-red">
 
                                     <div class="section">
@@ -670,6 +636,11 @@
                                             <div id="slider-range"></div>  
                                         </div><!-- end .slider-wrapper -->
                                     </div><!-- end section -->
+
+
+
+
+
 
                                     <div class="frm-row">
                                         <div class="section colm colm3">
@@ -714,13 +685,40 @@
                                         </div><!-- end section --> 
                                         <div class="section colm colm3">
                                             <label class="field select">
-                                                <select id="location" name="location">
-                                                    <option value="">Estados</option>
-                                                    <option value="AL">Veracruz</option>
-                                                    <option value="DZ">Guerrero</option>
-                                                    <option value="AD">Baja California</option>
-                                                    <option value="AO">Monterrey</option>
-                                                    <option value="AI">Yucatan</option>
+                                                <select name="states" id="mySelect" onchange="myFunction()">
+                                                    <option value="">Choose state</option>
+                                                    <option value="AS">Aguascalientes</option>
+                                                    <option value="BC">Baja California</option>
+                                                    <option value="BS">Baja California Sur</option>
+                                                    <option value="CC">Campeche</option>
+                                                    <option value="CS">Chiapas</option>
+                                                    <option value="CH">Chihuahua</option>
+                                                    <option value="CL">Coahuila</option>
+                                                    <option value="CM">Colima</option>
+                                                    <option value="DF">Distrito Federal</option>
+                                                    <option value="DG">Durango</option>
+                                                    <option value="GT">Guanajuato</option>
+                                                    <option value="GR">Guerrero</option>
+                                                    <option value="HG">Hidalgo</option>
+                                                    <option value="JC">Jalisco</option>
+                                                    <option value="MC">México</option>
+                                                    <option value="MN">Michoacan</option>
+                                                    <option value="MS">Morelos</option>
+                                                    <option value="NT">Nayarit</option>
+                                                    <option value="NL">Nuevo León</option>
+                                                    <option value="OC">Oaxaca</option>
+                                                    <option value="PL">Puebla</option>
+                                                    <option value="QT">Querétaro</option>
+                                                    <option value="QR">Quintana Roo</option>
+                                                    <option value="SP">San Luis Potosí</option>
+                                                    <option value="SL">Sinaloa</option>
+                                                    <option value="SR">Sonora</option>
+                                                    <option value="TC">Tabasco</option>
+                                                    <option value="TL">Tlaxcala</option>
+                                                    <option value="TS">Tamaulipas</option>
+                                                    <option value="VZ">Veracruz</option>
+                                                    <option value="YN">Yucatán</option>
+                                                    <option value="ZS">Zacatecas</option>
                                                 </select>
                                                 <i class="arrow double"></i>                    
                                             </label>  
@@ -913,7 +911,14 @@
                     </section>
                 </div>
                 <div class=" col-sm-3 ">
-                    <div id="googleMap" style="width:500px;height:380px;"></div>
+
+                    <div id="map_canvas" style="width:500px;height:380px;"></div>
+
+
+
+
+                    <div><input type="text" maxlength="100" id="address" placeholder="Dirección" /> <input type="button" id="search" value="Buscar" /></div><br/>
+                    <div id='map_canvas' style="width:600px; height:400px;"></div>
                 </div>
             </div>
 
@@ -922,7 +927,7 @@
             <div class="smart-wrap" style=" display: none">
                 <div class="smart-forms ">
 
-                    <form method="post" action="/" id="smart-form">
+                    <form  id="filter">
                         <div class="form-body">
 
 
@@ -1011,83 +1016,141 @@
         </div>
         <script src="../js/vendor/bootstrap.min.js"></script>
         <script>
-            $(document).ready(function ($) {
-                $(window).resize(function () {
-                    if ($(window).width() <= 800) {
-                        $("#text-caption").css({'position': 'absolute',
-                            'left': '15%',
-                            'right': '15%',
-                            'bottom': '200px'
-                        });
-                        $(".carousel-indicators").css({'position': 'absolute',
-                            'bottom': '100px'
-                        });
-                        $("#signin").css({
-                            'border': 'medium none'
-                        });
-                        $("#salida").hide();
-                        $("#llegada").hide();
-                        $("#lupa").hide();
-                        $("#sel3").hide();
-                        $("#lista1").hide();
-                        $("#lista2").hide();
-                        $("#lista3").hide();
-                    }
-                    if ($(window).width() > 800) {
-                        $("#salida").show();
-                        $("#llegada").show();
-                        $("#sel3").show();
-                        $("#lupa").show();
+                                                    $(document).ready(function ($) {
+                                                        $(window).resize(function () {
+                                                            if ($(window).width() <= 800) {
+                                                                $("#text-caption").css({'position': 'absolute',
+                                                                    'left': '15%',
+                                                                    'right': '15%',
+                                                                    'bottom': '200px'
+                                                                });
+                                                                $(".carousel-indicators").css({'position': 'absolute',
+                                                                    'bottom': '100px'
+                                                                });
+                                                                $("#signin").css({
+                                                                    'border': 'medium none'
+                                                                });
+                                                                $("#salida").hide();
+                                                                $("#llegada").hide();
+                                                                $("#lupa").hide();
+                                                                $("#sel3").hide();
+                                                                $("#lista1").hide();
+                                                                $("#lista2").hide();
+                                                                $("#lista3").hide();
+                                                            }
+                                                            if ($(window).width() > 800) {
+                                                                $("#salida").show();
+                                                                $("#llegada").show();
+                                                                $("#sel3").show();
+                                                                $("#lupa").show();
 
-                        setTimeout('document.location.reload()', 10);
-                    }
+                                                                setTimeout('document.location.reload()', 10);
+                                                            }
 
-                    if ($(window).width() <= 768) {
+                                                            if ($(window).width() <= 768) {
 
-                        $("#shearh").css({
-                            'margin-top': '5px',
-                            'width': '500px'
-                        });
-                        $("#lupa").show();
+                                                                $("#shearh").css({
+                                                                    'margin-top': '5px',
+                                                                    'width': '500px'
+                                                                });
+                                                                $("#lupa").show();
 
-                        $("#lupa").css({
-                            'margin-top': '-136px',
-                            'margin-left': '502px'
-                        });
+                                                                $("#lupa").css({
+                                                                    'margin-top': '-136px',
+                                                                    'margin-left': '502px'
+                                                                });
 
 
-                    }
+                                                            }
 
-                    if ($(window).width() <= 680) {
+                                                            if ($(window).width() <= 680) {
 
-                        $("#shearh").css({
-                            'margin-top': '5px',
-                            'width': '403px'
-                        });
-                        $("#lupa").show();
+                                                                $("#shearh").css({
+                                                                    'margin-top': '5px',
+                                                                    'width': '403px'
+                                                                });
+                                                                $("#lupa").show();
 
-                        $("#lupa").css({
-                            'margin-top': '-138px',
-                            'margin-left': '406px'
-                        });
-                    }
+                                                                $("#lupa").css({
+                                                                    'margin-top': '-138px',
+                                                                    'margin-left': '406px'
+                                                                });
+                                                            }
 
-                    if ($(window).width() <= 400) {
+                                                            if ($(window).width() <= 400) {
 
-                        $("#shearh").css({
-                            'margin-top': '5px',
-                            'width': '218px'
-                        });
-                        $("#lupa").show();
-                    }
+                                                                $("#shearh").css({
+                                                                    'margin-top': '5px',
+                                                                    'width': '218px'
+                                                                });
+                                                                $("#lupa").show();
+                                                            }
 
-                });
-            });
+                                                        });
+                                                    });
         </script>
 
 
+        <script>
 
-        <!-- /#page-content-wrapper -->
+
+            Parse.initialize("AwaxZPecidC77J5pymOrQVxB3cXkhJSKdmipzt7T", "vwz5gTGne4HvdawlNUgGuhiC79FWi7kYGgyjsIPo");
+
+
+
+
+////////////////////////////
+            var currentUser = Parse.User.current();
+            var test = JSON.stringify(currentUser);
+            var jsontext = test;
+            var contact = JSON.parse(jsontext);
+
+            var Username = contact.username;
+            if (Username) {
+                console.log("Este es el usuario : " + Username);
+                $("#session").remove();
+                $("#register").remove();
+                var output = "";
+                output += "Bienvenido :  " + Username + "    ";
+                $("#cuenta").html(output);
+                output += "<a class='fa fa-bars' href='/My-take-Car/Temples%20Usuario/index-user.html'>" + " " + "</a>";
+                $("#Dashborn").html(output);
+            }
+
+
+            function myFunction() {
+                var x = document.getElementById("mySelect").value;
+                console.log(x);
+                //     document.getElementById("demo").innerHTML = "You selected: " + x;
+
+
+
+
+
+
+
+                var GameScore = Parse.Object.extend("GameScore");
+                var Comment = Parse.Object.extend("Comment");
+
+// Create the post
+                var myPost = new Post();
+                myPost.set("title", "I'm Hungry");
+                myPost.set("content", "Where should we go for lunch?");
+
+// Create the comment
+                var myComment = new Comment();
+                myComment.set("content", "Let's do Sushirrito.");
+
+// Add the post as a value in the comment
+                myComment.set("parent", myPost);
+
+// This will save both myPost and myComment
+                myComment.save();
+                }
+
+
+        </script>
+
 
 
 
