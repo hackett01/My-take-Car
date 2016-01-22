@@ -158,8 +158,7 @@
 
 
 
-                                        <div class="row" id='otraDiv' style=" width: 96%; margin-left: 16px;
-                                             "> 
+                                        <div class="row" id='otraDiv' style=" width: 96%; margin-left: 16px;"> 
                                             <br>
 
 
@@ -248,7 +247,7 @@
                 var user = Parse.User.current();
                 var jobApplication = new Parse.Object("photosCar");
                 jobApplication.set("user", user);
-                jobApplication.set("title", Add);
+                jobApplication.set("AddId", Add);
                 jobApplication.set("parent", post);
                 jobApplication.set("profileImg", objParseFile);
                 jobApplication.save(null,
@@ -301,7 +300,7 @@
                 var GameScore = Parse.Object.extend("photosCar");
                 var query = new Parse.Query(GameScore);
                 console.log(user);
-                query.equalTo("title", Add);
+                query.equalTo("AddId", Add);
                 query.find({
                     success: function (results) {
                         //   alert("Successfully retrieved " + results.length + " scores.");

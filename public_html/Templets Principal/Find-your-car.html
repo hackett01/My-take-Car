@@ -620,9 +620,9 @@
                                 <div class="form-body theme-red">
 
                                     <div class="section">
-                                        <label for="guestname" class="field-label">Buscar</label>
+                                        <label for="guestname" class="field-label" >Buscar</label>
                                         <label for="guestname" class="field prepend-icon">
-                                            <input type="text" name="guestname" id="guestname" class="gui-input" placeholder="Tu auto...">
+                                            <input type="text" name="guestname" id="guestname"  class="gui-input" placeholder="Tu auto...">
                                             <span class="field-icon"><i class="fa fa-car"></i></span>  
                                         </label>
                                     </div><!-- end section --> 
@@ -636,16 +636,10 @@
                                             <div id="slider-range"></div>  
                                         </div><!-- end .slider-wrapper -->
                                     </div><!-- end section -->
-
-
-
-
-
-
                                     <div class="frm-row">
                                         <div class="section colm colm3">
                                             <label class="field select">
-                                                <select id="country" name="country">
+                                                <select id="tamano" name="tamano">
                                                     <option value="">Tipo</option>
                                                     <option value="AL">Grande</option>
                                                     <option value="DZ">Mediana</option>
@@ -659,20 +653,20 @@
 
                                         <div class="section colm colm3">
                                             <label class="field select">
-                                                <select id="location" name="location">
+                                                <select id="marca" name="marca">
                                                     <option value="">Marca</option>
-                                                    <option value="AL">Ford</option>
-                                                    <option value="DZ">Mercedez Benz</option>
-                                                    <option value="AD">Chevrolet</option>
-                                                    <option value="AO">Cadillac</option>
-                                                    <option value="AI">Audi</option>
+                                                    <option value="Ford">Ford</option>
+                                                    <option value="Mercedez Benz">Mercedez Benz</option>
+                                                    <option value="Chevrolet">Chevrolet</option>
+                                                    <option value="Cadillac">Cadillac</option>
+                                                    <option value="Audi">Audi</option>
                                                 </select>
                                                 <i class="arrow double"></i>                    
                                             </label>  
                                         </div><!-- end section --> 
                                         <div class="section colm colm3">
                                             <label class="field select">
-                                                <select id="location" name="location">
+                                                <select id="modelo" name="modelo">
                                                     <option value="">Modelo</option>
                                                     <option value="AL">2015</option>
                                                     <option value="DZ">2014</option>
@@ -707,7 +701,7 @@
                                                     <option value="NT">Nayarit</option>
                                                     <option value="NL">Nuevo León</option>
                                                     <option value="OC">Oaxaca</option>
-                                                    <option value="PL">Puebla</option>
+                                                    <option  value="PL">Puebla</option>
                                                     <option value="QT">Querétaro</option>
                                                     <option value="QR">Quintana Roo</option>
                                                     <option value="SP">San Luis Potosí</option>
@@ -814,97 +808,16 @@
             </div>
             <br>
             <div class="row ">
-                <div class=" col-lg-8 col-md-8 col-sm-8 " style="height: 400px;overflow: scroll;"  >
+                <div class=" col-lg-8 col-md-8 col-sm-8 " style="height: 400px;overflow: scroll;"  id="contimg" >
                     <section id="least">
 
                         <!-- Least Gallery: Fullscreen Preview -->
                         <div class="least-preview"></div>
 
                         <!-- Least Gallery: Thumbnails -->
-                        <ul class="least-gallery">
-                            <!-- 1 || Element with data-caption ||-->
-                            <li>
-                                <a href="#" title="Skateboard" data-subtitle="View Picture" data-caption="<strong>Bold text</strong> normal caption text">
-                                    <img src="../img/033_cooper_s-600-001.jpg" alt="Alt Image Text" />
-                                </a>
-                            </li>
+                        <ul class="least-gallery" id="otraDiv">
 
-                            <!-- 2 || Element with data-caption as href-attribute ||-->
-                            <li>
-                                <a  href="#"  title="Train Rails" data-subtitle="View Picture" data-caption="Now it's possibe to add an URL-Link into caption text - <a href='http://www.google.com' target='_blank'>GOOGLE</a>">
-                                    <img src="../img/1440_volkswagen-golf-gti-12.jpg" alt="Alt Image Text" />
-                                </a>
-                            </li>
 
-                            <!-- 3 -->
-                            <li>
-                                <a  href="#"  title="Apple" data-subtitle="View Picture">
-                                    <img src="../img/88964_937f120b3b_low_res.jpg" alt="Alt Image Text" />
-                                </a>
-                            </li>
-
-                            <!-- 4 -->
-                            <li>
-                                <a  href="#"  title="Road Trip" data-subtitle="View Picture">
-                                    <img src="../img/DSC9249.jpg" alt="Alt Image Text" />
-                                </a>
-                            </li>
-
-                            <!-- 5 -->
-                            <li>
-                                <a  href="#"  title="Desert" data-subtitle="View Picture">
-                                    <img src="../img/chevrolet-suburban-13.jpg" alt="Alt Image Text" />
-                                </a>
-                            </li>
-
-                            <!-- 6 -->
-                            <li>
-                                <a  href="#"  title="Tree" data-subtitle="View Picture">
-                                    <img src="../img/dic-amda-1315894.jpg" alt="Alt Image Text" />
-                                </a>
-                            </li>
-
-                            <!-- 7 -->
-                            <li>
-                                <a  href="#"  title="MacBook" data-subtitle="View Picture">
-                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
-                                </a>
-                            </li>
-
-                            <!-- 8 -->
-                            <li>
-                                <a  href="#"  title="Clock" data-subtitle="View Picture">
-                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
-                                </a>
-                            </li>
-
-                            <!-- 9 -->
-                            <li>
-                                <a  href="#"  title="iPhone" data-subtitle="View Picture">
-                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
-                                </a>
-                            </li>
-
-                            <!-- 10 -->
-                            <li>
-                                <a  href="#"  title="New York" data-subtitle="View Picture">
-                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
-                                </a>
-                            </li>
-                            <li>
-                                <a  href="#"  title="Clock" data-subtitle="View Picture">
-                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
-                                </a>
-                            </li>
-
-                            <!-- 9 -->
-                            <li>
-                                <a href="#"  title="iPhone" data-subtitle="View Picture">
-                                    <img src="../img/Dodge_Caliber_001.JPG" alt="Alt Image Text" />
-                                </a>
-                            </li>
-
-                            <!-- 10 -->
 
                         </ul>
 
@@ -912,15 +825,9 @@
                 </div>
                 <div class=" col-sm-3 ">
 
-                    <div id="map_canvas" style="width:500px;height:380px;"></div>
-
-
-
-
-                    <div><input type="text" maxlength="100" id="address" placeholder="Dirección" /> <input type="button" id="search" value="Buscar" /></div><br/>
-                    <div id='map_canvas' style="width:600px; height:400px;"></div>
                 </div>
             </div>
+
 
             <br>
 
@@ -1116,12 +1023,99 @@
                 output += "<a class='fa fa-bars' href='/My-take-Car/Temples%20Usuario/index-user.html'>" + " " + "</a>";
                 $("#Dashborn").html(output);
             }
+            $('#SearchFilter').submit(function (e) {
+                e.preventDefault();
+                var firstaddr = $("#guestname").val();
+                var tamano = $("#tamano").val();
+                var marca = $("#marca").val();
+                var tamano = $("#tamano").val();
+                var modelo = $("#Modelo").val();
+                var states = $("#mySelect").val();
+                $('#SearchFilter')[0].reset();
+                $("#otraDiv").empty();
+                $("#list-posts").html(output);
+
+                ////////////////////////////
 
 
-            function myFunction() {
-                var x = document.getElementById("mySelect").value;
-                console.log(x);
-                //     document.getElementById("demo").innerHTML = "You selected: " + x;
+                var GameScore = Parse.Object.extend("Vehiculo");
+                var query = new Parse.Query(GameScore);
+                query.equalTo("Marca", marca);
+                query.find({
+                    success: function (resultados) {
+                        for (var i = 0; i < resultados.length; i++) {
+                            if (resultados.length > 0) {
+                                var object = resultados[i];
+                                var AddId = object.get('AddId');
+
+
+
+                                var notCustomer = new Parse.Query("Customer");
+                                notCustomer.equalTo("AddId", AddId);
+
+                                var Customer = new Parse.Query("Customer");
+                                Customer.greaterThan("location", "PL");
+
+                                var mainQuery = Parse.Query.or(notCustomer, Customer);
+                                mainQuery.find({
+                                    success: function (results) {
+
+                                        for (var i = 0; i < results.length; i++) {
+                                            var object = results[i];
+
+                                            var addName = object.get('AddId');
+
+                                            var GameScore = Parse.Object.extend("photosCar");
+                                            var query = new Parse.Query(GameScore);
+                                            query.equalTo("AddId", addName);
+                                            query.find({
+                                                success: function (results) {
+
+                                                    for (var i = 0; i < 1; i++) {
+                                                        var object = results[i];
+
+                                                        var photo = object.get('profileImg');
+                                                        var url = photo.url();
+
+                                                        var img = "<img src='" + url + "'/>";
+                                                        $("<li/>", {
+                                                            id: 'trololo'
+                                                        }).append(
+                                                                $('<a/>', {
+                                                                    title: 'ver anuncio'
+
+
+                                                                }).append(
+                                                                $('<img />', {
+                                                                    id: 'lista-colas',
+                                                                    src: url,
+                                                                    width: 240
+                                                                })
+                                                                )
+                                                                ).appendTo('#otraDiv');
+                                                    }
+
+                                                }
+                                            });
+                                        }
+
+                                    },
+                                    error: function (error) {
+                                        // There was an error.
+                                    }
+                                });
+
+
+                            } else {
+                                console.log("fucck");
+                            }
+
+                        }
+                    },
+                    error: function (error) {
+                        alert("Error: " + error.code + " " + error.message);
+                    }
+                });
 
 
 
@@ -1129,27 +1123,118 @@
 
 
 
-                var GameScore = Parse.Object.extend("GameScore");
-                var Comment = Parse.Object.extend("Comment");
 
-// Create the post
-                var myPost = new Post();
-                myPost.set("title", "I'm Hungry");
-                myPost.set("content", "Where should we go for lunch?");
 
-// Create the comment
-                var myComment = new Comment();
-                myComment.set("content", "Let's do Sushirrito.");
 
-// Add the post as a value in the comment
-                myComment.set("parent", myPost);
 
-// This will save both myPost and myComment
-                myComment.save();
-                }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                /////////////////Buscan por estados
+                var GameScore = Parse.Object.extend("Customer");
+                var query = new Parse.Query(GameScore);
+                query.equalTo("location", states);
+                query.find({
+                    success: function (results) {
+                        // Do something with the returned Parse.Object values
+                        for (var i = 0; i < results.length; i++) {
+                            var object = results[i];
+                            var add_id = object.get('AddId');
+                            var fisrtAddr = object.get("firstaddr");
+                            var lastaddr = object.get("lastaddr");
+                            var AddUser = Parse.Object.extend("addUser");
+                            var query = new Parse.Query(AddUser);
+                            query.equalTo("objectId", add_id);
+                            query.find({
+                                success: function (results) {
+                                    // Do something with the returned Parse.Object values
+                                    for (var i = 0; i < results.length; i++) {
+                                        var object = results[i];
+                                    }
+                                    var addName = object.get('nameAdd');
+
+                                }
+                            });
+
+                            var GameScore = Parse.Object.extend("photosCar");
+                            var query = new Parse.Query(GameScore);
+                            query.equalTo("AddId", add_id);
+                            query.find({
+                                success: function (results) {
+
+                                    for (var i = 0; i < 1; i++) {
+                                        var object = results[i];
+
+                                        var photo = object.get('profileImg');
+                                        var url = photo.url();
+
+                                        var img = "<img src='" + url + "'/>";
+                                        $("<li/>", {
+                                            id: 'trololo'
+                                        }).append(
+                                                $('<a/>', {
+                                                    title: 'ver anuncio'
+
+
+                                                }).append(
+                                                $('<img />', {
+                                                    id: 'lista-colas',
+                                                    src: url,
+                                                    width: 240
+                                                })
+                                                )
+                                                ).appendTo('#otraDiv');
+                                    }
+
+                                }
+                            });
+
+                        }
+                    }
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            });
 
         </script>
+
+
+
 
 
 

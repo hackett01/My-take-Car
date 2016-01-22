@@ -597,7 +597,7 @@
             var Add = tmparr[1];
 
             $("#w1s").attr("href", "carEssentials.html?num=" + Add);
-           $("#w2s").attr("href", "describeAdd.html?num=" + Add);
+            $("#w2s").attr("href", "describeAdd.html?num=" + Add);
             $("#w3s").attr("href", "customerLocation.html?num=" + Add);
             $("#w4s").attr("href", "carImage.html?num=" + Add);
             $("#w5s").attr("href", "autoServices.html?num=" + Add);
@@ -646,6 +646,7 @@
                 myCustomer.set("city", city);
                 myCustomer.set("states", states);
                 myCustomer.set("parent", post);
+                myCustomer.set("AddId", Add);
                 myCustomer.save(null, {
                     success: function (myCustomer) {
                         window.location = "carImage.html?num=" + Add;

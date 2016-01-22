@@ -621,7 +621,7 @@
                 post.id = Add;
                 var user = Parse.User.current();
                 console.log(myPost);
-                myVehiculo.set("parent", post);
+                myVehiculo.set("AddId", Add);
                 myVehiculo.set("user", user);
                 myVehiculo.save(null, {
                     success: function (myVehiculo) {
@@ -657,7 +657,7 @@
                 var query = new Parse.Query(Vehiculo);
                 var post = new Post();
                 post.id = Add;
-                query.equalTo("parent", post);
+                query.equalTo("AddId", Add);
                 query.find({
                     success: function (results) {
                         if (results.length > 0) {
